@@ -1,0 +1,15 @@
+<h2 id="κατα-morphism-finally-length">κατα-morphism: Finally length</h2>
+<p>All needed information for making length.</p>
+<pre><code>instance Functor (StrF a) =
+    fmap f (Cons c x) = Cons c (f x)
+    fmap _ Nil = Nil
+
+length&#39; :: Str -&gt; Int
+length&#39; = cata phi where
+    phi :: Algebra StrF Int -- StrF Int -&gt; Int
+    phi (Cons a b) = 1 + b
+    phi Nil = 0
+
+main = do
+    l &lt;- length&#39; $ stringToStr &quot;Toto&quot;
+    ...</code></pre>

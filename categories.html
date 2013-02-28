@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<title>Category Theory for Programming</title>
+
+	<!-- Required stylesheet -->
+	<link rel="stylesheet" href="core/deck.core.css">
+
+	<!-- Extension CSS files go here. Remove or add as needed. -->
+	<link rel="stylesheet" href="extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="extensions/status/deck.status.css">
+	<link rel="stylesheet" href="extensions/hash/deck.hash.css">
+  <!--  <link rel="stylesheet" href="extensions/scale/deck.scale.css"> -->
+
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+
+    <!-- <link rel="stylesheet" href="themes/transition/fade.css"> -->
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+    <!-- <link rel="stylesheet" href="themes/style/web-2.0.css"> -->
+    <link rel="stylesheet" href="themes/style/y/main.css" />
+    <link rel="stylesheet" href="themes/style/y/solarized.css" />
+	<!-- Required Modernizr file -->
+	<script src="modernizr.custom.js"></script>
+    <script>
+        function gofullscreen(){
+            var body=document.getElementById('body');
+            try {
+                body.requestFullScreen();
+            } catch(err) {
+                try {
+                    body.webkitRequestFullScreen();
+                } catch(err) {
+                    body.mozRequestFullScreen();
+                }
+            }
+            return false;
+        }
+    </script>
+</head>
+<body id="body" class="deck-container">
+
+<div style="display:none">
+\(\newcommand{\F}{\mathbf{F}}\)
+\(\newcommand{\E}{\mathbf{E}}\)
+\(\newcommand{\C}{\mathcal{C}}\)
+\(\newcommand{\D}{\mathcal{D}}\)
+\(\newcommand{\id}{\mathrm{id}}\)
+\(\newcommand{\ob}[1]{\mathrm{ob}(#1)}\)
+\(\newcommand{\hom}[1]{\mathrm{hom}(#1)}\)
+\(\newcommand{\Set}{\mathbf{Set}}\)
+\(\newcommand{\Mon}{\mathbf{Mon}}\)
+\(\newcommand{\Vec}{\mathbf{Vec}}\)
+\(\newcommand{\Grp}{\mathbf{Grp}}\)
+\(\newcommand{\Rng}{\mathbf{Rng}}\)
+\(\newcommand{\ML}{\mathbf{ML}}\)
+\(\newcommand{\Hask}{\mathbf{Hask}}\)
+\(\newcommand{\Cat}{\mathbf{Cat}}\)
+\(\newcommand{\fmap}{\mathtt{fmap}}\)
+</div>
+
+<!-- Begin slides. Just make elements with a class of slide. -->
+
+<section class="slide">
+<div style="text-align:center; position:absolute; top: 2em; font-size: .9em; width: 100%">
+<h1 style="position: relative;">Category Theory <span class="and">&amp;</span> Programming</h1>
+<div><em class="base01">for</em> <a href="http://www.meetup.com/riviera-scala-clojure">Rivieria Scala Clojure</a> (Note this presentation uses Haskell)</div>
+<author><em class="base01">by</em> <a href="http://yannesposito.com">Yann Esposito</a></author>
+<div style="font-size:.8em">
+    <twitter>
+        <a href="http://twitter.com/yogsototh">@yogsototh</a>,
+     </twitter>
+     <googleplus>
+        <a href="https://plus.google.com/117858550730178181663">+yogsototh</a>
+     </googleplus>
+</div>
+<div class="base01" style="font-size: .5em; font-weight: 400; font-variant:italic">
+    <div class="button" style="margin: .5em auto;border: solid 2px; padding: 5px; width: 8em; border-radius: 1em; background:rgba(255,255,255,0.05);"  onclick="javascript:gofullscreen();">ENTER FULLSCREEN</div>
+    HTML presentation: use arrows, space, swipe to navigate.
+</div>
+</div>
+</section>
+<section class="slide">
+<h2>Plan</h2>
+<ul style="font-size: 2em; font-weight:bold">
+    <li><span class="yellow">General overview</li>
+    <li>Definitions</li>
+    <li>Applications</li>
+</ul>
+</section>
+<section class="slide">
+<h2 id="not-really-about-cat-glory">Not really about: Cat <span class="and">&amp;</span> glory</h2>
+<figure>
+<img src="categories/img/categlory.jpg" alt="Cat n glory" /> <figcaption>credit to Tokuhiro Kawai (川井徳寛)</figcaption>
+</figure>
+
+
+</section>
+<section class="slide">
+<h2 id="general-overview">General Overview</h2>
+<div style="float:right; width: 18%">
+<img src="categories/img/eilenberg.gif" alt="Samuel Eilenberg"/> <img src="categories/img/maclaine.jpg" alt="Saunders Mac Lane"/>
+</div>
+
+<p><em>Recent Math Field</em><br />1942-45, Samuel Eilenberg <span class="and">&amp;</span> Saunders Mac Lane</p>
+<p>Certainly one of the more abstract branches of math</p>
+<ul>
+<li><em>New math foundation</em><br /> formalism abstraction, package entire theory<sup>★</sup></li>
+<li><em>Bridge between disciplines</em><br /> Physics, Quantum Physics, Topology, Logic, Computer Science<sup>☆</sup></li>
+</ul>
+<p  class="smaller base01" style="border-top: solid 1px">
+★: <a href="http://www.math.harvard.edu/~mazur/preprints/when_is_one.pdf">When is one thing equal to some other thing?, Barry Mazur, 2007</a><br/> ☆: <a href="http://math.ucr.edu/home/baez/rosetta.pdf">Physics, Topology, Logic and Computation: A Rosetta Stone, John C. Baez, Mike Stay, 2009</a>
+</p>
+
+
+</section>
+<section class="slide">
+<h2 id="from-a-programmer-perspective">From a Programmer perspective</h2>
+<blockquote>
+<p>Category Theory is a new language/framework for Math</p>
+</blockquote>
+<ul>
+<li>Another way of thinking</li>
+<li>Extremely efficient for generalization</li>
+</ul>
+</section>
+<section class="slide">
+<h2 id="math-programming-relation">Math Programming relation</h2>
+<img class="right" src="categories/img/buddha.gif" alt="Buddha Fractal"/>
+<p>Programming <em><span class="yellow">is</span></em> doing Math</p>
+<p>Strong relations between type theory and category theory.</p>
+<p>Not convinced?<br />Certainly a <em>vocabulary</em> problem.</p>
+<p>One of the goal of Category Theory is to create a <em>homogeneous vocabulary</em> between different disciplines.</p>
+</section>
+<section class="slide">
+<h2 id="vocabulary">Vocabulary</h2>
+<img class="right" src="categories/img/mindblown.gif" alt="mind blown"/>
+<p>Math vocabulary used in this presentation:</p>
+<blockquote>
+<p>Category, Morphism, Associativity, Preorder, Functor, Endofunctor, Categorial property, Commutative diagram, Isomorph, Initial, Dual, Monoid, Natural transformation, Monad, Klesli arrows, κατα-morphism, ...</p>
+</blockquote>
+</section>
+<section class="slide">
+<h2 id="programmer-translation">Programmer Translation</h2>
+<img class="right" src="categories/img/readingcat.jpg" alt="lolcat"/>
+<table style="width:60%">
+<tr><th>
+Mathematician
+</th><th>
+Programmer
+</th></tr>
+<tr><td>
+Morphism
+</td><td>
+Arrow
+</td></tr>
+<tr><td>
+Monoid
+</td><td>
+String-like
+</td></tr>
+<tr><td>
+Preorder
+</td><td>
+Acyclic graph
+</td></tr>
+<tr><td>
+Isomorph
+</td><td>
+The same
+</td></tr>
+<tr><td>
+Natural transformation
+</td><td>
+rearrangement function
+</td></tr>
+<tr><td>
+Funny Category
+</td><td>
+LOLCat
+</td></tr>
+</table>
+
+
+</section>
+<section class="slide">
+<h2>Plan</h2>
+<ul style="font-size: 2em; font-weight: bold">
+    <li>General overview</li>
+    <li> <span class="yellow">Definitions</span>
+<ul class="base01" style="border-left: 2px solid; padding-left: 1em; font-size: .6em; float: right; font-weight: bold; margin: 0 0 0 1em">
+    <li>Category</li>
+    <li>Intuition</li>
+    <li>Examples</li>
+    <li>Functor</li>
+    <li>Examples</li>
+</ul>
+    </li>
+    <li>Applications</li>
+</ul>
+</section>
+<section class="slide">
+<h2>Category</h2>
+
+<p>A way of representing <strong><em>things</em></strong> and <strong><em>ways to go between things</em></strong>.</p>
+
+<p> A Category \(\mathcal{C}\) is defined by:</p>
+<ul>
+	<li> <em>Objects <span class="yellow">\(\ob{C}\)</span></em>,</li>
+	<li> <em>Morphisms <span class="yellow">\(\hom{C}\)</span></em>,</li>
+	<li> a <em>Composition law <span class="yellow">(∘)</span></em></li>
+    <li> obeying some <em>Properties</em>.</li>
+</ul>
+</section>
+<section class="slide">
+<h2>Category: Objects</h2>
+
+<img src="categories/img/mp/objects.png" alt="objects" />
+
+<p>\(\ob{\mathcal{C}}\) is a collection</p>
+</section>
+<section class="slide">
+<h2>Category: Morphisms</h2>
+
+<img src="categories/img/mp/morphisms.png" alt="morphisms"/>
+
+<p>\(A\) and \(B\) objects of \(\C\)<br/>
+\(\hom{A,B}\) is a collection of morphisms<br/>
+\(f:A→B\) denote the fact \(f\) belongs to \(\hom{A,B}\)</p>
+<p>\(\hom{\C}\) the collection of all morphisms of \(\C\)</p>
+</section>
+<section class="slide">
+<h2>Category: Composition</h2>
+<p>Composition (∘): associate to each couple \(f:A→B, g:B→C\)
+    $$g∘f:A\rightarrow C$$
+</p>
+<img src="categories/img/mp/composition.png" alt="composition"/>
+</section>
+<section class="slide">
+<h2>Category laws: neutral element</h2>
+<p>for each object \(X\), there is an \(\id_X:X→X\),<br/>
+such that for each \(f:A→B\):</p>
+<img src="categories/img/mp/identity.png" alt="identity"/>
+</section>
+<section class="slide">
+<h2>Category laws: Associativity</h2>
+<p> Composition is associative:</p>
+<img src="categories/img/mp/associativecomposition.png" alt="associative composition"/>
+</section>
+<section class="slide">
+<h2>Commutative diagrams</h2>
+
+<p>Two path with the same source and destination are equal.</p>
+<figure class="left" style="max-width: 40%;margin-left: 10%;">
+    <img
+      src="categories/img/mp/commutative-diagram-assoc.png"
+      alt="Commutative Diagram (Associativity)"/>
+    <figcaption>
+    \((h∘g)∘f = h∘(g∘f) \)
+    </figcaption>
+</figure>
+<figure class="right" style="max-width:31%;margin-right: 10%;">
+    <img
+      src="categories/img/mp/commutative-diagram-id.png"
+      alt="Commutative Diagram (Identity law)"/>
+    <figcaption>
+    \(id_B∘f = f = f∘id_A \)
+    </figcaption>
+</figure>
+</section>
+<section class="slide">
+<h2>Question Time!</h2>
+
+<figure style="width:70%; margin:0 auto">
+<img src="categories/img/batquestion.jpg" width="100%"/>
+<figcaption>
+<em>- French-only joke -</em>
+</figcaption>
+</figure>
+</section>
+<section class="slide">
+<h2>Can this be a category?</h2>
+<p>\(\ob{\C},\hom{\C}\) fixed, is there a valid ∘?</p>
+<figure class="left">
+    <img src="categories/img/mp/cat-example1.png" alt="Category example 1"/>
+    <figcaption class="slide">
+        <span class="green">YES</span>
+    </figcaption>
+</figure>
+<figure class="left">
+    <img src="categories/img/mp/cat-example2.png" alt="Category example 2"/>
+    <figcaption class="slide">
+        no candidate for \(g∘f\)
+        <br/><span class="red">NO</span>
+    </figcaption>
+</figure>
+<figure class="left">
+    <img src="categories/img/mp/cat-example3.png" alt="Category example 3"/>
+    <figcaption class="slide">
+    <span class="green">YES</span>
+    </figcaption>
+</figure>
+</section>
+<section class="slide">
+<h2>Can this be a category?</h2>
+<figure class="left">
+    <img src="categories/img/mp/cat-example4.png" alt="Category example 4"/>
+    <figcaption class="slide">
+        no candidate for \(f:C→B\)
+        <br/><span class="red">NO</span>
+    </figcaption>
+</figure>
+<figure class="right" style="min-width: 59%">
+    <img src="categories/img/mp/cat-example5.png" alt="Category example 5"/>
+    <figcaption class="slide">
+    \((h∘g)∘f=\id_B∘f=f\)<br/>
+    \(h∘(g∘f)=h∘\id_A=h\)<br/>
+    but \(h≠f\)<br/>
+    <span class="red">NO</span>
+    </figcaption>
+</figure>
+</section>
+<section class="slide">
+<h2>Categories Examples</h2>
+
+<figure style="width:70%; margin:0 auto">
+<img src="categories/img/basket_of_cats.jpg" alt="Basket of cats"/>
+<figcaption>
+<em>- Basket of Cats -</em>
+</figcaption>
+</figure>
+</section>
+<section class="slide">
+<h2>Category \(\Set\)</h2>
+
+<ul>
+	<li> \(\ob{\Set}\) are <em>all</em> the sets</li>
+    <li> \(\hom{E,F}\) are <em>all</em> functions from \(E\) to \(F\)</li>
+    <li> ∘ is functions composition </li>
+</ul>
+
+<ul class="slide">
+    <li>\(\ob{\Set}\) is a proper class ; not a set</li>
+    <li>\(\hom{E,F}\) is a set</li>
+	<li>\(\Set\) is then a <em>locally <b>small</b> category</em></li>
+</ul>
+</section>
+<section class="slide">
+<h2>Categories Everywhere?</h2>
+<img class="right" src="categories/img/cats-everywhere.jpg" alt="Cats everywhere"/>
+<ul>
+    <li>\(\Mon\): (monoids, monoid morphisms,∘)</li>
+    <li>\(\Vec\): (Vectorial spaces, linear functions,∘)</li>
+    <li>\(\Grp\): (groups, group morphisms,∘)</li>
+    <li>\(\Rng\): (rings, ring morphisms,∘)</li>
+    <li>Any deductive system <i>T</i>: (theorems, proofs, proof concatenation)</li>
+    <li>\( \Hask\): (Haskell types, functions, <code>(.)</code> )</li>
+    <li>...</li>
+</ul>
+</section>
+<section class="slide">
+<h2>Smaller Examples</h2>
+
+<h3>Strings</h3>
+<img class="right" style="max-width:17%" src="categories/img/mp/strings.png" alt="Monoids are one object categories"/>
+<ul>
+    <li> \(\ob{Str}\) is a singleton </li>
+    <li> \(\hom{Str}\) each string </li>
+    <li> ∘ is concatenation <code>(++)</code> </li>
+</ul>
+<ul>
+    <li> <code>"" ++ u = u = u ++ ""</code> </li>
+    <li> <code>(u ++ v) ++ w = u ++ (v ++ w)</code> </li>
+</ul>
+</section>
+<section class="slide">
+<h2>Finite Example?</h2>
+
+<h3>Graph</h3>
+<figure class="right" style="max-width:40%" >
+<img src="categories/img/mp/graph-category.png" alt="Each graph is a category"/>
+</figure>
+<ul>
+    <li> \(\ob{G}\) are vertices</li>
+    <li> \(\hom{G}\) each path</li>
+    <li> ∘ is path concatenation</li>
+</ul>
+<ul><li>\(\ob{G}=\{X,Y,Z\}\),
+    </li><li>\(\hom{G}=\{ε,α,β,γ,αβ,βγ,...\}\)
+    </li><li>\(αβ∘γ=αβγ\)
+</li></ul>
+</section>
+<section class="slide">
+<h2>Number construction</h2>
+
+<h3>Each Numbers as a whole category</h3>
+<img src="categories/img/mp/numbers.png" alt="Each number as a category"/>
+</section>
+<section class="slide">
+<h2>Degenerated Categories: Monoids</h2>
+
+<img class="right" style="max-width:17%" src="categories/img/mp/monoid.png" alt="Monoids are one object categories"/>
+<p>Each Monoid \((M,e,⊙): \ob{M}=\{∙\},\hom{M}=M,\circ = ⊙\)</p>
+<p class="yellow">Only one object.</p>
+<p>Examples:</p>
+<ul><li><code>(Integer,0,+)</code>, <code>(Integer,1,*)</code>,
+</li><li><code>(Strings,"",++)</code>, for each <code>a</code>, <code>([a],[],++)</code>
+</li></ul>
+</section>
+<section class="slide">
+<h2>Degenerated Categories: Preorders \((P,≤)\)</h2>
+
+<ul><li>\(\ob{P}={P}\),
+</li><li>\(\hom{x,y}=\{x≤y\} ⇔ x≤y\),
+</li><li>\((y≤z) \circ (x≤y) = (x≤z) \)
+</li></ul>
+
+<p><em class="yellow">At most one morphism between two objects.</em></p>
+
+<img src="categories/img/mp/preorder.png" alt="preorder category"/>
+</section>
+<section class="slide">
+<h2>Degenerated Categories: Discrete Categories</h2>
+
+<img class="right" src="categories/img/mp/set.png" alt="Any set can be a category"/>
+<h3>Any Set</h3>
+<p>Any set \(E: \ob{E}=E, \hom{x,y}=\{x\} ⇔  x=y \)</p>
+<p class="yellow">Only identities</p>
+</section>
+<section class="slide">
+<h2 id="choice">Choice</h2>
+<p>The same object can be seen in many different way as a category.</p>
+<p>You can choose what are object, morphisms and composition.</p>
+<p>ex: <strong>Str</strong> and discrete(Σ<sup>*</sup>)</p>
+</section>
+<section class="slide">
+<h2 class="base1">Categorical Properties</h2>
+
+<p class="base1">Any property which can be expressed in term of category, objects, morphism and composition.</p>
+
+<ul><li> <em class="yellow">Dual</em>: \(\D\) is \(\C\) with reversed morphisms.
+</li><li> <em class="yellow">Initial</em>: \(Z\in\ob{\C}\) s.t. \(∀Y∈\ob{\C}, \#\hom{Z,Y}=1\)
+	<br/> Unique ("up to isormophism")
+</li><li> <em class="yellow">Terminal</em>: \(T\in\ob{\C}\) s.t. \(T\) is initial in the dual of \(\C\)
+</li><li> <em class="yellow">Functor</em>: structure preserving mapping between categories
+</li><li> ...
+</li></ul>
+</section>
+<section class="slide">
+<h2 id="isomorph">Isomorph</h2>
+<p><img class="right" alt="isomorph cats" src="categories/img/isomorph-cats.jpg" /> <em class="yellow">isomorphism</em>: \(f:A→B\) which can be &quot;undone&quot; <em>i.e.</em><br />\(∃g:B→A\), \(g∘f=id_A\) <span class="and">&amp;</span> \(f∘g=id_B\)<br />in this case, \(A\) <span class="and">&amp;</span> \(B\) are <em class="yellow">isomorphic</em>.</p>
+<p><span class="yellow">A≌B</span> means A and B are essentially the same.<br />In Category Theory, <span class="yellow">=</span> is in fact mostly <span class="yellow">≌</span>.<br />For example in commutative diagrams.</p>
+</section>
+<section class="slide">
+<h2>Functor</h2>
+
+<p> A functor is a mapping between two categories.
+Let \(\C\) and \(\D\) be two categories.
+A <em>functor</em> <span class="yellow">\(\F\)</span> from <span class="blue">\(\C\)</span> to <span class="green">\(\D\)</span>:</p>
+<ul>
+	<li> Associate objects: <span class="backblue">\(A\in\ob{\C}\)</span> to <span class="backgreen">\(\F(A)\in\ob{\D}\)</span> </li>
+	<li> Associate morphisms: <span class="backblue">\(f:A\to B\)</span> to <span class="backgreen">\(\F(f) : \F(A) \to \F(B)\)</span>
+        such that
+        <ul>
+			<li>\( \F (\)<span class="backblue blue">\(\id_X\)</span>\()= \)<span class="backgreen"><span class="green">\(\id\)</span>\(\vphantom{\id}_{\F(}\)<span class="blue">\(\vphantom{\id}_X\)</span>\(\vphantom{\id}_{)} \)</span>,</li>
+			<li>\( \F (\)<span class="backblue blue">\(g∘f\)</span>\()= \)<span class="backgreen">\( \F(\)<span class="blue">\(g\)</span>\() \)<span class="green">\(\circ\)</span>\( \F(\)<span class="blue">\(f\)</span>\() \)</span></li>
+        </ul>
+    </li>
+</ul>
+</section>
+<section class="slide">
+<h2>Functor Example (ob → ob)</h2>
+
+<img width="65%" src="categories/img/mp/functor.png" alt="Functor"/>
+</section>
+<section class="slide">
+<h2>Functor Example (hom → hom)</h2>
+
+<img width="65%" src="categories/img/mp/functor-morphism.png" alt="Functor"/>
+</section>
+<section class="slide">
+<h2>Functor Example</h2>
+
+<img width="65%" src="categories/img/mp/functor-morphism-color.png" alt="Functor"/>
+</section>
+<section class="slide">
+<h2>Endofunctors</h2>
+
+<p>An <em>endofunctor</em> for \(\C\) is a functor \(F:\C→\C\).</p>
+<img width="75%"  src="categories/img/mp/endofunctor.png" alt="Endofunctor"/>
+</section>
+<section class="slide">
+<h2>Category of Categories</h2>
+
+<img style="min-width:43%; width: 43%" class="right" src="categories/img/fractalcat.jpg" />
+
+<p>Categories and functors form a category: \(\Cat\)</p>
+<ul><li>\(\ob{\Cat}\) are categories
+</li><li>\(\hom{\Cat}\) are functors
+</li><li>∘ is functor composition
+</li></ul>
+</section>
+<section class="slide">
+<h2>Plan</h2>
+<ul style="font-size: 2em; font-weight:bold">
+    <li>General overview</li>
+    <li>Definitions</li>
+    <li><span class="yellow">Applications
+        <ul class="base01" style="border-left: 2px solid; padding-left: 1em; font-size: .6em; float: right; font-weight: bold; margin: -4em 0 0 1em">
+            <li>\(\Hask\) category
+            </li><li> Functors
+            </li><li> Natural transformations
+            </li><li> Monads
+            </li><li> κατα-morphisms
+            </li></ul>
+    </li>
+</ul>
+</section>
+<section class="slide">
+<h2>Hask</h2>
+
+<p>Category \(\Hask\):</p>
+
+<img class="right" style="max-width:30%" src="categories/img/mp/hask.png" alt="Haskell Category Representation"/>
+
+<ul><li>
+\(\ob{\Hask} = \) Haskell types
+</li><li>
+\(\hom{\Hask} = \) Haskell functions
+</li><li>
+∘ = <code>(.)</code> Haskell function composition
+</li></ul>
+
+<p>Forget glitches because of <code>undefined</code>.</p>
+</section>
+<section class="slide">
+<h2 id="haskell-kinds">Haskell Kinds</h2>
+<p>In Haskell some types can take type variable(s). Typically: <code>[a]</code>.</p>
+<p>Types have <em>kinds</em>; The kind is to type what type is to function. Kind are the types for types (so meta).</p>
+<pre><code>Int, Char :: *
+[], Maybe :: * -&gt; *
+(,), (-&gt;) :: * -&gt; * -&gt; *
+[Int], Maybe Char, Maybe [Int] :: *</code></pre>
+</section>
+<section class="slide">
+<h2 id="haskell-types">Haskell Types</h2>
+<p>Sometimes, the type determine a lot about the function<sup>★</sup>:</p>
+<pre class="haskell"><code>fst :: (a,b) -> a -- Only one choice
+snd :: (a,b) -> b -- Only one choice
+f :: a -> [a]     -- Many choices
+-- Possibilities: f x=[], or [x], or [x,x] or [x,...,x]
+
+? :: [a] -> [a] -- Many choices
+-- can only rearrange: duplicate/remove/reorder elements
+-- for example: the type of addOne isn't [a] -> [a]
+addOne l = map <span class="red">(+1)</span> l
+-- The (+1) force 'a' to be a Num.</code></pre>
+
+<p>
+<p><span class="small base01">★:<a href="http://ttic.uchicago.edu/~dreyer/course/papers/wadler.pdf">Theorems for free!, Philip Wadler, 1989</a></span></p>
+</section>
+<section class="slide">
+<h2>Haskell Functor vs \(\Hask\) Functor</h2>
+
+<p>A Haskell Functor is a type <code>F :: * -> *</code> which belong to the type class <code>Functor</code> ; thus instantiate
+<code>fmap :: (a -> b) -> (F a -> F b)</code>.
+
+<p><span style="visibility:hidden"><span class="and">&amp;</span></span> <code>F</code>: \(\ob{\Hask}→\ob{\Hask}\)<br/> <span class="and">&amp;</span> <code>fmap</code>: \(\hom{\Hask}→\hom{\Hask}\)
+
+<p>The couple <code>(F,fmap)</code> is a \(\Hask\)'s functor if for any <code>x :: F a</code>:</p>
+<ul><li><code>fmap id x = x</code>
+</li><li><code>fmap (f.g) x= (fmap f . fmap g) x</code>
+</li></ul>
+</section>
+<section class="slide">
+<h2>Haskell Functors Example: Maybe</h2>
+
+<pre class="haskell"><code>data Maybe a = Just a | Nothing
+instance Functor Maybe where
+    fmap :: (a -> b) -> (Maybe a -> Maybe b)
+    fmap f (Just a) = Just (f a)
+    fmap f Nothing = Nothing</code></pre>
+<pre class="haskell"><code>fmap (+1) (Just 1) == Just 2
+fmap (+1) Nothing  == Nothing
+fmap head (Just [1,2,3]) == Just 1</code></pre>
+</section>
+<section class="slide">
+<h2>Haskell Functors Example: List</h2>
+
+<pre class="haskell"><code>instance Functor ([]) where
+	fmap :: (a -> b) -> [a] -> [b]
+	fmap = map</pre></code>
+<pre class="haskell"><code>fmap (+1) [1,2,3]           == [2,3,4]
+fmap (+1) []                == []
+fmap head [[1,2,3],[4,5,6]] == [1,4]</code></pre>
+</section>
+<section class="slide">
+<h2 id="haskell-functors-for-the-programmer">Haskell Functors for the programmer</h2>
+<p><code>Functor</code> is a type class used for types that can be mapped over.</p>
+<ul>
+<li>Containers: <code>[]</code>, Trees, Map, HashMap...</li>
+<li>&quot;Feature Type&quot;:
+<ul>
+<li><code>Maybe a</code>: help to handle absence of <code>a</code>.<br />Ex: <code>safeDiv x 0 ⇒ Nothing</code></li>
+<li><code>Either String a</code>: help to handle errors<br />Ex: <code>reportDiv x 0 ⇒ Left &quot;Division by 0!&quot;</code></li>
+</ul></li>
+</ul>
+</section>
+<section class="slide">
+<h2>Haskell Functor intuition</h2>
+
+<p>Put normal function inside a container. Ex: list, trees...<p>
+
+<img width="70%" src="categories/img/mp/boxfunctor.png" alt="Haskell Functor as a box play"/>
+</section>
+<section class="slide">
+<h2>Haskell Functor properties</h2>
+
+<p>Haskell Functors are:</p>
+
+<ul><li><em>endofunctors</em> ; \(F:\C→\C\) here \(\C = \Hask\),
+</li><li>a couple <b>(Object,Morphism)</b> in \(\Hask\).
+</li></ul>
+</section>
+<section class="slide">
+<h2>Functor as boxes</h2>
+
+<p>Haskell functor can be seen as boxes containing all Haskell types and functions.
+Haskell types is fractal:</p>
+
+<img width="70%" src="categories/img/mp/hask-endofunctor.png" alt="Haskell functor representation"/>
+</section>
+<section class="slide">
+<h2>Functor as boxes</h2>
+
+<p>Haskell functor can be seen as boxes containing all Haskell types and functions.
+Haskell types is fractal:</p>
+
+<img width="70%" src="categories/img/mp/hask-endofunctor-objects.png" alt="Haskell functor representation"/>
+</section>
+<section class="slide">
+<h2>Functor as boxes</h2>
+
+<p>Haskell functor can be seen as boxes containing all Haskell types and functions.
+Haskell types is fractal:</p>
+
+<img width="70%" src="categories/img/mp/hask-endofunctor-morphisms.png" alt="Haskell functor representation"/>
+</section>
+<section class="slide">
+<h2 id="non-haskell-hasks-functors">&quot;Non Haskell&quot; Hask's Functors</h2>
+<p>A simple basic example is the \(id_\Hask\) functor. It simply cannot be expressed as a couple (<code>F</code>,<code>fmap</code>) where</p>
+<ul>
+<li><code>F::* -&gt; *</code></li>
+<li><code>fmap :: (a -&gt; b) -&gt; (F a) -&gt; (F b)</code></li>
+</ul>
+<p>Another example:</p>
+<ul>
+<li>F(<code>T</code>)=<code>Int</code></li>
+<li>F(<code>f</code>)=<code>\_-&gt;0</code></li>
+</ul>
+</section>
+<section class="slide">
+<h2 id="also-functor-inside-hask">Also Functor inside \(\Hask\)</h2>
+<p>\(\mathtt{[a]}∈\ob{\Hask}\)</code> but is also a category. Idem for <code>Int</code>.</p>
+<p><code>length</code> is a Functor from the category <code>[a]</code> to the category <code>Int</code>:</p>
+<ul class="left" style="max-width:40%">
+<li>\(\ob{\mathtt{[a]}}=\{∙\}\)</li>
+<li>\(\hom{\mathtt{[a]}}=\mathtt{[a]}\)</li>
+<li>\(∘=\mathtt{(++)}\)</li>
+</ul>
+<p class="left" style="margin:2em 3em">⇒</p>
+<ul class="left" style="max-width:40%">
+<li>\(\ob{\mathtt{Int}}=\{∙\}\)</li>
+<li>\(\hom{\mathtt{Int}}=\mathtt{Int}\)</li>
+<li>\(∘=\mathtt{(+)}\)</li>
+</ul>
+<div class="flush"></div>
+<ul><li>id: <code>length [] = 0</code>
+</li><li>comp: <code>length (l ++ l') = (length l) + (length l')</code>
+</li></ul>
+</section>
+<section class="slide">
+<h2 id="category-of-hask-endofunctors">Category of \(\Hask\) Endofunctors</h2>
+<img width="60%" src="categories/img/mp/cat-hask-endofunctor.png" alt="Category of Hask endofunctors" />
+</section>
+<section class="slide">
+<h2 id="category-of-functors">Category of Functors</h2>
+<p>If \(\C\) is <em>small</em> (\(\hom{\C}\) is a set). All functors from \(\C\) to some category \(\D\) form the category \(\mathrm{Func}(\C,\D)\).</p>
+<ul>
+<li>\(\ob{\mathrm{Func}(\C,\D)}\): Functors \(F:\C→\D\)</li>
+<li>\(\hom{\mathrm{Func}(\C,\D)}\): <em>natural transformations</em></li>
+<li>∘: Functor composition</li>
+</ul>
+<p>\(\mathrm{Func}(\C,\C)\) is the category of endofunctors of \(\C\).</p>
+</section>
+<section class="slide">
+<h2 id="natural-transformations">Natural Transformations</h2>
+<p>Let \(F\) and \(G\) be two functors from \(\C\) to \(\D\).</p>
+<p><img src="categories/img/mp/natural-transformation.png" alt="Natural transformation commutative diagram" class="right"/> <em>A natural transformation:</em> familly η ; \(η_X\in\hom{\D}\) for \(X\in\ob{\C}\) s.t.</p>
+<p>ex: between Haskell functors; <code>F a -&gt; G a</code><br />Rearragement functions only.</p>
+</section>
+
+
+<section class="slide">
+<h2 id="natural-transformation-examples-14">Natural Transformation Examples (1/4)</h2>
+<pre><code class="haskell small">data List a = Nil | Cons a (List a)
+toList :: [a] -> List a
+toList [] = Nil
+toList (x:xs) = Cons x (toList xs)</pre>
+</code>
+<p><code>toList</code> is a natural transformation. It is also a morphism from <code>[]</code> to <code>List</code> in the Category of \(\Hask\) endofunctors.</p>
+<img style="float:left;width:30%" src="categories/img/mp/nattrans-list-tree.png" alt="natural transformation commutative diagram"/>
+<figure style="float:right;width:60%">
+<img style="width:40%" src="categories/img/mp/list-tree-endofunctor-morphism.png" alt="natural transformation commutative diagram"/>
+</figure>
+</section>
+<section class="slide">
+<h2 id="natural-transformation-examples-24">Natural Transformation Examples (2/4)</h2>
+<pre><code class="haskell small">data List a = Nil | Cons a (List a)
+toHList :: List a -> [a]
+toHList Nil = []
+toHList (Cons x xs) = x:toHList xs</pre>
+</code>
+<p><code>toHList</code> is a natural transformation. It is also a morphism from <code>List</code> to <code>[]</code> in the Category of \(\Hask\) endofunctors.</p>
+<img style="float:left;width:30%" src="categories/img/mp/nattrans-tree-list.png" alt="natural transformation commutative diagram"/>
+<figure style="float:right;width:60%">
+<img style="width:40%" src="categories/img/mp/tree-list-endofunctor-morphism.png" alt="natural transformation commutative diagram"/> <figcaption><code>toList . toHList = id</code> <span class="and">&amp;</span> <code>toHList . toList = id</code> <span style="visibility:hidden"><span class="and">&amp;</span></span><br/> therefore <code>[]</code> <span class="and">&amp;</span> <code>List</code> are <span class="orange">isomorph</span>. </figcaption>
+</figure>
+</section>
+<section class="slide">
+<h2 id="natural-transformation-examples-34">Natural Transformation Examples (3/4)</h2>
+<pre><code class="haskell small">toMaybe :: [a] -> Maybe a
+toMaybe [] = Nothing
+toMaybe (x:xs) = Just x</pre>
+</code>
+<p><code>toMaybe</code> is a natural transformation. It is also a morphism from <code>[]</code> to <code>Maybe</code> in the Category of \(\Hask\) endofunctors.</p>
+<img style="float:left;width:30%" src="categories/img/mp/nattrans-list-maybe.png" alt="natural transformation commutative diagram"/>
+<figure style="float:right;width:60%">
+<img style="width:40%" src="categories/img/mp/list-maybe-endofunctor-morphism.png" alt="natural transformation commutative diagram"/>
+</figure>
+
+
+</section>
+<section class="slide">
+<h2 id="natural-transformation-examples-44">Natural Transformation Examples (4/4)</h2>
+<pre><code class="haskell small">mToList :: Maybe a -> [a]
+mToList Nothing = []
+mToList Just x  = [x]</pre>
+</code>
+<p><code>toMaybe</code> is a natural transformation. It is also a morphism from <code>[]</code> to <code>Maybe</code> in the Category of \(\Hask\) endofunctors.</p>
+<img style="float:left;width:30%" src="categories/img/mp/nattrans-maybe-list.png" alt="natural transformation commutative diagram"/>
+<figure style="float:right;width:60%">
+<img style="width:40%" src="categories/img/mp/maybe-list-endofunctor-morphsm.png" alt="relation between [] and Maybe"/> <figcaption>There is <span class="red">no isomorphism</span>.<br/> Hint: <code>Bool</code> lists longer than 1. </figcaption>
+</figure>
+
+
+</section>
+<section class="slide">
+<h2 id="composition-problem">Composition problem</h2>
+<p>The Problem; example with lists:</p>
+<pre class="haskell"><code>f x = [x]       ⇒ f 1 = [1]   ⇒ (f.f) 1 = [[1]] ✗
+g x = [x+1]     ⇒ g 1 = [2]   ⇒ (g.g) 1 = ERROR [2]+1 ✗
+h x = [x+1,x*3] ⇒ h 1 = [2,3] ⇒ (h.h) 1 = ERROR [2,3]+1 ✗ </code></pre>
+
+<p>The same problem with most <code>f :: a -&gt; F a</code> functions and functor <code>F</code>.</p>
+</section>
+<section class="slide">
+<h2 id="composition-fixable">Composition Fixable?</h2>
+<p>How to fix that? We want to construct an operator which is able to compose:</p>
+<p><code>f :: a -&gt; F b</code> <span class="and">&amp;</span> <code>g :: b -&gt; F c</code>.</p>
+<p>More specifically we want to create an operator ◎ of type</p>
+<p><code>◎ :: (b -&gt; F c) -&gt; (a -&gt; F b) -&gt; (a -&gt; F c)</code></p>
+<p>Note: if <code>F</code> = I, ◎ = <code>(.)</code>.</p>
+</section>
+<section class="slide">
+<h2 id="fix-composition-12">Fix Composition (1/2)</h2>
+<p>Goal, find: <code>◎ :: (b -&gt; F c) -&gt; (a -&gt; F b) -&gt; (a -&gt; F c)</code><br /><code>f :: a -&gt; F b</code>, <code>g :: b -&gt; F c</code>:</p>
+<ul>
+<li><code>(g ◎ f) x</code> ???</li>
+<li>First apply <code>f</code> to <code>x</code> ⇒ <code>f x :: F b</code></li>
+<li>Then how to apply <code>g</code> properly to an element of type <code>F b</code>?</li>
+</ul>
+</section>
+<section class="slide">
+<h2 id="fix-composition-22">Fix Composition (2/2)</h2>
+<p>Goal, find: <code>◎ :: (b -&gt; F c) -&gt; (a -&gt; F b) -&gt; (a -&gt; F c)</code><br /><code>f :: a -&gt; F b</code>, <code>g :: b -&gt; F c</code>, <span class="yellow"><code>f x :: F b</code></span>:</p>
+<ul>
+<li>Use <code>fmap :: (t -&gt; u) -&gt; (F t -&gt; F u)</code>!</li>
+<li><code>(fmap g) :: F b -&gt; F (F c)</code> ; (<code>t=b</code>, <code>u=F c</code>)</li>
+<li><code>(fmap g) (f x) :: F (F c)</code> it almost WORKS!</li>
+<li>We lack an important component, <code>join :: F (F c) -&gt; F c</code></li>
+<li><code>(g ◎ f) x = join ((fmap g) (f x))</code> ☺<br />◎ is the Kleisli composition; in Haskell: <code>&lt;=&lt;</code> (in <code>Control.Monad</code>).</li>
+</ul>
+</section>
+<section class="slide">
+<h2 id="necessary-laws">Necessary laws</h2>
+<p>For ◎ to work like composition, we need join to hold the following properties:</p>
+<ul>
+<li><code>join (join (F (F (F a))))=join (F (join (F (F a))))</code></li>
+<li>abusing notations denoting <code>join</code> by ⊙; this is equivalent to<br /><span class="yellow"><code>(F ⊙ F) ⊙ F = F ⊙ (F ⊙ F)</code></span></li>
+<li>There exists <code>η :: a -&gt; F a</code> s.t.<br /><span class="yellow"><code>η⊙F=F=F⊙η</code></span></li>
+</ul>
+</section>
+<section class="slide">
+<h2 id="klesli-composition">Klesli composition</h2>
+<p>Now the composition works as expected. In Haskell ◎ is <code>&lt;=&lt;</code> in <code>Control.Monad</code>.</p>
+<p><code>g &lt;=&lt; f = \x -&gt; join ((fmap g) (f x))</code></p>
+<pre class="haskell"><code>f x = [x]       ⇒ f 1 = [1]   ⇒ (f <=< f) 1 = [1] ✓
+g x = [x+1]     ⇒ g 1 = [2]   ⇒ (g <=< g) 1 = [3] ✓
+h x = [x+1,x*3] ⇒ h 1 = [2,3] ⇒ (h <=< h) 1 = [3,6,4,9] ✓</code></pre>
+
+
+</section>
+<section class="slide">
+<h2 id="we-reinvented-monads">We reinvented Monads!</h2>
+<p>A monad is a triplet <code>(M,⊙,η)</code> where</p>
+<ul>
+<li>\(M\) an <span class="yellow">Endofunctor</span> (to type <code>a</code> associate <code>M a</code>)</li>
+<li>\(⊙:M×M→M\) a <span class="yellow">nat. trans.</span> (i.e. <code>⊙::M (M a) → M a</code> ; <code>join</code>)</li>
+<li>\(η:I→M\) a <span class="yellow">nat. trans.</span> (\(I\) identity functor ; <code>η::a → M a</code>)</li>
+</ul>
+<p>Satisfying</p>
+<ul>
+<li>\(M ⊙ (M ⊙ M) = (M ⊙ M) ⊙ M\)</li>
+<li>\(η ⊙ M = M = M ⊙ η\)</li>
+</ul>
+</section>
+<section class="slide">
+<h2 id="compare-with-monoid">Compare with Monoid</h2>
+<p>A Monoid is a triplet \((E,∙,e)\) s.t.</p>
+<ul>
+<li>\(E\) a set</li>
+<li>\(∙:E×E→E\)</li>
+<li>\(e:1→E\)</li>
+</ul>
+<p>Satisfying</p>
+<ul>
+<li>\(x∙(y∙z) = (x∙y)∙z, ∀x,y,z∈E\)</li>
+<li>\(e∙x = x = x∙e, ∀x∈E\)</li>
+</ul>
+</section>
+<section class="slide">
+<h2 id="monads-are-just-monoids">Monads are just Monoids</h2>
+<blockquote>
+<p>A Monad is just a monoid in the category of endofunctors, what's the problem?</p>
+</blockquote>
+<p>The real sentence was:</p>
+<blockquote>
+<p>All told, a monad in X is just a monoid in the category of endofunctors of X, with product × replaced by composition of endofunctors and unit set by the identity endofunctor.</p>
+</blockquote>
+</section>
+<section class="slide">
+<h2 id="example-list">Example: List</h2>
+<ul>
+<li><code>[] :: * -&gt; *</code> an <span class="yellow">Endofunctor</span></li>
+<li>\(⊙:M×M→M\) a nat. trans. (<code>join :: M (M a) -&gt; M a</code>)</li>
+<li>\(η:I→M\) a nat. trans.</li>
+</ul>
+<pre class="haskell"><code>-- In Haskell ⊙ is "join" in "Control.Monad"
+join :: [[a]] -> [a]
+join = concat
+
+-- In Haskell the "return" function (unfortunate name)
+η :: a -> [a]
+η x = [x]</code></pre>
+
+
+</section>
+<section class="slide">
+<h2 id="example-list-law-verification">Example: List (law verification)</h2>
+<p>Example: <code>List</code> is a functor (<code>join</code> is ⊙)</p>
+<ul>
+<li>\(M ⊙ (M ⊙ M) = (M ⊙ M) ⊙ M\)</li>
+<li>\(η ⊙ M = M = M ⊙ η\)</li>
+</ul>
+<pre class="nohighlight small"><code>join [ join [[x,y,...,z]] ] = join [[x,y,...,z]]
+                            = join (join [[[x,y,...,z]]])
+join (η [x]) = [x] = join [η x]</code></pre>
+
+<p>Therefore <code>([],join,η)</code> is a monad.</p>
+</section>
+<section class="slide">
+<h2 id="monads-utility">Monads useful?</h2>
+<p>A <em>LOT</em> of monad tutorial on the net. Just one example; the State Monad</p>
+<p><code>DrawScene</code> to <code><span class="yellow">State Screen</span> DrawScene</code> ; still <b>pure</b>.</p>
+<pre class="haskell left smaller" style="width:40%"><code>main = drawImage (width,height)
+
+drawImage :: Screen -&gt; DrawScene
+drawImage <span class="orange">screen</span> = do
+    drawPoint p <span class="orange">screen</span>
+    drawCircle c <span class="orange">screen</span>
+    drawRectangle r <span class="orange">screen</span>
+
+drawPoint point <span class="orange">screen</span> = ...
+drawCircle circle <span class="orange">screen</span> = ...
+drawRectangle rectangle <span class="orange">screen</span> = ...</code></pre>
+<pre class="haskell right smaller" style="width:45%"><code>main = do
+    <span class="orange">put (Screen 1024 768)</span>
+    drawImage
+
+drawImage :: State Screen DrawScene
+drawImage = do
+    drawPoint p
+    drawCircle c
+    drawRectangle r
+
+drawPoint :: Point -&gt; State Screen DrawScene
+drawPoint p = do
+    <span class="orange">Screen width height &lt;- get</span>
+    ...</code></pre>
+</section>
+<section class="slide">
+<h2 id="fold"><code>fold</code></h2>
+<img src="categories/img/tower_folded.gif" alt="fold" style="width:50%;max-width:50%"/>
+</section>
+<section class="slide">
+<h2 id="κατα-morphism">κατα-morphism</h2>
+<img src="categories/img/earth_catamorphed.gif" alt="catamorphism" style="width:90%;max-width:90%"/>
+</section>
+<section class="slide">
+<h2 id="κατα-morphism-fold-generalization">κατα-morphism: fold generalization</h2>
+<p><code>acc</code> type of the &quot;accumulator&quot;:<br /><code>fold :: (acc -&gt; a -&gt; acc) -&gt; acc -&gt; [a] -&gt; acc</code></p>
+<p>Idea: put the accumulated value inside the type.</p>
+<pre class="haskell"><code>-- Equivalent to fold (+1) 0 "cata"
+(Cons 'c' (Cons 'a' (Cons 't' (Cons 'a' Nil))))
+(Cons 'c' (Cons 'a' (Cons 't' (Cons 'a' <span style="border: solid 1px;">0</span>))))
+(Cons 'c' (Cons 'a' (Cons 't' <span style="border: solid 1px;">1</span>)))
+(Cons 'c' (Cons 'a' <span style="border: solid 1px;">2</span>))
+(Cons 'c' <span style="border: solid 1px;">3</span>)
+<span style="border: solid 1px;">4</span></code></pre>
+
+
+<p>But where are all the informations? <code>(+1)</code> and <code>0</code>?</p>
+</section>
+<section class="slide">
+<h2 id="κατα-morphism-missing-information">κατα-morphism: Missing Information</h2>
+<p>Where is the missing information?</p>
+<ul>
+<li>Functor operator <code>fmap</code></li>
+<li>Algebra representing the <code>(+1)</code> and also knowing about the <code>0</code>.</li>
+</ul>
+<p>First example, make <code>length</code> on <code>[Char]</code></p>
+</section>
+<section class="slide">
+<h2 id="κατα-morphism-type-work">κατα-morphism: Type work</h2>
+<pre class="haskell"><code>
+data StrF a = Cons Char a | Nil
+data Str' = StrF Str'
+
+-- generalize the construction of Str to other datatype
+-- Mu: type fixed point
+-- Mu :: (* -> *) -> *
+
+data Mu f = InF { outF :: f (Mu f) }
+data Str = Mu StrF
+
+-- Example
+foo=InF { outF = Cons 'f'
+        (InF { outF = Cons 'o'
+            (InF { outF = Cons 'o'
+                (InF { outF = Nil })})})}</code></pre>
+
+
+</section>
+<section class="slide">
+<h2 id="κατα-morphism-missing-information-retrieved">κατα-morphism: missing information retrieved</h2>
+<pre class="haskell"><code>type Algebra f a = f a -> a
+instance Functor (StrF a) =
+    fmap f (Cons c x) = Cons c (f x)
+    fmap _ Nil = Nil</code></pre>
+
+<pre class="haskell"><code>cata :: Functor f => Algebra f a -> Mu f -> a
+cata f = f . fmap (cata f) . outF</code></pre>
+
+
+
+</section>
+<section class="slide">
+<h2 id="κατα-morphism-finally-length">κατα-morphism: Finally length</h2>
+<p>All needed information for making length.</p>
+<pre><code>instance Functor (StrF a) =
+    fmap f (Cons c x) = Cons c (f x)
+    fmap _ Nil = Nil
+
+length&#39; :: Str -&gt; Int
+length&#39; = cata phi where
+    phi :: Algebra StrF Int -- StrF Int -&gt; Int
+    phi (Cons a b) = 1 + b
+    phi Nil = 0
+
+main = do
+    l &lt;- length&#39; $ stringToStr &quot;Toto&quot;
+    ...</code></pre>
+</section>
+<section class="slide">
+<h2 id="κατα-morphism-extension-to-trees">κατα-morphism: extension to Trees</h2>
+<p>Once you get the trick, it is easy to extent to most Functor.</p>
+<pre><code>type Tree = Mu TreeF
+data TreeF x = Node Int [x]
+
+instance Functor TreeF where
+  fmap f (Node e xs) = Node e (fmap f xs)
+
+depth = cata phi where
+  phi :: Algebra TreeF Int -- TreeF Int -&gt; Int
+  phi (Node x sons) = 1 + foldr max 0 sons</code></pre>
+</section>
+<section class="slide">
+<h2 id="conclusion">Conclusion</h2>
+<p>Category Theory oriented Programming:</p>
+<ul>
+<li>Focus on the type and operators</li>
+<li>Extreme generalisation</li>
+<li>Better modularity</li>
+<li>Better control through properties of types</li>
+</ul>
+<p><span class="smaller">No cat were harmed in the making of this presentation.</span></p>
+</section>
+<!-- End slides. -->
+
+
+<!-- Begin extension snippets. Add or remove as needed. -->
+
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<!-- deck.status snippet -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+<!-- End extension snippets. -->
+
+
+<!-- Required JS files. -->
+<script src="jquery-1.7.2.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="core/deck.core.js"></script>
+<script src="extensions/hash/deck.hash.js"></script>
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<!-- <script src="extensions/scale/deck.scale.js"></script> -->
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+<!-- Y theme -->
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="js/highlight/highlight.pack.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+<script>
+// --- Google analytics ---
+function analytics() {
+        // add an event to all link for google analytics
+        $('a').click(function () {
+            // tell analytics to save event
+            try {
+                var identifier=$(this).attr('id') ;
+                var href=$(this).attr('href')
+                var label="";
+                if ( typeof( identifier ) != 'undefined' ) {
+                    label=label+'[id]:'+identifier
+                    category='JSLink'
+                }
+                if ( typeof( href ) != 'undefined' ) {
+                    label=label+' [href]:'+href
+                    if ( href[0] == '#' ) {
+                        category='Anchor';
+                    } else {
+                        category='Link';
+                    }
+                }
+                _gaq.push(['_trackEvent', category, 'clicked', label]);
+                // console.log('[tracked]: ' + category + ' ; clicked ; ' + label );
+            }
+            catch (err) {
+                console.log(err);
+            }
+
+            // pause to allow google script to run
+            var date = new Date();
+            var curDate = null;
+            do {
+                curDate = new Date();
+            } while(curDate-date < 300);
+        });
+}
+$(document).ready(function(){ analytics(); });
+</script>
+</body>
+</html>

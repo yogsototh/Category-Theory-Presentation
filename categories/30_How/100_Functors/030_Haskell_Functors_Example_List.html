@@ -1,0 +1,8 @@
+<h2>Haskell Functors Example: List</h2>
+
+<pre class="haskell"><code>instance Functor ([]) where
+	fmap :: (a -> b) -> [a] -> [b]
+	fmap = map</pre></code>
+<pre class="haskell"><code>fmap (+1) [1,2,3]           == [2,3,4]
+fmap (+1) []                == []
+fmap head [[1,2,3],[4,5,6]] == [1,4]</code></pre>

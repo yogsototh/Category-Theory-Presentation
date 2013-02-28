@@ -1,0 +1,10 @@
+<h2>Haskell Functors Example: Maybe</h2>
+
+<pre class="haskell"><code>data Maybe a = Just a | Nothing
+instance Functor Maybe where
+    fmap :: (a -> b) -> (Maybe a -> Maybe b)
+    fmap f (Just a) = Just (f a)
+    fmap f Nothing = Nothing</code></pre>
+<pre class="haskell"><code>fmap (+1) (Just 1) == Just 2
+fmap (+1) Nothing  == Nothing
+fmap head (Just [1,2,3]) == Just 1</code></pre>

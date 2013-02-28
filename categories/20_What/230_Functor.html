@@ -1,0 +1,15 @@
+<h2>Functor</h2>
+
+<p> A functor is a mapping between two categories.
+Let \(\C\) and \(\D\) be two categories.
+A <em>functor</em> <span class="yellow">\(\F\)</span> from <span class="blue">\(\C\)</span> to <span class="green">\(\D\)</span>:</p>
+<ul>
+	<li> Associate objects: <span class="backblue">\(A\in\ob{\C}\)</span> to <span class="backgreen">\(\F(A)\in\ob{\D}\)</span> </li>
+	<li> Associate morphisms: <span class="backblue">\(f:A\to B\)</span> to <span class="backgreen">\(\F(f) : \F(A) \to \F(B)\)</span>
+        such that
+        <ul>
+			<li>\( \F (\)<span class="backblue blue">\(\id_X\)</span>\()= \)<span class="backgreen"><span class="green">\(\id\)</span>\(\vphantom{\id}_{\F(}\)<span class="blue">\(\vphantom{\id}_X\)</span>\(\vphantom{\id}_{)} \)</span>,</li>
+			<li>\( \F (\)<span class="backblue blue">\(g∘f\)</span>\()= \)<span class="backgreen">\( \F(\)<span class="blue">\(g\)</span>\() \)<span class="green">\(\circ\)</span>\( \F(\)<span class="blue">\(f\)</span>\() \)</span></li>
+        </ul>
+    </li>
+</ul>

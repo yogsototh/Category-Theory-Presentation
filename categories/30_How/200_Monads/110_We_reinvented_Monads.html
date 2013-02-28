@@ -1,0 +1,12 @@
+<h2 id="we-reinvented-monads">We reinvented Monads!</h2>
+<p>A monad is a triplet <code>(M,⊙,η)</code> where</p>
+<ul>
+<li>\(M\) an <span class="yellow">Endofunctor</span> (to type <code>a</code> associate <code>M a</code>)</li>
+<li>\(⊙:M×M→M\) a <span class="yellow">nat. trans.</span> (i.e. <code>⊙::M (M a) → M a</code> ; <code>join</code>)</li>
+<li>\(η:I→M\) a <span class="yellow">nat. trans.</span> (\(I\) identity functor ; <code>η::a → M a</code>)</li>
+</ul>
+<p>Satisfying</p>
+<ul>
+<li>\(M ⊙ (M ⊙ M) = (M ⊙ M) ⊙ M\)</li>
+<li>\(η ⊙ M = M = M ⊙ η\)</li>
+</ul>

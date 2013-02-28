@@ -1,0 +1,7 @@
+<h2 id="κατα-morphism-missing-information-retrieved">κατα-morphism: missing information retrieved</h2>
+<pre><code>type Algebra f a = f a -&gt; a
+instance Functor (StrF a) =
+    fmap f (Cons c x) = Cons c (f x)
+    fmap _ Nil = Nil</code></pre>
+<pre><code>cata :: Functor f =&gt; Algebra f a -&gt; Mu f -&gt; a
+cata f = f . fmap (cata f) . outF</code></pre>

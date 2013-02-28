@@ -1,0 +1,9 @@
+<h2 id="fix-composition-22">Fix Composition (2/2)</h2>
+<p>Goal, find: <code>◎ :: (b -&gt; F c) -&gt; (a -&gt; F b) -&gt; (a -&gt; F c)</code><br /><code>f :: a -&gt; F b</code>, <code>g :: b -&gt; F c</code>, <span class="yellow"><code>f x :: F b</code></span>:</p>
+<ul>
+<li>Use <code>fmap :: (t -&gt; u) -&gt; (F t -&gt; F u)</code>!</li>
+<li><code>(fmap g) :: F b -&gt; F (F c)</code> ; (<code>t=b</code>, <code>u=F c</code>)</li>
+<li><code>(fmap g) (f x) :: F (F c)</code> it almost WORKS!</li>
+<li>We lack an important component, <code>join :: F (F c) -&gt; F c</code></li>
+<li><code>(g ◎ f) x = join ((fmap g) (f x))</code> ☺<br />◎ is the Kleisli composition; in Haskell: <code>&lt;=&lt;</code> (in <code>Control.Monad</code>).</li>
+</ul>

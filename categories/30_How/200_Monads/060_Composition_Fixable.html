@@ -1,0 +1,6 @@
+<h2 id="composition-fixable">Composition Fixable?</h2>
+<p>How to fix that? We want to construct an operator which is able to compose:</p>
+<p><code>f :: a -&gt; F b</code> &amp; <code>g :: b -&gt; F c</code>.</p>
+<p>More specifically we want to create an operator ◎ of type</p>
+<p><code>◎ :: (b -&gt; F c) -&gt; (a -&gt; F b) -&gt; (a -&gt; F c)</code></p>
+<p>Note: if <code>F</code> = I, ◎ = <code>(.)</code>.</p>

@@ -1,0 +1,11 @@
+<h2 id="example-list-law-verification">Example: List (law verification)</h2>
+<p>Example: <code>List</code> is a functor (<code>join</code> is ⊙)</p>
+<ul>
+<li>\(M ⊙ (M ⊙ M) = (M ⊙ M) ⊙ M\)</li>
+<li>\(η ⊙ M = M = M ⊙ η\)</li>
+</ul>
+<pre class="nohighlight small"><code>join [ join [[x,y,...,z]] ] = join [[x,y,...,z]]
+                            = join (join [[[x,y,...,z]]])
+join (η [x]) = [x] = join [η x]</code></pre>
+
+<p>Therefore <code>([],join,η)</code> is a monad.</p>

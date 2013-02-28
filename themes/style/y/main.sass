@@ -1,0 +1,1229 @@
+/* Solarized palette */
+$base03 : #002b36
+$base02 : #073642
+$base01 : #586e75
+$base00 : #657b83
+$base0  : #839496
+$base1  : #93a1a1
+$base2  : #eee8d5
+$base3  : #fdf6e3
+$yellow : #b58900
+$orange : #cb4b16
+$red    : #dc322f
+$magenta: #d33682
+$violet : #6c71c4
+$blue   : #268bd2
+$cyan   : #2aa198
+$green  : #859900
+/* I won't use completely */
+$behindColor: $base0
+$mainTextColor: $base0
+$mainBackgroundColor: $base03
+$mainShadowColor: $mainBackgroundColor - #334
+$secondBackgroundColor: $base02
+$revealColor: $base1
+$secondRevealColor: $revealColor
+$lighterRevealColor: $revealColor + #666
+$imageBackgroundColor: $base02
+$borderColor: $base01
+$imageBorderColor: $borderColor
+$mainLinkColor: $mainTextColor
+$textLinkColor: $base1
+$highlightColor: $base1
+$highlightBlockColor: $base1
+$highlightRevealColor: $revealColor + #111
+$lighterText: $base1
+$lighterColor: $base3
+$lighterColorBorderTop: $lighterText
+$lighterColorBorderBottom: $lighterText
+$secondTextColor: $base1
+
+// include Computer Modern fonts
+
+@font-face
+  font-family: 'cmuntt'
+  src: url('fonts/cmuntt.eot')
+  src: local('☺'), url('fonts/cmuntt.svg') format('svg'), url('fonts/cmuntt.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'ComputerModernSansSerif'
+  src: url('fonts/cmunso.eot')
+  src: local('☺'), url('fonts/cmunso.svg') format('svg'), url('fonts/cmunso.ttf') format('truetype')
+  font-style: italic,oblique
+  font-weight: bold
+@font-face
+  font-family: 'ComputerModernSansSerif'
+  src: url('fonts/cmunsx.eot')
+  src: local('☺'), url('fonts/cmunsx.svg') format('svg'), url('fonts/cmunsx.ttf') format('truetype')
+  font-weight: bold
+@font-face
+  font-family: 'ComputerModernSansSerif'
+  src: url('fonts/cmunsi.eot')
+  src: local('☺'), url('fonts/cmunsi.svg') format('svg'), url('fonts/cmunsi.ttf') format('truetype')
+  font-style: italic,oblique
+@font-face
+  font-family: 'ComputerModernSansSerif'
+  src: url('fonts/cmunss.eot')
+  src: local('☺'), url('fonts/cmunss.svg') format('svg'), url('fonts/cmunss.ttf') format('truetype')
+  font-weight: normal
+  font-style: normal
+
+=selected
+  background: $base01
+  color: $base2
+
+=darkselected
+  background: $base01
+  color: $base2
+
+=sc
+  text-transform: uppercase
+  font-size: 0.8em
+
+=insetbox
+  background: rgba(#000,.05)
+  box-shadow: 0 0 2px #FFF, 0 0 3px #CCC inset
+  border: 1px solid rgba(#000,.1)
+  border-radius: 3px
+  &:hover
+    background: rgba(#000,.1)
+    box-shadow: 0 0 6px #555 inset
+
+=clearbutton
+  display: block
+  width: 25%
+  cursor: pointer
+  margin: 1em 0
+  padding: 1em
+  font-size: 16px
+  line-height: 1.4em
+  border: 1px solid $mainBackgroundColor
+  color: $lighterText
+  &:hover
+    +innerblock
+    color: $highlightRevealColor
+    text-shadow: 0 0 2px #FAA
+  &:active
+    +innerblock
+    color: $highlightRevealColor
+    text-shadow: 0 0 2px #FAA
+    background: $mainBackgroundColor - #060606
+
+=italic
+  font-style: italic
+
+=bold
+  font-weight: bold
+
+=normal
+  font-weight: normal
+  font-style: normal
+
+=mainColor
+  color: $base0
+  background:
+    color: $base03
+
+=lightColor
+  color: $lighterText
+  a
+    color: $lighterText
+  a:hover
+    color: $lighterRevealColor
+
+=innerblock
+  border: solid 1px $borderColor
+  border-radius: 2px
+  box-shadow: 0 0 4px $secondBackgroundColor inset
+  background-color: $mainBackgroundColor - #020202
+
+=highlight
+  +italic
+  padding: 0.5em 1em
+  color: $highlightBlockColor
+  a:hover
+    color: $revealColor
+  i, em
+    +normal
+    color: $base1
+  strong, b
+    +bold
+    color: $base1
+
+=secondColor
+  color: $behindColor
+  border: $borderColor solid 1px
+  border-radius: 5px
+  box-shadow: 0 0 2px $borderColor inset
+  background:
+    color: $lighterColor
+  a
+    color: $secondTextColor
+  a:hover
+    color: $secondRevealColor
+    strong, b, i, em, .nicer
+      color: $lighterRevealColor
+  hr
+    color: $secondTextColor
+    border:
+      top: 1px solid $secondTextColor
+  strong, b, i, em
+    color: $behindColor
+
+=revealColor
+  color: $revealColor
+
+=codeColor
+  background:
+    color: $base02
+  color: $base0
+=back
+  padding: 0 .1em
+  border: solid 2px
+  border-radius: 2px
+
+body.deck-container
+  width: 100%
+  padding: 0
+  .goto-form
+    font-size: 22px
+    background-color: $base02
+    label:
+      font-shadow: none
+      font-color: $base1
+    #goto-slide:
+      height: 50px
+
+.deck-container
+  .base03
+    color: $base03
+  .base02
+    color: $base02
+  .base01
+    color: $base01
+  .base00
+    color: $base00
+  .base0
+    color: $base0
+  .base1
+    color: $base1
+  .base2
+    color: $base2
+  .base3
+    color: $base3
+  .yellow
+    color: $yellow
+  .orange
+    color: $orange
+  .red
+    color: $red
+  .magenta
+    color: $magenta
+  .violet
+    color: $violet
+  .blue
+    color: $blue
+  .backblue
+    +back
+    border-color: $blue
+    background-color: rgba(38,139,210,.2)
+  .cyan
+    color: $cyan
+  .green
+    color: $green
+  .backgreen
+    +back
+    border-color: $green
+    background-color: rgba(133,153,0,.2)
+
+  font-family: "ComputerModernSansSerif",Helvetica,sans-serif
+  div
+    font-family: "ComputerModernSansSerif",Helvetica,sans-serif
+  .and
+    font-family: "Hoefler Text"
+    font-style: italic
+    font-weight: normal
+    font-size: .9em
+    opacity: .67
+  i, em
+    +italic
+  b, strong, h1, h2, h3, h4, h5, h6
+    +bold
+  table.description tr td
+    border: 1px solid $lighterColor
+
+  .assombris20
+    background-color: $lighterColor
+
+  body
+    +mainColor
+
+  ::selection
+    +selected
+  ::-moz-selection
+    +selected
+
+  pre, code, a.cut
+    font-family: "cmuntt",Incosolata, Monaco, monospace
+
+  pre
+    &::selection
+      +darkselected
+    *::selection
+      +darkselected
+    &::-moz-selection
+      +darkselected
+    *::-moz-selection
+      +darkselected
+
+  a:hover
+    text-shadow: 0 0 2px $violet
+
+  a, a:link, a:visited, a:active, a:hover
+    text-decoration: none
+    outline: none
+
+  a, a:link, a:visited, a:active
+    color: $mainLinkColor
+
+  a:hover
+    +revealColor
+
+  hr
+    color: $lighterColor
+    border:
+      top: 1px solid $lighterColor
+      bottom: none
+      left: none
+      right: none
+
+  ul
+    list-style: none
+
+  ul li:before
+    content: "- "
+
+  ol,ul
+    padding-left: 0
+    margin-left: 1.5ex
+    text-indent: -1.5ex
+  .toc
+    ol li, ul li
+      margin: .5em 0
+  ol li ul, ol li ol, ul li ol, ul li ul
+    margin: .5em 1.5em
+    list-style: none
+    line-height: 1.5em
+
+
+  body, h1, h2, h3, h4, #entete, .tagname
+    text-rendering: optimizelegibility
+    line-height: 1.5em
+    border-color: $base01
+
+  body
+    font-family: "ComputerModernSansSerif", Helvetica, sans-serif
+
+  /* Header Numbering */
+  .article #afterheader
+    counter-reset: niv02
+    h2
+      counter-increment: niv02
+      counter-reset: niv03
+      marker-offset: 3em
+      &:before
+        content: counter(niv02) ". "
+    h3
+      counter-increment: niv03
+      counter-reset: niv04
+      &:before
+        content: counter(niv02) "." counter(niv03) ". "
+    h4
+      counter-increment: niv04
+      &:before
+        content: counter(niv02) "." counter(niv03) "." counter(niv04) ". "
+
+  pre
+    +codeColor
+    box-shadow: 0 0 3px $base01 inset
+    border: solid 1px $base01
+    border-radius: 3px
+    padding: 1em
+    line-height: 1em
+    font-size: .9em
+
+  p
+    margin-bottom: 1.2em
+
+  blockquote
+    font-style: italic
+    padding: 0 1em
+    border-left: solid 10px $base01
+    em
+      font-style: normal
+      color: $base1
+    ul
+      padding-left: 1.5em
+
+  abbr,
+  acronym
+    +sc
+    text:
+      decoration: none
+    border:
+      bottom:
+        width: 0
+
+  // -- STYLE --
+
+  #titre
+    letter-spacing: -0.06em
+    border:
+      bottom: 4px double $lighterText
+      top: 4px double $lighterText
+
+  #liens .active, #sousliens
+    +secondColor
+
+  #liens a
+    border: 1px solid #EEE
+    +insetbox
+
+  #liens .active
+    text-shadow: 0 0 2px rgba(#000,.5)
+    background-color: $mainBackgroundColor - #030303
+    border: 1px solid $mainBackgroundColor - #111111
+    box-shadow: 0 0 3px ($mainBackgroundColor - #333333) inset
+    border-radius: 3px
+    border-top: none
+
+  // -- FOOTER --
+  #lastmod
+    font-size: 0.9em
+
+  // --- DYNAMICS --
+  .nojsbutton
+    font-size: 2.5em
+
+  #clickcomment, #choixlang > a, #choixrss > a, .return > a
+    +clearbutton
+
+  .return > a, #choixrss > a
+    float: right
+
+  #choix
+    .return > a, #choixrss > a
+      margin-top: 0
+
+  // -- TYPOGRAPHY --
+  .small
+    font-size: 0.8em
+  .smaller
+    font-size: 0.6em
+
+  .sc
+    +sc
+
+  .impact, .darkimpact
+    font-size: 2em
+    margin: 0 auto 1em auto
+    line-height: 1.3em
+
+  // -- DATES --
+
+  h1 > .date
+    font-size: 0.6em
+    color: $behindColor
+
+  .date
+    font-size: 0.8em
+    color: $mainBackgroundColor
+    border: 1px solid $mainTextColor
+    text-align: center
+    width: 4.1em
+    line-height: 1.5em
+    display: inline-block
+    vertical-align: middle
+    margin-right: 1em
+
+  .date .day,
+  .date .month,
+  .date .year
+    display: block
+
+  .date .day
+    color: $behindColor
+    background-color: $mainBackgroundColor
+    float: left
+    width: 1.7em
+
+  .date .month
+    float: right
+    width: 2.3em
+    background-color: $behindColor
+    color: $mainBackgroundColor
+
+  .date .year
+    line-height: 3ex
+    clear: both
+    +secondColor
+    border-radius: 0
+
+  // --- LAYOUTS --
+  $VPadCorps: 3em
+  $VMarginCorps: 3em
+
+  // ATTENTION DOIT ETRE 0 pour le bon callage
+  $HMarginCorps: 0
+  $content_width: 52em
+
+  body
+    text-align: left
+    font-size: 16px
+
+  body > #entete
+    position: absolute
+    left: 0
+    top: 0.5em
+    width: 100%
+    min-width: $content_width - 2em
+    z-index: 8000
+    padding-bottom: 1em
+    margin-bottom: $VMarginCorps
+
+  #titre h2
+    width: 80%
+    margin-left: auto
+    margin-right: auto
+    text-align: center
+    color: $lighterText
+
+  #titre
+    text-align: center
+    width: 100%
+
+  #titre h1, #titre h2
+    padding-left: 1em
+    padding-right: 1em
+
+  // le pied de page
+  #bottom
+    clear: right
+    margin-right: 0px
+    padding: 1.5em
+    line-height: 1.5em
+    color: $mainTextColor + #222
+    margin-top: 2em
+    text-align: center
+    a
+      color: $mainTextColor + #111
+    a:hover
+      +revealColor
+
+  // Les menus
+
+  #sousliens
+    padding: 1em 0
+    line-height: 2em
+
+  #sousliens ul
+    list-style: none
+    margin-left: 4em
+
+  ul.horizontal li
+    display: inline
+    font-size: 0.9em
+
+  ul.horizontal
+    margin-top: 0px
+    margin-bottom: 0px
+
+  #entete
+    padding-top: 0.1em
+    border-top: 1px solid $lighterColorBorderTop
+    border-bottom: 1px solid $lighterColorBorderTop
+
+  #liens
+    width: 100%
+    padding: 0
+    clear: both
+    margin-top: 0.5em
+
+  #liens ul
+    width: 100%
+    clear: both
+    padding: 0
+    margin: 0
+
+  $hauteur_menu: 4em
+
+  #liens ul li
+    display: inline-block
+    height: $hauteur_menu
+    margin-left: 0.2em
+    margin-right: 0.2em
+    width: 23%
+
+  #liens ul li a,
+  #liens ul li span
+    width: 100%
+    display: block
+    line-height: $hauteur_menu
+
+  // Un 'helper'
+  .clear
+    clear: both
+
+  // Le Contenu
+  #content
+    line-height: 4em
+    margin-left: auto
+    margin-right: auto
+    margin-top: 0
+    position: relative
+    clear: both
+    width: $content_width
+
+  $contentMargin: 0em
+
+  .encadre, .intro, .resume, .shadow
+    padding: 2em
+    margin:
+      top: 2em
+      bottom: 2em
+
+
+  .encadre
+    +secondColor
+
+  .intro, .resume
+    font-size: 0.9em
+    +highlight
+
+  #afterheader > h1
+    width: 100%
+    padding-top: 1.5em
+    text-align: left
+
+  #afterheader
+    padding-left: $contentMargin
+    padding-right: $contentMargin
+
+  #sousliens
+    margin:
+      top: $VMarginCorps
+      bottom: $VMarginCorps
+    font-size: 1.2em
+    letter-spacing: 1px
+    text-align: left
+    clear: both
+
+  .twilight
+    line-height: 1.1em
+
+  $fontcorps: 1.25
+
+  .corps
+    font-size: #{$fontcorps}em
+    line-height: 1.5em
+    text-align: justify
+    padding: $VPadCorps 3em
+    margin: 0 $HMarginCorps
+    clear: both
+    p, ol, ul, blockquote, pre, code
+      margin-top: 1.5em
+      margin-bottom: 1.5em
+    pre code
+      margin: 0
+    p, ol, ul, blockquote
+      line-height: 1.5em
+    pre, code
+      line-height: 1em
+    ul li ul, ol li ul, ul li ol, ol li ol
+      margin-top: 0
+      margin-bottom: 0
+
+  $corps_width: ($content_width - 2 * $contentMargin) / $fontcorps
+  $hpadding: 1
+
+  img,.likeimg
+    max-width: 80%
+    border: 2px solid $base02
+    padding: 0.3em
+    box-shadow: 0 0 .5em #000 inset
+    border-radius: 0.5em
+    text-align: center
+  a:hover img
+    background-color: $revealColor
+
+  figure
+    figcaption
+      text-align: center
+      margin: .5em 0
+      font-size: .7em
+  figure.left,figure.right
+    max-width: 30%
+    width: 30%
+
+  img.clean
+    border: none
+    background-color: none
+    box-shadow: none
+
+  //  les clear
+
+  #address
+    clear: both
+
+  .definitionCell
+    width: 5em
+    vertical-align: top
+    text-align: center
+    +bold
+
+  .valueCell
+    text-align: right
+
+  .smallblock
+    float: left
+    width: 50%
+    font-size: 1em
+    +bold
+
+  .largeblock
+    float: right
+    width: 70%
+    font-size: 1em
+
+  #blackpage, #nojsredirect
+    top: 0
+    left: 0
+    width: 100%
+    min-height: 100%
+    margin-left: 0
+    margin-right: 0
+    margin-top: 0
+    margin-bottom: 0
+    position: absolute
+    text-align: center
+
+  #blackpage
+    +mainColor
+    font-family: Georgia, serif
+    font-style: italic
+    padding-top: 8em
+    z-index: 9000
+    cursor: wait
+    .corps
+      code, pre
+        font-family: monospace
+    img
+      background: none
+      border: none
+      max-width: 80%
+      margin: 0 auto
+    a
+      cursor: pointer
+    .preh1
+      font-size: 1.5em
+      font-weight: bold
+      margin-bottom: 1em
+    .preh2
+      font-size: 1.2em
+      font-style: italic
+      margin-bottom: 1em
+    .preintro
+      text-align: left
+      width: $content_width
+      margin: 0 auto
+
+  #nojsredirect
+    z-index: 9001
+
+  .nojsbutton
+    width: 50%
+    padding: 1em
+    border: solid 3px white
+    margin-left: auto
+    margin-right: auto
+    margin-top: 2em
+    z-index: 9002
+
+  .codefile
+    font-size: 0.8em
+    text-align: right
+    padding-right: 1em
+    margin-right: 0.1
+    margin-bottom: -1em
+
+  .flush
+    clear: both
+
+  table.description
+    border-spacing: 5px
+    border-collapse: separate
+    margin-right: auto
+    margin-left: auto
+
+  table.description tr td
+    padding-left: 0.5em
+    padding-right: 0.5em
+    padding-top: 0.5ex
+    padding-bottom: 0.5ex
+    vertical-align: middle
+    margin-right: 5px
+
+  ul.long li
+    margin-bottom: 1em
+
+  img.left
+    max-width: 30%
+    margin:
+      top: .6em
+      right: 1em
+
+  img.right
+    max-width: 30%
+    width: 30%
+    margin:
+      top: .6em
+      left: 1em
+
+  img.inside
+    display: inline
+    vertical-align: middle
+
+  pre
+    overflow-x: auto
+    overflow-y: hidden
+
+  .navigationprev, .navigationnext
+    padding: 0px
+    margin-left: 0.2em
+    margin-right: 0.2em
+    margin-bottom: 0
+    margin-top: $VMarginCorps
+    width: 45%
+
+  .navigation .navigationprev,
+  .navigation .navigationnext
+    width: 30%
+    margin-top: 0
+
+  .navigation
+    height: 4em
+    border-bottom: $lighterColorBorderBottom solid 1px
+
+  .presarticleleft,
+  .presarticleright
+    font-size: 1em
+
+  .navigationprev
+    float: left
+    text-align: left
+
+  .navigationnext
+    float: right
+    text-align: right
+
+  .impact, .darkimpact
+    text-align: left
+    width: 66%
+    padding-left: 0.25em
+    padding-right: 0.25em
+
+  table.impact
+    text-align: left
+
+  table.impact tr td
+    padding-left: 0.25em
+    padding-right: 0.25em
+
+  #liens
+    font-size: 1.2em
+
+  #iemessage
+    font-size: 1.2em
+    color: #CCC
+    margin: -10px
+    padding: 1px 0
+    strong, b, i, em
+      color: $base1
+    a, a:visited
+      color: $base1
+
+  .tagname
+    display: inline
+    cursor: pointer
+    margin-left: 0.5em
+    margin-right: 0.5em
+
+  .list
+    margin-top: $VPadCorps
+
+  #menuMessage
+    font:
+      size: 1.2em
+    line:
+      height: 1.5em
+    width: 100%
+    text-align: center
+
+  #next_before_articles
+    clear: both
+    width: 100%
+    font-size: 1.2em
+    padding:
+      top: 1em
+      bottom: 1em
+
+  #previous_articles, #next_articles
+    color: $highlightColor
+    font-size: .8em
+    +italic
+
+  #previous_articles
+    float: left
+    margin-left: 1em
+    width: 45%
+    text-align: left
+
+  .previous_article, .next_article
+    margin-top: 1em
+
+  #next_articles
+    float: right
+    width: 45%
+    margin-right: 1em
+    text-align: right
+
+
+  #rss
+    font-size: 1.2em
+    text-align: center
+    display: block
+    width: 100%
+    float: right
+    padding: 1em 0.1em
+
+  .corps .return a
+    color: $lighterColor
+    padding: 0.1em
+    line-height: 1.5em
+    font-size: 1.5em
+    height: 1.5em
+    float: left
+    font-size: 2em
+    margin-top: -0.5em
+    margin-left: -2em
+    width: 1.5em
+
+  a.return
+    color: $lighterColor
+    padding: 0.1em
+    line-height: 1.5em
+    font-size: 1.5em
+    height: 1.5em
+    font-size: 2em
+    width: 1.5em
+    display: block
+    &:hover
+      color: $highlightColor
+
+  .corps .return a:hover
+    color: $revealColor
+
+  .footnotes
+    font-size: 0.8em
+    ol
+      color: $base0
+      +bold
+      p
+        color: $behindColor
+        +normal
+
+  .fontnotes ol
+    margin-left: 0
+
+  .typeset img
+    display: inline
+    border: none
+    margin: 0
+    padding: 0
+
+  strong, b, i, em
+    color: $highlightColor
+    a
+      color: $mainTextColor
+    a:hover
+      color: $revealColor
+
+  .corps p
+    strong, b, i, em
+      color: $highlightBlockColor
+
+  a:hover
+    strong, b, i, em
+      color: $highlightRevealColor
+
+  a:hover .nicer
+    color: $lighterRevealColor
+
+  .nicer
+    color: $lighterText
+    font-family: "Lucida Grande", Tahoma
+
+
+
+  .block
+    +innerblock
+    width: 26.5%
+    padding: 1em
+    border-radius: 2px
+    text-align: left
+    line-height: 1em
+    margin-left: 1%
+    margin-right: 1%
+    font-size: 0.8em
+    height: 9em
+    a
+      color: $mainTextColor
+    a:hover
+      color: $revealColor
+
+  .block h3
+    margin: 0
+    font-size: 1.3em
+
+  .block p
+    line-height: 1.2em
+
+  .left
+    float: left
+
+  .right
+    float: right
+
+  .corps
+    p a, ul a
+      color: $textLinkColor
+    p a:hover, ul a:hover
+      color: $revealColor
+
+  ul.bloglist, .archive ul
+    list-style-type: none
+    margin: 0
+    li
+      margin-bottom: 1em
+
+  .button
+    cursor: pointer
+    text-align: center
+
+  #tagcloud
+    font-size: .8em
+    background: $secondBackgroundColor
+    box-shadow: 0 0 6px $borderColor
+    border-radius: 3px
+    line-height: 2.5em
+    padding: 2em
+    text-align: justify
+
+  .pala
+    font-family: Palatino
+
+  sup
+    font-size: .7em
+
+  .article .corps a:after
+    content: "†"
+    vertical-align: super
+    line-height: 0
+    font-size: .66em
+    color: $highlightColor
+  .article .corps
+    .footnotes, sup
+      a:after
+        content: ""
+  .article .corps sup a
+    +bold
+    padding: 0 .3em
+    margin-left: 2px
+    border-radius:  3px
+    -moz-border-radius:  3px
+    -webkit-border-radius:  3px
+    &:hover
+      color: $revealColor
+
+  ul#markdown-toc, .intro .toc ul
+    +sc
+    list-style: none
+    padding-left: 1.5em
+    a:after
+      content: ""
+    ul ul
+      font-variant: normal
+      line-height: 1em
+      font-size: 1em
+      margin-bottom: 1em
+
+  table
+    border: 1px solid $borderColor
+    width: 90%
+    margin: 1.5em auto
+    box-sizing: border-box
+    -moz-box-sizing: border-box
+    -webkit-box-sizing: border-box
+  table tr td
+    padding: 2px .5em
+  table tr
+    &:nth-child(odd)
+      background-color: $secondBackgroundColor
+    &:nth-child(even)
+      background-color: $mainBackgroundColor
+
+  p, ul li, ol li
+    line-height: 1.5em
+    pre code
+      background: none
+      border: none
+      padding: 0
+    code
+      background: $secondBackgroundColor - #020202
+      border: solid 1px $borderColor
+      padding: 2px
+
+  ul.sameline
+    list-style: none
+    li
+      float: left
+      margin-left: .5em
+
+  .resumearticle
+    background-color: $secondBackgroundColor
+    border-radius: 7px
+    box-shadow: 0 0 5px $mainShadowColor inset,0 0 5px #FFF
+    margin: 1em 0
+    padding: 1em
+
+  a.cut
+    font-size: 12px
+    text-align: right
+    display: block
+    width: 100%
+    opacity: .5
+    border: 1px solid $mainBackgroundColor
+    border-radius: 3px
+    &:hover
+      opacity: 1
+      background-color: $secondBackgroundColor
+      border-color: $borderColor
+      box-shadow: 0 0 3px $borderColor inset
+    strong
+      +bold
+  .codehighlight pre
+    border-left: 4px solid $borderColor
+
+  #social
+    text-align: left
+    opacity: .3
+    &:hover
+      opacity: 1
+
+  .popularblock
+    width: 30.3333%
+    margin: 0 1.5%
+    float: left
+    figure
+      margin: 0
+      img
+        max-width: 80%
+        max-height: 6em
+
+/* deck.js fixes */
+
+.deck-menu .slide
+  background: none
+.deck-menu > .slide
+  border: solid 5px $base00
+.deck-menu .deck-current,
+.no-touch .deck-menu .slide:hover
+  background: $base02
+
+$padsize:20
+$maxwidth:800
+$width:760
+$height:500
+@for $fontsize from 12 through 90
+  $padsize:$fontsize*20/48
+  $maxwidth:$fontsize*1920/48
+  $width:$maxwidth - 2*$padsize
+  $height:$fontsize*1044/48
+  @media only screen and (min-width: #{$maxwidth}px)
+    body
+      width: #{$width}px       !important
+      min-width: #{$width}px   !important
+      max-width: #{$width}px   !important
+      height: #{$height}px     !important
+      min-height: #{$height}px !important
+      max-height: #{$height}px !important
+      padding: 0 #{$padsize}px !important
+      margin: 0 auto
+      box-shadow: 0 0 10px $base01 inset
+      height: 50%
+    .deck-container
+      font-size: #{$fontsize}px
+
+#MathJax_Message
+  font-size: .4em !important
+  font-shadow: none !important
+  background: none !important
+  border: none !important
+  color: $base01 !important
+
+body.deck-container
+  overflow-y: hidden
+
+html
+  box-shadow: 0 0 50px #000 inset
+.deck-container
+  color: $base0
+  background-color: $base03
+  text-shadow: 0 1px 5px #012
+  h1
+    font-size: 3em
+    line-height: 1.2em
+    margin-top: 1em
+  h2
+    font-size: 1.5em
+  h3,h4
+    font-size: 1.2em
+
+  select,
+  input,
+  textarea,
+    font-size: 2em
+    color: $base0
+  .deck-status
+    color: $base0
+    font-size: .5em
+
+  .deck-prev-link,
+  .deck-next-link
+    position: absolute
+    top: 90%
+    bottom: 1em
+    &:visited
+      color: $base01
+    &:hover
+      color: $base1
+      text-shadow: none
+    background-color: $base02
+    color: $base01
+    a, a:visited
+      color: $base01
+
+  pre, code, a.cut
+    font-family: "cmuntt",Incosolata, Monaco, monospace

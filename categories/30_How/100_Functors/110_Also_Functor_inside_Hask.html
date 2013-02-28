@@ -1,0 +1,18 @@
+<h2 id="also-functor-inside-hask">Also Functor inside \(\Hask\)</h2>
+<p>\(\mathtt{[a]}∈\ob{\Hask}\)</code> but is also a category. Idem for <code>Int</code>.</p>
+<p><code>length</code> is a Functor from the category <code>[a]</code> to the cateogry <code>Int</code>:</p>
+<ul class="left" style="max-width:40%">
+<li>\(\ob{\mathtt{[a]}}=\{∙\}\)</li>
+<li>\(\hom{\mathtt{[a]}}=\mathtt{[a]}\)</li>
+<li>\(∘=\mathtt{(++)}\)</li>
+</ul>
+<p class="left" style="margin:2em 3em">⇒</p>
+<ul class="left" style="max-width:40%">
+<li>\(\ob{\mathtt{Int}}=\{∙\}\)</li>
+<li>\(\hom{\mathtt{Int}}=\mathtt{Int}\)</li>
+<li>\(∘=\mathtt{(+)}\)</li>
+</ul>
+<div class="flush"></div>
+<ul><li>id: <code>length [] = 0</code>
+</li><li>comp: <code>length (l ++ l') = (length l) + (length l')</code>
+</li></ul>

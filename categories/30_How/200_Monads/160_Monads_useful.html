@@ -1,0 +1,28 @@
+<h2 id="monads-utility">Monads useful?</h2>
+<p>A <em>LOT</em> of monad tutorial on the net. Just one example; the State Monad</p>
+<p><code>DrawScene</code> to <code><span class="yellow">State Screen</span> DrawScene</code> ; still <b>pure</b>.</p>
+<pre class="haskell left smaller" style="width:40%"><code>main = drawImage (width,height)
+
+drawImage :: Screen -&gt; DrawScene
+drawImage <span class="orange">screen</span> =
+    drawPoint p <span class="orange">screen</span>
+    drawCircle c <span class="orange">screen</span>
+    drawRectangle r <span class="orange">screen</span>
+
+drawPoint point <span class="orange">screen</span> = ...
+drawCircle circle <span class="orange">screen</span> = ...
+drawRectangle rectangle <span class="orange">screen</span> = ...</code></pre>
+<pre class="haskell right smaller" style="width:45%"><code>main = do
+    <span class="orange">put (Screen 1024 768)</span>
+    drawImage
+
+drawImage :: State Screen DrawScene
+drawImage = do
+    drawPoint p
+    drawCircle c
+    drawRectangle r
+
+drawPoint :: Point -&gt; State Screen DrawScene
+drawPoint p = do
+    <span class="orange">Screen width height &lt;- get</span>
+    ...</code></pre>

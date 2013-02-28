@@ -1,0 +1,15 @@
+<h2 id="example-list">Example: List</h2>
+<ul>
+<li><code>[] :: * -&gt; *</code> an <span class="yellow">Endofunctor</span></li>
+<li>\(⊙:M×M→M\) a nat. trans. (<code>join :: M (M a) -&gt; M a</code>)</li>
+<li>\(η:I→M\) a nat. trans.</li>
+</ul>
+<pre class="haskell"><code>-- In Haskell ⊙ is "join" in "Control.Monad"
+join :: [[a]] -> [a]
+join = concat
+
+-- In Haskell the "return" function (unfortunate name)
+η :: a -> [a]
+η x = [x]</code></pre>
+
+

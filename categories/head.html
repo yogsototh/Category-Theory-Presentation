@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<title>Category Theory for Programming</title>
+
+	<!-- Required stylesheet -->
+	<link rel="stylesheet" href="core/deck.core.css">
+
+	<!-- Extension CSS files go here. Remove or add as needed. -->
+	<link rel="stylesheet" href="extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="extensions/status/deck.status.css">
+	<link rel="stylesheet" href="extensions/hash/deck.hash.css">
+  <!--  <link rel="stylesheet" href="extensions/scale/deck.scale.css"> -->
+
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+
+    <!-- <link rel="stylesheet" href="themes/transition/fade.css"> -->
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+    <!-- <link rel="stylesheet" href="themes/style/web-2.0.css"> -->
+    <link rel="stylesheet" href="themes/style/y/main.css" />
+    <link rel="stylesheet" href="themes/style/y/solarized.css" />
+	<!-- Required Modernizr file -->
+	<script src="modernizr.custom.js"></script>
+    <script>
+        function gofullscreen(){
+            var body=document.getElementById('body');
+            try {
+                body.requestFullScreen();
+            } catch(err) {
+                try {
+                    body.webkitRequestFullScreen();
+                } catch(err) {
+                    body.mozRequestFullScreen();
+                }
+            }
+            return false;
+        }
+    </script>
+</head>
+<body id="body" class="deck-container">
+
+<div style="display:none">
+\(\newcommand{\F}{\mathbf{F}}\)
+\(\newcommand{\E}{\mathbf{E}}\)
+\(\newcommand{\C}{\mathcal{C}}\)
+\(\newcommand{\D}{\mathcal{D}}\)
+\(\newcommand{\id}{\mathrm{id}}\)
+\(\newcommand{\ob}[1]{\mathrm{ob}(#1)}\)
+\(\newcommand{\hom}[1]{\mathrm{hom}(#1)}\)
+\(\newcommand{\Set}{\mathbf{Set}}\)
+\(\newcommand{\Mon}{\mathbf{Mon}}\)
+\(\newcommand{\Vec}{\mathbf{Vec}}\)
+\(\newcommand{\Grp}{\mathbf{Grp}}\)
+\(\newcommand{\Rng}{\mathbf{Rng}}\)
+\(\newcommand{\ML}{\mathbf{ML}}\)
+\(\newcommand{\Hask}{\mathbf{Hask}}\)
+\(\newcommand{\Cat}{\mathbf{Cat}}\)
+\(\newcommand{\fmap}{\mathtt{fmap}}\)
+</div>
+
+<!-- Begin slides. Just make elements with a class of slide. -->
+

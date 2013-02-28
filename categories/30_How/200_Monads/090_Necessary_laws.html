@@ -1,0 +1,7 @@
+<h2 id="necessary-laws">Necessary laws</h2>
+<p>For ◎ to work like composition, we need join to hold the following properties:</p>
+<ul>
+<li><code>join (join (F (F (F a))))=join (F (join (F (F a))))</code></li>
+<li>abusing notations denoting <code>join</code> by ⊙; this is equivalent to<br /><span class="yellow"><code>(F ⊙ F) ⊙ F = F ⊙ (F ⊙ F)</code></span></li>
+<li>There exists <code>η :: a -&gt; F a</code> s.t.<br /><span class="yellow"><code>η⊙F=F=F⊙η</code></span></li>
+</ul>

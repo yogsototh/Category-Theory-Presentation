@@ -1,0 +1,11 @@
+<h2 id="non-haskell-hasks-functors">&quot;Non Haskell&quot; Hask's Functors</h2>
+<p>A simple basic example is the \(id_\Hask\) functor. It simply cannot be expressed as a couple (<code>F</code>,<code>fmap</code>) where</p>
+<ul>
+<li><code>F::* -&gt; *</code></li>
+<li><code>fmap :: (a -&gt; b) -&gt; (F a) -&gt; (F b)</code></li>
+</ul>
+<p>Another example:</p>
+<ul>
+<li>F(<code>T</code>)=<code>Int</code></li>
+<li>F(<code>f</code>)=<code>\_-&gt;0</code></li>
+</ul>

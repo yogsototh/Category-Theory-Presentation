@@ -1,0 +1,15 @@
+Natural Transformation Examples (3/4)
+-------------------------------------
+
+<pre><code class="haskell small">toMaybe :: [a] -> Maybe a
+toMaybe [] = Nothing
+toMaybe (x:xs) = Just x</pre></code>
+
+
+`toMaybe` is a natural transformation.
+It is also a morphism from `[]` to `Maybe` in the Category of \\(\\Hask\\) endofunctors.
+
+<img style="float:left;width:30%" src="categories/img/mp/nattrans-list-maybe.png" alt="natural transformation commutative diagram"/>
+<figure style="float:right;width:60%">
+<img style="width:40%" src="categories/img/mp/list-maybe-endofunctor-morphism.png" alt="natural transformation commutative diagram"/>
+</figure>

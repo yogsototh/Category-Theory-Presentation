@@ -1,0 +1,11 @@
+<h2 id="κατα-morphism-extension-to-trees">κατα-morphism: extension to Trees</h2>
+<p>Once you get the trick, it is easy to extent to most Functor.</p>
+<pre><code>type Tree = Mu TreeF
+data TreeF x = Node Int [x]
+
+instance Functor TreeF where
+  fmap f (Node e xs) = Node e (fmap f xs)
+
+depth = cata phi where
+  phi :: Algebra TreeF Int -- TreeF Int -&gt; Int
+  phi (Node x sons) = 1 + foldr max 0 sons</code></pre>
