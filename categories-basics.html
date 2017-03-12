@@ -45,17 +45,21 @@
 </head>
 <body id="body" class="deck-container">
 
-<div style="display:none">
-\(\newcommand{\F}{\mathbf{F}}\)
-\(\newcommand{\E}{\mathbf{E}}\)
-\(\newcommand{\C}{\mathcal{C}}\)
-\(\newcommand{\D}{\mathcal{D}}\)
-\(\newcommand{\id}{\mathrm{id}}\)
-\(\newcommand{\ob}[1]{\mathrm{ob}(#1)}\)
-\(\newcommand{\hom}[1]{\mathrm{hom}(#1)}\)
-\(\newcommand{\Set}{\mathbf{Set}}\)
-\(\newcommand{\Mon}{\mathbf{Mon}}\)
-\(\newcommand{\Vec}{\mathbf{Vec}}\)
+    <div style="display:none">
+        \(\newcommand{\F}{\mathbf{F}}\)
+        \(\newcommand{\E}{\mathbf{E}}\)
+        \(\newcommand{\C}{\mathcal{C}}\)
+        \(\newcommand{\D}{\mathcal{D}}\)
+        \(\newcommand{\id}{\mathrm{id}}\)
+        \(\newcommand{\dom}{\mathrm{dom}}\)
+        \(\newcommand{\cod}{\mathrm{cod}}\)
+        \(\newcommand{\ob}[1]{\mathrm{ob}(#1)}\)
+        \(\newcommand{\hom}[1]{\mathrm{hom}(#1)}\)
+        \(\newcommand{\Set}{\mathbf{Set}}\)
+        \(\newcommand{\Str}{\mathbf{Str}}\)
+        \(\newcommand{\Mon}{\mathbf{Mon}}\)
+        \(\newcommand{\G}{\mathbf{G}}\)
+        \(\newcommand{\Vec}{\mathbf{Vec}}\)
 \(\newcommand{\Grp}{\mathbf{Grp}}\)
 \(\newcommand{\Rng}{\mathbf{Rng}}\)
 \(\newcommand{\ML}{\mathbf{ML}}\)
@@ -232,16 +236,34 @@
 
 <section class="slide">
     <h2>Алгебра функций: композиция функций</h2>
-    <h3>Упражнение</h3>
-    <p class="left" style="width: 55%; max-width:55%">
+    <p class="left" style="width: 35%; max-width:35%">
         <span class="red">\((h\circ g)\)</span>\(\circ f = h\circ\) <span class="blue">\((g\circ f)\)</span>:
         <span class="red">\(h(g(\;\;\)</span>\(f(x)\)<span class="red">\(\;\;))\)</span><span>\({} =  h(\;\;\)</span><span class="blue">\(g(f(x))\)</span>\(\;\;)\)
     </p>
+    <div class="right" style="width: 50%; max-width:50%">
+    <pre >
+        <code >
+f(x) = 1 + x;
+g(x) = x^2;
+h(x) = x+x;
+
+h(g(x)) = x^2+x^2 = 2*x^2;
+g(f(x)) = (1 + x)^2;
+
+h(g( f(x) )) = 2*(  1+x  )^2
+             = 2*(1+x)^2;
+
+h( g(f(x)) ) = (1 + x)^2 + (1 + x)^2
+             = 2*(1+x)^2;
+        </code>
+    </pre>
+    </div>
+    <img class="left" style="width:40%;max-width:40%;" src="categories/img/ai/set-func-composing-4.svg" alt="morphisms"/>
+    <!--
     <figure class="right" style="max-width:45%; width:45%;">
         <img src="categories/img/ai/set-func-composing-4.svg" alt="morphisms"/>
     </figure>
-    <h3>Обозначение композиций</h3>
-FIXME:
+    -->
 </section>
 
 <section class="slide">
@@ -286,20 +308,34 @@ FIXME:
 <img src="categories/img/mp/morphisms.png" alt="morphisms"/>
 
 <p>Объекты \(A\) и \(B\) - объекты категории \(\C\),<br/>
-\(\hom{A,B}\) - коллекция морфизмов (стрелок),<br/>
-\(f:A→B\) фактически обозначает, что \(f\) принадлежит \(\hom{A,B}\),</p>
+    \(\hom{A,B}\) - коллекция морфизмов;
+    \(f:A→B\) обозначает, что \(f \in \hom{A,B}\),<br/>
+    \(f:\dom(f)\to\cod(f)\): \(\dom(f)=A, \cod(f)=B\).</p>
 <p>\(\hom{\C}\) - это коллекция всех морфизмов категории \(\C\).</p>
 </section>
 <section class="slide">
     <h2>Категории: Правило композиции</h2>
     <p>Композиция (∘) требует для каждой пары морфизмов <span class="red">\(f:A→B\)</span>, <span class="blue">\(g:B→C\)</span><br/> <div style="text-align:center;">морфизм
-    <span class="yellow">\(g∘f:A\rightarrow C\)</span>.</div>
-</p>
-<img src="categories/img/mp/composition.png" alt="composition"/>
+        <span class="yellow">\(g∘f:A\rightarrow C\)</span>.</div>
+    </p>
+    <img src="categories/img/mp/composition.png" alt="composition"/>
+</section>
+<section class="slide">
+    <h2>Категории: Правило композиции</h2>
+    <img src="categories/img/mp/composition.png" alt="composition"/>
+    <h3>Обозначение композиций морфизмов</h3>
+    <p>
+        <ul>
+            <li>"\(g\) after \(f\)": \(g\circ f\), </li>
+            <li>\(gf\), \(g\;f\): \(f(x) = f\;x, g(f(x)) = g\;f\;x \),</li>
+            <li>"\(f\) then \(g\)": \(f \bullet g\),</li>
+            <li>\(f;\!g\).
+        </ul>
+    </p>
 </section>
 <section class="slide">
 <h2>Условия: Нейтральный элемент</h2>
-<p>Для каждого объекта \(X\) должен быть задан морфизм \(\id_X:X→X\) такой,<br/>
+<p>Для каждого объекта \(X\) должен <span class="yellow">существовать или быть задан/построен</span> морфизм \(\id_X:X→X\) такой,<br/>
 чтобы для каждого морфизма \(f:A→B\) выполнялось</p>
 <img src="categories/img/mp/identity.png" alt="identity"/>
 </section>
@@ -378,7 +414,7 @@ FIXME:
         <span class="red">НЕТ</span>,<br/>
         \((h∘g)∘f=\id_B∘f=f\)<br/>
     \(h∘(g∘f)=h∘\id_A=h\)<br/>
-    but \(h≠f\)
+    но \(h≠f\)
     </figcaption>
 </figure>
 </section>
@@ -423,11 +459,11 @@ FIXME:
 <section class="slide">
 <h2>Примеры более мелкого масштаба</h2>
 
-<h3>Строки \(Str\)</h3>
+<h3>Строки \(\Str\)</h3>
 <img class="right" style="max-width:17%; margin-left: 10%;" src="categories/img/mp/strings.png" alt="Monoids are one object categories"/>
 <ul>
-    <li> \(\ob{Str}\) - синглетон, </li>
-    <li> \(\hom{Str}\) - каждая строка, </li>
+    <li> \(\ob{\Str}\) - "формальный объект", </li>
+    <li> \(\hom{\Str}\) - каждая строка, </li>
     <li> ∘ - операция конкатенации <code>(++)</code> </li>
 </ul>
 <ul>
@@ -438,18 +474,19 @@ FIXME:
 <section class="slide">
 <h2>Конечные примеры</h2>
 
-<h3>Граф</h3>
+<h3>Граф \(\G\)</h3>
 <figure class="right" style="max-width:40%" >
 <img src="categories/img/mp/graph-category.png" alt="Each graph is a category"/>
 </figure>
 <ul>
-    <li> \(\ob{G}\) - вершины графа,</li>
-    <li> \(\hom{G}\) - все пути,</li>
+    <li> \(\ob{\G}\) - вершины графа,</li>
+    <li> \(\hom{\G}\) - все пути,</li>
     <li> ∘ - объединение (конкатенация) путей.</li>
 </ul>
-<ul><li>\(\ob{G}=\{X,Y,Z\}\),
-    </li><li>\(\hom{G}=\{ε,α,β,γ,αβ,βγ,...\}\)
-    </li><li>\(αβ∘γ=αβγ\)
+<ul><li>\(\ob{\G}=\{X,Y,Z\}\),
+</li><li>\(\hom{\G}=\{ε,α,β,γ,αβ,βγ,...\}\)
+</li><li>\(\varepsilon ∘ γ=γ=γ ∘ \varepsilon\)
+</li><li>\(αβ∘γ=αβγ=α∘βγ\)
 </li></ul>
 </section>
 <section class="slide">
@@ -466,7 +503,7 @@ FIXME:
 <p class="yellow">Только один объект!</p>
 <p>Примеры:</p>
 <ul><li><code>(Integer,0,+)</code>, <code>(Integer,1,*)</code>,
-</li><li><code>(String(s),"",++)</code>, для каждого <code>a</code>, <code>([a],[],++).</code>
+</li><li><code>(String,"",++)</code>, для каждого типа <code>a</code>, <code>([a],[],++).</code>
 </li></ul>
 </section>
 <section class="slide">
@@ -504,7 +541,6 @@ FIXME:
 </li><li> <em class="yellow">Инициал</em>: \(Z\in\ob{\C}\) такой, что \(∀Y∈\ob{\C}, \#\hom{Z,Y}=1\)
 	<br/> Уникальный "с точностью до изоморфизма".
 </li><li> <em class="yellow">Терминал</em>: \(T\in\ob{\C}\) такой, что \(T\) - это инициал в дуальной категории \(\C\).
-</li><li> <em class="yellow">Функтор</em> - структура, сохраняющая отображение между категориями, FIXME:
 </li><li> ...
 </li></ul>
 </section>
@@ -556,7 +592,7 @@ FIXME:
 
 <img style="min-width:43%; width: 43%" class="right" src="categories/img/fractalcat.jpg" />
 
-<p>Категории и функторы из категории \(\Cat\) FIXME: туман</p>
+<p>Элементы категории \(\Cat\) - категории и функторы из категории в категорию.</p>
 <ul><li>\(\ob{\Cat}\) - категории,
 </li><li>\(\hom{\Cat}\) - функторы,
 </li><li>∘ - композиция функторов.
