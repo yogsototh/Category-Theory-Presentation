@@ -66,6 +66,7 @@
             \(\newcommand{\Hask}{\mathbf{Hask}}\)
             \(\newcommand{\Cat}{\mathbf{Cat}}\)
             \(\newcommand{\fmap}{\mathtt{fmap}}\)
+
         </div>
 
         <!-- Begin slides. Just make elements with a class of slide. -->
@@ -533,7 +534,7 @@ h( g(f(x)) ) = (1 + x)^2 + (1 + x)^2
             <p>Например: <strong>Str</strong> и дискретную сигнатуру (Σ<sup>*</sup>).</p>
         </section>
         <section class="slide">
-            <h2 class="base1">Категоричные (Categorical) свойства</h2>
+            <h2 class="base1">Категорийные (Categorical) свойства</h2>
 
             <p class="base1">- это свойства объекта исследования, которые выражаются в терминах категорий, т.е., объектами, морфизмами и композициями.</p>
 
@@ -545,8 +546,47 @@ h( g(f(x)) ) = (1 + x)^2 + (1 + x)^2
             </li></ul>
         </section>
         <section class="slide">
+            <h2>Двоственность (Duality)</h2>
+            <p> - соответствие свойств категории \(\C\) и двоственными свойствам <em>двойственной категории</em> \(\C^{op}\).
+                <figure>
+                    <figcaption>
+                    </figcaption>
+                </figure>
+            </p>ь
+        </section>
+        <section class="slide">
+            <h2>Инициал, Терминал</h2>
+            <p>
+                <figure>
+                    <figcaption>
+                    </figcaption>
+                </figure>
+            </p>
+        </section>
+        <section class="slide">
+            <h2>Декартов квадрат/Кодекартов квадрат (Pushout, Pullup)</h2>
+            <p>
+                <figure>
+                    <figcaption>
+                    </figcaption>
+                </figure>
+            </p>
+        </section>
+        <section class="slide">
+            <h2>Конус/коконус</h2>
+            <p>
+                <figure>
+                    <figcaption>
+                    </figcaption>
+                </figure>
+            </p>
+        </section>
+        <section class="slide">
             <h2 id="isomorph">Изоморф</h2>
-            <p><img class="right" alt="isomorph cats" src="categories/img/isomorph-cats.jpg" /> <em class="yellow">Изоморфизм</em>: \(f:A→B\), который может быть &quot;отменен&quot, т.е.<br />\(∃g:B→A\), \(g∘f=id_A\) и \(f∘g=id_B\),<br /> в этом случае \(A\) и  \(B\) - <em class="yellow">изоморфны (isomorphic)</em>.</p>
+            <p>
+                <img class="right" alt="isomorph cats" src="categories/img/isomorph-cats.jpg" />
+                <em class="yellow">Изоморфизм</em>: \(f:A→B\), который может быть &quot;отменен&quot, т.е.<br />\(∃g:B→A\), \(g∘f=id_A\) и \(f∘g=id_B\),<br /> в этом случае \(A\) и  \(B\) - <em class="yellow">изоморфны (isomorphic)</em>.
+            </p>
             <p><span class="yellow">A≌B</span> обозначает, что A и B по сути одно и то же (essentially the same).<br />В теории категорий при использовании <span class="yellow">=</span> имеется ввиду <span class="yellow">≌</span>, например, в коммутативных диаграммах.</p>
         </section>
         <section class="slide">
@@ -1118,6 +1158,22 @@ depth = cata phi where
             <p><span class="smaller">В процессе подготовки и использования презентации кошки не пострадали.</span></p>
         </section>
         <!-- End slides. -->
+        <section class="slide">
+            <h2>Test</h2>
+            <p>
+                <figure>
+                    $$\require{AMScd}
+                    \begin{CD}
+                    K(X) @&gt;{ch}&gt;&gt; H(X;\mathbb Q);\\
+                    @VVV @V{q}V{b}V \\
+                    K(Y) @&gt;{ch}&gt;&gt; H(Y;\mathbb Q);
+                    \end{CD}$$
+                    <figcaption>
+                        Category
+                    </figcaption>
+                </figure>
+            </p>
+        </section>
 
 
         <!-- Begin extension snippets. Add or remove as needed. -->

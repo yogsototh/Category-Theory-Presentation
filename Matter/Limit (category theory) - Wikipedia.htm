@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html class="client-js ve-not-available" dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Limit (category theory) - Wikipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Limit_(category_theory)","wgTitle":"Limit (category theory)","wgCurRevisionId":769862420,"wgRevisionId":769862420,"wgArticleId":39248,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Articles lacking in-text citations from March 2013","All articles lacking in-text citations","Limits (category theory)"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Limit_(category_theory)","wgRelevantArticleId":39248,"wgRequestId":"WMSpPwpAIDYAAEmtucEAAABS","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFlaggedRevsParams":{"tags":{}},"wgStableRevisionId":null,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgPopupsShouldSendModuleToUser":false,"wgPopupsConflictsWithNavPopupGadget":false,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":true},"wgRelatedArticles":null,"wgRelatedArticlesBetaFeatureEnabled":false,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgWikibaseItemId":"Q1322614","wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0,"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.math.styles":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1dqfd7l",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["ext.math.scripts","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.legacy.wikibits","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.uls.interface","ext.quicksurveys.init","ext.centralNotice.geoIP","ext.centralNotice.startUp","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="Limit%20%28category%20theory%29%20-%20Wikipedia_files/load.css">
+<script async="" src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/load.php"></script>
+<style>
+.referencetooltip{position:absolute;list-style:none;list-style-image:none;opacity:0;font-size:10px;margin:0;z-index:5;padding:0}.referencetooltip li{border:#080086 2px solid;max-width:260px;padding:10px 8px 13px 8px;margin:0px;background-color:#F7F7F7;-webkit-box-shadow:2px 4px 2px rgba(0,0,0,0.3);-moz-box-shadow:2px 4px 2px rgba(0,0,0,0.3);box-shadow:2px 4px 2px rgba(0,0,0,0.3)}.referencetooltip li+li{margin-left:7px;margin-top:-2px;border:0;padding:0;height:3px;width:0px;background-color:transparent;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;border-top:12px #080086 solid;border-right:7px transparent solid;border-left:7px transparent solid}.referencetooltip>li+li::after{content:'';border-top:8px #F7F7F7 solid;border-right:5px transparent solid;border-left:5px transparent solid;margin-top:-12px;margin-left:-5px;z-index:1;height:0px;width:0px;display:block}.client-js body .referencetooltip li li{border:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;height:auto;width:auto;margin:auto;padding:0;position:static}.RTflipped{padding-top:13px}.referencetooltip.RTflipped li+li{position:absolute;top:2px;border-top:0;border-bottom:12px #080086 solid}.referencetooltip.RTflipped li+li::after{border-top:0;border-bottom:8px #F7F7F7 solid;position:absolute;margin-top:7px}.RTsettings{float:right;height:24px;width:24px;cursor:pointer;background-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/0/05/OOjs_UI_icon_advanced.svg/24px-OOjs_UI_icon_advanced.svg.png);background-image:linear-gradient(transparent,transparent),url(//upload.wikimedia.org/wikipedia/commons/0/05/OOjs_UI_icon_advanced.svg);margin-top:-9px;margin-right:-7px;-webkit-transition:opacity 0.15s;-moz-transition:opacity 0.15s;-ms-transition:opacity 0.15s;-o-transition:opacity 0.15s;transition:opacity 0.15s;opacity:0.6;filter:alpha(opacity=60)}.RTsettings:hover{opacity:1;filter:alpha(opacity=100)}.RTTarget{border:#080086 2px solid}
+.skin-vector li.GA,.skin-monobook li.GA,.skin-modern li.GA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/4/42/Monobook-bullet-ga.png)} .skin-vector li.FA,.skin-monobook li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/d/d4/Monobook-bullet-star.png)}.skin-modern li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Modern-bullet-star.svg/9px-Modern-bullet-star.svg.png)}
+.wp-teahouse-question-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}#wp-th-question-ask{float:right}.wp-teahouse-ask a.external{background-image:none !important}.wp-teahouse-respond-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}.wp-th-respond{float:right}.wp-teahouse-respond a.external{background-image:none !important}
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.mw-ui-button{font-family:inherit;font-size:1em;display:inline-block;min-width:4em;max-width:28.75em;padding:0.546875em 1em;line-height:1.286;margin:0;border-radius:2px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;*display:inline; zoom:1;vertical-align:middle;background-color:#f8f9fa;color:#222222;border:1px solid #a2a9b1;text-align:center;font-weight:bold;cursor:pointer}.mw-ui-button:visited{color:#222222}.mw-ui-button:hover{background-color:#ffffff;color:#444444;border-color:#a2a9b1}.mw-ui-button:focus{background-color:#ffffff;color:#222222;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button:active,.mw-ui-button.is-on,.mw-ui-button.mw-ui-checked{background-color:#d9d9d9;color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button:disabled:hover,.mw-ui-button:disabled:active{background-color:#c8ccd1;color:#fff;box-shadow:none;border-color:#c8ccd1}.mw-ui-button:focus{outline-width:0}.mw-ui-button:focus::-moz-focus-inner{border-color:transparent;padding:0}.mw-ui-button:not( :disabled ){-webkit-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;-moz-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms}.mw-ui-button:disabled{text-shadow:none;cursor:default}.mw-ui-button.mw-ui-big{font-size:1.3em}.mw-ui-button.mw-ui-block{display:block;width:100%;margin-left:auto;margin-right:auto}.mw-ui-button.mw-ui-progressive,.mw-ui-button.mw-ui-constructive{background-color:#3366cc;color:#fff;border:1px solid #3366cc;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-progressive:hover,.mw-ui-button.mw-ui-constructive:hover{background-color:#447ff5;border-color:#447ff5}.mw-ui-button.mw-ui-progressive:focus,.mw-ui-button.mw-ui-constructive:focus{box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-progressive:active,.mw-ui-button.mw-ui-constructive:active,.mw-ui-button.mw-ui-progressive.is-on,.mw-ui-button.mw-ui-constructive.is-on,.mw-ui-button.mw-ui-progressive.mw-ui-checked,.mw-ui-button.mw-ui-constructive.mw-ui-checked{background-color:#2a4b8d;border-color:#2a4b8d;box-shadow:none}.mw-ui-button.mw-ui-progressive:disabled,.mw-ui-button.mw-ui-constructive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-constructive:disabled:hover,.mw-ui-button.mw-ui-progressive:disabled:active,.mw-ui-button.mw-ui-constructive:disabled:active,.mw-ui-button.mw-ui-progressive:disabled.mw-ui-checked,.mw-ui-button.mw-ui-constructive:disabled.mw-ui-checked{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-constructive.mw-ui-quiet{color:#222222}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:hover{background-color:transparent;color:#447ff5}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:active,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:active,.mw-ui-button.mw-ui-progressive.mw-ui-quiet.mw-ui-checked,.mw-ui-button.mw-ui-constructive.mw-ui-quiet.mw-ui-checked{color:#2a4b8d}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:focus{background-color:transparent;color:#3366cc}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:disabled,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-destructive{background-color:#dd3333;color:#fff;border:1px solid #dd3333;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-destructive:hover{background-color:#ff4242;border-color:#ff4242}.mw-ui-button.mw-ui-destructive:focus{box-shadow:inset 0 0 0 1px #dd3333,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-destructive:active,.mw-ui-button.mw-ui-destructive.is-on,.mw-ui-button.mw-ui-destructive.mw-ui-checked{background-color:#b32424;border-color:#b32424;box-shadow:none}.mw-ui-button.mw-ui-destructive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-destructive:disabled:active,.mw-ui-button.mw-ui-destructive:disabled.mw-ui-checked{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-destructive.mw-ui-quiet{color:#222222}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:hover{background-color:transparent;color:#ff4242}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:active,.mw-ui-button.mw-ui-destructive.mw-ui-quiet.mw-ui-checked{color:#b32424}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:focus{background-color:transparent;color:#dd3333}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-quiet{background:transparent;border:0;text-shadow:none;color:#222222}.mw-ui-button.mw-ui-quiet:hover{background-color:transparent;color:#444444}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet.mw-ui-checked{color:#000000}.mw-ui-button.mw-ui-quiet:focus{background-color:transparent;color:#222222}.mw-ui-button.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-quiet:hover,.mw-ui-button.mw-ui-quiet:focus{box-shadow:none}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet:disabled{background:transparent}input.mw-ui-button::-moz-focus-inner,button.mw-ui-button::-moz-focus-inner{margin-top:-1px;margin-bottom:-1px}a.mw-ui-button{text-decoration:none}a.mw-ui-button:hover,a.mw-ui-button:focus{text-decoration:none}.mw-ui-button-group > *{min-width:48px;border-radius:0;float:left}.mw-ui-button-group > *:first-child{border-top-left-radius:2px;border-bottom-left-radius:2px}.mw-ui-button-group > *:not( :first-child ){border-left:0}.mw-ui-button-group > *:last-child{border-top-right-radius:2px;border-bottom-right-radius:2px}.mw-ui-button-group .is-on .button{cursor:default}
+.mw-ui-icon{position:relative;line-height:1.5em;min-height:1.5em;min-width:1.5em}.mw-ui-icon.mw-ui-icon-element{text-indent:-999px;overflow:hidden;width:3.5em;min-width:3.5em;max-width:3.5em}.mw-ui-icon.mw-ui-icon-element:before{left:0;right:0;position:absolute;margin:0 1em}.mw-ui-icon.mw-ui-icon-before:before,.mw-ui-icon.mw-ui-icon-element:before{background-position:50% 50%;background-repeat:no-repeat;background-size:100% auto;float:left;display:block;min-height:1.5em;content:''}.mw-ui-icon.mw-ui-icon-before:before{position:relative;width:1.5em;margin-right:1em}.mw-ui-icon.mw-ui-icon-small:before{background-size:66.67% auto}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:0;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:#fff;cursor:pointer;border:solid 1px #aaa;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0}.suggestions-result{color:#000;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4c59a6;color:#fff}.suggestions-special .special-label{color:#808080;text-align:left}.suggestions-special .special-query{color:#000;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:#c0c0c0}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:#fff}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:0.6em 3.6em 0.6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba( 255,255,255,0.5 );border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important; }.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/w/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 0.8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:#000;text-shadow:0 0.0625em 0 #fff;text-decoration:none;opacity:0.2;filter:alpha( opacity=20 )}.postedit-close:hover{color:#000;text-decoration:none;opacity:0.4;filter:alpha( opacity=40 )}
+@-webkit-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-webkit-transform:translateY(-20px)}100%{opacity:1;-webkit-transform:translateY(0)}}@-moz-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-moz-transform:translateY(-20px)}100%{opacity:1;-moz-transform:translateY(0)}}@-o-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-o-transform:translateY(-20px)}100%{opacity:1;-o-transform:translateY(0)}}@keyframes centralAuthPPersonalAnimation{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}.centralAuthPPersonalAnimation{-webkit-animation-duration:1s;-moz-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:centralAuthPPersonalAnimation;-moz-animation-name:centralAuthPPersonalAnimation;-o-animation-name:centralAuthPPersonalAnimation;animation-name:centralAuthPPersonalAnimation}
+@media print{#centralNotice{display:none}}.cn-closeButton{display:inline-block;zoom:1;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAACeklEQVR4Aa1UM3jkcRBN6qS//tTFttPHqmI359VZ5dm2L1zFtr02YlRx5sX2ft/7ed7O/w1M5ufnt8NZQjCBQXhG+IYZe5zjfju7xcHc3NzEzMwM6xOEqNnZ2ZeVlZW827dv1ycmJnbGx8d3Yr5582Z9eXk5D/d4h/empqYm+K0nw3yKcF4sFmdzOJzGgIAAhb29vc7Ozk6/Atrr/fz8lCwWq6m3tzcb72G3nmzFo/NNTU354eHhIltbW72Tk5M2IyND9P79+8ZPnz7VvXnzpoHBYPS4uLhobGxsDMHBwaLa2tp82MF+PVmUUqnMioiI6LOysjLQLCcPS2ZmZn7Ozc39oPtFYG80GgWpqakSS0tLY1hYmEgikWTBfoXsLD16BT3gUWhoqEKtVheREZ+Qu0IEjI+PZ2k0GqFer+cnJSWJra2tDWw2u2FqauoVeEAW3NzcnBcYGCh3dHTUtba2ltNjLvRJSEiQEQEPRENDQzkMBqPXwsKiXyqVFsFDNzc3LWmoqKmp4YIHZIyHDx9WOzg46GJiYmTk5e/h4eHstLQ0CX2ykXST4JPJ8y7sSVM5/QGMf9y4caMHf3r//v1a8IDsGRm04/D58+dtpNFPPNRqtflXrlzpI8G15IEGc2xsrFSlUglwD+Tk5NRBmuTk5A7wgOxbXFxcF8iysrIa1mskEolKvL29Ne7u7mpXV1dNaWlp9fr7X79+VYMMeQieY/dsv5p1r2g2Nja2vWZ7RXNiYuIA0dwlzwYGBjbkGXmURXeLeUa1ul2ebV8BEH+7CiAiASTYvgJ2qc3MzMzF2vz8+XPd27dvG5hMZg+CsV1tHmfXOP5+dqyddgHOI7v1srTdcwAAAABJRU5ErkJggg==);background:url(/w/extensions/CentralNotice/resources/subscribing/CloseWindow19x19.png?7596b)!ie;width:19px;height:19px;text-indent:19px;white-space:nowrap;overflow:hidden}
+.uls-menu{border-radius:4px; font-size:medium}.uls-search,.uls-language-settings-close-block{border-top-right-radius:4px;border-top-left-radius:4px}.uls-language-list{border-bottom-right-radius:4px;border-bottom-left-radius:4px}.uls-menu.callout .caret-before,.uls-menu.callout .caret-after{border-top:10px solid transparent;border-right:10px solid #c9c9c9;border-bottom:10px solid transparent;display:inline-block;left:-11px; top:17px;position:absolute}.uls-menu.callout .caret-after{border-right:10px solid #fcfcfc;display:inline-block;left:-10px}.uls-menu.callout--languageselection .caret-after{border-right:10px solid #fff}.uls-ui-languages button{margin:5px 15px 5px 0;white-space:nowrap;overflow:hidden}.uls-search-wrapper-wrapper{position:relative;padding-left:40px;margin-top:5px;margin-bottom:5px}.uls-icon-back{background:transparent url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.png?90e9b) no-repeat scroll center center;background-image:-webkit-linear-gradient( transparent,transparent ),url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?ae714);background-image:linear-gradient( transparent,transparent ),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20id%3D%22Layer_1%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M7%2013.1l8.9%208.9c.8-.8.8-2%200-2.8l-6.1-6.1%206-6.1c.8-.8.8-2%200-2.8L7%2013.1z%22%20id%3D%22path3%22%20fill%3D%22%23555%22%2F%3E%0A%3C%2Fsvg%3E%0A);background-size:28px;background-position:center center;height:32px;width:40px;display:block;position:absolute;left:0;border-right:1px solid #c9c9c9;opacity:0.8}.uls-icon-back:hover{opacity:1;cursor:pointer}
+.ext-quick-survey-panel,.ext-qs-loader-bar{width:auto;background-color:#eaecf0} .ext-qs-loader-bar{display:block;height:100px;margin-left:1.4em;clear:right;float:right;background-color:#eaecf0}.ext-qs-loader-bar.mw-ajax-loader{top:0}@media all and (min-width:720px){.ext-qs-loader-bar,.ext-quick-survey-panel{margin-left:1.4em;width:300px;clear:right;float:right}}</style><style>
+.mw-mmv-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:1000;background-color:#000000}body.mw-mmv-lightbox-open{overflow-y:auto;  }body.mw-mmv-lightbox-open #mw-page-base,body.mw-mmv-lightbox-open #mw-head-base,body.mw-mmv-lightbox-open #mw-navigation,body.mw-mmv-lightbox-open #content,body.mw-mmv-lightbox-open #footer,body.mw-mmv-lightbox-open #globalWrapper{ display:none}body.mw-mmv-lightbox-open > *{ display:none}body.mw-mmv-lightbox-open > .mw-mmv-overlay,body.mw-mmv-lightbox-open > .mw-mmv-wrapper{display:block}.mw-mmv-filepage-buttons{margin-top:5px}.mw-mmv-filepage-buttons .mw-mmv-view-expanded,.mw-mmv-filepage-buttons .mw-mmv-view-config{display:block;line-height:inherit}.mw-mmv-filepage-buttons .mw-mmv-view-expanded.mw-ui-icon:before{background-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%20768%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22%23777%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M851.2%2071.6L690.7%20232.1l-40.1-40.3-9.6%20164.8%20164.8-9.3-40.3-40.4L926%20146.4l58.5%2058.5L997.6%200%20792.7%2013.1%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M769.6%2089.3H611.9l70.9%2070.8%207.9%207.5m-47.1%20234.6l-51.2%203%203-51.2%209.4-164.4%205.8-100.3H26.4V768h883.1V387l-100.9%205.8-165%209.4zM813.9%20678H113.6l207.2-270.2%2031.5-12.9L548%20599.8l105.9-63.2%20159.8%20140.8.2.6zm95.6-291.9V228l-79.1%2078.9%207.8%207.9%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A)}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before{background-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%20768%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M897%20454.6V313.4L810.4%20299c-6.4-23.3-16-45.7-27.3-65.8l50.5-71.4-99.4-100.2-71.4%2050.5c-20.9-11.2-42.5-20.9-65.8-27.3L582.6-1H441.4L427%2085.6c-23.3%206.4-45.7%2016-65.8%2027.3l-71.4-50.5-100.3%2099.5%2050.5%2071.4c-11.2%2020.9-20.9%2042.5-27.3%2066.6L127%20313.4v141.2l85.8%2014.4c6.4%2023.3%2016%2045.7%2027.3%2066.6L189.6%20607l99.5%2099.5%2071.4-50.5c20.9%2011.2%2042.5%2020.9%2066.6%2027.3l14.4%2085.8h141.2l14.4-86.6c23.3-6.4%2045.7-16%2065.8-27.3l71.4%2050.5%2099.5-99.5-50.5-71.4c11.2-20.9%2020.9-42.5%2027.3-66.6l86.4-13.6zm-385%2077c-81.8%200-147.6-66.6-147.6-147.6%200-81.8%2066.6-147.6%20147.6-147.6S659.6%20302.2%20659.6%20384%20593.8%20531.6%20512%20531.6z%22%20fill%3D%22%23777%22%2F%3E%0A%3C%2Fsvg%3E%0A);opacity:0.75}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before:hover{opacity:1}
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:#000;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:#fff}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}
+.ve-activated #toc,.ve-activated #siteNotice,.ve-activated .mw-indicators,.ve-activated #t-print,.ve-activated #t-permalink,.ve-activated #p-coll-print_export,.ve-activated #t-cite,.ve-deactivating .ve-ui-surface,.ve-active .ve-init-mw-desktopArticleTarget-editableContent{display:none} .ve-activating .ve-ui-surface{height:0;padding:0 !important; overflow:hidden} .ve-loading #content > :not( .ve-init-mw-desktopArticleTarget-loading-overlay ), .ve-activated .ve-init-mw-desktopArticleTarget-uneditableContent{  pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none; opacity:0.5}.ve-activated .catlinks{cursor:pointer}.ve-activated .catlinks a{opacity:1} .ve-activated #content{position:relative} .ve-init-mw-desktopArticleTarget-loading-overlay{position:absolute;left:0;right:0;z-index:1;margin-top:-0.5em}.ve-init-mw-desktopArticleTarget-progress{height:1em;overflow:hidden;margin:0 25%}.ve-init-mw-desktopArticleTarget-progress-bar{height:1em;width:0} .mw-editsection{white-space:nowrap; unicode-bidi:-moz-isolate;unicode-bidi:-webkit-isolate;unicode-bidi:isolate}.mw-editsection-divider{color:#555} .ve-init-mw-desktopArticleTarget-progress{height:0.75em;border:1px solid #36c;background:#fff;border-radius:2px;box-shadow:0 0.1em 0 0 rgba( 0,0,0,0.15 )}.ve-init-mw-desktopArticleTarget-progress-bar{height:0.75em;background:#36c}
+#uls-settings-block{border-top:1px solid #c9c9c9;background:#f8f8f8;background:-webkit-gradient( linear,left top,left bottom,from( #fbfbfb ),to( #f0f0f0 ) );background:-webkit-linear-gradient( top,#fbfbfb,#f0f0f0 );background:-moz-linear-gradient( top,#fbfbfb,#f0f0f0 );background:-o-linear-gradient( top,#fbfbfb,#f0f0f0 );background:linear-gradient( #fbfbfb,#f0f0f0 );padding-left:10px;line-height:1.2em;border-radius:0 0 5px 5px}#uls-settings-block div.display-settings-block,#uls-settings-block div.input-settings-block{display:inline-block;margin:8px 15px;color:#565656}#uls-settings-block div.display-settings-block:hover,#uls-settings-block div.input-settings-block:hover{color:#252525}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="Limit%20%28category%20theory%29%20-%20Wikipedia_files/load_002.css">
+<meta name="generator" content="MediaWiki 1.29.0-wmf.15">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Functor_cone_%28extended%29.svg/1200px-Functor_cone_%28extended%29.svg.png">
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Limit_%28category_theory%29">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit">
+<link rel="edit" title="Edit this page" href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit">
+<link rel="apple-touch-icon" href="https://en.wikipedia.org/static/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="https://en.wikipedia.org/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.wikipedia.org/w/api.php?action=rsd">
+<link rel="copyright" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Limit_%28category_theory%29">
+<link rel="dns-prefetch" href="https://login.wikimedia.org/">
+<link rel="dns-prefetch" href="https://meta.wikimedia.org/">
+<script src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/load_002.php"></script></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Limit_category_theory rootpage-Limit_category_theory skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice" class="mw-body-content"><div id="centralNotice"></div><!-- CentralNotice --></div>
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Limit (category theory)</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><table class="plainlinks metadata ambox ambox-style ambox-More_footnotes" role="presentation">
+<tbody><tr>
+<td class="mbox-image">
+<div style="width:52px"><img alt="" src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/40px-Text_document_with_red_question_mark.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Text_document_with_red_question_mark.svg/60px-Text_document_with_red_question_mark.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Text_document_with_red_question_mark.svg/80px-Text_document_with_red_question_mark.svg.png 2x" data-file-width="48" data-file-height="48" width="40" height="40"></div>
+</td>
+<td class="mbox-text"><span class="mbox-text-span">This article includes a <a href="https://en.wikipedia.org/wiki/Wikipedia:Citing_sources" title="Wikipedia:Citing sources">list of references</a>, but <b>its sources remain unclear</b> because it has <b>insufficient <a href="https://en.wikipedia.org/wiki/Wikipedia:Citing_sources#Inline_citations" title="Wikipedia:Citing sources">inline citations</a></b>. <span class="hide-when-compact">Please help to <a href="https://en.wikipedia.org/wiki/Wikipedia:WikiProject_Fact_and_Reference_Check" title="Wikipedia:WikiProject Fact and Reference Check">improve</a> this article by <a href="https://en.wikipedia.org/wiki/Wikipedia:When_to_cite" title="Wikipedia:When to cite">introducing</a> more precise citations.</span> <small><i>(March 2013)</i></small> <small class="hide-when-compact"><i>(<a href="https://en.wikipedia.org/wiki/Help:Maintenance_template_removal" title="Help:Maintenance template removal">Learn how and when to remove this template message</a>)</i></small></span></td>
+</tr>
+</tbody></table>
+<p>In <a href="https://en.wikipedia.org/wiki/Category_theory" title="Category theory">category theory</a>, a branch of <a href="https://en.wikipedia.org/wiki/Mathematics" title="Mathematics">mathematics</a>, the abstract notion of a <b>limit</b> captures the essential properties of universal constructions such as <a href="https://en.wikipedia.org/wiki/Product_%28category_theory%29" title="Product (category theory)">products</a>, <a href="https://en.wikipedia.org/wiki/Pullback_%28category_theory%29" title="Pullback (category theory)">pullbacks</a> and <a href="https://en.wikipedia.org/wiki/Inverse_limit" title="Inverse limit">inverse limits</a>. The <a href="https://en.wikipedia.org/wiki/Duality_%28category_theory%29" class="mw-redirect" title="Duality (category theory)">dual notion</a> of a <b>colimit</b> generalizes constructions such as <a href="https://en.wikipedia.org/wiki/Disjoint_union" title="Disjoint union">disjoint unions</a>, <a href="https://en.wikipedia.org/wiki/Direct_sum" title="Direct sum">direct sums</a>, <a href="https://en.wikipedia.org/wiki/Coproduct" title="Coproduct">coproducts</a>, <a href="https://en.wikipedia.org/wiki/Pushout_%28category_theory%29" title="Pushout (category theory)">pushouts</a> and <a href="https://en.wikipedia.org/wiki/Direct_limit" title="Direct limit">direct limits</a>.</p>
+<p>Limits and colimits, like the strongly related notions of <a href="https://en.wikipedia.org/wiki/Universal_property" title="Universal property">universal properties</a> and <a href="https://en.wikipedia.org/wiki/Adjoint_functors" title="Adjoint functors">adjoint functors</a>,
+ exist at a high level of abstraction. In order to understand them, it 
+is helpful to first study the specific examples these concepts are meant
+ to generalize.</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+<span class="toctoggle">&nbsp;[<a role="button" tabindex="0" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Definition"><span class="tocnumber">1</span> <span class="toctext">Definition</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Limits"><span class="tocnumber">1.1</span> <span class="toctext">Limits</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Colimits"><span class="tocnumber">1.2</span> <span class="toctext">Colimits</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Variations"><span class="tocnumber">1.3</span> <span class="toctext">Variations</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#Examples"><span class="tocnumber">2</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Limits_2"><span class="tocnumber">2.1</span> <span class="toctext">Limits</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Colimits_2"><span class="tocnumber">2.2</span> <span class="toctext">Colimits</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Properties"><span class="tocnumber">3</span> <span class="toctext">Properties</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="#Existence_of_limits"><span class="tocnumber">3.1</span> <span class="toctext">Existence of limits</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="#Universal_property"><span class="tocnumber">3.2</span> <span class="toctext">Universal property</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#Adjunctions"><span class="tocnumber">3.3</span> <span class="toctext">Adjunctions</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#As_representations_of_functors"><span class="tocnumber">3.4</span> <span class="toctext">As representations of functors</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Interchange_of_limits_and_colimits_of_sets"><span class="tocnumber">3.5</span> <span class="toctext">Interchange of limits and colimits of sets</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Functors_and_limits"><span class="tocnumber">4</span> <span class="toctext">Functors and limits</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="#Preservation_of_limits"><span class="tocnumber">4.1</span> <span class="toctext">Preservation of limits</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Lifting_of_limits"><span class="tocnumber">4.2</span> <span class="toctext">Lifting of limits</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Creation_and_reflection_of_limits"><span class="tocnumber">4.3</span> <span class="toctext">Creation and reflection of limits</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Examples_2"><span class="tocnumber">4.4</span> <span class="toctext">Examples</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="#A_note_on_terminology"><span class="tocnumber">5</span> <span class="toctext">A note on terminology</span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="#External_links"><span class="tocnumber">7</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Definition">Definition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=1" title="Edit section: Definition">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Limits and colimits in a <a href="https://en.wikipedia.org/wiki/Category_%28mathematics%29" title="Category (mathematics)">category</a> <i>C</i> are defined by means of diagrams in <i>C</i>. Formally, a <b><a href="https://en.wikipedia.org/wiki/Diagram_%28category_theory%29" title="Diagram (category theory)">diagram</a></b> of shape <i>J</i> in <i>C</i> is a <a href="https://en.wikipedia.org/wiki/Functor" title="Functor">functor</a> from <i>J</i> to <i>C</i>:</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>F</mi>
+        <mo>:</mo>
+        <mi>J</mi>
+        <mo stretchy="false">→<!-- → --></mo>
+        <mi>C</mi>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F:J\to C.}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/c11780c4c320b2fb6ee61cc79406240b8db5b6a2.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:11.239ex; height:2.176ex;" alt="{\displaystyle F:J\to C.}"></span></dd>
+</dl>
+<p>The category <i>J</i> is thought of as an <a href="https://en.wikipedia.org/wiki/Index_category" class="mw-redirect" title="Index category">index category</a>, and the diagram <i>F</i> is thought of as indexing a collection of objects and <a href="https://en.wikipedia.org/wiki/Morphism" title="Morphism">morphisms</a> in <i>C</i> patterned on <i>J</i>.</p>
+<p>One is most often interested in the case where the category <i>J</i> is a <a href="https://en.wikipedia.org/wiki/Small_category" class="mw-redirect" title="Small category">small</a> or even <a href="https://en.wikipedia.org/wiki/Finite_set" title="Finite set">finite</a> category. A diagram is said to be <b>small</b> or <b>finite</b> whenever <i>J</i> is.</p>
+<h3><span class="mw-headline" id="Limits">Limits</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=2" title="Edit section: Limits">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Let <i>F</i>&nbsp;: <i>J</i> → <i>C</i> be a diagram of shape <i>J</i> in a category <i>C</i>. A <b><a href="https://en.wikipedia.org/wiki/Cone_%28category_theory%29" title="Cone (category theory)">cone</a></b> to <i>F</i> is an object <i>N</i> of <i>C</i> together with a family ψ<sub><i>X</i></sub>&nbsp;: <i>N</i> → <i>F</i>(<i>X</i>) of morphisms indexed by the objects <i>X</i> of <i>J</i>, such that for every morphism <i>f</i>&nbsp;: <i>X</i> → <i>Y</i> in <i>J</i>, we have <i>F</i>(<i>f</i>) o ψ<sub><i>X</i></sub> = ψ<sub><i>Y</i></sub>.</p>
+<p>A <b>limit</b> of the diagram <i>F</i>&nbsp;: <i>J</i> → <i>C</i> is a cone (<i>L</i>, φ) to <i>F</i> such that for any other cone (<i>N</i>, ψ) to <i>F</i> there exists a <i>unique</i> morphism <i>u</i>&nbsp;: <i>N</i> → <i>L</i> such that φ<sub><i>X</i></sub> o <i>u</i> = ψ<sub><i>X</i></sub> for all <i>X</i> in <i>J</i>.</p>
+<div class="center">
+<div class="floatnone"><a href="https://en.wikipedia.org/wiki/File:Functor_cone_%28extended%29.svg" class="image" title="A universal cone"><img alt="A universal cone" src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/196px-Functor_cone_extended.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/81/Functor_cone_%28extended%29.svg/294px-Functor_cone_%28extended%29.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/81/Functor_cone_%28extended%29.svg/392px-Functor_cone_%28extended%29.svg.png 2x" data-file-width="196" data-file-height="165" width="196" height="165"></a></div>
+</div>
+<p>One says that the cone (<i>N</i>, ψ) factors through the cone (<i>L</i>, φ) with the unique factorization <i>u</i>. The morphism <i>u</i> is sometimes called the <b>mediating morphism</b>.</p>
+<p>Limits are also referred to as <i><a href="https://en.wikipedia.org/wiki/Universal_cone" class="mw-redirect" title="Universal cone">universal cones</a></i>, since they are characterized by a <a href="https://en.wikipedia.org/wiki/Universal_property" title="Universal property">universal property</a>
+ (see below for more information). As with every universal property, the
+ above definition describes a balanced state of generality: The limit 
+object <i>L</i> has to be general enough to allow any other cone to factor through it; on the other hand, <i>L</i> has to be sufficiently specific, so that only <i>one</i> such factorization is possible for every cone.</p>
+<p>Limits may also be characterized as <a href="https://en.wikipedia.org/wiki/Terminal_object" class="mw-redirect" title="Terminal object">terminal objects</a> in the <a href="https://en.wikipedia.org/wiki/Category_of_cones" class="mw-redirect" title="Category of cones">category of cones</a> to <i>F</i>.</p>
+<p>It is possible that a diagram does not have a limit at all. However, 
+if a diagram does have a limit then this limit is essentially unique: it
+ is unique <a href="https://en.wikipedia.org/wiki/Up_to" title="Up to">up to</a> a unique <a href="https://en.wikipedia.org/wiki/Isomorphism" title="Isomorphism">isomorphism</a>. For this reason one often speaks of <i>the</i> limit of <i>F</i>.</p>
+<h3><span class="mw-headline" id="Colimits">Colimits</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=3" title="Edit section: Colimits">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div role="note" class="hatnote">See also: <a href="https://en.wikipedia.org/wiki/Direct_limit" title="Direct limit">Direct limit</a></div>
+<p>The <a href="https://en.wikipedia.org/wiki/Dual_%28category_theory%29" title="Dual (category theory)">dual notions</a>
+ of limits and cones are colimits and co-cones. Although it is 
+straightforward to obtain the definitions of these by inverting all 
+morphisms in the above definitions, we will explicitly state them here:</p>
+<p>A <b><a href="https://en.wikipedia.org/wiki/Co-cone" class="mw-redirect" title="Co-cone">co-cone</a></b> of a diagram <i>F</i>&nbsp;: <i>J</i> → <i>C</i> is an object <i>N</i> of <i>C</i> together with a family of morphisms</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>ψ<!-- ψ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>X</mi>
+          </mrow>
+        </msub>
+        <mo>:</mo>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>X</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">→<!-- → --></mo>
+        <mi>N</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \psi _{X}:F(X)\to N}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/20436dc83d645ecac3913695380cd142dfd4b104.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:16.381ex; height:2.843ex;" alt="{\displaystyle \psi _{X}:F(X)\to N}"></span></dd>
+</dl>
+<p>for every object <i>X</i> of <i>J</i>, such that for every morphism <i>f</i>&nbsp;: <i>X</i> → <i>Y</i> in <i>J</i>, we have ψ<sub><i>Y</i></sub> o <i>F</i>(<i>f</i>)= ψ<sub><i>X</i></sub>.</p>
+<p>A <b>colimit</b> of a diagram <i>F</i>&nbsp;: <i>J</i> → <i>C</i> is a co-cone (<i>L</i>, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>ϕ<!-- ϕ --></mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \phi }</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/72b1f30316670aee6270a28334bdf4f5072cdde4.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:1.396ex; height:2.509ex;" alt="\phi "></span>) of <i>F</i> such that for any other co-cone (<i>N</i>, ψ) of <i>F</i> there exists a unique morphism <i>u</i>&nbsp;: <i>L</i> → <i>N</i> such that <i>u</i> o <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>ϕ<!-- ϕ --></mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \phi }</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/72b1f30316670aee6270a28334bdf4f5072cdde4.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:1.396ex; height:2.509ex;" alt="\phi "></span><sub><i>X</i></sub> = ψ<sub><i>X</i></sub> for all <i>X</i> in <i>J</i>.</p>
+<div class="center">
+<div class="floatnone"><a href="https://en.wikipedia.org/wiki/File:Functor_co-cone_%28extended%29.svg" class="image" title="A universal co-cone"><img alt="A universal co-cone" src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/196px-Functor_co-cone_extended.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Functor_co-cone_%28extended%29.svg/294px-Functor_co-cone_%28extended%29.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Functor_co-cone_%28extended%29.svg/392px-Functor_co-cone_%28extended%29.svg.png 2x" data-file-width="196" data-file-height="166" width="196" height="166"></a></div>
+</div>
+<p>Colimits are also referred to as <i><a href="https://en.wikipedia.org/wiki/Universal_co-cone" class="mw-redirect" title="Universal co-cone">universal co-cones</a></i>. They can be characterized as <a href="https://en.wikipedia.org/wiki/Initial_object" class="mw-redirect" title="Initial object">initial objects</a> in the <a href="https://en.wikipedia.org/wiki/Category_of_co-cones" class="mw-redirect" title="Category of co-cones">category of co-cones</a> from <i>F</i>.</p>
+<p>As with limits, if a diagram <i>F</i> has a colimit then this colimit is unique up to a unique isomorphism.</p>
+<h3><span class="mw-headline" id="Variations">Variations</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=4" title="Edit section: Variations">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Limits and colimits can also be defined for collections of objects 
+and morphisms without the use of diagrams. The definitions are the same 
+(note that in definitions above we never needed to use composition of 
+morphisms in <i>J</i>). This variation, however, adds no new information. Any collection of objects and morphisms defines a (possibly large) <a href="https://en.wikipedia.org/wiki/Directed_graph" title="Directed graph">directed graph</a> <i>G</i>. If we let <i>J</i> be the <a href="https://en.wikipedia.org/wiki/Free_category" title="Free category">free category</a> generated by <i>G</i>, there is a universal diagram <i>F</i>&nbsp;: <i>J</i> → <i>C</i> whose image contains <i>G</i>.
+ The limit (or colimit) of this diagram is the same as the limit (or 
+colimit) of the original collection of objects and morphisms.</p>
+<p><b>Weak limit</b> and <b>weak colimits</b> are defined like limits and colimits, except that the uniqueness property of the mediating morphism is dropped.</p>
+<h2><span class="mw-headline" id="Examples">Examples</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=5" title="Edit section: Examples">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Limits_2">Limits</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=6" title="Edit section: Limits">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The definition of limits is general enough to subsume several 
+constructions useful in practical settings. In the following we will 
+consider the limit (<i>L</i>, φ) of a diagram <i>F</i>&nbsp;: <i>J</i> → <i>C</i>.</p>
+<ul>
+<li><b><a href="https://en.wikipedia.org/wiki/Terminal_object" class="mw-redirect" title="Terminal object">Terminal objects</a></b>. If <i>J</i> is the empty category there is only one diagram of shape <i>J</i>: the empty one (similar to the <a href="https://en.wikipedia.org/wiki/Empty_function" title="Empty function">empty function</a> in set theory). A cone to the empty diagram is essentially just an object of <i>C</i>. The limit of <i>F</i> is any object that is uniquely factored through by every other object. This is just the definition of a <i>terminal object</i>.</li>
+<li><b><a href="https://en.wikipedia.org/wiki/Product_%28category_theory%29" title="Product (category theory)">Products</a></b>. If <i>J</i> is a <a href="https://en.wikipedia.org/wiki/Discrete_category" title="Discrete category">discrete category</a> then a diagram <i>F</i> is essentially nothing but a <a href="https://en.wikipedia.org/wiki/Indexed_family" title="Indexed family">family</a> of objects of <i>C</i>, indexed by <i>J</i>. The limit <i>L</i> of <i>F</i> is called the <i>product</i> of these objects. The cone φ consists of a family of morphisms φ<sub><i>X</i></sub>&nbsp;: <i>L</i> → <i>F</i>(<i>X</i>) called the <i>projections</i> of the product. In the <a href="https://en.wikipedia.org/wiki/Category_of_sets" title="Category of sets">category of sets</a>, for instance, the products are given by <a href="https://en.wikipedia.org/wiki/Cartesian_product" title="Cartesian product">Cartesian products</a> and the projections are just the natural projections onto the various factors.
+<ul>
+<li><b>Powers</b>. A special case of a product is when the diagram <i>F</i> is a constant functor to an object <i>X</i> of <i>C</i>. The limit of this diagram is called the <i>J<sup>th</sup> power</i> of <i>X</i> and denoted <i>X</i><sup><i>J</i></sup>.</li>
+</ul>
+</li>
+<li><b><a href="https://en.wikipedia.org/wiki/Equalizer_%28mathematics%29" class="mw-redirect" title="Equalizer (mathematics)">Equalizers</a></b>. If <i>J</i> is a category with two objects and two parallel morphisms from object <i>1</i> to object <i>2</i> then a diagram of shape <i>J</i> is a pair of parallel morphisms in <i>C</i>. The limit <i>L</i> of such a diagram is called an <i>equalizer</i> of those morphisms.
+<ul>
+<li><b><a href="https://en.wikipedia.org/wiki/Kernel_%28category_theory%29" title="Kernel (category theory)">Kernels</a></b>. A <i>kernel</i> is a special case of an equalizer where one of the morphisms is a <a href="https://en.wikipedia.org/wiki/Zero_morphism" title="Zero morphism">zero morphism</a>.</li>
+</ul>
+</li>
+<li><b><a href="https://en.wikipedia.org/wiki/Pullback_%28category_theory%29" title="Pullback (category theory)">Pullbacks</a></b>. Let <i>F</i> be a diagram that picks out three objects <i>X</i>, <i>Y</i>, and <i>Z</i> in <i>C</i>, where the only non-identity morphisms are <i>f</i>&nbsp;: <i>X</i> → <i>Z</i> and <i>g</i>&nbsp;: <i>Y</i> → <i>Z</i>. The limit <i>L</i> of <i>F</i> is called a <i>pullback</i> or a <i>fiber product</i>. It can nicely be visualized as a <a href="https://en.wikipedia.org/wiki/Commutative_diagram" title="Commutative diagram">commutative square</a>:</li>
+</ul>
+<div class="center">
+<div class="floatnone"><a href="https://en.wikipedia.org/wiki/File:Pullback_categories.svg" class="image"><img alt="Pullback categories.svg" src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/138px-Pullback_categories.png" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/9/98/Pullback_categories.svg/207px-Pullback_categories.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/9/98/Pullback_categories.svg/276px-Pullback_categories.svg.png 2x" data-file-width="138" data-file-height="125" width="138" height="125"></a></div>
+</div>
+<ul>
+<li><b><a href="https://en.wikipedia.org/wiki/Inverse_limit" title="Inverse limit">Inverse limits</a></b>. Let <i>J</i> be a <a href="https://en.wikipedia.org/wiki/Directed_set" title="Directed set">directed</a> set (considered as a small category by adding arrows <i>i</i> → <i>j</i> if and only if <i>i</i> ≤ <i>j</i>) and let <i>F</i>&nbsp;: <i>J</i><sup>op</sup> → <i>C</i> be a diagram. The limit of <i>F</i> is called (confusingly) an <i>inverse limit</i> or <i>projective limit</i>.</li>
+<li>If <i>J</i> = <b>1</b>, the category with a single object and morphism, then a diagram of shape <i>J</i> is essentially just an object <i>X</i> of <i>C</i>. A cone to an object <i>X</i> is just a morphism with codomain <i>X</i>. A morphism <i>f</i>&nbsp;: <i>Y</i> → <i>X</i> is a limit of the diagram <i>X</i> if and only if <i>f</i> is an <a href="https://en.wikipedia.org/wiki/Isomorphism" title="Isomorphism">isomorphism</a>. More generally, if <i>J</i> is any category with an <a href="https://en.wikipedia.org/wiki/Initial_object" class="mw-redirect" title="Initial object">initial object</a> <i>i</i>, then any diagram of shape <i>J</i> has a limit, namely any object isomorphic to <i>F</i>(<i>i</i>). Such an isomorphism uniquely determines a universal cone to <i>F</i>.</li>
+<li><b>Topological limits</b>. Limits of functions are a special case of <a href="https://en.wikipedia.org/wiki/Filter_%28mathematics%29#Convergent_filter_bases" title="Filter (mathematics)">limits of filters</a>, which are related to categorical limits as follows. Given a <a href="https://en.wikipedia.org/wiki/Topological_space" title="Topological space">topological space</a> <i>X</i>, denote <i>F</i> the set of filters on <i>X</i>, <i>x</i> ∈ <i>X</i> a point, <i>V</i>(<i>x</i>) ∈ <i>F</i> the <a href="https://en.wikipedia.org/wiki/Filter_%28mathematics%29#Neighbourhood_bases" title="Filter (mathematics)">neighborhood filter</a> of <i>x</i>, <i>A</i> ∈ <i>F</i> a particular filter and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+            <mo>,</mo>
+            <mi>A</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mi>G</mi>
+        <mo>∈<!-- ∈ --></mo>
+        <mi>F</mi>
+        <mo>∣<!-- ∣ --></mo>
+        <mi>V</mi>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>∪<!-- ∪ --></mo>
+        <mi>A</mi>
+        <mo>⊂<!-- ⊂ --></mo>
+        <mi>G</mi>
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F_{x,A}=\{G\in F\mid V(x)\cup A\subset G\}}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/f8a27214e78991c7d08def37b21256a598708363.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:32.492ex; height:3.009ex;" alt="F_{{x,A}}=\{G\in F\mid V(x)\cup A\subset G\}"></span> the set of filters finer than <i>A</i> and that converge to <i>x</i>. The filters <i>F</i> are given a small and thin category structure by adding an arrow <i>A</i> → <i>B</i> if and only if <i>A</i> ⊆ <i>B</i>. The injection <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>I</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+            <mo>,</mo>
+            <mi>A</mi>
+          </mrow>
+        </msub>
+        <mo>:</mo>
+        <msub>
+          <mi>F</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+            <mo>,</mo>
+            <mi>A</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">→<!-- → --></mo>
+        <mi>F</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle I_{x,A}:F_{x,A}\to F}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/22f726bc10a0380dbe1779dd41039f2df160f4a7.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:15.631ex; height:2.843ex;" alt="I_{{x,A}}:F_{{x,A}}\to F"></span> becomes a functor and the following equivalence holds&nbsp;:</li>
+</ul>
+<dl>
+<dd>
+<dl>
+<dd><i>x</i> is a topological limit of <i>A</i> if and only if <i>A</i> is a categorical limit of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>I</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>x</mi>
+            <mo>,</mo>
+            <mi>A</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle I_{x,A}}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/e956d9156ed5eebe038916432fe7926c57709bea.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -1.005ex; width:3.918ex; height:2.843ex;" alt="I_{{x,A}}"></span></dd>
+</dl>
+</dd>
+</dl>
+<h3><span class="mw-headline" id="Colimits_2">Colimits</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=7" title="Edit section: Colimits">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Examples of colimits are given by the dual versions of the examples above:</p>
+<ul>
+<li><b><a href="https://en.wikipedia.org/wiki/Initial_object" class="mw-redirect" title="Initial object">Initial objects</a></b> are colimits of empty diagrams.</li>
+<li><b><a href="https://en.wikipedia.org/wiki/Coproduct" title="Coproduct">Coproducts</a></b> are colimits of diagrams indexed by discrete categories.
+<ul>
+<li><b>Copowers</b> are colimits of constant diagrams from discrete categories.</li>
+</ul>
+</li>
+<li><b><a href="https://en.wikipedia.org/wiki/Coequalizer" title="Coequalizer">Coequalizers</a></b> are colimits of a parallel pair of morphisms.
+<ul>
+<li><b><a href="https://en.wikipedia.org/wiki/Cokernel" title="Cokernel">Cokernels</a></b> are coequalizers of a morphism and a parallel zero morphism.</li>
+</ul>
+</li>
+<li><b><a href="https://en.wikipedia.org/wiki/Pushout_%28category_theory%29" title="Pushout (category theory)">Pushouts</a></b> are colimits of a pair of morphisms with common domain.</li>
+<li><b><a href="https://en.wikipedia.org/wiki/Direct_limit" title="Direct limit">Direct limits</a></b> are colimits of diagrams indexed by directed sets.</li>
+</ul>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=8" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Existence_of_limits">Existence of limits</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=9" title="Edit section: Existence of limits">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A given diagram <i>F</i>&nbsp;: <i>J</i> → <i>C</i> may or may not have a limit (or colimit) in <i>C</i>. Indeed, there may not even be a cone to <i>F</i>, let alone a universal cone.</p>
+<p>A category <i>C</i> is said to <b>have limits of shape <i>J</i></b> if every diagram of shape <i>J</i> has a limit in <i>C</i>. Specifically, a category <i>C</i> is said to</p>
+<ul>
+<li><b>have products</b> if it has limits of shape <i>J</i> for every <i>small</i> discrete category <i>J</i> (it need not have large products),</li>
+<li><b>have equalizers</b> if it has limits of shape <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo>∙<!-- ∙ --></mo>
+        <mo stretchy="false">⇉<!-- ⇉ --></mo>
+        <mo>∙<!-- ∙ --></mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \bullet \rightrightarrows \bullet }</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/68433e3cb42b60f286f7cd16ac3b15193d2d92da.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.505ex; width:5.97ex; height:2.176ex;" alt="\bullet \rightrightarrows \bullet "></span> (i.e. every parallel pair of morphisms has an equalizer),</li>
+<li><b>have pullbacks</b> if it has limits of shape <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo>∙<!-- ∙ --></mo>
+        <mo stretchy="false">→<!-- → --></mo>
+        <mo>∙<!-- ∙ --></mo>
+        <mo stretchy="false">←<!-- ← --></mo>
+        <mo>∙<!-- ∙ --></mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \bullet \rightarrow \bullet \leftarrow \bullet }</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/251a0b80fdd24d9b34ab42c6188fa19e5c9f3b72.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:10.768ex; height:1.843ex;" alt="\bullet \rightarrow \bullet \leftarrow \bullet "></span> (i.e. every pair of morphisms with common codomain has a pullback).</li>
+</ul>
+<p>A <b><a href="https://en.wikipedia.org/wiki/Complete_category" title="Complete category">complete category</a></b> is a category that has all small limits (i.e. all limits of shape <i>J</i> for every small category <i>J</i>).</p>
+<p>One can also make the dual definitions. A category <b>has colimits of shape <i>J</i></b> if every diagram of shape <i>J</i> has a colimit in <i>C</i>. A <b><a href="https://en.wikipedia.org/wiki/Cocomplete_category" class="mw-redirect" title="Cocomplete category">cocomplete category</a></b> is one that has all small colimits.</p>
+<p>The <b>existence theorem for limits</b> states that if a category <i>C</i> has equalizers and all products indexed by the classes Ob(<i>J</i>) and Hom(<i>J</i>), then <i>C</i> has all limits of shape <i>J</i>. In this case, the limit of a diagram <i>F</i>&nbsp;: <i>J</i> → <i>C</i> can be constructed as the equalizer of the two morphisms</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>s</mi>
+        <mo>,</mo>
+        <mi>t</mi>
+        <mo>:</mo>
+        <munder>
+          <mo>∏<!-- ∏ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>∈<!-- ∈ --></mo>
+            <mi>Ob</mi>
+            <mo>⁡<!-- ⁡ --></mo>
+            <mo stretchy="false">(</mo>
+            <mi>J</mi>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </munder>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>i</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">⇉<!-- ⇉ --></mo>
+        <munder>
+          <mo>∏<!-- ∏ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>f</mi>
+            <mo>∈<!-- ∈ --></mo>
+            <mi>Hom</mi>
+            <mo>⁡<!-- ⁡ --></mo>
+            <mo stretchy="false">(</mo>
+            <mi>J</mi>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </munder>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>cod</mi>
+        <mo>⁡<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>f</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle s,t:\prod 
+_{i\in \operatorname {Ob} (J)}F(i)\rightrightarrows \prod _{f\in 
+\operatorname {Hom} (J)}F(\operatorname {cod} (f))}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/40d8ace8b66aeb0fb2073a0b7e0fbcd32c3d0b2a.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.671ex; width:37.986ex; height:6.176ex;" alt="{\displaystyle s,t:\prod _{i\in \operatorname {Ob} (J)}F(i)\rightrightarrows \prod _{f\in \operatorname {Hom} (J)}F(\operatorname {cod} (f))}"></span></dd>
+</dl>
+<p>given (in component form) by</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mtable columnalign="right left right left right left right left right left right left" rowspacing="3pt" columnspacing="0em 2em 0em 2em 0em 2em 0em 2em 0em 2em 0em" displaystyle="true">
+            <mtr>
+              <mtd>
+                <mi>s</mi>
+              </mtd>
+              <mtd>
+                <mi></mi>
+                <mo>=</mo>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mrow class="MJX-TeXAtom-OPEN">
+                    <mo maxsize="1.2em" minsize="1.2em">(</mo>
+                  </mrow>
+                </mrow>
+                <mi>F</mi>
+                <mo stretchy="false">(</mo>
+                <mi>f</mi>
+                <mo stretchy="false">)</mo>
+                <mo>∘<!-- ∘ --></mo>
+                <msub>
+                  <mi>π<!-- π --></mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>F</mi>
+                    <mo stretchy="false">(</mo>
+                    <mi>dom</mi>
+                    <mo>⁡<!-- ⁡ --></mo>
+                    <mo stretchy="false">(</mo>
+                    <mi>f</mi>
+                    <mo stretchy="false">)</mo>
+                    <mo stretchy="false">)</mo>
+                  </mrow>
+                </msub>
+                <msub>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mrow class="MJX-TeXAtom-CLOSE">
+                      <mo maxsize="1.2em" minsize="1.2em">)</mo>
+                    </mrow>
+                  </mrow>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>f</mi>
+                    <mo>∈<!-- ∈ --></mo>
+                    <mi>Hom</mi>
+                    <mo>⁡<!-- ⁡ --></mo>
+                    <mo stretchy="false">(</mo>
+                    <mi>J</mi>
+                    <mo stretchy="false">)</mo>
+                  </mrow>
+                </msub>
+              </mtd>
+            </mtr>
+            <mtr>
+              <mtd>
+                <mi>t</mi>
+              </mtd>
+              <mtd>
+                <mi></mi>
+                <mo>=</mo>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mrow class="MJX-TeXAtom-OPEN">
+                    <mo maxsize="1.2em" minsize="1.2em">(</mo>
+                  </mrow>
+                </mrow>
+                <msub>
+                  <mi>π<!-- π --></mi>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>F</mi>
+                    <mo stretchy="false">(</mo>
+                    <mi>cod</mi>
+                    <mo>⁡<!-- ⁡ --></mo>
+                    <mo stretchy="false">(</mo>
+                    <mi>f</mi>
+                    <mo stretchy="false">)</mo>
+                    <mo stretchy="false">)</mo>
+                  </mrow>
+                </msub>
+                <msub>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mrow class="MJX-TeXAtom-CLOSE">
+                      <mo maxsize="1.2em" minsize="1.2em">)</mo>
+                    </mrow>
+                  </mrow>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi>f</mi>
+                    <mo>∈<!-- ∈ --></mo>
+                    <mi>Hom</mi>
+                    <mo>⁡<!-- ⁡ --></mo>
+                    <mo stretchy="false">(</mo>
+                    <mi>J</mi>
+                    <mo stretchy="false">)</mo>
+                  </mrow>
+                </msub>
+                <mo>.</mo>
+              </mtd>
+            </mtr>
+          </mtable>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle 
+{\begin{aligned}s&amp;={\bigl (}F(f)\circ \pi _{F(\operatorname {dom} 
+(f))}{\bigr )}_{f\in \operatorname {Hom} (J)}\\t&amp;={\bigl (}\pi 
+_{F(\operatorname {cod} (f))}{\bigr )}_{f\in \operatorname {Hom} 
+(J)}.\end{aligned}}}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/309d965bcd1113fbffe63eba4b55192d05e526f7.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.338ex; width:31.655ex; height:7.843ex;" alt="{\displaystyle {\begin{aligned}s&amp;={\bigl (}F(f)\circ \pi _{F(\operatorname {dom} (f))}{\bigr )}_{f\in \operatorname {Hom} (J)}\\t&amp;={\bigl (}\pi _{F(\operatorname {cod} (f))}{\bigr )}_{f\in \operatorname {Hom} (J)}.\end{aligned}}}"></span></dd>
+</dl>
+<p>There is a dual <b>existence theorem for colimits</b> in terms of 
+coequalizers and coproducts. Both of these theorems give sufficient and 
+necessary conditions for the existence of all (co)limits of shape <i>J</i>.</p>
+<h3><span class="mw-headline" id="Universal_property">Universal property</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=10" title="Edit section: Universal property">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Limits and colimits are important special cases of <a href="https://en.wikipedia.org/wiki/Universal_construction" class="mw-redirect" title="Universal construction">universal constructions</a>.</p>
+<p>Let <i>C</i> be a category and let <i>J</i> be a small index category. The <a href="https://en.wikipedia.org/wiki/Functor_category" title="Functor category">functor category</a> <i>C</i><sup><i>J</i></sup> may be thought of as the category of all diagrams of shape <i>J</i> in <i>C</i>. The <i><a href="https://en.wikipedia.org/wiki/Diagonal_functor" title="Diagonal functor">diagonal functor</a></i></p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi mathvariant="normal">Δ<!-- Δ --></mi>
+        <mo>:</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi class="MJX-tex-caligraphic" mathvariant="script">C</mi>
+          </mrow>
+        </mrow>
+        <mo stretchy="false">→<!-- → --></mo>
+        <msup>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi class="MJX-tex-caligraphic" mathvariant="script">C</mi>
+            </mrow>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi class="MJX-tex-caligraphic" mathvariant="script">J</mi>
+            </mrow>
+          </mrow>
+        </msup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \Delta :{\mathcal {C}}\to {\mathcal {C}}^{\mathcal {J}}}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/3abaadde68f33903a1acd2b6af465f96403835d9.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:11.64ex; height:2.676ex;" alt="\Delta :{\mathcal  C}\to {\mathcal  C}^{{{\mathcal  J}}}"></span></dd>
+</dl>
+<p>is the functor that maps each object <i>N</i> in <i>C</i> to the constant functor Δ(<i>N</i>)&nbsp;: <i>J</i> → <i>C</i> to <i>N</i>. That is, Δ(<i>N</i>)(<i>X</i>) = <i>N</i> for each object <i>X</i> in <i>J</i> and Δ(<i>N</i>)(<i>f</i>) = id<sub><i>N</i></sub> for each morphism <i>f</i> in <i>J</i>.</p>
+<p>Given a diagram <i>F</i>: <i>J</i> → <i>C</i> (thought of as an object in <i>C</i><sup><i>J</i></sup>), a <a href="https://en.wikipedia.org/wiki/Natural_transformation" title="Natural transformation">natural transformation</a> ψ&nbsp;: Δ(<i>N</i>) → <i>F</i> (which is just a morphism in the category <i>C</i><sup><i>J</i></sup>) is the same thing as a cone from <i>N</i> to <i>F</i>. To see this, first note that Δ(<i>N</i>)(<i>X</i>) = <i>N</i> for all X implies that the components of ψ are morphisms ψ<sub><i>X</i></sub>&nbsp;: <i>N</i> → <i>F</i>(<i>X</i>), which all share the domain <i>N</i>.
+ Moreover, the requirement that the cones diagrams commute is true 
+simply because this ψ is a natural transformation. (Dually, a natural 
+transformation ψ&nbsp;: <i>F</i> → Δ(<i>N</i>) is the same thing as a co-cone from <i>F</i> to <i>N</i>.)</p>
+<p>Therefore, the definitions of limits and colimits can then be restated in the form:</p>
+<ul>
+<li>A limit of <i>F</i> is a universal morphism from Δ to <i>F</i>.</li>
+<li>A colimit of <i>F</i> is a universal morphism from <i>F</i> to Δ.</li>
+</ul>
+<h3><span class="mw-headline" id="Adjunctions">Adjunctions</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=11" title="Edit section: Adjunctions">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Like all universal constructions, the formation of limits and 
+colimits is functorial in nature. In other words, if every diagram of 
+shape <i>J</i> has a limit in <i>C</i> (for <i>J</i> small) there exists a <b>limit functor</b></p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo movablelimits="true" form="prefix">lim</mo>
+        <mo>:</mo>
+        <msup>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi class="MJX-tex-caligraphic" mathvariant="script">C</mi>
+            </mrow>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi class="MJX-tex-caligraphic" mathvariant="script">J</mi>
+            </mrow>
+          </mrow>
+        </msup>
+        <mo stretchy="false">→<!-- → --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi class="MJX-tex-caligraphic" mathvariant="script">C</mi>
+          </mrow>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \lim :{\mathcal {C}}^{\mathcal {J}}\to {\mathcal {C}}}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/3cfc59dbb1f7db2f4ca102c318b7666dcca55603.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:12.955ex; height:2.676ex;" alt="{\displaystyle \lim :{\mathcal {C}}^{\mathcal {J}}\to {\mathcal {C}}}"></span></dd>
+</dl>
+<p>which assigns each diagram its limit and each <a href="https://en.wikipedia.org/wiki/Natural_transformation" title="Natural transformation">natural transformation</a> η&nbsp;: <i>F</i> → <i>G</i> the unique morphism lim η&nbsp;: lim <i>F</i> → lim <i>G</i> commuting with the corresponding universal cones. This functor is <a href="https://en.wikipedia.org/wiki/Right_adjoint" class="mw-redirect" title="Right adjoint">right adjoint</a> to the diagonal functor Δ&nbsp;: <i>C</i> → <i>C</i><sup><i>J</i></sup>. This adjunction gives a bijection between the set of all morphisms from <i>N</i> to lim <i>F</i> and the set of all cones from <i>N</i> to <i>F</i></p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>Hom</mi>
+        <mo>⁡<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>N</mi>
+        <mo>,</mo>
+        <mo movablelimits="true" form="prefix">lim</mo>
+        <mi>F</mi>
+        <mo stretchy="false">)</mo>
+        <mo>≅<!-- ≅ --></mo>
+        <mi>Cone</mi>
+        <mo>⁡<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>N</mi>
+        <mo>,</mo>
+        <mi>F</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {Hom} (N,\lim F)\cong \operatorname {Cone} (N,F)}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/e36ec0ff5eb49b1c6cbe3ab855f5fb34126dc332.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:30.237ex; height:2.843ex;" alt="{\displaystyle \operatorname {Hom} (N,\lim F)\cong \operatorname {Cone} (N,F)}"></span></dd>
+</dl>
+<p>which is natural in the variables <i>N</i> and <i>F</i>. The counit of this adjunction is simply the universal cone from lim <i>F</i> to <i>F</i>. If the index category <i>J</i> is <a href="https://en.wikipedia.org/wiki/Connected_category" title="Connected category">connected</a> (and nonempty) then the unit of the adjunction is an isomorphism so that lim is a left inverse of Δ. This fails if <i>J</i> is not connected. For example, if <i>J</i> is a discrete category, the components of the unit are the <a href="https://en.wikipedia.org/wiki/Diagonal_morphism" title="Diagonal morphism">diagonal morphisms</a> δ&nbsp;: <i>N</i> → <i>N</i><sup><i>J</i></sup>.</p>
+<p>Dually, if every diagram of shape <i>J</i> has a colimit in <i>C</i> (for <i>J</i> small) there exists a <b>colimit functor</b></p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>colim</mi>
+        <mo>:</mo>
+        <msup>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi class="MJX-tex-caligraphic" mathvariant="script">C</mi>
+            </mrow>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi class="MJX-tex-caligraphic" mathvariant="script">J</mi>
+            </mrow>
+          </mrow>
+        </msup>
+        <mo stretchy="false">→<!-- → --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi class="MJX-tex-caligraphic" mathvariant="script">C</mi>
+          </mrow>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {colim} :{\mathcal {C}}^{\mathcal {J}}\to {\mathcal {C}}}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/2d33b6004c12762ef127d9a12ec24802d8b70694.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:15.171ex; height:2.676ex;" alt="{\displaystyle \operatorname {colim} :{\mathcal {C}}^{\mathcal {J}}\to {\mathcal {C}}}"></span></dd>
+</dl>
+<p>which assigns each diagram its colimit. This functor is <a href="https://en.wikipedia.org/wiki/Left_adjoint" class="mw-redirect" title="Left adjoint">left adjoint</a> to the diagonal functor Δ&nbsp;: <i>C</i> → <i>C</i><sup><i>J</i></sup>, and one has a natural isomorphism</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>Hom</mi>
+        <mo>⁡<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>colim</mi>
+        <mo>⁡<!-- ⁡ --></mo>
+        <mi>F</mi>
+        <mo>,</mo>
+        <mi>N</mi>
+        <mo stretchy="false">)</mo>
+        <mo>≅<!-- ≅ --></mo>
+        <mi>Cocone</mi>
+        <mo>⁡<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>F</mi>
+        <mo>,</mo>
+        <mi>N</mi>
+        <mo stretchy="false">)</mo>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {Hom} (\operatorname {colim} F,N)\cong \operatorname {Cocone} (F,N).}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/96490ce783955703e81efe5071a9468e930953f7.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:35.326ex; height:2.843ex;" alt="{\displaystyle \operatorname {Hom} (\operatorname {colim} F,N)\cong \operatorname {Cocone} (F,N).}"></span></dd>
+</dl>
+<p>The unit of this adjunction is the universal cocone from <i>F</i> to colim <i>F</i>. If <i>J</i> is connected (and nonempty) then the counit is an isomorphism, so that colim is a left inverse of Δ.</p>
+<p>Note that both the limit and the colimit functors are <a href="https://en.wikipedia.org/wiki/Covariant_functor" class="mw-redirect" title="Covariant functor"><i>covariant</i></a> functors.</p>
+<h3><span class="mw-headline" id="As_representations_of_functors">As representations of functors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=12" title="Edit section: As representations of functors">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>One can use <a href="https://en.wikipedia.org/wiki/Hom_functor" title="Hom functor">Hom functors</a> to relate limits and colimits in a category <i>C</i> to limits in <b>Set</b>, the <a href="https://en.wikipedia.org/wiki/Category_of_sets" title="Category of sets">category of sets</a>. This follows, in part, from the fact the covariant Hom functor Hom(<i>N</i>, –)&nbsp;: <i>C</i> → <b>Set</b> <a href="#Preservation_of_limits">preserves all limits</a> in <i>C</i>. By duality, the contravariant Hom functor must take colimits to limits.</p>
+<p>If a diagram <i>F</i>&nbsp;: <i>J</i> → <i>C</i> has a limit in <i>C</i>, denoted by lim <i>F</i>, there is a <a href="https://en.wikipedia.org/wiki/Canonical_isomorphism" class="mw-redirect" title="Canonical isomorphism">canonical isomorphism</a></p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>Hom</mi>
+        <mo>⁡<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>N</mi>
+        <mo>,</mo>
+        <mo movablelimits="true" form="prefix">lim</mo>
+        <mi>F</mi>
+        <mo stretchy="false">)</mo>
+        <mo>≅<!-- ≅ --></mo>
+        <mo movablelimits="true" form="prefix">lim</mo>
+        <mi>Hom</mi>
+        <mo>⁡<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>N</mi>
+        <mo>,</mo>
+        <mi>F</mi>
+        <mo>−<!-- − --></mo>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {Hom} (N,\lim F)\cong \lim \operatorname {Hom} (N,F-)}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/39c2bfa880c6b4d22cc43a4f92835f69e4c70e26.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:35.369ex; height:2.843ex;" alt="{\displaystyle \operatorname {Hom} (N,\lim F)\cong \lim \operatorname {Hom} (N,F-)}"></span></dd>
+</dl>
+<p>which is natural in the variable <i>N</i>. Here the functor Hom(<i>N</i>, <i>F</i>–) is the composition of the Hom functor Hom(<i>N</i>, –) with <i>F</i>. This isomorphism is the unique one which respects the limiting cones.</p>
+<p>One can use the above relationship to define the limit of <i>F</i> in <i>C</i>. The first step is to observe that the limit of the functor Hom(<i>N</i>, <i>F</i>–) can be identified with the set of all cones from <i>N</i> to <i>F</i>:</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo movablelimits="true" form="prefix">lim</mo>
+        <mi>Hom</mi>
+        <mo>⁡<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>N</mi>
+        <mo>,</mo>
+        <mi>F</mi>
+        <mo>−<!-- − --></mo>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>Cone</mi>
+        <mo>⁡<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>N</mi>
+        <mo>,</mo>
+        <mi>F</mi>
+        <mo stretchy="false">)</mo>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \lim \operatorname {Hom} (N,F-)=\operatorname {Cone} (N,F).}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/ab5ca7e0425699230839f323d4a1a1ae1c8107ab.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:32.713ex; height:2.843ex;" alt="{\displaystyle \lim \operatorname {Hom} (N,F-)=\operatorname {Cone} (N,F).}"></span></dd>
+</dl>
+<p>The limiting cone is given by the family of maps π<sub><i>X</i></sub>&nbsp;: Cone(<i>N</i>, <i>F</i>) → Hom(<i>N</i>, <i>FX</i>) where π<sub><i>X</i></sub>(ψ) = ψ<sub><i>X</i></sub>. If one is given an object <i>L</i> of <i>C</i> together with a <a href="https://en.wikipedia.org/wiki/Natural_isomorphism" class="mw-redirect" title="Natural isomorphism">natural isomorphism</a> Φ&nbsp;: Hom(–, <i>L</i>) → Cone(–, <i>F</i>), the object <i>L</i> will be a limit of <i>F</i> with the limiting cone given by Φ<sub><i>L</i></sub>(id<sub><i>L</i></sub>). In fancy language, this amounts to saying that a limit of <i>F</i> is a <a href="https://en.wikipedia.org/wiki/Representable_functor" title="Representable functor">representation</a> of the functor Cone(–, <i>F</i>)&nbsp;: <i>C</i> → <b>Set</b>.</p>
+<p>Dually, if a diagram <i>F</i>&nbsp;: <i>J</i> → <i>C</i> has a colimit in <i>C</i>, denoted colim <i>F</i>, there is a unique canonical isomorphism</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>Hom</mi>
+        <mo>⁡<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>colim</mi>
+        <mo>⁡<!-- ⁡ --></mo>
+        <mi>F</mi>
+        <mo>,</mo>
+        <mi>N</mi>
+        <mo stretchy="false">)</mo>
+        <mo>≅<!-- ≅ --></mo>
+        <mo movablelimits="true" form="prefix">lim</mo>
+        <mi>Hom</mi>
+        <mo>⁡<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>F</mi>
+        <mo>−<!-- − --></mo>
+        <mo>,</mo>
+        <mi>N</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {Hom} (\operatorname {colim} F,N)\cong \lim \operatorname {Hom} (F-,N)}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/aaf3945bf1be4eab5d19d2dc5cb7fca8d9d4762b.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:37.585ex; height:2.843ex;" alt="{\displaystyle \operatorname {Hom} (\operatorname {colim} F,N)\cong \lim \operatorname {Hom} (F-,N)}"></span></dd>
+</dl>
+<p>which is natural in the variable <i>N</i> and respects the colimiting cones. Identifying the limit of Hom(<i>F</i>–, <i>N</i>) with the set Cocone(<i>F</i>, <i>N</i>), this relationship can be used to define the colimit of the diagram <i>F</i> as a representation of the functor Cocone(<i>F</i>, –).</p>
+<h3><span class="mw-headline" id="Interchange_of_limits_and_colimits_of_sets">Interchange of limits and colimits of sets</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=13" title="Edit section: Interchange of limits and colimits of sets">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Let <i>I</i> be a finite category and <i>J</i> be a small <a href="https://en.wikipedia.org/wiki/Filtered_category" title="Filtered category">filtered category</a>. For any <a href="https://en.wikipedia.org/wiki/Bifunctor" class="mw-redirect" title="Bifunctor">bifunctor</a></p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>F</mi>
+        <mo>:</mo>
+        <mi>I</mi>
+        <mo>×<!-- × --></mo>
+        <mi>J</mi>
+        <mo stretchy="false">→<!-- → --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="bold">S</mi>
+          <mi mathvariant="bold">e</mi>
+          <mi mathvariant="bold">t</mi>
+        </mrow>
+        <mo>,</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F:I\times J\to \mathbf {Set} ,}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/0da56ac2e2150d8068a379b7f32d8237b1d1f9fd.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:17.277ex; height:2.509ex;" alt="{\displaystyle F:I\times J\to \mathbf {Set} ,}"></span></dd>
+</dl>
+<p>there is a <a href="https://en.wikipedia.org/wiki/Natural_isomorphism" class="mw-redirect" title="Natural isomorphism">natural isomorphism</a></p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <munder>
+          <mi>colim</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>J</mi>
+          </mrow>
+        </munder>
+        <mo>⁡<!-- ⁡ --></mo>
+        <munder>
+          <mo movablelimits="true" form="prefix">lim</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>I</mi>
+          </mrow>
+        </munder>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>i</mi>
+        <mo>,</mo>
+        <mi>j</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">→<!-- → --></mo>
+        <munder>
+          <mo movablelimits="true" form="prefix">lim</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>I</mi>
+          </mrow>
+        </munder>
+        <munder>
+          <mi>colim</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>J</mi>
+          </mrow>
+        </munder>
+        <mo>⁡<!-- ⁡ --></mo>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>i</mi>
+        <mo>,</mo>
+        <mi>j</mi>
+        <mo stretchy="false">)</mo>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {colim} \limits _{J}\lim _{I}F(i,j)\rightarrow \lim _{I}\operatorname {colim} \limits _{J}F(i,j).}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/e2735a483e4de1b0c43cab3e4d511656bb243f3b.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.171ex; width:36.12ex; height:4.176ex;" alt="{\displaystyle \operatorname {colim} \limits _{J}\lim _{I}F(i,j)\rightarrow \lim _{I}\operatorname {colim} \limits _{J}F(i,j).}"></span></dd>
+</dl>
+<p>In words, filtered colimits in <b>Set</b> commute with finite limits.</p>
+<h2><span class="mw-headline" id="Functors_and_limits">Functors and limits</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=14" title="Edit section: Functors and limits">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>If <i>F</i>&nbsp;: <i>J</i> → <i>C</i> is a diagram in <i>C</i> and <i>G</i>&nbsp;: <i>C</i> → <i>D</i> is a <a href="https://en.wikipedia.org/wiki/Functor" title="Functor">functor</a> then by composition (recall that a diagram is just a functor) one obtains a diagram <i>GF</i>&nbsp;: <i>J</i> → <i>D</i>. A natural question is then:</p>
+<dl>
+<dd>“How are the limits of <i>GF</i> related to those of <i>F</i>?”</dd>
+</dl>
+<h3><span class="mw-headline" id="Preservation_of_limits">Preservation of limits</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=15" title="Edit section: Preservation of limits">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A functor <i>G</i>&nbsp;: <i>C</i> → <i>D</i> induces a map from Cone(<i>F</i>) to Cone(<i>GF</i>): if Ψ is a cone from <i>N</i> to <i>F</i> then <i>G</i>Ψ is a cone from <i>GN</i> to <i>GF</i>. The functor <i>G</i> is said to <b>preserve the limits of <i>F</i></b> if (<i>GL</i>, <i>G</i>φ) is a limit of <i>GF</i> whenever (<i>L</i>, φ) is a limit of <i>F</i>. (Note that if the limit of <i>F</i> does not exist, then <i>G</i> <a href="https://en.wikipedia.org/wiki/Vacuous_truth" title="Vacuous truth">vacuously</a> preserves the limits of <i>F</i>.)</p>
+<p>A functor <i>G</i> is said to <b>preserve all limits of shape <i>J</i></b> if it preserves the limits of all diagrams <i>F</i>&nbsp;: <i>J</i> → <i>C</i>. For example, one can say that <i>G</i> preserves products, equalizers, pullbacks, etc. A <b>continuous functor</b> is one that preserves all <i>small</i> limits.</p>
+<p>One can make analogous definitions for colimits. For instance, a functor <i>G</i> preserves the colimits of <i>F</i> if <i>G</i>(<i>L</i>, φ) is a colimit of <i>GF</i> whenever (<i>L</i>, φ) is a colimit of <i>F</i>. A <b>cocontinuous functor</b> is one that preserves all <i>small</i> colimits.</p>
+<p>If <i>C</i> is a <a href="https://en.wikipedia.org/wiki/Complete_category" title="Complete category">complete category</a>, then, by the above existence theorem for limits, a functor <i>G</i>&nbsp;: <i>C</i> → <i>D</i> is continuous if and only if it preserves (small) products and equalizers. Dually, <i>G</i> is cocontinuous if and only if it preserves (small) coproducts and coequalizers.</p>
+<p>An important property of <a href="https://en.wikipedia.org/wiki/Adjoint_functors" title="Adjoint functors">adjoint functors</a>
+ is that every right adjoint functor is continuous and every left 
+adjoint functor is cocontinuous. Since adjoint functors exist in 
+abundance, this gives numerous examples of continuous and cocontinuous 
+functors.</p>
+<p>For a given diagram <i>F</i>&nbsp;: <i>J</i> → <i>C</i> and functor <i>G</i>&nbsp;: <i>C</i> → <i>D</i>, if both <i>F</i> and <i>GF</i> have specified limits there is a unique canonical morphism</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>τ<!-- τ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>F</mi>
+          </mrow>
+        </msub>
+        <mo>:</mo>
+        <mi>G</mi>
+        <mo movablelimits="true" form="prefix">lim</mo>
+        <mi>F</mi>
+        <mo stretchy="false">→<!-- → --></mo>
+        <mo movablelimits="true" form="prefix">lim</mo>
+        <mi>G</mi>
+        <mi>F</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \tau _{F}:G\lim F\to \lim GF}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/f2b1f6439ea452aee744bc2df0cb60be80a6a22b.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:22.929ex; height:2.509ex;" alt="{\displaystyle \tau _{F}:G\lim F\to \lim GF}"></span></dd>
+</dl>
+<p>which respects the corresponding limit cones. The functor <i>G</i> preserves the limits of <i>F</i> if and only this map is an isomorphism. If the categories <i>C</i> and <i>D</i> have all limits of shape <i>J</i> then lim is a functor and the morphisms τ<sub><i>F</i></sub> form the components of a <a href="https://en.wikipedia.org/wiki/Natural_transformation" title="Natural transformation">natural transformation</a></p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>τ<!-- τ --></mi>
+        <mo>:</mo>
+        <mi>G</mi>
+        <mo movablelimits="true" form="prefix">lim</mo>
+        <mo stretchy="false">→<!-- → --></mo>
+        <mo movablelimits="true" form="prefix">lim</mo>
+        <msup>
+          <mi>G</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>J</mi>
+          </mrow>
+        </msup>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \tau :G\lim \to \lim G^{J}.}</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/5aececf265f7dd84d4cd209444540342dc7033dd.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:19.692ex; height:2.676ex;" alt="{\displaystyle \tau :G\lim \to \lim G^{J}.}"></span></dd>
+</dl>
+<p>The functor <i>G</i> preserves all limits of shape <i>J</i> if and only if τ is a natural isomorphism. In this sense, the functor <i>G</i> can be said to <i>commute with limits</i> (<a href="https://en.wikipedia.org/wiki/Up_to" title="Up to">up to</a> a canonical natural isomorphism).</p>
+<p>Preservation of limits and colimits is a concept that only applies to <i><a href="https://en.wikipedia.org/wiki/Covariant_functor" class="mw-redirect" title="Covariant functor">covariant</a></i> functors. For <a href="https://en.wikipedia.org/wiki/Contravariant_functor" class="mw-redirect" title="Contravariant functor">contravariant functors</a> the corresponding notions would be a functor that takes colimits to limits, or one that takes limits to colimits.</p>
+<h3><span class="mw-headline" id="Lifting_of_limits">Lifting of limits</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=16" title="Edit section: Lifting of limits">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A functor <i>G</i>&nbsp;: <i>C</i> → <i>D</i> is said to <b>lift limits</b> for a diagram <i>F</i>&nbsp;: <i>J</i> → <i>C</i> if whenever (<i>L</i>, φ) is a limit of <i>GF</i> there exists a limit (<i>L</i>′, φ′) of <i>F</i> such that <i>G</i>(<i>L</i>′, φ′) = (<i>L</i>, φ). A functor <i>G</i> <b>lifts limits of shape <i>J</i></b> if it lifts limits for all diagrams of shape <i>J</i>. One can therefore talk about lifting products, equalizers, pullbacks, etc. Finally, one says that <i>G</i> <b>lifts limits</b> if it lifts all limits. There are dual definitions for the lifting of colimits.</p>
+<p>A functor <i>G</i> <b>lifts limits uniquely</b> for a diagram <i>F</i> if there is a unique preimage cone (<i>L</i>′, φ′) such that (<i>L</i>′, φ′) is a limit of <i>F</i> and <i>G</i>(<i>L</i>′, φ′) = (<i>L</i>, φ). One can show that <i>G</i> lifts limits uniquely if and only if it lifts limits and is <a href="https://en.wikipedia.org/wiki/Amnestic_functor" title="Amnestic functor">amnestic</a>.</p>
+<p>Lifting of limits is clearly related to preservation of limits. If <i>G</i> lifts limits for a diagram <i>F</i> and <i>GF</i> has a limit, then <i>F</i> also has a limit and <i>G</i> preserves the limits of <i>F</i>. It follows that:</p>
+<ul>
+<li>If <i>G</i> lifts limits of all shape <i>J</i> and <i>D</i> has all limits of shape <i>J</i>, then <i>C</i> also has all limits of shape <i>J</i> and <i>G</i> preserves these limits.</li>
+<li>If <i>G</i> lifts all small limits and <i>D</i> is complete, then <i>C</i> is also complete and <i>G</i> is continuous.</li>
+</ul>
+<p>The dual statements for colimits are equally valid.</p>
+<h3><span class="mw-headline" id="Creation_and_reflection_of_limits">Creation and reflection of limits</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=17" title="Edit section: Creation and reflection of limits">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Let <i>F</i>&nbsp;: <i>J</i> → <i>C</i> be a diagram. A functor <i>G</i>&nbsp;: <i>C</i> → <i>D</i> is said to</p>
+<ul>
+<li><b>create limits</b> for <i>F</i> if whenever (<i>L</i>, φ) is a limit of <i>GF</i> there exists a unique cone (<i>L</i>′, φ′) to <i>F</i> such that <i>G</i>(<i>L</i>′, φ′) ≅ (<i>L</i>, φ), and furthermore, this cone is a limit of <i>F</i>.</li>
+<li><b>reflect limits</b> for <i>F</i> if each cone to <i>F</i> whose image under <i>G</i> is a limit of <i>GF</i> is already a limit of <i>F</i>.</li>
+</ul>
+<p>Dually, one can define creation and reflection of colimits.</p>
+<p>The following statements are easily seen to be equivalent:</p>
+<ul>
+<li>The functor <i>G</i> creates limits.</li>
+<li>The functor <i>G</i> lifts limits uniquely and reflects limits.</li>
+</ul>
+<p>There are examples of functors which lift limits uniquely but neither create nor reflect them.</p>
+<h3><span class="mw-headline" id="Examples_2">Examples</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=18" title="Edit section: Examples">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<ul>
+<li>Every <a href="https://en.wikipedia.org/wiki/Representable_functor" title="Representable functor">representable functor</a> <i>C</i> → <b>Set</b> preserves limits (but not necessarily colimits). In particular, for any object <i>A</i> of <i>C</i>, this is true of the covariant <a href="https://en.wikipedia.org/wiki/Hom_functor" title="Hom functor">Hom functor</a> Hom(<i>A</i>,–)&nbsp;: <i>C</i> → <b>Set</b>.</li>
+<li>The <a href="https://en.wikipedia.org/wiki/Forgetful_functor" title="Forgetful functor">forgetful functor</a> <i>U</i>&nbsp;: <b>Grp</b> → <b>Set</b> creates (and preserves) all small limits and <a href="https://en.wikipedia.org/wiki/Filtered_colimit" class="mw-redirect" title="Filtered colimit">filtered colimits</a>; however, <i>U</i> does not preserve coproducts. This situation is typical of algebraic forgetful functors.</li>
+<li>The <a href="https://en.wikipedia.org/wiki/Free_functor" class="mw-redirect" title="Free functor">free functor</a> <i>F</i>&nbsp;: <b>Set</b> → <b>Grp</b> (which assigns to every set <i>S</i> the <a href="https://en.wikipedia.org/wiki/Free_group" title="Free group">free group</a> over <i>S</i>) is left adjoint to forgetful functor <i>U</i> and is, therefore, cocontinuous. This explains why the <a href="https://en.wikipedia.org/wiki/Free_product" title="Free product">free product</a> of two free groups <i>G</i> and <i>H</i> is the free group generated by the <a href="https://en.wikipedia.org/wiki/Disjoint_union" title="Disjoint union">disjoint union</a> of the generators of <i>G</i> and <i>H</i>.</li>
+<li>The inclusion functor <b>Ab</b> → <b>Grp</b> creates limits but does not preserve coproducts (the coproduct of two abelian groups being the <a href="https://en.wikipedia.org/wiki/Direct_sum_of_abelian_groups" class="mw-redirect" title="Direct sum of abelian groups">direct sum</a>).</li>
+<li>The forgetful functor <b>Top</b> → <b>Set</b> lifts limits and colimits uniquely but creates neither.</li>
+<li>Let <b>Met</b><sub><i>c</i></sub> be the category of <a href="https://en.wikipedia.org/wiki/Metric_space" title="Metric space">metric spaces</a> with <a href="https://en.wikipedia.org/wiki/Continuous_function" title="Continuous function">continuous functions</a> for morphisms. The forgetful functor <b>Met</b><sub><i>c</i></sub> → <b>Set</b> lifts finite limits but does not lift them uniquely.</li>
+</ul>
+<h2><span class="mw-headline" id="A_note_on_terminology">A note on terminology</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=19" title="Edit section: A note on terminology">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Older terminology referred to limits as "inverse limits" or 
+"projective limits," and to colimits as "direct limits" or "inductive 
+limits." This has been the source of a lot of confusion.</p>
+<p>There are several ways to remember the modern terminology. First of all,</p>
+<ul>
+<li>cokernels,</li>
+<li>coproducts,</li>
+<li>coequalizers, and</li>
+<li>codomains</li>
+</ul>
+<p>are types of colimits, whereas</p>
+<ul>
+<li>kernels,</li>
+<li>products</li>
+<li>equalizers, and</li>
+<li>domains</li>
+</ul>
+<p>are types of limits. Second, the prefix "co" implies "first variable of the <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>Hom</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {Hom} }</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/5d0830df5db5d5e66a6c5701fbff3beb967fab55.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:4.873ex; height:2.176ex;" alt="\operatorname {Hom}"></span>".
+ Terms like "cohomology" and "cofibration" all have a slightly stronger 
+association with the first variable, i.e., the contravariant variable, 
+of the <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>Hom</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {Hom} }</annotation>
+  </semantics>
+</math></span><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/5d0830df5db5d5e66a6c5701fbff3beb967fab55.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:4.873ex; height:2.176ex;" alt="\operatorname {Hom}"></span> bifunctor.</p>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=20" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><cite class="citation book">Adámek, Jiří; Horst Herrlich; George E. Strecker (1990). <a rel="nofollow" class="external text" href="http://katmat.math.uni-bremen.de/acc/acc.pdf"><i>Abstract and Concrete Categories</i></a> <span style="font-size:85%;">(PDF)</span>. John Wiley &amp; Sons. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-471-60922-6" title="Special:BookSources/0-471-60922-6">0-471-60922-6</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALimit+%28category+theory%29&amp;rft.aufirst=Ji%C5%99%C3&amp;rft.au=George+E.+Strecker&amp;rft.au=Horst+Herrlich&amp;rft.aulast=Ad%C3%A1mek&amp;rft.btitle=Abstract+and+Concrete+Categories&amp;rft.date=1990&amp;rft.genre=book&amp;rft_id=http%3A%2F%2Fkatmat.math.uni-bremen.de%2Facc%2Facc.pdf&amp;rft.isbn=0-471-60922-6&amp;rft.pub=John+Wiley+%26+Sons&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><cite class="citation book"><a href="https://en.wikipedia.org/wiki/Saunders_Mac_Lane" title="Saunders Mac Lane">Mac Lane, Saunders</a> (1998). <i><a href="https://en.wikipedia.org/wiki/Categories_for_the_Working_Mathematician" title="Categories for the Working Mathematician">Categories for the Working Mathematician</a></i>. <a href="https://en.wikipedia.org/wiki/Graduate_Texts_in_Mathematics" title="Graduate Texts in Mathematics">Graduate Texts in Mathematics</a>. <b>5</b> (2nd ed.). <a href="https://en.wikipedia.org/wiki/Springer-Verlag" class="mw-redirect" title="Springer-Verlag">Springer-Verlag</a>. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-387-98403-8" title="Special:BookSources/0-387-98403-8">0-387-98403-8</a>. <a href="https://en.wikipedia.org/wiki/Zentralblatt_MATH" title="Zentralblatt MATH">Zbl</a>&nbsp;<a rel="nofollow" class="external text" href="https://zbmath.org/?format=complete&amp;q=an:0906.18001">0906.18001</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALimit+%28category+theory%29&amp;rft.aufirst=Saunders&amp;rft.aulast=Mac+Lane&amp;rft.btitle=Categories+for+the+Working+Mathematician&amp;rft.date=1998&amp;rft.edition=2nd&amp;rft.genre=book&amp;rft_id=%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A0906.18001&amp;rft.isbn=0-387-98403-8&amp;rft.pub=Springer-Verlag&amp;rft.series=Graduate+Texts+in+Mathematics&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><cite class="citation book">Borceux, Francis (1994). "Limits". <i>Handbook of categorical algebra</i>. Encyclopedia of mathematics and its applications 50-51, 53 [i.e. 52]. Volume 1. Cambridge University Press. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-521-44178-1" title="Special:BookSources/0-521-44178-1">0-521-44178-1</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3ALimit+%28category+theory%29&amp;rft.atitle=Limits&amp;rft.aufirst=Francis&amp;rft.aulast=Borceux&amp;rft.btitle=Handbook+of+categorical+algebra&amp;rft.date=1994&amp;rft.genre=bookitem&amp;rft.isbn=0-521-44178-1&amp;rft.pub=Cambridge+University+Press&amp;rft.series=Encyclopedia+of+mathematics+and+its+applications+50-51%2C+53+%5Bi.e.+52%5D&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+</ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit&amp;section=21" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://www.j-paine.org/cgi-bin/webcats/webcats.php">Interactive Web page</a> which generates examples of limits and colimits in the category of finite sets. Written by <a rel="nofollow" class="external text" href="http://www.j-paine.org/">Jocelyn Paine</a>.</li>
+<li><a rel="nofollow" class="external text" href="https://ncatlab.org/nlab/show/limit">Limit</a> in <i><a href="https://en.wikipedia.org/wiki/NLab" title="NLab">nLab</a></i></li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1281
+Cached time: 20170312014906
+Cache expiry: 2592000
+Dynamic content: false
+CPU time usage: 0.108 seconds
+Real time usage: 0.213 seconds
+Preprocessor visited node count: 496/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 9526/2097152 bytes
+Template argument size: 119/2097152 bytes
+Highest expansion depth: 7/40
+Expensive parser function count: 1/500
+Lua time usage: 0.040/10.000 seconds
+Lua memory usage: 2.08 MB/50 MB
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   95.382      1 -total
+ 49.93%   47.625      1 Template:More_footnotes
+ 38.26%   36.491      3 Template:Cite_book
+ 29.13%   27.789      1 Template:Ambox
+  8.23%    7.851      1 Template:See_also
+  1.57%    1.494      1 Template:Main_other
+  1.33%    1.269      1 Template:Nlab
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:39248-0!*!0!!en!4!*!math=5 and timestamp 20170312014913 and revision id 769862420
+ -->
+<noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;oldid=769862420">https://en.wikipedia.org/w/index.php?title=Limit_(category_theory)&amp;oldid=769862420</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="https://en.wikipedia.org/wiki/Category:Limits_%28category_theory%29" title="Category:Limits (category theory)">Limits (category theory)</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="https://en.wikipedia.org/wiki/Category:Articles_lacking_in-text_citations_from_March_2013" title="Category:Articles lacking in-text citations from March 2013">Articles lacking in-text citations from March 2013</a></li><li><a href="https://en.wikipedia.org/wiki/Category:All_articles_lacking_in-text_citations" title="Category:All articles lacking in-text citations">All articles lacking in-text citations</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="https://en.wikipedia.org/wiki/Special:MyTalk" title="Discussion about edits from this IP address [Alt+Shift+n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="https://en.wikipedia.org/wiki/Special:MyContributions" title="A list of edits made from this IP address [Alt+Shift+y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&amp;returnto=Limit+%28category+theory%29" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Limit+%28category+theory%29" title="You're encouraged to log in; however, it's not mandatory. [Alt+Shift+o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li id="ca-nstab-main" class="selected"><span><a href="https://en.wikipedia.org/wiki/Limit_%28category_theory%29" title="View the content page [Alt+Shift+c]" accesskey="c">Article</a></span></li>
+															<li id="ca-talk"><span><a href="https://en.wikipedia.org/wiki/Talk:Limit_%28category_theory%29" title="Discussion about the content page [Alt+Shift+t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label" tabindex="0">
+							<span>Variants</span><a href="#" tabindex="-1"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="https://en.wikipedia.org/wiki/Limit_%28category_theory%29">Read</a></span></li>
+															<li id="ca-edit"><span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=edit" title="Edit this page [Alt+Shift+e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label" style="">
+						<h3 id="p-cactions-label" tabindex="0"><span>More</span><a href="#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input name="search" placeholder="Search Wikipedia" title="Search Wikipedia [Alt+Shift+f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off" type="search"><input value="Special:Search" name="title" type="hidden"><input name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" type="submit">							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="https://en.wikipedia.org/wiki/Main_Page" title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label">Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="https://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [Alt+Shift+z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="https://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="https://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="https://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="https://en.wikipedia.org/wiki/Special:Random" title="Load a random article [Alt+Shift+x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="https://shop.wikimedia.org/" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-interaction" aria-labelledby="p-interaction-label">
+			<h3 id="p-interaction-label">Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="https://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="https://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="https://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [Alt+Shift+r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://en.wikipedia.org/wiki/Special:WhatLinksHere/Limit_%28category_theory%29" title="List of all English Wikipedia pages containing links to this page [Alt+Shift+j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Limit_%28category_theory%29" rel="nofollow" title="Recent changes in pages linked from this page [Alt+Shift+k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [Alt+Shift+u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [Alt+Shift+q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;oldid=769862420" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Q1322614" title="Link to connected data repository item [Alt+Shift+g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Limit_%28category_theory%29&amp;id=769862420" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
+			<h3 id="p-coll-print_export-label">Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Limit+%28category+theory%29">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Limit+%28category+theory%29&amp;returnto=Limit+%28category+theory%29&amp;oldid=769862420&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="https://en.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;printable=yes" title="Printable version of this page [Alt+Shift+p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-lang" aria-labelledby="p-lang-label"><span class="uls-settings-trigger" title="Language settings" tabindex="0" role="button" aria-haspopup="true"></span>
+			<h3 id="p-lang-label">Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-ca"><a href="https://ca.wikipedia.org/wiki/L%C3%ADmit_%28teoria_de_categories%29" title="Límit (teoria de categories) – Catalan" hreflang="ca" class="interlanguage-link-target" lang="ca">Català</a></li><li class="interlanguage-link interwiki-de"><a href="https://de.wikipedia.org/wiki/Limes_%28Kategorientheorie%29" title="Limes (Kategorientheorie) – German" hreflang="de" class="interlanguage-link-target" lang="de">Deutsch</a></li><li class="interlanguage-link interwiki-es"><a href="https://es.wikipedia.org/wiki/L%C3%ADmite_%28teor%C3%ADa_de_categor%C3%ADas%29" title="Límite (teoría de categorías) – Spanish" hreflang="es" class="interlanguage-link-target" lang="es">Español</a></li><li class="interlanguage-link interwiki-fr"><a href="https://fr.wikipedia.org/wiki/Limite_%28th%C3%A9orie_des_cat%C3%A9gories%29" title="Limite (théorie des catégories) – French" hreflang="fr" class="interlanguage-link-target" lang="fr">Français</a></li><li class="interlanguage-link interwiki-ko"><a href="https://ko.wikipedia.org/wiki/%EA%B7%B9%ED%95%9C_%28%EB%B2%94%EC%A3%BC%EB%A1%A0%29" title="극한 (범주론) – Korean" hreflang="ko" class="interlanguage-link-target" lang="ko">한국어</a></li><li class="interlanguage-link interwiki-nl"><a href="https://nl.wikipedia.org/wiki/Limiet_%28categorietheorie%29" title="Limiet (categorietheorie) – Dutch" hreflang="nl" class="interlanguage-link-target" lang="nl">Nederlands</a></li><li class="interlanguage-link interwiki-ja"><a href="https://ja.wikipedia.org/wiki/%E6%A5%B5%E9%99%90_%28%E5%9C%8F%E8%AB%96%29" title="極限 (圏論) – Japanese" hreflang="ja" class="interlanguage-link-target" lang="ja">日本語</a></li><li class="interlanguage-link interwiki-pl"><a href="https://pl.wikipedia.org/wiki/Granica_i_kogranica" title="Granica i kogranica – Polish" hreflang="pl" class="interlanguage-link-target" lang="pl">Polski</a></li><li class="interlanguage-link interwiki-ru"><a href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B5%D0%B4%D0%B5%D0%BB_%28%D1%82%D0%B5%D0%BE%D1%80%D0%B8%D1%8F_%D0%BA%D0%B0%D1%82%D0%B5%D0%B3%D0%BE%D1%80%D0%B8%D0%B9%29" title="Предел (теория категорий) – Russian" hreflang="ru" class="interlanguage-link-target" lang="ru">Русский</a></li><li class="interlanguage-link interwiki-zh"><a href="https://zh.wikipedia.org/wiki/%E6%9E%81%E9%99%90_%28%E8%8C%83%E7%95%B4%E8%AE%BA%29" title="极限 (范畴论) – Chinese" hreflang="zh" class="interlanguage-link-target" lang="zh">中文</a></li>					</ul>
+				<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Q1322614#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 12 March 2017, at 01:49.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="https://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="https://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="https://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="https://wikimediafoundation.org/wiki/Cookie_statement">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="https://en.m.wikipedia.org/w/index.php?title=Limit_%28category_theory%29&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" alt="Wikimedia Foundation" width="88" height="31"></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="Limit%20%28category%20theory%29%20-%20Wikipedia_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.108","walltime":"0.213","ppvisitednodes":{"value":496,"limit":1000000},"ppgeneratednodes":{"value":0,"limit":1500000},"postexpandincludesize":{"value":9526,"limit":2097152},"templateargumentsize":{"value":119,"limit":2097152},"expansiondepth":{"value":7,"limit":40},"expensivefunctioncount":{"value":1,"limit":500},"entityaccesscount":{"value":0,"limit":400},"timingprofile":["100.00%   95.382      1 -total"," 49.93%   47.625      1 Template:More_footnotes"," 38.26%   36.491      3 Template:Cite_book"," 29.13%   27.789      1 Template:Ambox","  8.23%    7.851      1 Template:See_also","  1.57%    1.494      1 Template:Main_other","  1.33%    1.269      1 Template:Nlab"]},"scribunto":{"limitreport-timeusage":{"value":"0.040","limit":"10.000"},"limitreport-memusage":{"value":2185742,"limit":52428800}},"cachereport":{"origin":"mw1281","timestamp":"20170312014906","ttl":2592000,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":62,"wgHostname":"mw1184"});});</script>
+	
+
+<div style="display: none; font-size: 13px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div><a accesskey="v" href="https://en.wikipedia.org/wiki/Limit_%28category_theory%29?action=edit" style="display: none;"></a></body></html>
