@@ -51,10 +51,14 @@
 \(\newcommand{\C}{\mathcal{C}}\)
 \(\newcommand{\D}{\mathcal{D}}\)
 \(\newcommand{\id}{\mathrm{id}}\)
+        \(\newcommand{\dom}{\mathrm{dom}}\)
+        \(\newcommand{\cod}{\mathrm{cod}}\)
 \(\newcommand{\ob}[1]{\mathrm{ob}(#1)}\)
 \(\newcommand{\hom}[1]{\mathrm{hom}(#1)}\)
 \(\newcommand{\Set}{\mathbf{Set}}\)
+        \(\newcommand{\Str}{\mathbf{Str}}\)
 \(\newcommand{\Mon}{\mathbf{Mon}}\)
+        \(\newcommand{\G}{\mathbf{G}}\)
 \(\newcommand{\Vec}{\mathbf{Vec}}\)
 \(\newcommand{\Grp}{\mathbf{Grp}}\)
 \(\newcommand{\Rng}{\mathbf{Rng}}\)
@@ -68,8 +72,8 @@
 
 <section class="slide">
 <div style="text-align:center; position:absolute; top: 2em; font-size: .9em; width: 100%">
-<h1 style="position: relative;">Теория категорий <span class="and">&amp;</span> прогроаммирование</h1>
-<div><em class="base01">представленно на</em> <a href="http://www.meetup.com/riviera-scala-clojure">Rivieria Scala Clojure</a><br/> (Эта презентация использует Haskell)</div>
+<h1 style="position: relative;">Теория категорий <span class="and">&amp;</span> программирование</h1>
+<div><em class="base01">представлено на</em> <a href="http://www.meetup.com/riviera-scala-clojure">Rivieria Scala Clojure</a><br/> (Эта презентация использует Haskell)</div>
 <author><em class="base01">автор -</em> <a href="http://yannesposito.com">Yann Esposito</a></author>
 <div style="font-size:.8em">
     <twitter>
@@ -80,7 +84,7 @@
      </googleplus>
 </div>
 <div class="base01" style="font-size: .5em; font-weight: 400; font-variant:italic">
-    <div class="button" style="margin: .5em auto;border: solid 2px; padding: 5px; width: 9em; border-radius: 1em; background:rgba(255,255,255,0.05);"  onclick="javascript:gofullscreen();">ПОЛНОЭКРАННЫЙ РЕЖИМ</div>
+    <div class="button" style="margin: .5em auto;border: solid 2px; padding: 5px; width: 11em; border-radius: 1em; background:rgba(255,255,255,0.05);"  onclick="javascript:gofullscreen();">ПОЛНОЭКРАННЫЙ РЕЖИМ</div>
     HTML-презентация: используйте стрелки, пробел, проводите пальцем.
 </div>
 </div>
@@ -132,17 +136,17 @@
 <section class="slide">
 <h2 id="math-programming-relation">Отношение математики к программированию</h2>
 <img class="right" src="categories/img/buddha.gif" alt="Buddha Fractal"/>
-<p>Прогроаммирование <em><span class="yellow">это и есть</span></em> математика</p>
+<p>Программирование <em><span class="yellow">это и есть</span></em> математика</p>
 <p>Тесная связь между теорией типов и теорией категорий.</p>
 <p>Не убедил?<br />Проблема в <em>терминологии</em>.</p>
-<p>Одна из задач теории катогрий - это создать <em>общую (homogeneous) терминологию</em> для разных областей исследований (наук).</p>
+<p>Одна из задач теории категорий - это создать <em>общую (homogeneous) терминологию</em> для разных областей исследований (наук).</p>
 </section>
 <section class="slide">
 <h2 id="vocabulary">Терминология</h2>
 <img class="right" src="categories/img/mindblown.gif" alt="mind blown"/>
 <p>Математические термины, использованные далее в презентации:</p>
 <blockquote>
-<p>Категория, Морфизм, Ассоциативность, Отношение предпорядка (Preorder), Функтор, Эндофунктор, Categorial property, Коммутативня диаграмма, Изоморф, Инициал (Initial), Дуал, Моноид, Естественные преобразования, Монада, Стрелки Клесли (Klesli), κατα-морфизм, \(\ldots\)</p>
+<p>Категория, Морфизм, Ассоциативность, Отношение предпорядка (Preorder), Функтор, Эндофунктор, Categorial property, Коммутативная диаграмма, Изоморф, Инициал (Initial), Дуал, Моноид, Естественные преобразования, Монада, Стрелки Клесли (Klesli), κατα-морфизм, \(\ldots\)</p>
 </blockquote>
 </section>
 <section class="slide">
@@ -165,7 +169,7 @@
 Строковый тип (String-like)
 </td></tr>
 <tr><td>
-Отношение предпорядока (Preorder)
+Отношение предпорядка (Preorder)
 </td><td>
 Ациклический граф
 </td></tr>
@@ -205,7 +209,7 @@ LOLCat
 </ul>
 </section>
 <section class="slide">
-<h2>Катеогрии</h2>
+<h2>Категории</h2>
 
 <p>Способ представления <strong><em>сущностей</em></strong> и <strong><em>переходов между ними </em></strong>.</p>
 
@@ -230,12 +234,13 @@ LOLCat
 <img src="categories/img/mp/morphisms.png" alt="morphisms"/>
 
 <p>Объекты \(A\) и \(B\) - объекты категории \(\C\),<br/>
-\(\hom{A,B}\) - коллекция морфизмов (стрелок),<br/>
-\(f:A→B\) фактически обозначает, что \(f\) принадлежит \(\hom{A,B}\),</p>
+    \(\hom{A,B}\) - коллекция морфизмов;
+    \(f:A→B\) обозначает, что \(f \in \hom{A,B}\),<br/>
+    \(f:\dom(f)\to\cod(f)\): \(\dom(f)=A, \cod(f)=B\).</p>
 <p>\(\hom{\C}\) - это коллекция всех морфизмов категории \(\C\).</p>
 </section>
 <section class="slide">
-    <h2>Катогрии: Правило композиции</h2>
+    <h2>Категории: Правило композиции</h2>
     <p>Композиция (∘) требует для каждой пары морфизмов <span class="red">\(f:A→B\)</span>, <span class="blue">\(g:B→C\)</span><br/> <div style="text-align:center;">морфизм
     <span class="yellow">\(g∘f:A\rightarrow C\)</span>.</div>
 </p>
@@ -243,7 +248,7 @@ LOLCat
 </section>
 <section class="slide">
 <h2>Условия: Нейтральный элемент</h2>
-<p>Для каждого объекта \(X\) должен быть задан морфизм \(\id_X:X→X\) такой,<br/>
+<p>Для каждого объекта \(X\) должен <span class="yellow">существовать или быть задан/построен</span> морфизм \(\id_X:X→X\) такой,<br/>
 чтобы для каждого морфизма \(f:A→B\) выполнялось</p>
 <img src="categories/img/mp/identity.png" alt="identity"/>
 </section>
@@ -322,7 +327,7 @@ LOLCat
         <span class="red">НЕТ</span>,<br/>
         \((h∘g)∘f=\id_B∘f=f\)<br/>
     \(h∘(g∘f)=h∘\id_A=h\)<br/>
-    but \(h≠f\)
+    но \(h≠f\)
     </figcaption>
 </figure>
 </section>
@@ -359,19 +364,19 @@ LOLCat
     <li>\(\Vec\): (векторные пространства, линейные функции,∘),</li>
     <li>\(\Grp\): (группы, морфизмы групп,∘),</li>
     <li>\(\Rng\): (кольца, морфизмы колец,∘),</li>
-    <li>Любая дедуктвиная система <i>T</i>: (теоремы, доказательства, сведения доказательств друг к другу),</li>
+    <li>Любая дедуктивная система <i>T</i>: (теоремы, доказательства, сведения доказательств друг к другу),</li>
     <li>\( \Hask\): (типы языка программирования Haskell, функции, <code>(.)</code> ),</li>
     <li>...</li>
 </ul>
 </section>
 <section class="slide">
-<h2>Примеры более мелького масштаба</h2>
+<h2>Примеры более мелкого масштаба</h2>
 
-<h3>Строки \(Str\)</h3>
+<h3>Строки \(\Str\)</h3>
 <img class="right" style="max-width:17%; margin-left: 10%;" src="categories/img/mp/strings.png" alt="Monoids are one object categories"/>
 <ul>
-    <li> \(\ob{Str}\) - синглетон, </li>
-    <li> \(\hom{Str}\) - каждая строка, </li>
+    <li> \(\ob{\Str}\) - "формальный объект", </li>
+    <li> \(\hom{\Str}\) - каждая строка, </li>
     <li> ∘ - операция конкатенации <code>(++)</code> </li>
 </ul>
 <ul>
@@ -382,18 +387,19 @@ LOLCat
 <section class="slide">
 <h2>Конечные примеры</h2>
 
-<h3>Граф</h3>
+<h3>Граф \(\G\)</h3>
 <figure class="right" style="max-width:40%" >
 <img src="categories/img/mp/graph-category.png" alt="Each graph is a category"/>
 </figure>
 <ul>
-    <li> \(\ob{G}\) - вершины графа,</li>
-    <li> \(\hom{G}\) - все пути,</li>
+    <li> \(\ob{\G}\) - вершины графа,</li>
+    <li> \(\hom{\G}\) - все пути,</li>
     <li> ∘ - объединение (конкатенация) путей.</li>
 </ul>
-<ul><li>\(\ob{G}=\{X,Y,Z\}\),
-    </li><li>\(\hom{G}=\{ε,α,β,γ,αβ,βγ,...\}\)
-    </li><li>\(αβ∘γ=αβγ\)
+<ul><li>\(\ob{\G}=\{X,Y,Z\}\),
+</li><li>\(\hom{\G}=\{ε,α,β,γ,αβ,βγ,...\}\)
+</li><li>\(\varepsilon ∘ γ=γ=γ ∘ \varepsilon\)
+</li><li>\(αβ∘γ=αβγ=α∘βγ\)
 </li></ul>
 </section>
 <section class="slide">
@@ -410,7 +416,7 @@ LOLCat
 <p class="yellow">Только один объект!</p>
 <p>Примеры:</p>
 <ul><li><code>(Integer,0,+)</code>, <code>(Integer,1,*)</code>,
-</li><li><code>(String(s),"",++)</code>, для каждого <code>a</code>, <code>([a],[],++).</code>
+</li><li><code>(String,"",++)</code>, для каждого типа <code>a</code>, <code>([a],[],++).</code>
 </li></ul>
 </section>
 <section class="slide">
@@ -435,20 +441,19 @@ LOLCat
 </section>
 <section class="slide">
 <h2 id="choice">Выбор</h2>
-<p>Один и тот же объект исследования представим разными способами в виде катеогрий.</p>
+<p>Один и тот же объект исследования представим разными способами в виде категорий.</p>
 <p>Можно выбирать то, что будет объектами, морфизмами и композициями.</p>
 <p>Например: <strong>Str</strong> и дискретную сигнатуру (Σ<sup>*</sup>).</p>
 </section>
 <section class="slide">
-<h2 class="base1">Категорийные (Categorical) свойства</h2>
+<h2 class="base1">Категоричные (Categorical) свойства</h2>
 
-<p class="base1">- это свойства объекта исследования, которые выражаются в терминах квтегорий, т.е., объектами, морфизмами и композициями.</p>
+<p class="base1">- это свойства объекта исследования, которые выражаются в терминах категорий, т.е., объектами, морфизмами и композициями.</p>
 
 <ul><li> <em class="yellow">Дуальность</em>: \(\D\) - суть \(\C\) с обращенными стрелками.
 </li><li> <em class="yellow">Инициал</em>: \(Z\in\ob{\C}\) такой, что \(∀Y∈\ob{\C}, \#\hom{Z,Y}=1\)
 	<br/> Уникальный "с точностью до изоморфизма".
 </li><li> <em class="yellow">Терминал</em>: \(T\in\ob{\C}\) такой, что \(T\) - это инициал в дуальной категории \(\C\).
-</li><li> <em class="yellow">Функтор</em> - структура, сохраняющая отображение между категориями, FIXME:
 </li><li> ...
 </li></ul>
 </section>
@@ -500,7 +505,7 @@ LOLCat
 
 <img style="min-width:43%; width: 43%" class="right" src="categories/img/fractalcat.jpg" />
 
-<p>Категории и функторы из категории \(\Cat\) FIXME: туман</p>
+<p>Элементы категории \(\Cat\) - категории и функторы из категории в категорию.</p>
 <ul><li>\(\ob{\Cat}\) - категории,
 </li><li>\(\hom{\Cat}\) - функторы,
 </li><li>∘ - композиция функторов.
@@ -655,7 +660,7 @@ fmap head [[1,2,3],[4,5,6]] == [1,4]</code></pre>
 </section>
 <section class="slide">
 <h2 id="non-haskell-hasks-functors">&quot;не-Haskell&quot; функторы Hask</h2>
-<p>Простой пример - функтор \(id_\Hask\). Его нефозможно выразить парой (<code>F</code>,<code>fmap</code>), чтобы</p>
+<p>Простой пример - функтор \(id_\Hask\). Его невозможно выразить парой (<code>F</code>,<code>fmap</code>), чтобы</p>
 <ul>
 <li><code>F::* -&gt; *</code>,</li>
 <li><code>fmap :: (a -&gt; b) -&gt; (F a) -&gt; (F b)</code>.</li>
@@ -702,7 +707,7 @@ fmap head [[1,2,3],[4,5,6]] == [1,4]</code></pre>
 </section>
 <section class="slide">
 <h2 id="natural-transformations">Естественные преобразования</h2>
-<p>Пусть \(F\) и \(G\) - два функтора, отобраэающие \(\C\) в \(\D\).</p>
+<p>Пусть \(F\) и \(G\) - два функтора, отображающие \(\C\) в \(\D\).</p>
 <p><img src="categories/img/mp/natural-transformation.png" alt="Natural transformation commutative diagram" class="right"/> <em>Естественное преобразование</em> - это семейство η ; \(η_X\in\hom{\D}\) для \(X\in\ob{\C}\) такое, что FIXME:</p>
 <p>например между функторами Haskell; <code>F a -&gt; G a</code><br />Представлены только rearrangement функции.</p>
 </section>
@@ -757,7 +762,7 @@ mToList Just x  = [x]</pre>
 <p><code>toMaybe</code> - это естественное преобразование. Оно также морфизм из <code>Maybe</code> в <code>[]</code> в категории эндофункторов \(\Hask\).</p>
 <img style="float:left;width:30%" src="categories/img/mp/nattrans-maybe-list.png" alt="natural transformation commutative diagram"/>
 <figure style="float:right;width:60%">
-<img style="width:40%" src="categories/img/mp/maybe-list-endofunctor-morphsm.png" alt="relation between [] and Maybe"/> <figcaption>Здесь <span class="red">нет изоморфов</span>.<br/> Подсказка: <code>Bool</code>-списки FIXME: длинее, чем 1. </figcaption>
+<img style="width:40%" src="categories/img/mp/maybe-list-endofunctor-morphsm.png" alt="relation between [] and Maybe"/> <figcaption>Здесь <span class="red">нет изоморфов</span>.<br/> Подсказка: <code>Bool</code>-списки FIXME: длиннее, чем 1. </figcaption>
 </figure>
 
 
@@ -797,13 +802,13 @@ h x = [x+1,x*3] ⇒ h 1 = [2,3] ⇒ (h.h) 1 = ERROR [2,3]+1 ✗ </code></pre>
 <li>Используем <code>fmap :: (t -&gt; u) -&gt; (F t -&gt; F u)</code>!</li>
 <li><code>(fmap g) :: F b -&gt; F (F c)</code> ; (<code>t=b</code>, <code>u=F c</code>)</li>
 <li><code>(fmap g) (f x) :: F (F c)</code>, это почти СРАБОТАЛО!</li>
-<li>Нам не хавтает важной детали - <code>join :: F (F c) -&gt; F c</code></li>
+<li>Нам не хватает важной детали - <code>join :: F (F c) -&gt; F c</code></li>
 <li><code>(g ◎ f) x = join ((fmap g) (f x))</code> ☺<br />◎ - это композиция Клейсли (Kleisli) - в языке Haskell - <code>&lt;=&lt;</code> (в модуле <code>Control.Monad</code>).</li>
 </ul>
 </section>
 <section class="slide">
 <h2 id="necessary-laws">Проверка необходимых условий</h2>
-<p>Для тогог, чтобы ◎ выполняла роль композиции, нужно, чтобы join удовлетворяла следующим условиям:</p>
+<p>Для того, чтобы ◎ выполняла роль композиции, нужно, чтобы join удовлетворяла следующим условиям:</p>
 <ul>
 <li><code>join (join (F (F (F a))))=join (F (join (F (F a))))</code></li>
 <li>избавимся от суперпозиции функций, переобозначив <code>join</code> оператором ⊙, что дает эквивалентную запись<br /><span class="yellow"><code>(F ⊙ F) ⊙ F = F ⊙ (F ⊙ F)</code></span></li>
@@ -876,7 +881,7 @@ join = concat
 
 </section>
 <section class="slide">
-<h2 id="example-list-law-verification">Пример - List, проверка праил</h2>
+<h2 id="example-list-law-verification">Пример - List, проверка правил</h2>
 <p>Пример - <code>List</code> - это функтор (<code>join</code> - это ⊙)</p>
 <ul>
 <li>\(M ⊙ (M ⊙ M) = (M ⊙ M) ⊙ M\),</li>
@@ -1003,7 +1008,7 @@ main = do
 </section>
 <section class="slide">
 <h2 id="κατα-morphism-extension-to-trees">κατα-морфизм, расширение до деревьев (Trees)</h2>
-<p>Как тоько трюк усвоен, становится просто расширять что???? FIXME: до класса Functor.</p>
+<p>Как только трюк усвоен, становится просто расширять что???? FIXME: до класса Functor.</p>
 <pre><code>type Tree = Mu TreeF
 data TreeF x = Node Int [x]
 
@@ -1023,7 +1028,7 @@ depth = cata phi where
 <li>Улучшай модульность,</li>
 <li>Улучшай качество за счет анализа свойств типов.</li>
 </ul>
-<p><span class="smaller">В процесе подготовки и спользования презентации не пострадало не одной кошки.</span></p>
+<p><span class="smaller">В процессе подготовки и использования презентации кошки не пострадали.</span></p>
 </section>
 <!-- End slides. -->
 
@@ -1075,7 +1080,12 @@ depth = cata phi where
 	});
 </script>
 <!-- Y theme -->
+<script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!--
 <script type="text/javascript" src="MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+-->
 <script src="js/highlight/highlight.pack.js"></script>
 <script>
     hljs.initHighlightingOnLoad();
