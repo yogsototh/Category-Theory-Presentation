@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta name="viewport" content="width=1024, user-scalable=no">
+
+	    <title>Category Theory for Programming</title>
+
+	    <!-- Required stylesheet -->
+	    <link rel="stylesheet" href="core/deck.core.css">
+
+	    <!-- Extension CSS files go here. Remove or add as needed. -->
+	    <link rel="stylesheet" href="extensions/goto/deck.goto.css">
+	    <link rel="stylesheet" href="extensions/menu/deck.menu.css">
+	    <link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+	    <link rel="stylesheet" href="extensions/status/deck.status.css">
+	    <link rel="stylesheet" href="extensions/hash/deck.hash.css">
+        <!--  <link rel="stylesheet" href="extensions/scale/deck.scale.css"> -->
+
+	    <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+
+        <!-- <link rel="stylesheet" href="themes/transition/fade.css"> -->
+	    <!-- Style theme. More available in /themes/style/ or create your own. -->
+        <!-- <link rel="stylesheet" href="themes/style/web-2.0.css"> -->
+        <link rel="stylesheet" href="themes/style/y/main.css" />
+        <link rel="stylesheet" href="themes/style/y/solarized.css" />
+	    <!-- Required Modernizr file -->
+	    <script src="modernizr.custom.js"></script>
+        <script>
+         function gofullscreen(){
+             var body=document.getElementById('body');
+             try {
+                 body.requestFullScreen();
+             } catch(err) {
+                 try {
+                     body.webkitRequestFullScreen();
+                 } catch(err) {
+                     body.mozRequestFullScreen();
+                 }
+             }
+             return false;
+         }
+        </script>
+    </head>
+    <body id="body" class="deck-container">
+
+        <div style="display:none">
+            \(\newcommand{\F}{\mathbf{F}}\)
+            \(\newcommand{\E}{\mathbf{E}}\)
+            \(\newcommand{\C}{\mathcal{C}}\)
+            \(\newcommand{\D}{\mathcal{D}}\)
+            \(\newcommand{\id}{\mathrm{id}}\)
+            \(\newcommand{\dom}{\mathrm{dom}}\)
+            \(\newcommand{\cod}{\mathrm{cod}}\)
+            \(\newcommand{\ob}[1]{\mathrm{ob}(#1)}\)
+            \(\newcommand{\hom}[1]{\mathrm{hom}(#1)}\)
+            \(\newcommand{\Set}{\mathbf{Set}}\)
+            \(\newcommand{\Str}{\mathbf{Str}}\)
+            \(\newcommand{\Mon}{\mathbf{Mon}}\)
+            \(\newcommand{\G}{\mathbf{G}}\)
+            \(\newcommand{\Vec}{\mathbf{Vec}}\)
+            \(\newcommand{\Grp}{\mathbf{Grp}}\)
+            \(\newcommand{\Rng}{\mathbf{Rng}}\)
+            \(\newcommand{\ML}{\mathbf{ML}}\)
+            \(\newcommand{\Hask}{\mathbf{Hask}}\)
+            \(\newcommand{\Cat}{\mathbf{Cat}}\)
+            \(\newcommand{\fmap}{\mathtt{fmap}}\)
+
+        </div>
+
+        <!-- Begin slides. Just make elements with a class of slide. -->
+
+        <section class="slide">
+            <div style="text-align:center; position:absolute; top: 2em; font-size: .9em; width: 100%">
+                <h1 style="position: relative;">Теория категорий <span class="and">&amp;</span> программирование</h1>
+                <div><em class="base01">представлено на</em> <a href="http://www.meetup.com/riviera-scala-clojure">Rivieria Scala Clojure</a><br/> (Эта презентация использует Haskell)</div>
+                <author><em class="base01">автор -</em> <a href="http://yannesposito.com">Yann Esposito</a></author>
+                <div style="font-size:.8em">
+                    <twitter>
+                        <a href="http://twitter.com/yogsototh">@yogsototh</a>,
+                    </twitter>
+                    <googleplus>
+                        <a href="https://plus.google.com/117858550730178181663">+yogsototh</a>
+                    </googleplus>
+                </div>
+                <div class="base01" style="font-size: .5em; font-weight: 400; font-variant:italic">
+                    <div class="button" style="margin: .5em auto;border: solid 2px; padding: 5px; width: 11em; border-radius: 1em; background:rgba(255,255,255,0.05);"  onclick="javascript:gofullscreen();">ПОЛНОЭКРАННЫЙ РЕЖИМ</div>
+                    HTML-презентация: используйте стрелки, пробел, проводите пальцем.
+                </div>
+            </div>
+        </section>
+        <section class="slide">
+            <h2>План</h2>
+            <ul style="font-size: 2em; font-weight:bold">
+                <li><span class="yellow">Общий обзор</li>
+                    <li>Определения</li>
+                    <li>Приложения</li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2 id="not-really-about-cat-glory">Мы не будем говорить о Cat <span class="and">&amp;</span> glory</h2>
+            <figure>
+                <img src="categories/img/categlory.jpg" alt="Cat n glory" /> <figcaption>автор картины - Tokuhiro Kawai (川井徳寛)</figcaption>
+            </figure>
+
+
+        </section>
+        <section class="slide">
+            <h2 id="general-overview">Общий обзор</h2>
+            <div style="float:right; width: 18%">
+                <img src="categories/img/eilenberg.gif" alt="Samuel Eilenberg"/> <img src="categories/img/maclaine.jpg" alt="Saunders Mac Lane"/>
+            </div>
+
+            <p><em>Современная математика</em><br />1942-45, Самюэл Эйленберг (Samuel Eilenberg) <span class="and">&amp;</span> Сандерс Маклейн (Saunders Mac Lane)</p>
+            <p>Определенно одно из самых абстрактных направлений математики</p>
+            <ul>
+                <li><em>Новые основы математики</em><br /> абстракция формализации, представление единой (entire) теории<sup>★</sup></li>
+                <li><em>Связующее звено между науками</em><br /> Физика, Квантовая физика, Топология, Логика, Информатика<sup>☆</sup></li>
+            </ul>
+            <p  class="smaller base01" style="border-top: solid 1px">
+                ★: <a href="http://www.math.harvard.edu/~mazur/preprints/when_is_one.pdf">When is one thing equal to some other thing?, Barry Mazur, 2007</a><br/> ☆: <a href="http://math.ucr.edu/home/baez/rosetta.pdf">Physics, Topology, Logic and Computation: A Rosetta Stone, John C. Baez, Mike Stay, 2009</a>
+            </p>
+
+
+        </section>
+        <section class="slide">
+            <h2 id="from-a-programmer-perspective">Что дает для программирования?</h2>
+            <blockquote>
+                <p>Теория категорий - новый язык и исследовательская среда для математики.</p>
+            </blockquote>
+            <ul>
+                <li>Другой подход к пониманию;</li>
+                <li>Очень эффективна для представления обобщений.</li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2 id="math-programming-relation">Отношение математики к программированию</h2>
+            <img class="right" src="categories/img/buddha.gif" alt="Buddha Fractal"/>
+            <p>Программирование <em><span class="yellow">это и есть</span></em> математика</p>
+            <p>Тесная связь между теорией типов и теорией категорий.</p>
+            <p>Не убедил?<br />Проблема в <em>терминологии</em>.</p>
+            <p>Одна из задач теории категорий - это создать <em>общую (homogeneous) терминологию</em> для разных областей исследований (наук).</p>
+        </section>
+        <section class="slide">
+            <h2 id="vocabulary">Терминология</h2>
+            <img class="right" src="categories/img/mindblown.gif" alt="mind blown"/>
+            <p>Математические термины, использованные далее в презентации:</p>
+            <blockquote>
+                <p>Категория, Морфизм, Ассоциативность, Отношение предпорядка (Preorder), Функтор, Эндофунктор, Categorial property, Коммутативная диаграмма, Изоморф, Инициал (Initial), Дуал, Моноид, Естественные преобразования, Монада, Стрелки Клесли (Klesli), κατα-морфизм, \(\ldots\)</p>
+            </blockquote>
+        </section>
+        <section class="slide">
+            <h2 id="programmer-translation">Перевод терминов для программистов</h2>
+            <img class="right" src="categories/img/readingcat.jpg" alt="lolcat"/>
+            <table style="width:60%">
+                <tr><th>
+                    Математический
+                </th><th>
+                    Программистский
+                </th></tr>
+                <tr><td>
+                    Морфизм
+                </td><td>
+                    Стрелка
+                </td></tr>
+                <tr><td>
+                    Моноид
+                </td><td>
+                    Строковый тип (String-like)
+                </td></tr>
+                <tr><td>
+                    Отношение предпорядка (Preorder)
+                </td><td>
+                    Ациклический граф
+                </td></tr>
+                <tr><td>
+                    Изоморф
+                </td><td>
+                    Тот же самый, тождественный
+                </td></tr>
+                <tr><td>
+                    Естественные преобразования
+                </td><td>
+                    rearrangement function
+                </td></tr>
+                <tr><td>
+                    Прикольная категория
+                </td><td>
+                    LOLCat
+                </td></tr>
+            </table>
+        </section>
+
+        <!-- MY: -->
+
+        <section class="slide">
+            <h2>Алгебра функций</h2>
+            <p>Рассмотрим функции над множествами.
+                <ul>
+                    <li>Обозначим множества \(A, B, C, \ldots\),</li>
+                    <li>Функции \(f, g, h, \ldots\)</li>
+                </ul>
+                $$ f:A \to B\qquad f\subseteq A\times B,$$
+                при этом для любого \(a\in A\) существует <em>единственный</em> \(b\in B\) и \(\langle a,b\rangle\in f.\)</p>
+            <p>
+                Интуитивное понимание функции - Берем элемент из \(A\), и \(f\) возвращает нам для него соответствующий элемент из \(B\).
+            </p>
+        </section>
+        <section class="slide">
+            <h2>Алгебра функций: композиция функций</h2>
+            <figure class="left" style="max-width:50%; width:50%;">
+                <img src="categories/img/ai/set-func-composing.svg" alt="morphisms"/>
+                <figcaption>
+                    \((g∘f)\leftrightarrow g(f(x))\)
+                </figcaption>
+            </figure>
+            <figure class="left" style="max-width:50%; width:50%;">
+                <img src="categories/img/ai/set-func-composing-3.svg" alt="morphisms"/>
+                <figcaption>
+                    \(f\circ 1_A = f = 1_B\circ f \)
+                </figcaption>
+            </figure>
+            <figure class="right" style="max-width:45%; width:45%;">
+                <img src="categories/img/ai/set-func-composing-4.svg" alt="morphisms"/>
+                <figcaption>
+                    \((h\circ g)\circ f = h\circ (g\circ f) \)
+                </figcaption>
+            </figure>
+            <figure class="left" style="max-width:50%; width:50%;">
+                <img src="categories/img/ai/set-func-composing-1.svg" alt="morphisms"/>
+                <figcaption>
+                    \( 1_A:A\to A, \qquad 1_A(x)=x \)
+                </figcaption>
+            </figure>
+        </section>
+
+        <section class="slide">
+            <h2>Алгебра функций: композиция функций</h2>
+            <p class="left" style="width: 35%; max-width:35%">
+                <span class="red">\((h\circ g)\)</span>\(\circ f = h\circ\) <span class="blue">\((g\circ f)\)</span>:
+                <span class="red">\(h(g(\;\;\)</span>\(f(x)\)<span class="red">\(\;\;))\)</span><span>\({} =  h(\;\;\)</span><span class="blue">\(g(f(x))\)</span>\(\;\;)\)
+            </p>
+            <div class="right" style="width: 50%; max-width:50%">
+                <pre >
+                    <code >
+f(x) = 1 + x;
+g(x) = x^2;
+h(x) = x+x;
+
+h(g(x)) = x^2+x^2 = 2*x^2;
+g(f(x)) = (1 + x)^2;
+
+h(g( f(x) )) = 2*(  1+x  )^2
+             = 2*(1+x)^2;
+
+h( g(f(x)) ) = (1 + x)^2 + (1 + x)^2
+             = 2*(1+x)^2;
+                    </code>
+                </pre>
+            </div>
+            <img class="left" style="width:40%;max-width:40%;" src="categories/img/ai/set-func-composing-4.svg" alt="morphisms"/>
+            <!--
+                 <figure class="right" style="max-width:45%; width:45%;">
+                 <img src="categories/img/ai/set-func-composing-4.svg" alt="morphisms"/>
+                 </figure>
+               -->
+        </section>
+
+        <section class="slide">
+            <h2>План</h2>
+            <ul style="font-size: 2em; font-weight: bold">
+                <li>Общий обзор</li>
+                <li> <span class="yellow">Определения</span>
+                    <ul class="base01" style="border-left: 2px solid; padding-left: 1em; font-size: .6em; float: right; font-weight: bold; margin: 0 0 0 1em">
+                        <li>Категории</li>
+                        <li>Интуитивное<br/> понимание</li>
+                        <li>Примеры</li>
+                        <li>Функторы</li>
+                        <li>Примеры</li>
+                    </ul>
+                </li>
+                <li>Приложения</li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2>Категории</h2>
+
+            <p>Способ представления <strong><em>сущностей</em></strong> и <strong><em>переходов между ними </em></strong>.</p>
+
+            <p> Категории \(\mathcal{C}\) задаются </p>
+            <ul>
+	            <li> <em>Объектами </em><span class="yellow">\(\ob{C}\)</span>,</li>
+	            <li> <em>Морфизмами (стрелками) </em><span class="yellow">\(\hom{C}\)</span>,</li>
+	            <li> <em>Правило (low) композиции </em><span class="yellow">(∘)</span>,</li>
+                <li> при этом должны выполняться <em>ряд условий (Properties)</em>.</li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2>Категории: Объекты</h2>
+
+            <img src="categories/img/mp/objects.png" alt="objects" />
+
+            <p>Объекты формируют коллекцию \(\ob{\mathcal{C}}\).</p>
+        </section>
+        <section class="slide">
+            <h2>Категории: Морфизмы</h2>
+
+            <img src="categories/img/mp/morphisms.png" alt="morphisms"/>
+
+            <p>Объекты \(A\) и \(B\) - объекты категории \(\C\),<br/>
+                \(\hom{A,B}\) - коллекция морфизмов;
+                \(f:A→B\) обозначает, что \(f \in \hom{A,B}\),<br/>
+                \(f:\dom(f)\to\cod(f)\): \(\dom(f)=A, \cod(f)=B\).</p>
+            <p>\(\hom{\C}\) - это коллекция всех морфизмов категории \(\C\).</p>
+        </section>
+        <section class="slide">
+            <h2>Категории: Правило композиции</h2>
+            <p>Композиция (∘) требует для каждой пары морфизмов <span class="red">\(f:A→B\)</span>, <span class="blue">\(g:B→C\)</span><br/> <div style="text-align:center;">морфизм
+                <span class="yellow">\(g∘f:A\rightarrow C\)</span>.</div>
+            </p>
+            <img src="categories/img/mp/composition.png" alt="composition"/>
+        </section>
+        <section class="slide">
+            <h2>Категории: Правило композиции</h2>
+            <img src="categories/img/mp/composition.png" alt="composition"/>
+            <h3>Обозначение композиций морфизмов</h3>
+            <p>
+                <ul>
+                    <li>"\(g\) after \(f\)": \(g\circ f\), </li>
+                    <li>\(gf\), \(g\;f\): \(f(x) = f\;x, g(f(x)) = g\;f\;x \),</li>
+                    <li>"\(f\) then \(g\)": \(f \bullet g\),</li>
+                    <li>\(f;\!g\).
+                </ul>
+            </p>
+        </section>
+        <section class="slide">
+            <h2>Условия: Нейтральный элемент</h2>
+            <p>Для каждого объекта \(X\) должен <span class="yellow">существовать или быть задан/построен</span> морфизм \(\id_X:X→X\) такой,<br/>
+                чтобы для каждого морфизма \(f:A→B\) выполнялось</p>
+            <img src="categories/img/mp/identity.png" alt="identity"/>
+        </section>
+        <section class="slide">
+            <h2>Условия: Ассоциативность</h2>
+            <p> Композиция должна быть ассоциативной:</p>
+            <img src="categories/img/mp/associativecomposition.png" alt="associative composition"/>
+        </section>
+        <section class="slide">
+            <h2>Коммутативные диаграммы</h2>
+
+            <p>Два пути, исходящие из одного и того же исходного объекта и приходящие в один и тот же конечный объект являются одним и тем же (equal).</p>
+            <figure class="left" style="max-width: 40%;margin-left: 10%;">
+                <img
+                    src="categories/img/mp/commutative-diagram-assoc.png"
+                    alt="Commutative Diagram (Associativity)"/>
+                <figcaption>
+                    \((h∘g)∘f = h∘(g∘f) \)
+                </figcaption>
+            </figure>
+            <figure class="right" style="max-width:31%;margin-right: 10%;">
+                <img
+                    src="categories/img/mp/commutative-diagram-id.png"
+                    alt="Commutative Diagram (Identity law)"/>
+                <figcaption>
+                    Пример:
+                    \(id_B∘f = f = f∘id_A \)
+                </figcaption>
+            </figure>
+        </section>
+        <section class="slide">
+            <h2>Вопросы!</h2>
+
+            <figure style="width:70%; margin:0 auto">
+                <img src="categories/img/batquestion.jpg" width="100%"/>
+                <figcaption>
+                    <em>- Шутку поймут только французы -</em>
+                </figcaption>
+            </figure>
+        </section>
+        <section class="slide">
+            <h2>Это категории или нет?</h2>
+            <p>Пусть \(\ob{\C},\hom{\C}\) - фиксированные коллекции, установим правильные композиции ∘.</p>
+            <figure class="left">
+                <img src="categories/img/mp/cat-example1.png" alt="Category example 1"/>
+                <figcaption class="slide">
+                    <span class="green">ДА</span>
+                </figcaption>
+            </figure>
+            <figure class="left">
+                <img src="categories/img/mp/cat-example2.png" alt="Category example 2"/>
+                <figcaption class="slide">
+                    <span class="red">НЕТ</span>,<br/>
+                    нет стрелки \(g∘f\)
+                </figcaption>
+            </figure>
+            <figure class="left">
+                <img src="categories/img/mp/cat-example3.png" alt="Category example 3"/>
+                <figcaption class="slide">
+                    <span class="green">ДА</span>
+                </figcaption>
+            </figure>
+        </section>
+        <section class="slide">
+            <h2>Это категории или нет?</h2>
+            <figure class="left">
+                <img src="categories/img/mp/cat-example4.png" alt="Category example 4"/>
+                <figcaption class="slide">
+                    <span class="red">НЕТ</span>, <br/>
+                    нет стрелки \(f:C→B\)
+                </figcaption>
+            </figure>
+            <figure class="right" style="min-width: 59%">
+                <img src="categories/img/mp/cat-example5.png" alt="Category example 5"/>
+                <figcaption class="slide">
+                    <span class="red">НЕТ</span>,<br/>
+                    \((h∘g)∘f=\id_B∘f=f\)<br/>
+                    \(h∘(g∘f)=h∘\id_A=h\)<br/>
+                    но \(h≠f\)
+                </figcaption>
+            </figure>
+        </section>
+        <section class="slide">
+            <h2>Примеры категорий</h2>
+
+            <figure style="width:70%; margin:0 auto">
+                <img src="categories/img/basket_of_cats.jpg" alt="Basket of cats"/>
+                <figcaption>
+                    <em>- Корзина котят (Basket of Cats) -</em>
+                </figcaption>
+            </figure>
+        </section>
+        <section class="slide">
+            <h2>Категория \(\Set\)</h2>
+
+            <ul>
+	            <li> \(\ob{\Set}\) - <em>все</em> множества,</li>
+                <li> \(\hom{E,F}\) - <em>все</em> функции из \(E\) в \(F\),</li>
+                <li> ∘ - композиция функций. </li>
+            </ul>
+
+            <ul class="slide">
+                <li>\(\ob{\Set}\) - это <em>собственный класс</em> (Proper class, не является множеством),</li>
+                <li>\(\hom{E,F}\) - множество,</li>
+	            <li>\(\Set\) - представитель <em>локально-<b>малых</b> категорий</em>.</li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2>Категории везде?</h2>
+            <img class="right" src="categories/img/cats-everywhere.jpg" alt="Cats everywhere"/>
+            <ul>
+                <li>\(\Mon\): (моноиды, морфизмы моноидов,∘),</li>
+                <li>\(\Vec\): (векторные пространства, линейные функции,∘),</li>
+                <li>\(\Grp\): (группы, морфизмы групп,∘),</li>
+                <li>\(\Rng\): (кольца, морфизмы колец,∘),</li>
+                <li>Любая дедуктивная система <i>T</i>: (теоремы, доказательства, сведения доказательств друг к другу),</li>
+                <li>\( \Hask\): (типы языка программирования Haskell, функции, <code>(.)</code> ),</li>
+                <li>...</li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2>Примеры более мелкого масштаба</h2>
+
+            <h3>Строки \(\Str\)</h3>
+            <img class="right" style="max-width:17%; margin-left: 10%;" src="categories/img/mp/strings.png" alt="Monoids are one object categories"/>
+            <ul>
+                <li> \(\ob{\Str}\) - "формальный объект", </li>
+                <li> \(\hom{\Str}\) - каждая строка, </li>
+                <li> ∘ - операция конкатенации <code>(++)</code> </li>
+            </ul>
+            <ul>
+                <li> <code>"" ++ u = u = u ++ ""</code> </li>
+                <li> <code>(u ++ v) ++ w = u ++ (v ++ w)</code> </li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2>Конечные примеры</h2>
+
+            <h3>Граф \(\G\)</h3>
+            <figure class="right" style="max-width:40%" >
+                <img src="categories/img/mp/graph-category.png" alt="Each graph is a category"/>
+            </figure>
+            <ul>
+                <li> \(\ob{\G}\) - вершины графа,</li>
+                <li> \(\hom{\G}\) - все пути,</li>
+                <li> ∘ - объединение (конкатенация) путей.</li>
+            </ul>
+            <ul><li>\(\ob{\G}=\{X,Y,Z\}\),
+            </li><li>\(\hom{\G}=\{ε,α,β,γ,αβ,βγ,...\}\)
+            </li><li>\(\varepsilon ∘ γ=γ=γ ∘ \varepsilon\)
+            </li><li>\(αβ∘γ=αβγ=α∘βγ\)
+            </li></ul>
+        </section>
+        <section class="slide">
+            <h2>Числа (Number conclusion)</h2>
+
+            <h3>Каждое число - это полноценная категория.</h3>
+            <img src="categories/img/mp/numbers.png" alt="Each number as a category"/>
+        </section>
+        <section class="slide">
+            <h2>Вырожденные (Degenerated) категории: Моноиды</h2>
+
+            <img class="right" style="max-width:17%" src="categories/img/mp/monoid.png" alt="Monoids are one object categories"/>
+            <p>Каждый моноид \((M,\varepsilon,⊙):\)  \(\ob{M}=\{∙\},\hom{M}=M,\circ = ⊙\)</p>
+            <p class="yellow">Только один объект!</p>
+            <p>Примеры:</p>
+            <ul><li><code>(Integer,0,+)</code>, <code>(Integer,1,*)</code>,
+            </li><li><code>(String,"",++)</code>, для каждого типа <code>a</code>, <code>([a],[],++).</code>
+            </li></ul>
+        </section>
+        <section class="slide">
+            <h2>Вырожденные категории: Предпорядки (Preorders) \((P,≤)\)</h2>
+
+            <ul><li>\(\ob{P}={P}\),
+            </li><li>\(\hom{x,y}=\{x≤y\} ⇔ x≤y\),
+            </li><li>\((y≤z) \circ (x≤y) = (x≤z) \).
+            </li></ul>
+
+            <p><em class="yellow"><b class="yellow">Не больше одного</b> морфизма между любыми двумя объектами.</em></p>
+
+            <img src="categories/img/mp/preorder.png" alt="preorder category"/>
+        </section>
+        <section class="slide">
+            <h2>Вырожденные категории: Дискретные категории</h2>
+
+            <img class="right" src="categories/img/mp/set.png" alt="Any set can be a category"/>
+            <h3>Любое множество</h3>
+            <p>Любое множество \(E: \ob{E}=E, \hom{x,y}=\{x\} ⇔  x=y \)</p>
+            <p class="yellow">Только тождества.</p>
+        </section>
+        <section class="slide">
+            <h2 id="choice">Выбор</h2>
+            <p>Один и тот же объект исследования представим разными способами в виде категорий.</p>
+            <p>Можно выбирать то, что будет объектами, морфизмами и композициями.</p>
+            <p>Например: <strong>Str</strong> и дискретную сигнатуру (Σ<sup>*</sup>).</p>
+        </section>
+        <section class="slide">
+            <h2 class="base1">Категорийные (Categorical) свойства</h2>
+
+            <p class="base1">- это свойства объекта исследования, которые выражаются в терминах категорий, т.е., объектами, морфизмами и композициями.</p>
+
+            <ul><li> <em class="yellow">Дуальность</em>: \(\D\) - суть \(\C\) с обращенными стрелками.
+            </li><li> <em class="yellow">Инициал</em>: \(Z\in\ob{\C}\) такой, что \(∀Y∈\ob{\C}, \#\hom{Z,Y}=1\)
+	            <br/> Уникальный "с точностью до изоморфизма".
+            </li><li> <em class="yellow">Терминал</em>: \(T\in\ob{\C}\) такой, что \(T\) - это инициал в дуальной категории \(\C\).
+            </li><li> ...
+            </li></ul>
+        </section>
+        <section class="slide">
+            <h2>Двоственность (Duality)</h2>
+            <p> - соответствие свойств категории \(\C\) и двоственными свойствам <em>двойственной категории</em> \(\C^{op}\).
+                <figure>
+                    <figcaption>
+                    </figcaption>
+                </figure>
+            </p>ь
+        </section>
+        <section class="slide">
+            <h2>Инициал, Терминал</h2>
+            <p>
+                <figure>
+                    <figcaption>
+                    </figcaption>
+                </figure>
+            </p>
+        </section>
+        <section class="slide">
+            <h2>Декартов квадрат/Кодекартов квадрат (Pushout, Pullup)</h2>
+            <p>
+                <figure>
+                    <figcaption>
+                    </figcaption>
+                </figure>
+            </p>
+        </section>
+        <section class="slide">
+            <h2>Конус/коконус</h2>
+            <p>
+                <figure>
+                    <figcaption>
+                    </figcaption>
+                </figure>
+            </p>
+        </section>
+        <section class="slide">
+            <h2 id="isomorph">Изоморф</h2>
+            <p>
+                <img class="right" alt="isomorph cats" src="categories/img/isomorph-cats.jpg" />
+                <em class="yellow">Изоморфизм</em>: \(f:A→B\), который может быть &quot;отменен&quot, т.е.<br />\(∃g:B→A\), \(g∘f=id_A\) и \(f∘g=id_B\),<br /> в этом случае \(A\) и  \(B\) - <em class="yellow">изоморфны (isomorphic)</em>.
+            </p>
+            <p><span class="yellow">A≌B</span> обозначает, что A и B по сути одно и то же (essentially the same).<br />В теории категорий при использовании <span class="yellow">=</span> имеется ввиду <span class="yellow">≌</span>, например, в коммутативных диаграммах.</p>
+        </section>
+        <section class="slide">
+            <h2>Функтор</h2>
+
+            <p> Функтор - это отображение одной категории в другую.<br/>
+                Пусть \(\C\) и \(\D\) - две категории.
+                <em>Функтор</em> <span class="yellow">\(\F\)</span> из <span class="blue">\(\C\)</span> в <span class="green">\(\D\)</span> задает</p>
+            <ul>
+	            <li> ассоциации объектов <span class="backblue">\(A\in\ob{\C}\)</span> в <span class="backgreen">\(\F(A)\in\ob{\D}\)</span>, </li>
+	            <li> ассоциации морфизмов <span class="backblue">\(f:A\to B\)</span> в <span class="backgreen">\(\F(f) : \F(A) \to \F(B)\)</span>
+                    такие, что
+                    <ul>
+			            <li>\( \F (\)<span class="backblue blue">\(\id_X\)</span>\()= \)<span class="backgreen"><span class="green">\(\id\)</span>\(\vphantom{\id}_{\F(}\)<span class="blue">\(\vphantom{\id}_X\)</span>\(\vphantom{\id}_{)} \)</span>,</li>
+			            <li>\( \F (\)<span class="backblue blue">\(g∘f\)</span>\()= \)<span class="backgreen">\( \F(\)<span class="blue">\(g\)</span>\() \)<span class="green">\(\circ\)</span>\( \F(\)<span class="blue">\(f\)</span>\() \)</span>.</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2>Пример функтора (ob → ob)</h2>
+
+            <img width="65%" src="categories/img/mp/functor.png" alt="Functor"/>
+        </section>
+        <section class="slide">
+            <h2>Пример функтора (hom → hom)</h2>
+
+            <img width="65%" src="categories/img/mp/functor-morphism.png" alt="Functor"/>
+        </section>
+        <section class="slide">
+            <h2>Пример функтора</h2>
+
+            <img width="65%" src="categories/img/mp/functor-morphism-color.png" alt="Functor"/>
+        </section>
+        <section class="slide">
+            <h2>Эндофункторы (Endofunctors)</h2>
+
+            <p><em>Эндофунктор</em> [для] категории \(\C\) - функтор \(F:\C→\C\).</p>
+            <img width="75%"  src="categories/img/mp/endofunctor.png" alt="Endofunctor"/>
+        </section>
+        <section class="slide">
+            <h2>Категория категорий</h2>
+
+            <img style="min-width:43%; width: 43%" class="right" src="categories/img/fractalcat.jpg" />
+
+            <p>Элементы категории \(\Cat\) - категории и функторы из категории в категорию.</p>
+            <ul><li>\(\ob{\Cat}\) - категории,
+            </li><li>\(\hom{\Cat}\) - функторы,
+            </li><li>∘ - композиция функторов.
+            </li></ul>
+        </section>
+        <section class="slide">
+            <h2>План</h2>
+            <ul style="font-size: 2em; font-weight:bold">
+                <li>Общий обзор</li>
+                <li>Определения</li>
+                <li><span class="yellow">Приложения
+                    <ul class="base01" style="border-left: 2px solid; padding-left: 1em; font-size: .6em; float: right; font-weight: bold; margin: -4em 0 0 1em">
+                        <li>Категория \(\Hask\)
+                        </li><li> Функторы
+                        </li><li> Естественные <br/>преобразования
+                        </li><li> Монады
+                        </li><li> κατα-морфизмы
+                        </li></ul>
+                </li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2>Категория Hask</h2>
+
+            <p>Категория \(\Hask\):</p>
+
+            <img class="right" style="max-width:30%" src="categories/img/mp/hask.png" alt="Haskell Category Representation"/>
+
+            <ul><li>
+                \(\ob{\Hask} = \) типы данных Haskell,
+            </li><li>
+                \(\hom{\Hask} = \) функции Haskell,
+            </li><li>
+                ∘ = <code>(.)</code> композиции функций Haskell.
+            </li></ul>
+
+            <p>Забудьте о глюках из-за "<code>undefined</code>".</p>
+        </section>
+        <section class="slide">
+            <h2 id="haskell-kinds">Роды Haskell (Kinds)</h2>
+            <p>В Haskell некоторые типы могут получать some types can take type variable(s). Typically: <code>[a]</code>.</p>
+            <p>Types have <em>kinds</em>; Род относится к типу, так же как тип к функции. Роды - это типы типов (то-то вроде метатипов). FIXME:</p>
+            <pre><code>Int, Char :: *
+[], Maybe :: * -&gt; *
+(,), (-&gt;) :: * -&gt; * -&gt; *
+[Int], Maybe Char, Maybe [Int] :: *</code></pre>
+        </section>
+        <section class="slide">
+            <h2 id="haskell-types">Типы Haskell</h2>
+            <p>В некоторых случаях тип значительно ограничивает, что функция может реализовать<sup>★</sup>:</p>
+            <pre class="haskell"><code>fst :: (a,b) -> a -- Только один вариант выбора
+snd :: (a,b) -> b -- Только один вариант выбора
+f :: a -> [a]     -- Много вариантов выбора
+-- Варианты: f x=[], или [x], или [x,x] или [x,...,x]
+
+? :: [a] -> [a] -- Много вариантов выбора
+-- можно только перестраивать: дублировать/удалять/менять порядок элементов,
+
+-- например, тип addOne не является [a] -> [a]
+addOne l = map <span class="red">(+1)</span> l
+-- Функция (+1) заставляет 'a' стать числом (Num).</code></pre>
+
+            <p>
+                <p><span class="small base01">★:<a href="http://ttic.uchicago.edu/~dreyer/course/papers/wadler.pdf">Theorems for free!, Philip Wadler, 1989</a></span></p>
+        </section>
+        <section class="slide">
+            <h2>Функторы Haskell и функтор \(\Hask\)</h2>
+
+            <p>Функтор Haskell - это тип <code>F :: * -> *</code>, который принадлежит классу типов <code>Functor</code>, функтор F - это вариант отображения
+                <code>fmap :: (a -> b) -> (F a -> F b)</code>.
+
+                <p><span style="visibility:hidden"><span class="and">&amp;</span></span> <code>F</code>: \(\ob{\Hask}→\ob{\Hask}\)<br/> и<br/> <code>fmap</code>: \(\hom{\Hask}→\hom{\Hask}\).
+
+                    <p>Пара (couple) <code>(F,fmap)</code> - это функтор \(\Hask\), если для любого <code>x :: F a</code>:</p>
+                    <ul><li><code>fmap id x = x</code>,
+                    </li><li><code>fmap (f.g) x= (fmap f . fmap g) x</code>.
+                    </li></ul>
+        </section>
+        <section class="slide">
+            <h2>Maybe - пример функтора Haskell</h2>
+
+            <pre class="haskell"><code>data Maybe a = Just a | Nothing
+instance Functor Maybe where
+    fmap :: (a -> b) -> (Maybe a -> Maybe b)
+    fmap f (Just a) = Just (f a)
+    fmap f Nothing = Nothing</code></pre>
+            <pre class="haskell"><code>fmap (+1) (Just 1) == Just 2
+fmap (+1) Nothing  == Nothing
+fmap head (Just [1,2,3]) == Just 1</code></pre>
+        </section>
+        <section class="slide">
+            <h2>List - пример функтора Haskell</h2>
+
+            <pre class="haskell"><code>instance Functor ([]) where
+	fmap :: (a -> b) -> [a] -> [b]
+	fmap = map</pre></code>
+            <pre class="haskell"><code>fmap (+1) [1,2,3]           == [2,3,4]
+fmap (+1) []                == []
+fmap head [[1,2,3],[4,5,6]] == [1,4]</code></pre>
+        </section>
+        <section class="slide">
+            <h2 id="haskell-functors-for-the-programmer">Что дают функторы Haskell Functors для программистов?</h2>
+            <p><code>Functor</code> - класс типов, над которыми можно строить отображения.</p>
+            <ul>
+                <li>Контейнеры: <code>[]</code>, Trees, Map, HashMap...</li>
+                <li>&quot;Фичи для типов&quot;:
+                    <ul>
+                        <li><code>Maybe a</code> помогает в ситуациях, если <code>a</code> отсутствует.<br />Пример - <code>safeDiv x 0 ⇒ Nothing</code></li>
+                        <li><code>Either String a</code> помогает обрабатывать ошибки<br />Пример - <code>reportDiv x 0 ⇒ Left &quot;Деление на  0!&quot;</code></li>
+                    </ul></li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2>Как понимать использование функторов Haskell</h2>
+
+            <p>Помещение обычной функции в контейнер. Примеры - списки, деревья ...<p>
+
+                <img width="70%" src="categories/img/mp/boxfunctor.png" alt="Haskell Functor as a box play"/>
+        </section>
+        <section class="slide">
+            <h2>Свойства функторов Haskell</h2>
+
+            <p>Функторы Haskell обладают следующими свойствами:</p>
+
+            <ul><li><em>эндофункторы</em> - \(F:\C→\C\), где \(\C = \Hask\),
+            </li><li>пара <b>(Object,Morphism)</b> - морфизм в \(\Hask\).
+            </li></ul>
+        </section>
+        <section class="slide">
+            <h2>Функтор - это упаковка (box)</h2>
+
+            <p>Функторы Haskell можно рассматривать как упаковку, содержащую в себе все типы и функции Haskell.
+                Система типов Haskell - это фрактал:</p>
+
+            <img width="70%" src="categories/img/mp/hask-endofunctor.png" alt="Haskell functor representation"/>
+        </section>
+        <section class="slide">
+            <h2>Функтор - это упаковка (box)</h2>
+
+            <p>Функторы Haskell можно рассматривать как упаковку, содержащую в себе все типы и функции Haskell.
+                Система типов Haskell - это фрактал:</p>
+
+            <img width="70%" src="categories/img/mp/hask-endofunctor-objects.png" alt="Haskell functor representation"/>
+        </section>
+        <section class="slide">
+            <h2>Функтор - это упаковка (box)</h2>
+
+            <p>Функторы Haskell можно рассматривать как упаковку, содержащую в себе все типы и функции Haskell.
+                Система типов Haskell - это фрактал:</p>
+
+            <img width="70%" src="categories/img/mp/hask-endofunctor-morphisms.png" alt="Haskell functor representation"/>
+        </section>
+        <section class="slide">
+            <h2 id="non-haskell-hasks-functors">&quot;не-Haskell&quot; функторы Hask</h2>
+            <p>Простой пример - функтор \(id_\Hask\). Его невозможно выразить парой (<code>F</code>,<code>fmap</code>), чтобы</p>
+            <ul>
+                <li><code>F::* -&gt; *</code>,</li>
+                <li><code>fmap :: (a -&gt; b) -&gt; (F a) -&gt; (F b)</code>.</li>
+            </ul>
+            <p>Другой пример:</p>
+            <ul>
+                <li>F(<code>T</code>)=<code>Int</code>,</li>
+                <li>F(<code>f</code>)=<code>\_-&gt;0</code>.</li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2 id="also-functor-inside-hask">Also Functor inside \(\Hask\)</h2>
+            <p>\(\mathtt{[a]}∈\ob{\Hask}\)</code> также является категорией. Idem for <code>Int</code>. FIXME:</p>
+            <p><code>length</code> - это функтор из категории <code>[a]</code> в категорию <code>Int</code>:</p>
+            <ul class="left" style="max-width:40%">
+                <li>\(\ob{\mathtt{[a]}}=\{∙\}\)</li>
+                <li>\(\hom{\mathtt{[a]}}=\mathtt{[a]}\)</li>
+                <li>\(∘=\mathtt{(++)}\)</li>
+            </ul>
+            <p class="left" style="margin:2em 3em">⇒</p>
+            <ul class="left" style="max-width:40%">
+                <li>\(\ob{\mathtt{Int}}=\{∙\}\)</li>
+                <li>\(\hom{\mathtt{Int}}=\mathtt{Int}\)</li>
+                <li>\(∘=\mathtt{(+)}\)</li>
+            </ul>
+            <div class="flush"></div>
+            <ul><li>id: <code>length [] = 0</code>
+            </li><li>comp: <code>length (l ++ l') = (length l) + (length l')</code>
+            </li></ul>
+        </section>
+        <section class="slide">
+            <h2 id="category-of-hask-endofunctors">Категория эндофункторов \(\Hask\)</h2>
+            <img width="60%" src="categories/img/mp/cat-hask-endofunctor.png" alt="Category of Hask endofunctors" />
+        </section>
+        <section class="slide">
+            <h2 id="category-of-functors">Категория функторов</h2>
+            <p>Пусть \(\C\) - <em>малая</em> категория, т.е., \(\hom{\C}\) - множество. Все функторы, отображающие \(\C\) в другую категорию \(\D\) образуют категорию \(\mathrm{Func}(\C,\D)\).</p>
+            <ul>
+                <li>\(\ob{\mathrm{Func}(\C,\D)}\) - функторы \(F:\C→\D\),</li>
+                <li>\(\hom{\mathrm{Func}(\C,\D)}\) - <em>естественные преобразования,</em></li>
+                <li>∘ - композиция функторов.</li>
+            </ul>
+            <p>\(\mathrm{Func}(\C,\C)\) - категория эндофункторов над \(\C\).</p>
+        </section>
+        <section class="slide">
+            <h2 id="natural-transformations">Естественные преобразования</h2>
+            <p>Пусть \(F\) и \(G\) - два функтора, отображающие \(\C\) в \(\D\).</p>
+            <p><img src="categories/img/mp/natural-transformation.png" alt="Natural transformation commutative diagram" class="right"/> <em>Естественное преобразование</em> - это семейство η ; \(η_X\in\hom{\D}\) для \(X\in\ob{\C}\) такое, что FIXME:</p>
+            <p>например между функторами Haskell; <code>F a -&gt; G a</code><br />Представлены только rearrangement функции.</p>
+        </section>
+
+
+        <section class="slide">
+            <h2 id="natural-transformation-examples-14">Примеры естественных преобразований (1/4)</h2>
+            <pre><code class="haskell small">data List a = Nil | Cons a (List a)
+toList :: [a] -> List a
+toList [] = Nil
+toList (x:xs) = Cons x (toList xs)</pre>
+            </code>
+            <p><code>toList</code> - это естественное преобразование. Оно также морфизм из <code>[]</code> в <code>List</code> в категории эндофункторов \(\Hask\).</p>
+            <img style="float:left;width:30%" src="categories/img/mp/nattrans-list-tree.png" alt="natural transformation commutative diagram"/>
+            <figure style="float:right;width:60%">
+                <img style="width:40%" src="categories/img/mp/list-tree-endofunctor-morphism.png" alt="natural transformation commutative diagram"/>
+            </figure>
+        </section>
+        <section class="slide">
+            <h2 id="natural-transformation-examples-24">Примеры естественных преобразований (2/4)</h2>
+            <pre><code class="haskell small">data List a = Nil | Cons a (List a)
+toHList :: List a -> [a]
+toHList Nil = []
+toHList (Cons x xs) = x:toHList xs</pre>
+            </code>
+            <p><code>toHList</code> - это также естественное преобразование. Оно также морфизм из <code>List</code> в <code>[]</code> в категории эндофункторов \(\Hask\).</p>
+            <img style="float:left;width:30%" src="categories/img/mp/nattrans-tree-list.png" alt="natural transformation commutative diagram"/>
+            <figure style="float:right;width:60%">
+                <img style="width:40%" src="categories/img/mp/tree-list-endofunctor-morphism.png" alt="natural transformation commutative diagram"/> <figcaption><code>toList . toHList = id</code> <span class="and">&amp;</span> <code>toHList . toList = id</code> <span style="visibility:hidden"><span class="and">&amp;</span></span><br/> therefore <code>[]</code> <span class="and">&amp;</span> <code>List</code> - <span class="orange">изоморф</span>. </figcaption>
+            </figure>
+        </section>
+        <section class="slide">
+            <h2 id="natural-transformation-examples-34">Примеры естественных преобразований (3/4)</h2>
+            <pre><code class="haskell small">toMaybe :: [a] -> Maybe a
+toMaybe [] = Nothing
+toMaybe (x:xs) = Just x</pre>
+            </code>
+            <p><code>toMaybe</code> - естественное преобразование. Оно также морфизм из <code>[]</code> в <code>Maybe</code> в категории эндофункторов \(\Hask\).</p>
+            <img style="float:left;width:30%" src="categories/img/mp/nattrans-list-maybe.png" alt="natural transformation commutative diagram"/>
+            <figure style="float:right;width:60%">
+                <img style="width:40%" src="categories/img/mp/list-maybe-endofunctor-morphism.png" alt="natural transformation commutative diagram"/>
+            </figure>
+
+
+        </section>
+        <section class="slide">
+            <h2 id="natural-transformation-examples-44">Примеры естественных преобразований (4/4)</h2>
+            <pre><code class="haskell small">mToList :: Maybe a -> [a]
+mToList Nothing = []
+mToList Just x  = [x]</pre>
+            </code>
+            <p><code>toMaybe</code> - это естественное преобразование. Оно также морфизм из <code>Maybe</code> в <code>[]</code> в категории эндофункторов \(\Hask\).</p>
+            <img style="float:left;width:30%" src="categories/img/mp/nattrans-maybe-list.png" alt="natural transformation commutative diagram"/>
+            <figure style="float:right;width:60%">
+                <img style="width:40%" src="categories/img/mp/maybe-list-endofunctor-morphsm.png" alt="relation between [] and Maybe"/> <figcaption>Здесь <span class="red">нет изоморфов</span>.<br/> Подсказка: <code>Bool</code>-списки FIXME: длиннее, чем 1. </figcaption>
+            </figure>
+
+
+        </section>
+        <section class="slide">
+            <h2 id="composition-problem">Проблема композиции</h2>
+            <p>Пример для списков -</p>
+            <pre class="haskell"><code>f x = [x]       ⇒ f 1 = [1]   ⇒ (f.f) 1 = [[1]] ✗
+g x = [x+1]     ⇒ g 1 = [2]   ⇒ (g.g) 1 = ERROR [2]+1 ✗
+h x = [x+1,x*3] ⇒ h 1 = [2,3] ⇒ (h.h) 1 = ERROR [2,3]+1 ✗ </code></pre>
+
+            <p>Проблема для большинства функций <code>f :: a -&gt; F a</code> и функторов <code>F</code>.</p>
+        </section>
+        <section class="slide">
+            <h2 id="composition-fixable">Можно ли выправить композицию?</h2>
+            <p>Как это сделать? - Нам надо сконструировать оператор, при помощи которого можно создать композицию</p>
+            <p><code>f :: a -&gt; F b</code> <span class="and">&amp;</span> <code>g :: b -&gt; F c</code>.</p>
+            <p>Т.е., нам надо придумать оператор ◎ над типами</p>
+            <p><code>◎ :: (b -&gt; F c) -&gt; (a -&gt; F b) -&gt; (a -&gt; F c)</code></p>
+            <p>Заметим, что если <code>F</code> = I, ◎ = <code>(.)</code>.</p>
+        </section>
+        <section class="slide">
+            <h2 id="fix-composition-12">Выправление композиции (1/2)</h2>
+            <p>Цель - найти оператор <code>◎ :: (b -&gt; F c) -&gt; (a -&gt; F b) -&gt; (a -&gt; F c) такой, чтобы
+            </code><br /><code>f :: a -&gt; F b</code>, <code>g :: b -&gt; F c</code> и</p>
+            <ul>
+                <li><code>(g ◎ f) x</code> ???</li>
+                <li>Первая аппликация <code>f</code> к <code>x</code> ⇒ <code>f x :: F b</code></li>
+                <li>Как правильно апплицировать <code>g</code> к элементам типа <code>F b</code>?</li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2 id="fix-composition-22">Выправление композиции (2/2)</h2>
+            <p>Цель - найти оператор <code>◎ :: (b -&gt; F c) -&gt; (a -&gt; F b) -&gt; (a -&gt; F c) такой, чтобы
+            </code><br /><code>f :: a -&gt; F b</code>, <code>g :: b -&gt; F c</code>, <span class="yellow"><code>f x :: F b</code></span> и </p>
+            <ul>
+                <li>Используем <code>fmap :: (t -&gt; u) -&gt; (F t -&gt; F u)</code>!</li>
+                <li><code>(fmap g) :: F b -&gt; F (F c)</code> ; (<code>t=b</code>, <code>u=F c</code>)</li>
+                <li><code>(fmap g) (f x) :: F (F c)</code>, это почти СРАБОТАЛО!</li>
+                <li>Нам не хватает важной детали - <code>join :: F (F c) -&gt; F c</code></li>
+                <li><code>(g ◎ f) x = join ((fmap g) (f x))</code> ☺<br />◎ - это композиция Клейсли (Kleisli) - в языке Haskell - <code>&lt;=&lt;</code> (в модуле <code>Control.Monad</code>).</li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2 id="necessary-laws">Проверка необходимых условий</h2>
+            <p>Для того, чтобы ◎ выполняла роль композиции, нужно, чтобы join удовлетворяла следующим условиям:</p>
+            <ul>
+                <li><code>join (join (F (F (F a))))=join (F (join (F (F a))))</code></li>
+                <li>избавимся от суперпозиции функций, переобозначив <code>join</code> оператором ⊙, что дает эквивалентную запись<br /><span class="yellow"><code>(F ⊙ F) ⊙ F = F ⊙ (F ⊙ F)</code></span></li>
+                <li>Должен быть задан единичный морфизм <code>η :: a -&gt; F a</code> такой, чтобы<br /><span class="yellow"><code>η⊙F=F=F⊙η</code></span></li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2 id="klesli-composition">Композиция Клейсли</h2>
+            <p>Теперь композиция работает так, как от ее требуется. В Haskell ◎ - это <code>&lt;=&lt;</code> в модуле <code>Control.Monad</code>.</p>
+            <p><code>g &lt;=&lt; f = \x -&gt; join ((fmap g) (f x))</code></p>
+            <pre class="haskell"><code>f x = [x]       ⇒ f 1 = [1]   ⇒ (f <=< f) 1 = [1] ✓
+g x = [x+1]     ⇒ g 1 = [2]   ⇒ (g <=< g) 1 = [3] ✓
+h x = [x+1,x*3] ⇒ h 1 = [2,3] ⇒ (h <=< h) 1 = [3,6,4,9] ✓</code></pre>
+
+
+        </section>
+        <section class="slide">
+            <h2 id="we-reinvented-monads">Мы заново открыли монады!</h2>
+            <p>Монада - это тройка <code>(M,⊙,η)</code>, где</p>
+            <ul>
+                <li>\(M\) - <span class="yellow">эндофунктор</span> в тип <code>a</code>, FIXME: <code>M a</code></li>
+                <li>\(⊙:M×M→M\) - <span class="yellow">ест. преобр.</span>, т.е., <code>⊙::M (M a) → M a</code>, <code>join</code></li>
+                <li>\(η:I→M\) - <span class="yellow">nat. trans.</span>, \(I\) единичный функтор <code>η::a → M a</code>,</li>
+            </ul>
+            <p>При этом выполнены следующие условия:</p>
+            <ul>
+                <li>\(M ⊙ (M ⊙ M) = (M ⊙ M) ⊙ M\),</li>
+                <li>\(η ⊙ M = M = M ⊙ η\).</li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2 id="compare-with-monoid">Сравним с моноидом</h2>
+            <p>Моноид - это тройка \((E,∙,e)\) такая, что</p>
+            <ul>
+                <li>\(E\) - множество,</li>
+                <li>\(∙:E×E→E\),</li>
+                <li>\(e:1→E\),</li>
+            </ul>
+            <p>При этом выполнено</p>
+            <ul>
+                <li>\(x∙(y∙z) = (x∙y)∙z, ∀x,y,z∈E\),</li>
+                <li>\(e∙x = x = x∙e, ∀x∈E\).</li>
+            </ul>
+        </section>
+        <section class="slide">
+            <h2 id="monads-are-just-monoids">Монады - это просто моноиды</h2>
+            <blockquote>
+                <p>--- [Дети!] Монада - это моноид в категории эндофункторов, что тут непонятного?</p>
+            </blockquote>
+            <p>На самом деле суть фразы такая -</p>
+            <blockquote>
+                <p>То, что сказано выше, т.е., монада в X - это моноид в категории эндофункторов над X, при этом произведение × заменено на композицию эндофункторов, а единичное множество - на единичный эндофунктор.</p>
+            </blockquote>
+        </section>
+        <section class="slide">
+            <h2 id="example-list">Пример - List</h2>
+            <ul>
+                <li><code>[] :: * -&gt; *</code> - <span class="yellow">Эндофунктор,</span></li>
+                <li>\(⊙:M×M→M\) - ест. преобр. (<code>join :: M (M a) -&gt; M a</code>),</li>
+                <li>\(η:I→M\) - ест. преобр.</li>
+            </ul>
+            <pre class="haskell"><code>-- В Haskell ⊙ - это "join" в модуле "Control.Monad"
+join :: [[a]] -> [a]
+join = concat
+
+-- В Haskell "возвращающая" ("return") функция (неудачное название)
+η :: a -> [a]
+η x = [x]</code></pre>
+
+
+        </section>
+        <section class="slide">
+            <h2 id="example-list-law-verification">Пример - List, проверка правил</h2>
+            <p>Пример - <code>List</code> - это функтор (<code>join</code> - это ⊙)</p>
+            <ul>
+                <li>\(M ⊙ (M ⊙ M) = (M ⊙ M) ⊙ M\),</li>
+                <li>\(η ⊙ M = M = M ⊙ η\).</li>
+            </ul>
+            <pre class="nohighlight small"><code>join [ join [[x,y,...,z]] ] = join [[x,y,...,z]]
+                            = join (join [[[x,y,...,z]]])
+join (η [x]) = [x] = join [η x]</code></pre>
+
+            <p>Поэтому <code>([],join,η)</code> - монада.</p>
+        </section>
+        <section class="slide">
+            <h2 id="monads-utility">Есть толк в использовании монад?</h2>
+            <p>В сети находится <em>ОЧЕНЬ МНОГО</em> примеров правильного использования. Вот один пример - монада State</p>
+            <p><code>DrawScene</code> в <code><span class="yellow">State Screen</span> DrawScene</code>, при этом <b>чистая</b> категория FIXME:.</p>
+            <pre class="haskell left smaller" style="width:40%"><code>main = drawImage (width,height)
+
+drawImage :: Screen -&gt; DrawScene
+drawImage <span class="orange">screen</span> = do
+    drawPoint p <span class="orange">screen</span>
+    drawCircle c <span class="orange">screen</span>
+    drawRectangle r <span class="orange">screen</span>
+
+drawPoint point <span class="orange">screen</span> = ...
+drawCircle circle <span class="orange">screen</span> = ...
+drawRectangle rectangle <span class="orange">screen</span> = ...</code></pre>
+            <pre class="haskell right smaller" style="width:45%"><code>main = do
+                <span class="orange">put (Screen 1024 768)</span>
+    drawImage
+
+drawImage :: State Screen DrawScene
+drawImage = do
+    drawPoint p
+    drawCircle c
+    drawRectangle r
+
+drawPoint :: Point -&gt; State Screen DrawScene
+drawPoint p = do
+                <span class="orange">Screen width height &lt;- get</span>
+    ...</code></pre>
+        </section>
+        <section class="slide">
+            <h2 id="fold"><code>свертка (fold)</code></h2>
+            <img src="categories/img/tower_folded.gif" alt="fold" style="width:50%;max-width:50%"/>
+        </section>
+        <section class="slide">
+            <h2 id="κατα-morphism">κατα-морфизм</h2>
+            <img src="categories/img/earth_catamorphed.gif" alt="catamorphism" style="width:90%;max-width:90%"/>
+        </section>
+        <section class="slide">
+            <h2 id="κατα-morphism-fold-generalization">κατα-морфизм - обобщение свертки</h2>
+            <p><code>acc</code> имеет тип &quot;аккумулятор&quot;:<br /><code>fold :: (acc -&gt; a -&gt; acc) -&gt; acc -&gt; [a] -&gt; acc</code></p>
+            <p>Идея - поместить значение аккумулятора в тип данных.</p>
+            <pre class="haskell"><code>-- эквивалент свертки (+1) 0 "cata"
+(Cons 'c' (Cons 'a' (Cons 't' (Cons 'a' Nil))))
+(Cons 'c' (Cons 'a' (Cons 't' (Cons 'a' <span style="border: solid 1px;">0</span>))))
+(Cons 'c' (Cons 'a' (Cons 't' <span style="border: solid 1px;">1</span>)))
+(Cons 'c' (Cons 'a' <span style="border: solid 1px;">2</span>))
+(Cons 'c' <span style="border: solid 1px;">3</span>)
+                <span style="border: solid 1px;">4</span></code></pre>
+
+
+            <p>Но где вся эта информация? <code>(+1)</code> и <code>0</code>?</p>
+        </section>
+        <section class="slide">
+            <h2 id="κατα-morphism-missing-information">κατα-морфизм, недостающая информация</h2>
+            <p>Где недостающая информация?</p>
+            <ul>
+                <li>Оператор-функтор <code>fmap</code></li>
+                <li>Алгебра представляет функцию <code>(+1)</code>, она так же знает о <code>0</code>.</li>
+            </ul>
+            <p>Например, предложите реализацию <code>length</code> для <code>[Char]</code></p>
+        </section>
+        <section class="slide">
+            <h2 id="κατα-morphism-type-work">κατα-морфизм, вывод типов</h2>
+            <pre class="haskell"><code>
+data StrF a = Cons Char a | Nil
+data Str' = StrF Str'
+
+-- обобщение конструирования Str на другие типы данных
+-- Тип Mu - число с фиксированной точкой (fixed point) FIXME:
+-- Mu :: (* -> *) -> *
+
+data Mu f = InF { outF :: f (Mu f) }
+data Str = Mu StrF
+
+-- Пример
+foo=InF { outF = Cons 'f'
+        (InF { outF = Cons 'o'
+            (InF { outF = Cons 'o'
+                (InF { outF = Nil })})})}</code></pre>
+
+
+        </section>
+        <section class="slide">
+            <h2 id="κατα-morphism-missing-information-retrieved">κατα-морфизм, недостающая информация восстановлена</h2>
+            <pre class="haskell"><code>type Algebra f a = f a -> a
+instance Functor (StrF a) =
+    fmap f (Cons c x) = Cons c (f x)
+    fmap _ Nil = Nil</code></pre>
+
+            <pre class="haskell"><code>cata :: Functor f => Algebra f a -> Mu f -> a
+cata f = f . fmap (cata f) . outF</code></pre>
+
+
+
+        </section>
+        <section class="slide">
+            <h2 id="κατα-morphism-finally-length">κατα-морфизм, функция length</h2>
+            <p>Вся необходимая информация для разработки length уже есть.</p>
+            <pre><code>instance Functor (StrF a) =
+    fmap f (Cons c x) = Cons c (f x)
+    fmap _ Nil = Nil
+
+length&#39; :: Str -&gt; Int
+length&#39; = cata phi where
+    phi :: Algebra StrF Int -- StrF Int -&gt; Int
+    phi (Cons a b) = 1 + b
+    phi Nil = 0
+
+main = do
+    l &lt;- length&#39; $ stringToStr &quot;Toto&quot;
+    ...</code></pre>
+        </section>
+        <section class="slide">
+            <h2 id="κατα-morphism-extension-to-trees">κατα-морфизм, расширение до деревьев (Trees)</h2>
+            <p>Как только трюк усвоен, становится просто расширять что???? FIXME: до класса Functor.</p>
+            <pre><code>type Tree = Mu TreeF
+data TreeF x = Node Int [x]
+
+instance Functor TreeF where
+  fmap f (Node e xs) = Node e (fmap f xs)
+
+depth = cata phi where
+  phi :: Algebra TreeF Int -- TreeF Int -&gt; Int
+  phi (Node x sons) = 1 + foldr max 0 sons</code></pre>
+        </section>
+        <section class="slide">
+            <h2 id="conclusion">Заключение</h2>
+            <p>Программирование, ориентированное на категории:</p>
+            <ul>
+                <li>Уделяй больше внимания типам и операторам,</li>
+                <li>Экстремальные обобщения,</li>
+                <li>Улучшай модульность,</li>
+                <li>Улучшай качество за счет анализа свойств типов.</li>
+            </ul>
+            <p><span class="smaller">В процессе подготовки и использования презентации кошки не пострадали.</span></p>
+        </section>
+        <!-- End slides. -->
+        <section class="slide">
+            <h2>Test</h2>
+            <p>
+                <figure>
+                    $$\require{AMScd}
+                    \begin{CD}
+                    K(X) @&gt;{ch}&gt;&gt; H(X;\mathbb Q);\\
+                    @VVV @V{q}V{b}V \\
+                    K(Y) @&gt;{ch}&gt;&gt; H(Y;\mathbb Q);
+                    \end{CD}$$
+                    <figcaption>
+                        Category
+                    </figcaption>
+                </figure>
+            </p>
+        </section>
+
+
+        <!-- Begin extension snippets. Add or remove as needed. -->
+
+        <!-- deck.navigation snippet -->
+        <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+        <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+        <!-- deck.status snippet -->
+        <p class="deck-status">
+	        <span class="deck-status-current"></span>
+	        /
+	        <span class="deck-status-total"></span>
+        </p>
+
+        <!-- deck.goto snippet -->
+        <form action="." method="get" class="goto-form">
+	        <label for="goto-slide">Go to slide:</label>
+	        <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	        <datalist id="goto-datalist"></datalist>
+	        <input type="submit" value="Go">
+        </form>
+
+        <!-- deck.hash snippet -->
+        <a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+        <!-- End extension snippets. -->
+
+
+        <!-- Required JS files. -->
+        <script src="jquery-1.7.2.min.js"></script>
+        <script src="core/deck.core.js"></script>
+
+        <!-- Extension JS files. Add or remove as needed. -->
+        <script src="core/deck.core.js"></script>
+        <script src="extensions/hash/deck.hash.js"></script>
+        <script src="extensions/menu/deck.menu.js"></script>
+        <script src="extensions/goto/deck.goto.js"></script>
+        <script src="extensions/status/deck.status.js"></script>
+        <script src="extensions/navigation/deck.navigation.js"></script>
+        <!-- <script src="extensions/scale/deck.scale.js"></script> -->
+
+        <!-- Initialize the deck. You can put this in an external file if desired. -->
+        <script>
+         $(function() {
+	         $.deck('.slide');
+         });
+        </script>
+        <!-- Y theme -->
+        <script type="text/javascript" async
+                src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        </script>
+        <!--
+             <script type="text/javascript" src="MathJax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+           -->
+        <script src="js/highlight/highlight.pack.js"></script>
+        <script>
+         hljs.initHighlightingOnLoad();
+        </script>
+        <script>
+         // --- Google analytics ---
+         function analytics() {
+             // add an event to all link for google analytics
+             $('a').click(function () {
+                 // tell analytics to save event
+                 try {
+                     var identifier=$(this).attr('id') ;
+                     var href=$(this).attr('href')
+                     var label="";
+                     if ( typeof( identifier ) != 'undefined' ) {
+                         label=label+'[id]:'+identifier
+                         category='JSLink'
+                     }
+                     if ( typeof( href ) != 'undefined' ) {
+                         label=label+' [href]:'+href
+                         if ( href[0] == '#' ) {
+                             category='Anchor';
+                         } else {
+                             category='Link';
+                         }
+                     }
+                     _gaq.push(['_trackEvent', category, 'clicked', label]);
+                     // console.log('[tracked]: ' + category + ' ; clicked ; ' + label );
+                 }
+                 catch (err) {
+                     console.log(err);
+                 }
+
+                 // pause to allow google script to run
+                 var date = new Date();
+                 var curDate = null;
+                 do {
+                     curDate = new Date();
+                 } while(curDate-date < 300);
+             });
+         }
+         $(document).ready(function(){ analytics(); });
+        </script>
+    </body>
+</html>

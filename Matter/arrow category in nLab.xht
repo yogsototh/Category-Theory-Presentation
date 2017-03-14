@@ -1,0 +1,513 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1//EN" "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg-flat.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>
+      arrow category in nLab
+  </title>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="robots" content="index,follow" />
+  
+ 
+  <link href="arrow%20category%20in%20nLab_files/instiki.css" media="all" rel="stylesheet" type="text/css" />
+  <link href="arrow%20category%20in%20nLab_files/syntax.css" media="all" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    h1#pageName, div.info, .newWikiWord a, a.existingWikiWord, .newWikiWord a:hover, [actiontype="toggle"]:hover, #TextileHelp h3 { 
+      color: #008B26; 
+    }
+    a:visited.existingWikiWord {
+      color: #005c19;
+    }
+    
+    
+  </style>
+  
+  <style type="text/css"><!--/*--><![CDATA[/*><!--*/    
+    .toc ul {margin: 0; padding: 0;}
+.toc ul ul {margin: 0; padding: 0 0 0 10px;}
+.toc li > p {margin: 0}
+.toc ul li {list-style-type: none; position: relative;}
+.toc div {border-top:1px dotted #ccc;}
+.rightHandSide h2 {font-size: 1.5em;color:#008B26}
+table.plaintable {
+    border-collapse:collapse;
+    margin-left:30px;
+    border:0;
+}
+.plaintable td {border:1px solid #000; padding: 3px;}
+.plaintable th {padding: 3px;}
+.plaintable caption {
+    font-weight: bold;
+    font-size:1.1em;
+    text-align:center;
+    margin-left:30px;
+}
+    
+   
+/* Query boxes for questioning and answering mechanism */
+div.query{
+background: #f6fff3;
+border: solid #ce9;
+border-width: 2px 1px;
+padding: 0 1em;
+margin: 0 1em;
+max-height: 20em;
+overflow: auto;
+}
+
+/* Standout boxes for putting important text */
+div.standout{
+background: #fff1f1;
+border: solid black;
+border-width: 2px 1px;
+padding: 0 1em;
+margin: 0 1em;
+overflow: auto;
+}
+
+/* Icon for links to n-category arXiv documents 
+ (commented out for now i.e. disabled)
+a[href*="http://arxiv.org/"] {
+  background-image: url(../files/arXiv_icon.gif);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+     padding-right: 22px;
+  } */
+    
+/* Icon for links to n-category cafe posts (disabled) 
+a[href*="http://golem.ph.utexas.edu/category"] {
+  background-image: url(../files/n-cafe_5.gif);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+     padding-right: 25px;
+  } */
+
+/* Icon for links to pdf files (disabled)
+a[href$=".pdf"] {
+  background-image: url(../files/pdficon_small.gif);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+     padding-right: 25px;
+  } */
+
+/* Icon for links to pages, etc. -inside- pdf files (disabled)
+a[href*=".pdf#"] {
+  background-image: url(../files/pdf_entry.gif);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+     padding-right: 25px;
+  } */
+
+a.existingWikiWord[title] {
+border: 0px;
+color: #aa0505;
+}
+    
+a.existingWikiWord[title]:visited {
+border: 0px;
+color: #551111;
+}
+
+a[href^="http://"] {
+border: 0px;
+color: #003399;
+}
+
+a[href^="http://"]:visited {
+border: 0px;
+color: #330066;
+}
+
+a[href^="https://"] {
+border: 0px;
+color: #003399;
+}
+
+a[href^="https://"]:visited {
+border: 0px;
+color: #330066;
+}
+
+div.dropDown .hide {
+display: none;
+}
+
+div.dropDown:hover .hide {
+display:block;
+}
+
+div.clickDown .hide {
+display: none;
+}
+
+div.clickDown:focus {
+outline:none;
+}
+
+div.clickDown:focus .hide, div.clickDown:hover .hide {
+display: block;
+}
+
+div.clickDown .clickToReveal, div.clickDown:focus .clickToHide {
+display:block;
+}
+
+div.clickDown:focus .clickToReveal, div.clickDown .clickToHide {
+display:none;
+}
+
+div.clickDown .clickToReveal:after {
+content: "\A(Hover to reveal, click to \"hold\")";
+font-size: 60%;
+}
+
+div.clickDown .clickToHide:after {
+content: "\A(Click to hide)";
+font-size: 60%;
+}
+div.clickDown .clickToHide, div.clickDown .clickToReveal {
+white-space: pre-wrap;
+}
+
+.un_theorem, .num_theorem, .un_lemma, .num_lemma, .un_prop, .num_prop, .un_cor, .num_cor, .un_defn, .num_defn, .un_example, .num_example, .un_note, .num_note, .un_remark, .num_remark {
+margin-left: 1em;
+}
+
+span.theorem_label {
+margin-left: -1em;
+}
+.proof span.theorem_label {
+margin-left: 0em;
+}
+:target {
+    background-color: #BBBBBB;
+    border-radius: 5pt;
+    padding: 0 10pt;
+}
+    
+  /*]]>*/--&gt;</style>
+  <script src="arrow%20category%20in%20nLab_files/prototype.js" type="text/javascript"></script>
+<script src="arrow%20category%20in%20nLab_files/effects.js" type="text/javascript"></script>
+<script src="arrow%20category%20in%20nLab_files/dragdrop.js" type="text/javascript"></script>
+<script src="arrow%20category%20in%20nLab_files/controls.js" type="text/javascript"></script>
+<script src="arrow%20category%20in%20nLab_files/application.js" type="text/javascript"></script>
+  <script src="arrow%20category%20in%20nLab_files/page_helper.js" type="text/javascript"></script>
+  <script src="arrow%20category%20in%20nLab_files/thm_numbering.js" type="text/javascript"></script>
+  
+  <script type="text/x-mathjax-config">
+  <!--//--><![CDATA[//><!--
+    MathJax.Hub.Config({
+      MathML: { useMathMLspacing: true },
+      "HTML-CSS": { scale: 90,
+                    extensions: ["handle-floats.js"]
+      }
+    });
+    MathJax.Hub.Queue( function () {
+       var fos = document.getElementsByTagName('foreignObject');
+       for (var i = 0; i < fos.length; i++) {
+         MathJax.Hub.Typeset(fos[i]);
+       }
+    });
+  //--><!]]>
+  </script>
+  <script type="text/javascript">
+    if (!(Prototype.Browser.Gecko || navigator.userAgent.match(/MathPlayer/))) {
+      var s = document.createElement('script');
+      s.src = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_HTMLorMML-full";
+      document.querySelector('head').appendChild(s);
+    };
+  </script>
+  	<link href="https://ncatlab.org/nlab/atom_with_headlines" rel="alternate" title="Atom with headlines" type="application/atom+xml" />
+  	<link href="https://ncatlab.org/nlab/atom_with_content" rel="alternate" title="Atom with full content" type="application/atom+xml" />
+  <script type="text/javascript">
+  document.observe("dom:loaded", function() {
+    generateThmNumbers();
+  });
+  </script>
+</head>
+
+<body>
+
+<div id="Container">
+<div id="Content">
+  <h1 id="pageName">
+    <span id="svg_logo"><svg version="1.1" width="100%" height="100%" viewBox="0 -1 180 198" xmlns="http://www.w3.org/2000/svg">
+      <path id="svg_logo_path" fill="#008B26" stroke-width="0.5" stroke="#000" d="         M170,60c4,11-1,20-12,25c-9,4-25,3-20,15c5,5,15,0,24,1c11,1,21,11,14,21c-10,15-35,6-48-1c-5-3-27-23-32-10c-1,13,15,10,22,16         c11,4,24,14,34,20c12,10,7,25-9,23c-11-1-22-9-30-16c-5-5-13-18-21-9c-2,6,2,11,5,14c9,9,22,14,22,31c-2,8-12,8-18,4c-4-3-9-8-11-13         c-3-6-5-18-12-18c-14-1-5,28-18,30c-9,2-13-9-12-16c1-14,12-24,21-31c5-4,17-13,10-20c-9-10-19,12-23,16c-7,7-17,16-31,15         c-9-1-18-9-11-17c5-7,14-4,23-6c6-1,15-8,8-15c-5-6-57,2-42-24c7-12,51,4,61,6c6,1,17,4,18-4c2-11-12-7-21-8c-21-2-49-14-49-34         c0-5,3-11,8-11C31,42,34,65,42,67c6,1,9-3,8-9C49,49,38,40,40,25c1-5,4-15,13-14c10,2,11,18,13,29c1,8,0,24,7,28c15,0,5-22,4-30         C74,23,78,7,87,1c8-4,14,1,16,9c2,11-8,21-2,30c8,2,11-6,14-12c9-14,36-18,30,5c-3,9-12,19-21,24c-6,4-22,10-23,19c-2,14,15,2,18-2         c9-9,20-18,33-22C159,52,166,54,170,60"/>
+    </svg></span>
+      <span class="webName">nLab</span><br />
+      arrow category
+  </h1>
+
+
+
+<div class="navigation">
+    <span class="skipNav"><a href="#navEnd">Skip the Navigation Links</a> | </span>
+    <a href="https://ncatlab.org/nlab/show/HomePage" accesskey="H" title="Home, Sweet Home">Home Page</a> | 
+    <a href="https://ncatlab.org/nlab/list" accesskey="A" title="Alphabetically sorted list of pages">All Pages</a> | 
+    <a href="https://ncatlab.org/nlab/latest_revisions" accesskey="U" title="View latest revisions on this web">Latest Revisions</a> |
+    <a href="https://ncatlab.org/nlab/authors" title="Who wrote what">Authors</a> | 
+    <a href="https://ncatlab.org/nlab/feeds" title="Subscribe to changes by Atom">Feeds</a> | 
+    <a href="https://ncatlab.org/nlab/export" accesskey="X" title="Download a zip with all the pages in this wiki">Export</a> |
+<form accept-charset="utf-8" action="/nlab/search" id="navigationSearchForm" method="get">      <fieldset class="search"><input id="searchField" name="query" value="Search" onfocus="this.value == 'Search' ? this.value = '' : true" onblur="this.value == '' ? this.value = 'Search' : true" type="text" /></fieldset>
+</form>  <span id="navEnd"></span>
+</div>
+
+
+
+
+
+
+<div id="revision">
+    <div class="rightHandSide">
+<div class="toc clickDown" tabindex="0">
+<h3 id="context">Context</h3>
+
+<h4 id="category_theory">Category theory</h4>
+
+<div class="hide">
+<p><strong><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/category+theory">category theory</a></strong></p>
+
+<h2 id="concepts" class="context_menu">Concepts</h2>
+
+<ul>
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/category">category</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/functor">functor</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/natural+transformation">natural transformation</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/Cat">Cat</a></p>
+</li>
+</ul>
+
+<h2 id="universal_constructions" class="context_menu">Universal constructions</h2>
+
+<ul>
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/universal+construction">universal construction</a></p>
+
+<ul>
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/representable+functor">representable functor</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/adjoint+functor">adjoint functor</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/limit">limit</a>/<a class="existingWikiWord" href="https://ncatlab.org/nlab/show/colimit">colimit</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/weighted+limit">weighted limit</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/end">end</a>/<a class="existingWikiWord" href="https://ncatlab.org/nlab/show/end">coend</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/Kan+extension">Kan extension</a></p>
+</li>
+</ul>
+</li>
+</ul>
+
+<h2 id="theorems" class="context_menu">Theorems</h2>
+
+<ul>
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/Yoneda+lemma">Yoneda lemma</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/Isbell+duality">Isbell duality</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/Grothendieck+construction">Grothendieck construction</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/adjoint+functor+theorem">adjoint functor theorem</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/monadicity+theorem">monadicity theorem</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/adjoint+lifting+theorem">adjoint lifting theorem</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/Tannaka+duality">Tannaka duality</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/Gabriel-Ulmer+duality">Gabriel-Ulmer duality</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/small+object+argument">small object argument</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/Freyd-Mitchell+embedding+theorem">Freyd-Mitchell embedding theorem</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/relation+between+type+theory+and+category+theory">relation between type theory and category theory</a></p>
+</li>
+</ul>
+
+<h2 id="extensions" class="context_menu">Extensions</h2>
+
+<ul>
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/sheaf+and+topos+theory">sheaf and topos theory</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/enriched+category+theory">enriched category theory</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/higher+category+theory">higher category theory</a></p>
+</li>
+</ul>
+
+<h2 id="applications" class="context_menu">Applications</h2>
+
+<ul>
+<li><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/applications+of+%28higher%29+category+theory">applications of (higher) category theory</a></li>
+</ul>
+<div>
+<p>
+  <a href="https://ncatlab.org/nlab/edit/category+theory+-+contents">Edit this sidebar</a>
+</p>
+</div></div>
+</div>
+</div>
+
+<h1 id="contents">Contents</h1>
+<div class="maruku_toc"><ul><li><a href="#idea">1. Idea</a></li><li><a href="#definition">2. Definition</a></li><li><a href="#properties">3. Properties</a></li><li><a href="#related_concepts">4. Related concepts</a></li></ul></div>
+<h2 id="idea">1. Idea</h2>
+
+<p>Every <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/category">category</a> <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math> gives rise to an <em>arrow category</em> <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Arr</mi><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Arr(C)</annotation></semantics></math> such that the <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/object">objects</a> of <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Arr</mi><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Arr(C)</annotation></semantics></math> are the <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/morphism">morphisms</a> (or <em>arrows</em>, hence the name) of <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math>.</p>
+
+<h2 id="definition">2. Definition</h2>
+
+<p>For <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math> any <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/category">category</a>, its <strong>arrow category</strong> <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Arr</mi><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Arr(C)</annotation></semantics></math> is the category such that:</p>
+
+<ul>
+<li>an <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/object">object</a> <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math> of <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Arr</mi><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Arr(C)</annotation></semantics></math> is a <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/morphism">morphism</a> <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo lspace="verythinmathspace">:</mo><msub><mi>a</mi> <mn>0</mn></msub><mo>→</mo><msub><mi>a</mi> <mn>1</mn></msub></mrow><annotation encoding="application/x-tex">a\colon a_0 \to a_1</annotation></semantics></math> of <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math>;</li>
+
+<li>a <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/morphism">morphism</a> <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi><mo lspace="verythinmathspace">:</mo><mi>a</mi><mo>→</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">f\colon a \to b</annotation></semantics></math> of <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Arr</mi><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Arr(C)</annotation></semantics></math> is a <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/commutative+square">commutative square</a><div class="maruku-equation"><math class="maruku-mathml" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mtable><mtr><mtd><msub><mi>a</mi> <mn>0</mn></msub></mtd> <mtd><mover><mo>→</mo><mrow><msub><mi>f</mi> <mn>0</mn></msub></mrow></mover></mtd> <mtd><msub><mi>b</mi> <mn>0</mn></msub></mtd></mtr> <mtr><mtd><mi>a</mi><mo stretchy="false">↓</mo></mtd> <mtd/> <mtd><mi>b</mi><mo stretchy="false">↓</mo></mtd></mtr> <mtr><mtd><msub><mi>a</mi> <mn>1</mn></msub></mtd> <mtd><munder><mo>→</mo><mrow><msub><mi>f</mi> <mn>1</mn></msub></mrow></munder></mtd> <mtd><msub><mi>b</mi> <mn>1</mn></msub></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex"> \array {
+   a_0 &amp; \overset{f_0}\to &amp; b_0 \\
+   \llap{a}\downarrow &amp; &amp; \rlap{b}\downarrow \\
+   a_1 &amp; \underset{f_1}\to &amp; b_1
+   } 
+</annotation></semantics></math></div>
+<p>in <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math>;</p>
+</li>
+
+<li><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/composition">composition</a> in <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Arr</mi><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Arr(C)</annotation></semantics></math> is given simply by placing commutative squares side by side to get a commutative oblong.</li>
+</ul>
+
+<p>Up to <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/equivalence+of+categories">equivalence</a>, this is the same as the <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/functor+category">functor category</a></p>
+<div class="maruku-equation"><math class="maruku-mathml" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Arr</mi><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo><mo>:</mo><mo>=</mo><mi>Funct</mi><mo stretchy="false">(</mo><mi>I</mi><mo>,</mo><mi>C</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">[</mo><mi>I</mi><mo>,</mo><mi>C</mi><mo stretchy="false">]</mo><mo>=</mo><msup><mi>C</mi> <mi>I</mi></msup></mrow><annotation encoding="application/x-tex">
+  Arr(C) := Funct(I,C) = [I,C] = C^I
+
+</annotation></semantics></math></div>
+<p>for <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math> the <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/interval+category">interval category</a> <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">{</mo><mn>0</mn><mo>→</mo><mn>1</mn><mo stretchy="false">}</mo></mrow><annotation encoding="application/x-tex">\{0 \to 1\}</annotation></semantics></math>. <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Arr</mi><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Arr(C)</annotation></semantics></math> is also written <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mstyle mathvariant="bold"><mn>2</mn></mstyle><mo>,</mo><mi>C</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[\mathbf{2},C]</annotation></semantics></math>, <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>C</mi> <mstyle mathvariant="bold"><mn>2</mn></mstyle></msup></mrow><annotation encoding="application/x-tex">C^{\mathbf{2}}</annotation></semantics></math>, <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>Δ</mi><mo stretchy="false">[</mo><mn>1</mn><mo stretchy="false">]</mo><mo>,</mo><mi>C</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[\Delta[1],C]</annotation></semantics></math>, or <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>C</mi> <mrow><mi>Δ</mi><mo stretchy="false">[</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></msup></mrow><annotation encoding="application/x-tex">C^{\Delta[1]}</annotation></semantics></math>, since <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="bold"><mn>2</mn></mstyle></mrow><annotation encoding="application/x-tex">\mathbf{2}</annotation></semantics></math> and <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><mo stretchy="false">[</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">\Delta[1]</annotation></semantics></math> (for the <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math>-<a class="existingWikiWord" href="https://ncatlab.org/nlab/show/simplex">simplex</a>) are common notations for the interval category.</p>
+
+<h2 id="properties">3. Properties</h2>
+
+<ul>
+<li>
+<p><math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Arr</mi><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Arr(C)</annotation></semantics></math> is the equivalently the <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/comma+category">comma category</a> <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>id</mi><mo stretchy="false">/</mo><mi>id</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(id/id)</annotation></semantics></math> where <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>id</mi><mo lspace="verythinmathspace">:</mo><mi>C</mi><mo>→</mo><mi>C</mi></mrow><annotation encoding="application/x-tex">id\colon C \to C</annotation></semantics></math> is the <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/identity+functor">identity functor</a>.</p>
+</li>
+
+<li>
+<p><math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Arr</mi><mo stretchy="false">(</mo><mi>C</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">Arr(C)</annotation></semantics></math> plays the role of a directed <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/homotopy">path object</a> for categories in that functors</p>
+<div class="maruku-equation"><math class="maruku-mathml" display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>→</mo><mi>Arr</mi><mo stretchy="false">(</mo><mi>Y</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">
+X \to Arr(Y)
+
+</annotation></semantics></math></div>
+<p>are the same as <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/natural+transformation">natural transformations</a> between functors between <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math> and <math class="maruku-mathml" display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math>.</p>
+</li>
+</ul>
+
+<h2 id="related_concepts">4. Related concepts</h2>
+
+<ul>
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/path+space+object">path space object</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/over+category">slice category</a>, <a class="existingWikiWord" href="https://ncatlab.org/nlab/show/under+category">undercategory</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/arrow+%28%E2%88%9E%2C1%29-category">arrow (∞,1)-category</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/arrow+%28%E2%88%9E%2C1%29-topos">arrow (∞,1)-topos</a></p>
+</li>
+
+<li>
+<p><a class="existingWikiWord" href="https://ncatlab.org/nlab/show/twisted+arrow+category">twisted arrow category</a></p>
+</li>
+</ul>
+
+<p>
+ 
+</p>
+</div>
+
+<div class="revisedby">
+  Revised on July 26, 2016 10:04:27 
+  by <span class="newWikiWord">Brian Schroeder<a href="https://ncatlab.org/nlab/new/Brian+Schroeder">?</a></span>
+  (24.188.96.3)
+</div>
+
+<div class="navigation navfoot">
+
+  <a href="https://ncatlab.org/nlab/edit/arrow+category" accesskey="E" class="navlink" id="edit" rel="nofollow">Edit</a> | <a href="https://ncatlab.org/nlab/revision/arrow+category/18" accesskey="B" class="navlink" id="to_previous_revision" rel="nofollow">Back in time</a> <span class="revisions">(18 revisions)</span> | <a href="https://ncatlab.org/nlab/show/diff/arrow+category" accesskey="C" class="navlink" id="see_changes" rel="nofollow">See changes</a> | <a href="https://ncatlab.org/nlab/history/arrow+category" accesskey="S" class="navlink" id="history" rel="nofollow">History</a>
+  
+  <span class="views">
+    | Views: 
+    <a href="https://ncatlab.org/nlab/print/arrow+category" accesskey="p" id="view_print" rel="nofollow">Print</a>
+    | 
+    <a href="https://ncatlab.org/nlab/tex/arrow+category" id="view_tex" rel="nofollow">TeX</a>
+    |
+    <a href="https://ncatlab.org/nlab/source/arrow+category" id="view_source" rel="nofollow">Source</a>
+  </span>
+
+  
+
+</div>
+
+
+    <div id="footer">
+    <div>This site is running on <a href="http://golem.ph.utexas.edu/instiki/show/HomePage">Instiki 0.19.7(MML+)</a></div>
+    <div>Powered by <a href="http://rubyonrails.com/">Ruby on Rails</a>  2.3.18</div>
+    </div>
+
+</div> <!-- Content -->
+
+</div> <!-- Container -->
+
+</body>
+</html>

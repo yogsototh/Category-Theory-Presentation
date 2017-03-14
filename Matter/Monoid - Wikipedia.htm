@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html class="client-js ve-not-available" dir="ltr" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<title>Monoid - Wikipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Monoid","wgTitle":"Monoid","wgCurRevisionId":768075849,"wgRevisionId":768075849,"wgArticleId":19652,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["CS1 German-language sources (de)","Wikipedia articles needing clarification from March 2017","Algebraic structures","Category theory","Semigroup theory"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Monoid","wgRelevantArticleId":19652,"wgRequestId":"WMTYjApAICoAAG7j5gUAAABH","wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgFlaggedRevsParams":{"tags":{}},"wgStableRevisionId":null,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgPopupsShouldSendModuleToUser":false,"wgPopupsConflictsWithNavPopupGadget":false,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"en","wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":true},"wgRelatedArticles":null,"wgRelatedArticlesBetaFeatureEnabled":false,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSCurrentAutonym":"English","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgWikibaseItemId":"Q208237","wgCentralAuthMobileDomain":false,"wgVisualEditorToolbarScrollOffset":0,"wgEditSubmitButtonLabelPublish":false});mw.loader.state({"ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","ext.cite.styles":"ready","ext.math.styles":"ready","wikibase.client.init":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options@0j3lz3q",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens@1dqfd7l",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["ext.cite.a11y","ext.math.scripts","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.legacy.wikibits","mediawiki.searchSuggest","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.watchlist-notice","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.extra-toolbar-buttons","ext.gadget.switcher","ext.gadget.featured-articles-links","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.uls.interface","ext.quicksurveys.init","ext.centralNotice.geoIP","ext.centralNotice.startUp","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="Monoid%20-%20Wikipedia_files/load_002.css">
+<script async="" src="Monoid%20-%20Wikipedia_files/load_002.php"></script>
+<style>
+.cite-accessibility-label{ top:-99999px;clip:rect( 1px 1px 1px 1px ); clip:rect( 1px,1px,1px,1px ); position:absolute !important;padding:0 !important;border:0 !important;height:1px !important;width:1px !important; overflow:hidden}
+.referencetooltip{position:absolute;list-style:none;list-style-image:none;opacity:0;font-size:10px;margin:0;z-index:5;padding:0}.referencetooltip li{border:#080086 2px solid;max-width:260px;padding:10px 8px 13px 8px;margin:0px;background-color:#F7F7F7;-webkit-box-shadow:2px 4px 2px rgba(0,0,0,0.3);-moz-box-shadow:2px 4px 2px rgba(0,0,0,0.3);box-shadow:2px 4px 2px rgba(0,0,0,0.3)}.referencetooltip li+li{margin-left:7px;margin-top:-2px;border:0;padding:0;height:3px;width:0px;background-color:transparent;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;border-top:12px #080086 solid;border-right:7px transparent solid;border-left:7px transparent solid}.referencetooltip>li+li::after{content:'';border-top:8px #F7F7F7 solid;border-right:5px transparent solid;border-left:5px transparent solid;margin-top:-12px;margin-left:-5px;z-index:1;height:0px;width:0px;display:block}.client-js body .referencetooltip li li{border:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;height:auto;width:auto;margin:auto;padding:0;position:static}.RTflipped{padding-top:13px}.referencetooltip.RTflipped li+li{position:absolute;top:2px;border-top:0;border-bottom:12px #080086 solid}.referencetooltip.RTflipped li+li::after{border-top:0;border-bottom:8px #F7F7F7 solid;position:absolute;margin-top:7px}.RTsettings{float:right;height:24px;width:24px;cursor:pointer;background-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/0/05/OOjs_UI_icon_advanced.svg/24px-OOjs_UI_icon_advanced.svg.png);background-image:linear-gradient(transparent,transparent),url(//upload.wikimedia.org/wikipedia/commons/0/05/OOjs_UI_icon_advanced.svg);margin-top:-9px;margin-right:-7px;-webkit-transition:opacity 0.15s;-moz-transition:opacity 0.15s;-ms-transition:opacity 0.15s;-o-transition:opacity 0.15s;transition:opacity 0.15s;opacity:0.6;filter:alpha(opacity=60)}.RTsettings:hover{opacity:1;filter:alpha(opacity=100)}.RTTarget{border:#080086 2px solid}
+.skin-vector li.GA,.skin-monobook li.GA,.skin-modern li.GA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/4/42/Monobook-bullet-ga.png)} .skin-vector li.FA,.skin-monobook li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/d/d4/Monobook-bullet-star.png)}.skin-modern li.FA{list-style-image:url(//upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Modern-bullet-star.svg/9px-Modern-bullet-star.svg.png)}
+.wp-teahouse-question-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}#wp-th-question-ask{float:right}.wp-teahouse-ask a.external{background-image:none !important}.wp-teahouse-respond-form{position:absolute;margin-left:auto;margin-right:auto;background-color:#f4f3f0;border:1px solid #a7d7f9;padding:1em}.wp-th-respond{float:right}.wp-teahouse-respond a.external{background-image:none !important}
+.mw-collapsible-toggle{float:right;-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}  .mw-content-ltr .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr .mw-collapsible-toggle{float:right} .mw-content-rtl .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl .mw-collapsible-toggle{float:left}.mw-customtoggle,.mw-collapsible-toggle{cursor:pointer} caption .mw-collapsible-toggle,.mw-content-ltr caption .mw-collapsible-toggle,.mw-content-rtl caption .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr caption .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl caption .mw-collapsible-toggle{float:none} li .mw-collapsible-toggle,.mw-content-ltr li .mw-collapsible-toggle,.mw-content-rtl li .mw-collapsible-toggle,.mw-content-rtl .mw-content-ltr li .mw-collapsible-toggle,.mw-content-ltr .mw-content-rtl li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:0;z-index:1099;padding:0;margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:#fff;cursor:pointer;border:solid 1px #aaa;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:#fff;cursor:pointer;border:solid 1px #aaa;padding:0;margin:0}.suggestions-result{color:#000;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left; overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}.suggestions-result-current{background-color:#4c59a6;color:#fff}.suggestions-special .special-label{color:#808080;text-align:left}.suggestions-special .special-query{color:#000;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:#c0c0c0}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:#fff}.highlight{font-weight:bold}
+@media screen {
+	.tochidden,.toctoggle{-moz-user-select:none;-webkit-user-select:none;-ms-user-select:none;user-select:none}.toctoggle{font-size:94%}}
+@media print {
+	#toc.tochidden,.toctoggle{display:none}}
+.uls-menu{border-radius:4px; font-size:medium}.uls-search,.uls-language-settings-close-block{border-top-right-radius:4px;border-top-left-radius:4px}.uls-language-list{border-bottom-right-radius:4px;border-bottom-left-radius:4px}.uls-menu.callout .caret-before,.uls-menu.callout .caret-after{border-top:10px solid transparent;border-right:10px solid #c9c9c9;border-bottom:10px solid transparent;display:inline-block;left:-11px; top:17px;position:absolute}.uls-menu.callout .caret-after{border-right:10px solid #fcfcfc;display:inline-block;left:-10px}.uls-menu.callout--languageselection .caret-after{border-right:10px solid #fff}.uls-ui-languages button{margin:5px 15px 5px 0;white-space:nowrap;overflow:hidden}.uls-search-wrapper-wrapper{position:relative;padding-left:40px;margin-top:5px;margin-bottom:5px}.uls-icon-back{background:transparent url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.png?90e9b) no-repeat scroll center center;background-image:-webkit-linear-gradient( transparent,transparent ),url(/w/extensions/UniversalLanguageSelector/resources/images/back-grey-ltr.svg?ae714);background-image:linear-gradient( transparent,transparent ),url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20id%3D%22Layer_1%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M7%2013.1l8.9%208.9c.8-.8.8-2%200-2.8l-6.1-6.1%206-6.1c.8-.8.8-2%200-2.8L7%2013.1z%22%20id%3D%22path3%22%20fill%3D%22%23555%22%2F%3E%0A%3C%2Fsvg%3E%0A);background-size:28px;background-position:center center;height:32px;width:40px;display:block;position:absolute;left:0;border-right:1px solid #c9c9c9;opacity:0.8}.uls-icon-back:hover{opacity:1;cursor:pointer}
+@media print{#centralNotice{display:none}}.cn-closeButton{display:inline-block;zoom:1;background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAACeklEQVR4Aa1UM3jkcRBN6qS//tTFttPHqmI359VZ5dm2L1zFtr02YlRx5sX2ft/7ed7O/w1M5ufnt8NZQjCBQXhG+IYZe5zjfju7xcHc3NzEzMwM6xOEqNnZ2ZeVlZW827dv1ycmJnbGx8d3Yr5582Z9eXk5D/d4h/empqYm+K0nw3yKcF4sFmdzOJzGgIAAhb29vc7Ozk6/Atrr/fz8lCwWq6m3tzcb72G3nmzFo/NNTU354eHhIltbW72Tk5M2IyND9P79+8ZPnz7VvXnzpoHBYPS4uLhobGxsDMHBwaLa2tp82MF+PVmUUqnMioiI6LOysjLQLCcPS2ZmZn7Ozc39oPtFYG80GgWpqakSS0tLY1hYmEgikWTBfoXsLD16BT3gUWhoqEKtVheREZ+Qu0IEjI+PZ2k0GqFer+cnJSWJra2tDWw2u2FqauoVeEAW3NzcnBcYGCh3dHTUtba2ltNjLvRJSEiQEQEPRENDQzkMBqPXwsKiXyqVFsFDNzc3LWmoqKmp4YIHZIyHDx9WOzg46GJiYmTk5e/h4eHstLQ0CX2ykXST4JPJ8y7sSVM5/QGMf9y4caMHf3r//v1a8IDsGRm04/D58+dtpNFPPNRqtflXrlzpI8G15IEGc2xsrFSlUglwD+Tk5NRBmuTk5A7wgOxbXFxcF8iysrIa1mskEolKvL29Ne7u7mpXV1dNaWlp9fr7X79+VYMMeQieY/dsv5p1r2g2Nja2vWZ7RXNiYuIA0dwlzwYGBjbkGXmURXeLeUa1ul2ebV8BEH+7CiAiASTYvgJ2qc3MzMzF2vz8+XPd27dvG5hMZg+CsV1tHmfXOP5+dqyddgHOI7v1srTdcwAAAABJRU5ErkJggg==);background:url(/w/extensions/CentralNotice/resources/subscribing/CloseWindow19x19.png?7596b)!ie;width:19px;height:19px;text-indent:19px;white-space:nowrap;overflow:hidden}
+.mw-ui-button{font-family:inherit;font-size:1em;display:inline-block;min-width:4em;max-width:28.75em;padding:0.546875em 1em;line-height:1.286;margin:0;border-radius:2px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-appearance:none;*display:inline; zoom:1;vertical-align:middle;background-color:#f8f9fa;color:#222222;border:1px solid #a2a9b1;text-align:center;font-weight:bold;cursor:pointer}.mw-ui-button:visited{color:#222222}.mw-ui-button:hover{background-color:#ffffff;color:#444444;border-color:#a2a9b1}.mw-ui-button:focus{background-color:#ffffff;color:#222222;border-color:#3366cc;box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button:active,.mw-ui-button.is-on,.mw-ui-button.mw-ui-checked{background-color:#d9d9d9;color:#000000;border-color:#72777d;box-shadow:none}.mw-ui-button:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button:disabled:hover,.mw-ui-button:disabled:active{background-color:#c8ccd1;color:#fff;box-shadow:none;border-color:#c8ccd1}.mw-ui-button:focus{outline-width:0}.mw-ui-button:focus::-moz-focus-inner{border-color:transparent;padding:0}.mw-ui-button:not( :disabled ){-webkit-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;-moz-transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms;transition:background-color 100ms,color 100ms,border-color 100ms,box-shadow 100ms}.mw-ui-button:disabled{text-shadow:none;cursor:default}.mw-ui-button.mw-ui-big{font-size:1.3em}.mw-ui-button.mw-ui-block{display:block;width:100%;margin-left:auto;margin-right:auto}.mw-ui-button.mw-ui-progressive,.mw-ui-button.mw-ui-constructive{background-color:#3366cc;color:#fff;border:1px solid #3366cc;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-progressive:hover,.mw-ui-button.mw-ui-constructive:hover{background-color:#447ff5;border-color:#447ff5}.mw-ui-button.mw-ui-progressive:focus,.mw-ui-button.mw-ui-constructive:focus{box-shadow:inset 0 0 0 1px #3366cc,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-progressive:active,.mw-ui-button.mw-ui-constructive:active,.mw-ui-button.mw-ui-progressive.is-on,.mw-ui-button.mw-ui-constructive.is-on,.mw-ui-button.mw-ui-progressive.mw-ui-checked,.mw-ui-button.mw-ui-constructive.mw-ui-checked{background-color:#2a4b8d;border-color:#2a4b8d;box-shadow:none}.mw-ui-button.mw-ui-progressive:disabled,.mw-ui-button.mw-ui-constructive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-progressive:disabled:hover,.mw-ui-button.mw-ui-constructive:disabled:hover,.mw-ui-button.mw-ui-progressive:disabled:active,.mw-ui-button.mw-ui-constructive:disabled:active,.mw-ui-button.mw-ui-progressive:disabled.mw-ui-checked,.mw-ui-button.mw-ui-constructive:disabled.mw-ui-checked{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-progressive.mw-ui-quiet,.mw-ui-button.mw-ui-constructive.mw-ui-quiet{color:#222222}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:hover,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:hover{background-color:transparent;color:#447ff5}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:active,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:active,.mw-ui-button.mw-ui-progressive.mw-ui-quiet.mw-ui-checked,.mw-ui-button.mw-ui-constructive.mw-ui-quiet.mw-ui-checked{color:#2a4b8d}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:focus,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:focus{background-color:transparent;color:#3366cc}.mw-ui-button.mw-ui-progressive.mw-ui-quiet:disabled,.mw-ui-button.mw-ui-constructive.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-destructive{background-color:#dd3333;color:#fff;border:1px solid #dd3333;text-shadow:0 1px rgba(0,0,0,0.1)}.mw-ui-button.mw-ui-destructive:hover{background-color:#ff4242;border-color:#ff4242}.mw-ui-button.mw-ui-destructive:focus{box-shadow:inset 0 0 0 1px #dd3333,inset 0 0 0 2px #ffffff}.mw-ui-button.mw-ui-destructive:active,.mw-ui-button.mw-ui-destructive.is-on,.mw-ui-button.mw-ui-destructive.mw-ui-checked{background-color:#b32424;border-color:#b32424;box-shadow:none}.mw-ui-button.mw-ui-destructive:disabled{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1}.mw-ui-button.mw-ui-destructive:disabled:hover,.mw-ui-button.mw-ui-destructive:disabled:active,.mw-ui-button.mw-ui-destructive:disabled.mw-ui-checked{background-color:#c8ccd1;color:#fff;border-color:#c8ccd1;box-shadow:none}.mw-ui-button.mw-ui-destructive.mw-ui-quiet{color:#222222}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:hover{background-color:transparent;color:#ff4242}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:active,.mw-ui-button.mw-ui-destructive.mw-ui-quiet.mw-ui-checked{color:#b32424}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:focus{background-color:transparent;color:#dd3333}.mw-ui-button.mw-ui-destructive.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-quiet{background:transparent;border:0;text-shadow:none;color:#222222}.mw-ui-button.mw-ui-quiet:hover{background-color:transparent;color:#444444}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet.mw-ui-checked{color:#000000}.mw-ui-button.mw-ui-quiet:focus{background-color:transparent;color:#222222}.mw-ui-button.mw-ui-quiet:disabled{color:#c8ccd1}.mw-ui-button.mw-ui-quiet:hover,.mw-ui-button.mw-ui-quiet:focus{box-shadow:none}.mw-ui-button.mw-ui-quiet:active,.mw-ui-button.mw-ui-quiet:disabled{background:transparent}input.mw-ui-button::-moz-focus-inner,button.mw-ui-button::-moz-focus-inner{margin-top:-1px;margin-bottom:-1px}a.mw-ui-button{text-decoration:none}a.mw-ui-button:hover,a.mw-ui-button:focus{text-decoration:none}.mw-ui-button-group > *{min-width:48px;border-radius:0;float:left}.mw-ui-button-group > *:first-child{border-top-left-radius:2px;border-bottom-left-radius:2px}.mw-ui-button-group > *:not( :first-child ){border-left:0}.mw-ui-button-group > *:last-child{border-top-right-radius:2px;border-bottom-right-radius:2px}.mw-ui-button-group .is-on .button{cursor:default}
+.mw-ui-icon{position:relative;line-height:1.5em;min-height:1.5em;min-width:1.5em}.mw-ui-icon.mw-ui-icon-element{text-indent:-999px;overflow:hidden;width:3.5em;min-width:3.5em;max-width:3.5em}.mw-ui-icon.mw-ui-icon-element:before{left:0;right:0;position:absolute;margin:0 1em}.mw-ui-icon.mw-ui-icon-before:before,.mw-ui-icon.mw-ui-icon-element:before{background-position:50% 50%;background-repeat:no-repeat;background-size:100% auto;float:left;display:block;min-height:1.5em;content:''}.mw-ui-icon.mw-ui-icon-before:before{position:relative;width:1.5em;margin-right:1em}.mw-ui-icon.mw-ui-icon-small:before{background-size:66.67% auto}
+.postedit-container{margin:0 auto;position:fixed;top:0;height:0;left:50%;z-index:1000;font-size:13px}.postedit-container:hover{cursor:pointer}.postedit{position:relative;top:0.6em;left:-50%;padding:0.6em 3.6em 0.6em 1.1em;line-height:1.5625em;color:#626465;background-color:#f4f4f4;border:1px solid #dcd9d9;text-shadow:0 0.0625em 0 rgba( 255,255,255,0.5 );border-radius:5px;box-shadow:0 2px 5px 0 #ccc;-webkit-transition:all 0.25s ease-in-out;-moz-transition:all 0.25s ease-in-out;-ms-transition:all 0.25s ease-in-out;-o-transition:all 0.25s ease-in-out;transition:all 0.25s ease-in-out}.skin-monobook .postedit{top:6em !important; }.postedit-faded{opacity:0}.postedit-icon{padding-left:41px;  line-height:25px;background-repeat:no-repeat;background-position:8px 50%}.postedit-icon-checkmark{background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAB9ElEQVR4AZWRA3AYURQArxrVHtW2bdu2bdu2zdi2bdu2bWxs7zeehZaw4f70kbs+zI3e/nWK+RWx3aOFlrL56Sy5SxrruG69hlv6OyK+mz+8KDSXdXembj0ispT7tjs4ZTIbpYBvxGSGKzZTeFrb7W/meN002swFs0U8ttpHTkF2BvCqWQrW35929bTsKm5Zb+SEwWwcY8wAngB9m7Z+d+rIPZ/npdy12M5p47n8dXsCYAf0qPy06eGMdktuDu9Qf+JmKl3SWM91qzVcN9tAbEYkwMaq0tyb1m/To5kP170el/BK8/qa6sJr70ydf+T/Uu5ab+Oo/lS0AkUBpIFWlZ9WPhxpse/PHO7YbOOczjL0vZV2lNxPPtG73dYXM+xvm2znrOl83tidoqCwMBgYXsPFB0on5S6pr+eK5TKuW67lgvaKvF8mL1dtfTL32FHxRdyx3cQpg7m4x9sCXKkTIzA4LDH44zWdzaUf71hv5rTG4uyzcusybxSX7aThbMQ8XgCYAp3rzTTQOiIh9PNlzY3FSuZxrzjme1Y7uGS6kjsWO4jPjM4FVjRZsvD4kO9XtTZzQn82NyzWc0B7AmZh6gA/hOYSGhfw9YbOVnarj+S7800AL2BIsxUAbWNToj7bhBuQmZcOsFdoKUC74rGheCwXmqAIQTc9jQcrADIAAAAASUVORK5CYII=);background-image:url(/w/resources/src/mediawiki.action/images/green-checkmark.png?d94f1)!ie;background-position:left}.postedit-close{position:absolute;padding:0 0.8em;right:0;top:0;font-size:1.25em;font-weight:bold;line-height:2.3em;color:#000;text-shadow:0 0.0625em 0 #fff;text-decoration:none;opacity:0.2;filter:alpha( opacity=20 )}.postedit-close:hover{color:#000;text-decoration:none;opacity:0.4;filter:alpha( opacity=40 )}
+@-webkit-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-webkit-transform:translateY(-20px)}100%{opacity:1;-webkit-transform:translateY(0)}}@-moz-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-moz-transform:translateY(-20px)}100%{opacity:1;-moz-transform:translateY(0)}}@-o-keyframes centralAuthPPersonalAnimation{0%{opacity:0;-o-transform:translateY(-20px)}100%{opacity:1;-o-transform:translateY(0)}}@keyframes centralAuthPPersonalAnimation{0%{opacity:0;transform:translateY(-20px)}100%{opacity:1;transform:translateY(0)}}.centralAuthPPersonalAnimation{-webkit-animation-duration:1s;-moz-animation-duration:1s;-o-animation-duration:1s;animation-duration:1s;-webkit-animation-fill-mode:both;-moz-animation-fill-mode:both;-o-animation-fill-mode:both;animation-fill-mode:both;-webkit-animation-name:centralAuthPPersonalAnimation;-moz-animation-name:centralAuthPPersonalAnimation;-o-animation-name:centralAuthPPersonalAnimation;animation-name:centralAuthPPersonalAnimation}
+.ext-quick-survey-panel,.ext-qs-loader-bar{width:auto;background-color:#eaecf0} .ext-qs-loader-bar{display:block;height:100px;margin-left:1.4em;clear:right;float:right;background-color:#eaecf0}.ext-qs-loader-bar.mw-ajax-loader{top:0}@media all and (min-width:720px){.ext-qs-loader-bar,.ext-quick-survey-panel{margin-left:1.4em;width:300px;clear:right;float:right}}</style><style>
+.suggestions a.mw-searchSuggest-link,.suggestions a.mw-searchSuggest-link:hover,.suggestions a.mw-searchSuggest-link:active,.suggestions a.mw-searchSuggest-link:focus{color:#000;text-decoration:none}.suggestions-result-current a.mw-searchSuggest-link,.suggestions-result-current a.mw-searchSuggest-link:hover,.suggestions-result-current a.mw-searchSuggest-link:active,.suggestions-result-current a.mw-searchSuggest-link:focus{color:#fff}.suggestions a.mw-searchSuggest-link .special-query{ overflow:hidden;-o-text-overflow:ellipsis; text-overflow:ellipsis;white-space:nowrap}
+#uls-settings-block{border-top:1px solid #c9c9c9;background:#f8f8f8;background:-webkit-gradient( linear,left top,left bottom,from( #fbfbfb ),to( #f0f0f0 ) );background:-webkit-linear-gradient( top,#fbfbfb,#f0f0f0 );background:-moz-linear-gradient( top,#fbfbfb,#f0f0f0 );background:-o-linear-gradient( top,#fbfbfb,#f0f0f0 );background:linear-gradient( #fbfbfb,#f0f0f0 );padding-left:10px;line-height:1.2em;border-radius:0 0 5px 5px}#uls-settings-block div.display-settings-block,#uls-settings-block div.input-settings-block{display:inline-block;margin:8px 15px;color:#565656}#uls-settings-block div.display-settings-block:hover,#uls-settings-block div.input-settings-block:hover{color:#252525}
+.mw-mmv-overlay{position:fixed;top:0;left:0;right:0;bottom:0;z-index:1000;background-color:#000000}body.mw-mmv-lightbox-open{overflow-y:auto;  }body.mw-mmv-lightbox-open #mw-page-base,body.mw-mmv-lightbox-open #mw-head-base,body.mw-mmv-lightbox-open #mw-navigation,body.mw-mmv-lightbox-open #content,body.mw-mmv-lightbox-open #footer,body.mw-mmv-lightbox-open #globalWrapper{ display:none}body.mw-mmv-lightbox-open > *{ display:none}body.mw-mmv-lightbox-open > .mw-mmv-overlay,body.mw-mmv-lightbox-open > .mw-mmv-wrapper{display:block}.mw-mmv-filepage-buttons{margin-top:5px}.mw-mmv-filepage-buttons .mw-mmv-view-expanded,.mw-mmv-filepage-buttons .mw-mmv-view-config{display:block;line-height:inherit}.mw-mmv-filepage-buttons .mw-mmv-view-expanded.mw-ui-icon:before{background-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%20768%22%3E%0A%20%20%20%20%3Cg%20fill%3D%22%23777%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M851.2%2071.6L690.7%20232.1l-40.1-40.3-9.6%20164.8%20164.8-9.3-40.3-40.4L926%20146.4l58.5%2058.5L997.6%200%20792.7%2013.1%22%2F%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M769.6%2089.3H611.9l70.9%2070.8%207.9%207.5m-47.1%20234.6l-51.2%203%203-51.2%209.4-164.4%205.8-100.3H26.4V768h883.1V387l-100.9%205.8-165%209.4zM813.9%20678H113.6l207.2-270.2%2031.5-12.9L548%20599.8l105.9-63.2%20159.8%20140.8.2.6zm95.6-291.9V228l-79.1%2078.9%207.8%207.9%22%2F%3E%0A%20%20%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A)}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before{background-image:url(data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20standalone%3D%22no%22%3F%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%201024%20768%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M897%20454.6V313.4L810.4%20299c-6.4-23.3-16-45.7-27.3-65.8l50.5-71.4-99.4-100.2-71.4%2050.5c-20.9-11.2-42.5-20.9-65.8-27.3L582.6-1H441.4L427%2085.6c-23.3%206.4-45.7%2016-65.8%2027.3l-71.4-50.5-100.3%2099.5%2050.5%2071.4c-11.2%2020.9-20.9%2042.5-27.3%2066.6L127%20313.4v141.2l85.8%2014.4c6.4%2023.3%2016%2045.7%2027.3%2066.6L189.6%20607l99.5%2099.5%2071.4-50.5c20.9%2011.2%2042.5%2020.9%2066.6%2027.3l14.4%2085.8h141.2l14.4-86.6c23.3-6.4%2045.7-16%2065.8-27.3l71.4%2050.5%2099.5-99.5-50.5-71.4c11.2-20.9%2020.9-42.5%2027.3-66.6l86.4-13.6zm-385%2077c-81.8%200-147.6-66.6-147.6-147.6%200-81.8%2066.6-147.6%20147.6-147.6S659.6%20302.2%20659.6%20384%20593.8%20531.6%20512%20531.6z%22%20fill%3D%22%23777%22%2F%3E%0A%3C%2Fsvg%3E%0A);opacity:0.75}.mw-mmv-filepage-buttons .mw-mmv-view-config.mw-ui-icon:before:hover{opacity:1}
+.ve-activated #toc,.ve-activated #siteNotice,.ve-activated .mw-indicators,.ve-activated #t-print,.ve-activated #t-permalink,.ve-activated #p-coll-print_export,.ve-activated #t-cite,.ve-deactivating .ve-ui-surface,.ve-active .ve-init-mw-desktopArticleTarget-editableContent{display:none} .ve-activating .ve-ui-surface{height:0;padding:0 !important; overflow:hidden} .ve-loading #content > :not( .ve-init-mw-desktopArticleTarget-loading-overlay ), .ve-activated .ve-init-mw-desktopArticleTarget-uneditableContent{  pointer-events:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none; opacity:0.5}.ve-activated .catlinks{cursor:pointer}.ve-activated .catlinks a{opacity:1} .ve-activated #content{position:relative} .ve-init-mw-desktopArticleTarget-loading-overlay{position:absolute;left:0;right:0;z-index:1;margin-top:-0.5em}.ve-init-mw-desktopArticleTarget-progress{height:1em;overflow:hidden;margin:0 25%}.ve-init-mw-desktopArticleTarget-progress-bar{height:1em;width:0} .mw-editsection{white-space:nowrap; unicode-bidi:-moz-isolate;unicode-bidi:-webkit-isolate;unicode-bidi:isolate}.mw-editsection-divider{color:#555} .ve-init-mw-desktopArticleTarget-progress{height:0.75em;border:1px solid #36c;background:#fff;border-radius:2px;box-shadow:0 0.1em 0 0 rgba( 0,0,0,0.15 )}.ve-init-mw-desktopArticleTarget-progress-bar{height:0.75em;background:#36c}</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="Monoid%20-%20Wikipedia_files/load.css">
+<meta name="generator" content="MediaWiki 1.29.0-wmf.15">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Exponentiation_as_monoid_homomorphism_svg.svg/1200px-Exponentiation_as_monoid_homomorphism_svg.svg.png">
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Monoid">
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit">
+<link rel="edit" title="Edit this page" href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit">
+<link rel="apple-touch-icon" href="https://en.wikipedia.org/static/apple-touch/wikipedia.png">
+<link rel="shortcut icon" href="https://en.wikipedia.org/static/favicon/wikipedia.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="https://en.wikipedia.org/w/opensearch_desc.php" title="Wikipedia (en)">
+<link rel="EditURI" type="application/rsd+xml" href="https://en.wikipedia.org/w/api.php?action=rsd">
+<link rel="copyright" href="https://creativecommons.org/licenses/by-sa/3.0/">
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Monoid">
+<link rel="dns-prefetch" href="https://login.wikimedia.org/">
+<link rel="dns-prefetch" href="https://meta.wikimedia.org/">
+<script src="Monoid%20-%20Wikipedia_files/load.php"></script></head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Monoid rootpage-Monoid skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice" class="mw-body-content"><div id="centralNotice"></div><!-- CentralNotice --></div>
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Monoid</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" dir="ltr" class="mw-content-ltr" lang="en"><div role="note" class="hatnote">For other uses, see <a href="https://en.wikipedia.org/wiki/Monoid_%28disambiguation%29" class="mw-disambig" title="Monoid (disambiguation)">Monoid (disambiguation)</a>.</div>
+<div role="note" class="hatnote">Not to be confused with <a href="https://en.wikipedia.org/wiki/Monad_%28disambiguation%29" class="mw-redirect mw-disambig" title="Monad (disambiguation)">monad</a>.</div>
+<p>In <a href="https://en.wikipedia.org/wiki/Abstract_algebra" title="Abstract algebra">abstract algebra</a>, a branch of <a href="https://en.wikipedia.org/wiki/Mathematics" title="Mathematics">mathematics</a>, a <b>monoid</b> is an <a href="https://en.wikipedia.org/wiki/Algebraic_structure" title="Algebraic structure">algebraic structure</a> with a single <a href="https://en.wikipedia.org/wiki/Associative" class="mw-redirect" title="Associative">associative</a> <a href="https://en.wikipedia.org/wiki/Binary_operation" title="Binary operation">binary operation</a> and an <a href="https://en.wikipedia.org/wiki/Identity_element" title="Identity element">identity element</a>. Monoids are studied in <a href="https://en.wikipedia.org/wiki/Semigroup" title="Semigroup">semigroup</a>
+ theory as they are semigroups with identity. Monoids occur in several 
+branches of mathematics; for instance, they can be regarded as <a href="https://en.wikipedia.org/wiki/Category_%28mathematics%29" title="Category (mathematics)">categories</a> with a single <a href="https://en.wikipedia.org/wiki/Object_%28category_theory%29" class="mw-redirect" title="Object (category theory)">object</a>. Thus, they capture the idea of <a href="https://en.wikipedia.org/wiki/Function_composition" title="Function composition">function composition</a>
+ within a set. In fact, all functions from a set into itself form 
+naturally a monoid with respect to function composition. Monoids are 
+also commonly used in <a href="https://en.wikipedia.org/wiki/Computer_science" title="Computer science">computer science</a>, both in its foundational aspects and in practical programming. The set of <a href="https://en.wikipedia.org/wiki/String_%28computer_science%29" title="String (computer science)">strings</a> built from a given set of <a href="https://en.wikipedia.org/wiki/Character_%28computing%29" title="Character (computing)">characters</a> is a <a href="https://en.wikipedia.org/wiki/Free_monoid" title="Free monoid">free monoid</a>. The <a href="https://en.wikipedia.org/wiki/Transition_monoid" class="mw-redirect" title="Transition monoid">transition monoid</a> and <a href="https://en.wikipedia.org/wiki/Syntactic_monoid" title="Syntactic monoid">syntactic monoid</a> are used in describing <a href="https://en.wikipedia.org/wiki/Finite_state_machines" class="mw-redirect" title="Finite state machines">finite state machines</a>, whereas <a href="https://en.wikipedia.org/wiki/Trace_monoid" title="Trace monoid">trace monoids</a> and <a href="https://en.wikipedia.org/wiki/History_monoid" title="History monoid">history monoids</a> provide a foundation for <a href="https://en.wikipedia.org/wiki/Process_calculi" class="mw-redirect" title="Process calculi">process calculi</a> and <a href="https://en.wikipedia.org/wiki/Concurrent_computing" title="Concurrent computing">concurrent computing</a>. Some of the more important results in the study of monoids are the <a href="https://en.wikipedia.org/wiki/Krohn%E2%80%93Rhodes_theorem" class="mw-redirect" title="Krohn–Rhodes theorem">Krohn–Rhodes theorem</a> and the <a href="https://en.wikipedia.org/wiki/Star_height_problem" title="Star height problem">star height problem</a>. The history of monoids, as well as a discussion of additional general properties, are found in the article on <a href="https://en.wikipedia.org/wiki/Semigroup" title="Semigroup">semigroups</a>.</p>
+<table class="vertical-navbox nowraplinks plainlist" style="float:right;clear:right;width:22.0em;margin:0 0 1.0em 1.0em;background:#f9f9f9;border:1px solid #aaa;padding:0.2em;border-spacing:0.4em 0;text-align:center;line-height:1.4em;font-size:88%">
+<tbody><tr>
+<th style="padding:0.2em 0.4em 0.2em;font-size:145%;line-height:1.2em;display:block;margin-bottom:0.35em;"><a href="https://en.wikipedia.org/wiki/Algebraic_structure" title="Algebraic structure">Algebraic structures</a></th>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame" style="border:none;padding:0" id="NavFrame1">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left;text-align:center;"><a href="https://en.wikipedia.org/wiki/Group_%28mathematics%29" title="Group (mathematics)">Group</a>-like<a class="NavToggle" id="NavToggle1" href="#">[hide]</a></div>
+<div class="NavContent" style="font-size:105%;padding:0.2em 0 0.4em;text-align:center;border-top:1px solid #aaa;border-bottom:1px solid #aaa;">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Semigroup" title="Semigroup">Semigroup</a>&nbsp;/ <strong class="selflink">Monoid</strong></li>
+<li><a href="https://en.wikipedia.org/wiki/Racks_and_quandles" title="Racks and quandles">Racks and quandles</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Quasigroup" title="Quasigroup">Quasigroup and loop</a></li>
+</ul>
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Abelian_group" title="Abelian group">Abelian group</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Magma_%28algebra%29" title="Magma (algebra)">Magma</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Lie_group" title="Lie group">Lie group</a></li>
+</ul>
+</div>
+<i><a href="https://en.wikipedia.org/wiki/Group_theory" title="Group theory">Group theory</a></i></div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0" id="NavFrame2">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left;text-align:center;"><a href="https://en.wikipedia.org/wiki/Ring_%28mathematics%29" title="Ring (mathematics)">Ring</a>-like<a class="NavToggle" id="NavToggle2" href="#">[show]</a></div>
+<div class="NavContent" style="font-size: 105%; padding: 0.2em 0px 0.4em; text-align: center; border-top: 1px solid rgb(170, 170, 170); border-bottom: 1px solid rgb(170, 170, 170); display: none;">
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Ring_%28mathematics%29" title="Ring (mathematics)">Ring</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Semiring" title="Semiring">Semiring</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Near-ring" title="Near-ring">Near-ring</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Commutative_ring" title="Commutative ring">Commutative ring</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Integral_domain" title="Integral domain">Integral domain</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Field_%28mathematics%29" title="Field (mathematics)">Field</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Division_ring" title="Division ring">Division ring</a></li>
+</ul>
+</div>
+<i><a href="https://en.wikipedia.org/wiki/Ring_theory" title="Ring theory">Ring theory</a></i></div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0" id="NavFrame3">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left;text-align:center;"><a href="https://en.wikipedia.org/wiki/Lattice_%28order%29" title="Lattice (order)">Lattice</a>-like<a class="NavToggle" id="NavToggle3" href="#">[show]</a></div>
+<div class="NavContent" style="font-size: 105%; padding: 0.2em 0px 0.4em; text-align: center; border-top: 1px solid rgb(170, 170, 170); border-bottom: 1px solid rgb(170, 170, 170); display: none;">
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Lattice_%28order%29" title="Lattice (order)">Lattice</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Semilattice" title="Semilattice">Semilattice</a></li>
+</ul>
+</div>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Map_of_lattices" title="Map of lattices">Map of lattices</a></li>
+<li><i><a href="https://en.wikipedia.org/wiki/Lattice_%28order%29" title="Lattice (order)">Lattice theory</a></i></li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0" id="NavFrame4">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left;text-align:center;"><a href="https://en.wikipedia.org/wiki/Module_%28mathematics%29" title="Module (mathematics)">Module</a>-like<a class="NavToggle" id="NavToggle4" href="#">[show]</a></div>
+<div class="NavContent" style="font-size: 105%; padding: 0.2em 0px 0.4em; text-align: center; border-top: 1px solid rgb(170, 170, 170); border-bottom: 1px solid rgb(170, 170, 170); display: none;">
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Module_%28mathematics%29" title="Module (mathematics)">Module</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Group_with_operators" title="Group with operators">Group with operators</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Vector_space" title="Vector space">Vector space</a></li>
+</ul>
+</div>
+<ul>
+<li><i><a href="https://en.wikipedia.org/wiki/Linear_algebra" title="Linear algebra">Linear algebra</a></i></li>
+</ul>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="padding:0 0.1em 0.4em">
+<div class="NavFrame collapsed" style="border:none;padding:0" id="NavFrame5">
+<div class="NavHead" style="font-size:105%;background:transparent;text-align:left;text-align:center;"><a href="https://en.wikipedia.org/wiki/Algebra_over_a_field" title="Algebra over a field">Algebra</a>-like<a class="NavToggle" id="NavToggle5" href="#">[show]</a></div>
+<div class="NavContent" style="font-size: 105%; padding: 0.2em 0px 0.4em; text-align: center; border-top: 1px solid rgb(170, 170, 170); border-bottom: 1px solid rgb(170, 170, 170); display: none;">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Algebra_over_a_field" title="Algebra over a field">Algebra</a></li>
+</ul>
+<div class="hlist">
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Associative_algebra" title="Associative algebra">Associative</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Non-associative_algebra" title="Non-associative algebra">Non-associative</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Composition_algebra" title="Composition algebra">Composition algebra</a></li>
+</ul>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Lie_algebra" title="Lie algebra">Lie algebra</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Graded_ring" title="Graded ring">Graded</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Bialgebra" title="Bialgebra">Bialgebra</a></li>
+</ul>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td style="text-align:right;font-size:115%;padding-top: 0.6em;">
+<div class="plainlinks hlist navbar mini">
+<ul>
+<li class="nv-view"><a href="https://en.wikipedia.org/wiki/Template:Algebraic_structures" title="Template:Algebraic structures"><abbr title="View this template">v</abbr></a></li>
+<li class="nv-talk"><a href="https://en.wikipedia.org/wiki/Template_talk:Algebraic_structures" title="Template talk:Algebraic structures"><abbr title="Discuss this template">t</abbr></a></li>
+<li class="nv-edit"><a class="external text" href="https://en.wikipedia.org/w/index.php?title=Template:Algebraic_structures&amp;action=edit"><abbr title="Edit this template">e</abbr></a></li>
+</ul>
+</div>
+</td>
+</tr>
+</tbody></table>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+<span class="toctoggle">&nbsp;[<a role="button" tabindex="0" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Definition"><span class="tocnumber">1</span> <span class="toctext">Definition</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Monoid_structures"><span class="tocnumber">2</span> <span class="toctext">Monoid structures</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Submonoids"><span class="tocnumber">2.1</span> <span class="toctext">Submonoids</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Generators"><span class="tocnumber">2.2</span> <span class="toctext">Generators</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Commutative_monoid"><span class="tocnumber">2.3</span> <span class="toctext">Commutative monoid</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Partially_commutative_monoid"><span class="tocnumber">2.4</span> <span class="toctext">Partially commutative monoid</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Examples"><span class="tocnumber">3</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#Properties"><span class="tocnumber">4</span> <span class="toctext">Properties</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#Acts_and_operator_monoids"><span class="tocnumber">5</span> <span class="toctext">Acts and operator monoids</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="#Monoid_homomorphisms"><span class="tocnumber">6</span> <span class="toctext">Monoid homomorphisms</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="#Equational_presentation"><span class="tocnumber">7</span> <span class="toctext">Equational presentation</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="#Relation_to_category_theory"><span class="tocnumber">8</span> <span class="toctext">Relation to category theory</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="#Monoids_in_computer_science"><span class="tocnumber">9</span> <span class="toctext">Monoids in computer science</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="#MapReduce"><span class="tocnumber">10</span> <span class="toctext">MapReduce</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="#Complete_monoids"><span class="tocnumber">11</span> <span class="toctext">Complete monoids</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="#See_also"><span class="tocnumber">12</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="#Notes"><span class="tocnumber">13</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="#References"><span class="tocnumber">14</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="#External_links"><span class="tocnumber">15</span> <span class="toctext">External links</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="Definition">Definition</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=1" title="Edit section: Definition">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Suppose that <i>S</i> is a <a href="https://en.wikipedia.org/wiki/Set_%28mathematics%29" title="Set (mathematics)">set</a> and • is some <a href="https://en.wikipedia.org/wiki/Binary_operation" title="Binary operation">binary operation</a> <span class="nowrap"><i>S</i> × <i>S</i> → <i>S</i></span>, then <i>S</i> with • is a <b>monoid</b> if it satisfies the following two axioms:</p>
+<dl>
+<dt>Associativity</dt>
+<dd>For all <i>a</i>, <i>b</i> and <i>c</i> in <i>S</i>, the equation <span class="nowrap">(<i>a</i> • <i>b</i>) • <i>c</i> = <i>a</i> • (<i>b</i> • <i>c</i>)</span> holds.</dd>
+<dt>Identity element</dt>
+<dd>There exists an element <i>e</i> in <i>S</i> such that for every element <i>a</i> in <i>S</i>, the equations <span class="nowrap"><i>e</i> • <i>a</i> = <i>a</i> • <i>e</i> = <i>a</i></span> hold.</dd>
+</dl>
+<p>In other words, a monoid is a <a href="https://en.wikipedia.org/wiki/Semigroup" title="Semigroup">semigroup</a> with an <a href="https://en.wikipedia.org/wiki/Identity_element" title="Identity element">identity element</a>. It can also be thought of as a <a href="https://en.wikipedia.org/wiki/Magma_%28algebra%29" title="Magma (algebra)">magma</a> with associativity and identity. The identity element of a monoid is unique.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1">[1]</a></sup> A monoid in which each element has an <a href="https://en.wikipedia.org/wiki/Inverse_element" title="Inverse element">inverse</a> is a <a href="https://en.wikipedia.org/wiki/Group_%28mathematics%29" title="Group (mathematics)">group</a>.</p>
+<p>Depending on the context, the symbol for the binary operation may be 
+omitted, so that the operation is denoted by juxtaposition; for example,
+ the monoid axioms may be written <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo stretchy="false">(</mo>
+        <mi>a</mi>
+        <mi>b</mi>
+        <mo stretchy="false">)</mo>
+        <mi>c</mi>
+        <mo>=</mo>
+        <mi>a</mi>
+        <mo stretchy="false">(</mo>
+        <mi>b</mi>
+        <mi>c</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle (ab)c=a(bc)}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/ebe39cd5b70c1c6b7e467d25b61554b02b1bd122.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:13.3ex; height:2.843ex;" alt="(ab)c=a(bc)"></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>e</mi>
+        <mi>a</mi>
+        <mo>=</mo>
+        <mi>a</mi>
+        <mi>e</mi>
+        <mo>=</mo>
+        <mi>a</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle ea=ae=a}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/f028dc1a4809d8618a275e522ecb69c40e168f31.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:12.126ex; height:1.676ex;" alt="ea=ae=a"></span>. This notation does not imply that it is numbers being multiplied.</p>
+<h2><span class="mw-headline" id="Monoid_structures">Monoid structures</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=2" title="Edit section: Monoid structures">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<h3><span class="mw-headline" id="Submonoids">Submonoids</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=3" title="Edit section: Submonoids">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A <b>submonoid</b> of a monoid <span class="nowrap">(<i>M</i>, •)</span> is a <a href="https://en.wikipedia.org/wiki/Subset" title="Subset">subset</a> <i>N</i> of <i>M</i> that is closed under the monoid operation and contains the identity element <i>e</i> of <i>M</i>.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">[2]</a></sup><sup id="cite_ref-3" class="reference"><a href="#cite_note-3">[3]</a></sup> Symbolically, <i>N</i> is a submonoid of <i>M</i> if <span class="nowrap"><i>N</i> ⊆ <i>M</i></span>, <span class="nowrap"><i>x</i> • <i>y</i> ∈ <i>N</i></span> whenever <span class="nowrap"><i>x</i>, <i>y</i> ∈ <i>N</i></span>, and <span class="nowrap"><i>e</i> ∈ <i>N</i></span>. <i>N</i> is thus a monoid under the binary operation inherited from <i>M</i>.</p>
+<h3><span class="mw-headline" id="Generators">Generators</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=4" title="Edit section: Generators">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A subset <i>S</i> of <i>M</i> is said to be a <b>generator</b> of <i>M</i> if <i>M</i> is the smallest set containing <i>S</i> that is <a href="https://en.wikipedia.org/wiki/Closure_%28mathematics%29" title="Closure (mathematics)">closed</a> under the monoid operation, or equivalently <i>M</i> is the result of applying the <a href="https://en.wikipedia.org/wiki/Finitary_closure_operator" class="mw-redirect" title="Finitary closure operator">finitary closure operator</a> to <i>S</i>. If there is a generator of <i>M</i> that has finite cardinality, then <i>M</i> is said to be <b>finitely generated</b>. Not every set <i>S</i> will generate a monoid, as the generated structure may lack an identity element.</p>
+<h3><span class="mw-headline" id="Commutative_monoid">Commutative monoid</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=5" title="Edit section: Commutative monoid">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A monoid whose operation is <a href="https://en.wikipedia.org/wiki/Commutative" class="mw-redirect" title="Commutative">commutative</a> is called a <b>commutative monoid</b> (or, less commonly, an <b>abelian monoid</b>). Commutative monoids are often written additively. Any commutative monoid is endowed with its <b>algebraic</b> <a href="https://en.wikipedia.org/wiki/Preorder" title="Preorder">preordering</a> ≤, defined by <span class="nowrap"><i>x</i> ≤ <i>y</i></span> if there exists <i>z</i> such that <span class="nowrap"><i>x</i> + <i>z</i> = <i>y</i></span>.<sup id="cite_ref-4" class="reference"><a href="#cite_note-4">[4]</a></sup> An <b>order-unit</b> of a commutative monoid <i>M</i> is an element <i>u</i> of <i>M</i> such that for any element <i>x</i> of <i>M</i>, there exists a positive integer <i>n</i> such that <span class="nowrap"><i>x</i> ≤ <i>nu</i></span>. This is often used in case <i>M</i> is the <a href="https://en.wikipedia.org/wiki/Ordered_group" class="mw-redirect" title="Ordered group">positive cone</a> of a <a href="https://en.wikipedia.org/wiki/Partially_ordered_set" title="Partially ordered set">partially ordered</a> <a href="https://en.wikipedia.org/wiki/Abelian_group" title="Abelian group">abelian group</a> <i>G</i>, in which case we say that <i>u</i> is an order-unit of <i>G</i>.</p>
+<h3><span class="mw-headline" id="Partially_commutative_monoid">Partially commutative monoid</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=6" title="Edit section: Partially commutative monoid">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A monoid for which the operation is commutative for some, but not all elements is a <a href="https://en.wikipedia.org/wiki/Trace_monoid" title="Trace monoid">trace monoid</a>; trace monoids commonly occur in the theory of <a href="https://en.wikipedia.org/wiki/Concurrent_computation" class="mw-redirect" title="Concurrent computation">concurrent computation</a>.</p>
+<h2><span class="mw-headline" id="Examples">Examples</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=7" title="Edit section: Examples">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li>Out of the 16 possible <a href="https://en.wikipedia.org/wiki/Truth_table#Truth_table_for_all_binary_logical_operators" title="Truth table">binary Boolean operators</a>,
+ each of the four that has a two sided identity is also commutative and 
+associative and thus makes the set {False, True} a commutative monoid. 
+Under the standard definitions, <a href="https://en.wikipedia.org/wiki/Logical_conjunction" title="Logical conjunction">AND</a> and <a href="https://en.wikipedia.org/wiki/Logical_biconditional" title="Logical biconditional">XNOR</a> have the identity True while <a href="https://en.wikipedia.org/wiki/Exclusive_disjunction" class="mw-redirect" title="Exclusive disjunction">XOR</a> and <a href="https://en.wikipedia.org/wiki/Logical_disjunction" title="Logical disjunction">OR</a> have the identity False. The monoids from AND and OR are also <a href="https://en.wikipedia.org/wiki/Idempotent" class="mw-redirect" title="Idempotent">idempotent</a> while those from XOR and XNOR are not.</li>
+<li>The <a href="https://en.wikipedia.org/wiki/Natural_number" title="Natural number">natural numbers</a>, <b>N</b>, form a commutative monoid under addition (identity element <a href="https://en.wikipedia.org/wiki/0_%28number%29" class="mw-redirect" title="0 (number)">zero</a>), or multiplication (identity element <a href="https://en.wikipedia.org/wiki/1_%28number%29" class="mw-redirect" title="1 (number)">one</a>). A submonoid of <b>N</b> under addition is called a <a href="https://en.wikipedia.org/wiki/Numerical_monoid" class="mw-redirect" title="Numerical monoid">numerical monoid</a>.</li>
+<li>The <a href="https://en.wikipedia.org/wiki/Positive_integer" class="mw-redirect" title="Positive integer">positive integers</a>, <span class="nowrap"><b>N</b> ∖ {0}</span>, form a commutative monoid under multiplication (identity element one).</li>
+<li>Given a set A, all subsets of A form a commutative monoid under intersection operation (identity element is A itself).</li>
+<li>Given a set A, all subsets of A form a commutative monoid under union operation (identity element is the empty set).</li>
+<li>Generalizing the previous example, every bounded <a href="https://en.wikipedia.org/wiki/Semilattice" title="Semilattice">semilattice</a> is an <a href="https://en.wikipedia.org/wiki/Idempotent" class="mw-redirect" title="Idempotent">idempotent</a> commutative monoid.
+<ul>
+<li>In particular, any bounded <a href="https://en.wikipedia.org/wiki/Lattice_%28order%29" title="Lattice (order)">lattice</a> can be endowed with both a <a href="https://en.wikipedia.org/wiki/Join_and_meet" title="Join and meet">meet</a>- and a <a href="https://en.wikipedia.org/wiki/Join_and_meet" title="Join and meet">join</a>- monoid structure. The identity elements are the lattice's top and its bottom, respectively. Being lattices, <a href="https://en.wikipedia.org/wiki/Heyting_algebra" title="Heyting algebra">Heyting algebras</a> and <a href="https://en.wikipedia.org/wiki/Boolean_algebra_%28structure%29" title="Boolean algebra (structure)">Boolean algebras</a> are endowed with these monoid structures.</li>
+</ul>
+</li>
+<li>Every <a href="https://en.wikipedia.org/wiki/Singleton_set" class="mw-redirect" title="Singleton set">singleton set</a> {<i>x</i>} closed under a binary operation • forms the trivial (one-element) monoid, which is also the <a href="https://en.wikipedia.org/wiki/Trivial_group" title="Trivial group">trivial group</a>.</li>
+<li>Every <a href="https://en.wikipedia.org/wiki/Group_%28mathematics%29" title="Group (mathematics)">group</a> is a monoid and every <a href="https://en.wikipedia.org/wiki/Abelian_group" title="Abelian group">abelian group</a> a commutative monoid.</li>
+<li>Any <a href="https://en.wikipedia.org/wiki/Semigroup" title="Semigroup">semigroup</a> <i>S</i> may be turned into a monoid simply by adjoining an element <i>e</i> not in <i>S</i> and defining <span class="nowrap"><i>e</i> • <i>s</i> = <i>s</i> = <i>s</i> • <i>e</i></span> for all <span class="nowrap"><i>s</i> ∈ <i>S</i></span>. This conversion of any semigroup to the monoid is done by the <a href="https://en.wikipedia.org/wiki/Free_functor" class="mw-redirect" title="Free functor">free functor</a> between the <a href="https://en.wikipedia.org/w/index.php?title=Category_of_semigroups&amp;action=edit&amp;redlink=1" class="new" title="Category of semigroups (page does not exist)">category of semigroups</a> and the <a href="https://en.wikipedia.org/wiki/Category_of_monoids" class="mw-redirect" title="Category of monoids">category of monoids</a>.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5">[5]</a></sup>
+<ul>
+<li>Thus, an idempotent monoid (sometimes known as <i>find-first</i>) may be formed by adjoining an identity element <i>e</i> to the <a href="https://en.wikipedia.org/wiki/Left_zero_semigroup" class="mw-redirect" title="Left zero semigroup">left zero semigroup</a> over a set <i>S</i>. The opposite monoid (sometimes called <i>find-last</i>) is formed from the <a href="https://en.wikipedia.org/wiki/Right_zero_semigroup" class="mw-redirect" title="Right zero semigroup">right zero semigroup</a> over <i>S</i>.
+<ul>
+<li>Adjoin an identity <i>e</i> to the left-zero semigroup with two elements {<i>lt</i>; <i>gt</i>}. Then the resulting idempotent monoid <span class="nowrap">{<i>lt</i>; <i>e</i>; <i>gt</i>}</span> models the <a href="https://en.wikipedia.org/wiki/Lexicographical_order" title="Lexicographical order">lexicographical order</a> of a sequence given the orders of its elements, with <i>e</i> representing equality.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The elements of any <a href="https://en.wikipedia.org/wiki/Unital_algebra" class="mw-redirect" title="Unital algebra">unital</a> <a href="https://en.wikipedia.org/wiki/Ring_%28algebra%29" class="mw-redirect" title="Ring (algebra)">ring</a>, with addition or multiplication as the operation.
+<ul>
+<li>The <a href="https://en.wikipedia.org/wiki/Integer" title="Integer">integers</a>, <a href="https://en.wikipedia.org/wiki/Rational_number" title="Rational number">rational numbers</a>, <a href="https://en.wikipedia.org/wiki/Real_number" title="Real number">real numbers</a> or <a href="https://en.wikipedia.org/wiki/Complex_number" title="Complex number">complex numbers</a>, with addition or multiplication as operation.<sup id="cite_ref-6" class="reference"><a href="#cite_note-6">[6]</a></sup></li>
+<li>The set of all <i>n</i> by <i>n</i> <a href="https://en.wikipedia.org/wiki/Matrix_%28mathematics%29" title="Matrix (mathematics)">matrices</a> over a given ring, with <a href="https://en.wikipedia.org/wiki/Matrix_addition" title="Matrix addition">matrix addition</a> or <a href="https://en.wikipedia.org/wiki/Matrix_multiplication" title="Matrix multiplication">matrix multiplication</a> as the operation.</li>
+</ul>
+</li>
+<li>The set of all finite <a href="https://en.wikipedia.org/wiki/String_%28computer_science%29" title="String (computer science)">strings</a> over some fixed alphabet Σ forms a monoid with <a href="https://en.wikipedia.org/wiki/String_concatenation" class="mw-redirect" title="String concatenation">string concatenation</a> as the operation. The <a href="https://en.wikipedia.org/wiki/Empty_string" title="Empty string">empty string</a> serves as the identity element. This monoid is denoted Σ<sup>∗</sup> and is called the <b><a href="https://en.wikipedia.org/wiki/Free_monoid" title="Free monoid">free monoid</a></b> over Σ.</li>
+<li>Given any monoid <i>M</i>, the <i>opposite monoid</i> M<sup>op</sup> has the same carrier set and identity element as <i>M</i>, and its operation is defined by <i>x</i> •<sup>op</sup> <span class="nowrap"><i>y</i> = <i>y</i> • <i>x</i></span>. Any <a href="https://en.wikipedia.org/wiki/Commutative_monoid" class="mw-redirect" title="Commutative monoid">commutative monoid</a> is the opposite monoid of itself.</li>
+<li>Given two sets <i>M</i> and <i>N</i> endowed with monoid structure (or, in general, any finite number of monoids, <i>M</i><sub>1</sub>, ..., <i>M<sub>k</sub></i>), their <a href="https://en.wikipedia.org/wiki/Cartesian_product" title="Cartesian product">cartesian product</a> <span class="nowrap"><i>M</i> × <i>N</i></span> is also a monoid (respectively, <span class="nowrap"><i>M<sub>1</sub></i> × ... × <i>M<sub>k</sub></i></span>). The associative operation and the identity element are defined pairwise.<sup id="cite_ref-7" class="reference"><a href="#cite_note-7">[7]</a></sup></li>
+<li>Fix a monoid <i>M</i>. The set of all functions from a given set to <i>M</i> is also a monoid. The identity element is a <a href="https://en.wikipedia.org/wiki/Constant_function" title="Constant function">constant function</a> mapping any value to the identity of <i>M</i>; the associative operation is defined <a href="https://en.wikipedia.org/wiki/Pointwise" title="Pointwise">pointwise</a>.</li>
+<li>Fix a monoid <i>M</i> with the operation • and identity element <i>e</i>, and consider its <a href="https://en.wikipedia.org/wiki/Power_set" title="Power set">power set</a> <i>P</i>(<i>M</i>) consisting of all <a href="https://en.wikipedia.org/wiki/Subset" title="Subset">subsets</a> of <i>M</i>. A binary operation for such subsets can be defined by <span class="nowrap"><i>S</i> • <i>T</i> = { <i>s</i> • <i>t</i>&nbsp;: <i>s</i> ∈ <i>S</i>, <i>t</i> ∈ <i>T</i> }</span>. This turns <i>P</i>(<i>M</i>) into a monoid with identity element {<i>e</i>}. In the same way the power set of a group <i>G</i> is a monoid under the <a href="https://en.wikipedia.org/wiki/Product_of_group_subsets" title="Product of group subsets">product of group subsets</a>.</li>
+<li>Let <i>S</i> be a set. The set of all functions <span class="nowrap"><i>S</i> → <i>S</i></span> forms a monoid under <a href="https://en.wikipedia.org/wiki/Function_composition" title="Function composition">function composition</a>. The identity is just the <a href="https://en.wikipedia.org/wiki/Identity_function" title="Identity function">identity function</a>. It is also called the <b><a href="https://en.wikipedia.org/wiki/Full_transformation_monoid" class="mw-redirect" title="Full transformation monoid">full transformation monoid</a></b> of <i>S</i>. If <i>S</i> is finite with <i>n</i> elements, the monoid of functions on <i>S</i> is finite with <i>n</i><sup><i>n</i></sup> elements.</li>
+<li>Generalizing the previous example, let <i>C</i> be a <a href="https://en.wikipedia.org/wiki/Category_%28mathematics%29" title="Category (mathematics)">category</a> and <i>X</i> an object in <i>C</i>. The set of all <a href="https://en.wikipedia.org/wiki/Endomorphism" title="Endomorphism">endomorphisms</a> of <i>X</i>, denoted End<sub><i>C</i></sub>(<i>X</i>), forms a monoid under composition of <a href="https://en.wikipedia.org/wiki/Morphism" title="Morphism">morphisms</a>. For more on the relationship between category theory and monoids see below.</li>
+<li>The set of <a href="https://en.wikipedia.org/wiki/Homeomorphism" title="Homeomorphism">homeomorphism</a> <a href="https://en.wikipedia.org/wiki/Class_%28set_theory%29" title="Class (set theory)">classes</a> of <a href="https://en.wikipedia.org/wiki/Compact_surface" class="mw-redirect" title="Compact surface">compact surfaces</a> with the <a href="https://en.wikipedia.org/wiki/Connected_sum" title="Connected sum">connected sum</a>. Its unit element is the class of the ordinary 2-sphere. Furthermore, if <i>a</i> denotes the class of the <a href="https://en.wikipedia.org/wiki/Torus" title="Torus">torus</a>, and <i>b</i> denotes the class of the projective plane, then every element <i>c</i> of the monoid has a unique expression the form <span class="nowrap"><i>c</i> = <i>na</i> + <i>mb</i></span> where <i>n</i> is the integer ≥ 0 and <i>m</i> = 0, 1, or 2. We have <span class="nowrap">3<i>b</i> = <i>a</i> + <i>b</i></span>.</li>
+<li>Let <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo fence="false" stretchy="false">⟨<!-- ⟨ --></mo>
+        <mi>f</mi>
+        <mo fence="false" stretchy="false">⟩<!-- ⟩ --></mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \langle f\rangle }</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/870037af06b737f0f7e35b42eb3b18ec1ce0199a.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:3.119ex; height:2.843ex;" alt="\langle f\rangle "></span> be a cyclic monoid of order <i>n</i>, that is, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo fence="false" stretchy="false">⟨<!-- ⟨ --></mo>
+        <mi>f</mi>
+        <mo fence="false" stretchy="false">⟩<!-- ⟩ --></mo>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <msup>
+          <mi>f</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>0</mn>
+          </mrow>
+        </msup>
+        <mo>,</mo>
+        <msup>
+          <mi>f</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>1</mn>
+          </mrow>
+        </msup>
+        <mo>,</mo>
+        <mo>…<!-- … --></mo>
+        <mo>,</mo>
+        <msup>
+          <mi>f</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+            <mo>−<!-- − --></mo>
+            <mn>1</mn>
+          </mrow>
+        </msup>
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \langle f\rangle =\{f^{0},f^{1},\dots ,f^{n-1}\}}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/3c3779c3a1c1cfe9a21270a454a78b3e7e1e6504.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:24.285ex; height:3.176ex;" alt="\langle f\rangle =\{f^{0},f^{1},\dots ,f^{n-1}\}"></span>. Then <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msup>
+          <mi>f</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msup>
+        <mo>=</mo>
+        <msup>
+          <mi>f</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>k</mi>
+          </mrow>
+        </msup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f^{n}=f^{k}}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/c106f26b6c538d93985cb41a722ee780f1c45a45.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:8.093ex; height:3.009ex;" alt="f^{n}=f^{k}"></span> for some <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mn>0</mn>
+        <mo>≤<!-- ≤ --></mo>
+        <mi>k</mi>
+        <mo>&lt;</mo>
+        <mi>n</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle 0\leq k&lt;n}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/75df768c7941edb28c55b82f6a26c92959fe68cf.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:10.018ex; height:2.509ex;" alt="0\leq k&lt;n"></span>. In fact, each such <i>k</i> gives a distinct monoid of order <i>n</i>, and every cyclic monoid is isomorphic to one of these.</li>
+</ul>
+<p>Moreover, <i>f</i> can be considered as a function on the points <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mn>2</mn>
+        <mo>,</mo>
+        <mo>…<!-- … --></mo>
+        <mo>,</mo>
+        <mi>n</mi>
+        <mo>−<!-- − --></mo>
+        <mn>1</mn>
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \{0,1,2,\dots ,n-1\}}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/a274c78335c05b113ff9a19b66526a9da869fbfd.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:18.592ex; height:2.843ex;" alt="\{0,1,2,\dots ,n-1\}"></span> given by</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow>
+            <mo>[</mo>
+            <mtable rowspacing="4pt" columnspacing="1em">
+              <mtr>
+                <mtd>
+                  <mn>0</mn>
+                </mtd>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+                <mtd>
+                  <mn>2</mn>
+                </mtd>
+                <mtd>
+                  <mo>…<!-- … --></mo>
+                </mtd>
+                <mtd>
+                  <mi>n</mi>
+                  <mo>−<!-- − --></mo>
+                  <mn>2</mn>
+                </mtd>
+                <mtd>
+                  <mi>n</mi>
+                  <mo>−<!-- − --></mo>
+                  <mn>1</mn>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mn>1</mn>
+                </mtd>
+                <mtd>
+                  <mn>2</mn>
+                </mtd>
+                <mtd>
+                  <mn>3</mn>
+                </mtd>
+                <mtd>
+                  <mo>…<!-- … --></mo>
+                </mtd>
+                <mtd>
+                  <mi>n</mi>
+                  <mo>−<!-- − --></mo>
+                  <mn>1</mn>
+                </mtd>
+                <mtd>
+                  <mi>k</mi>
+                </mtd>
+              </mtr>
+            </mtable>
+            <mo>]</mo>
+          </mrow>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\begin{bmatrix}0&amp;1&amp;2&amp;\dots &amp;n-2&amp;n-1\\1&amp;2&amp;3&amp;\dots &amp;n-1&amp;k\end{bmatrix}}}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/f40e56bc2bec95c5e26b5c161fbcae4a8cc8a376.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.505ex; width:31.951ex; height:6.176ex;" alt="{\begin{bmatrix}0&amp;1&amp;2&amp;\dots &amp;n-2&amp;n-1\\1&amp;2&amp;3&amp;\dots &amp;n-1&amp;k\end{bmatrix}}"></span></dd>
+</dl>
+<p>or, equivalently</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>i</mi>
+        <mo stretchy="false">)</mo>
+        <mo>:=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow>
+            <mo>{</mo>
+            <mtable columnalign="left left" rowspacing=".2em" columnspacing="1em" displaystyle="false">
+              <mtr>
+                <mtd>
+                  <mi>i</mi>
+                  <mo>+</mo>
+                  <mn>1</mn>
+                  <mo>,</mo>
+                </mtd>
+                <mtd>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mtext>if&nbsp;</mtext>
+                  </mrow>
+                  <mn>0</mn>
+                  <mo>≤<!-- ≤ --></mo>
+                  <mi>i</mi>
+                  <mo>&lt;</mo>
+                  <mi>n</mi>
+                  <mo>−<!-- − --></mo>
+                  <mn>1</mn>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mi>k</mi>
+                  <mo>,</mo>
+                </mtd>
+                <mtd>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mtext>if&nbsp;</mtext>
+                  </mrow>
+                  <mi>i</mi>
+                  <mo>=</mo>
+                  <mi>n</mi>
+                  <mo>−<!-- − --></mo>
+                  <mn>1.</mn>
+                </mtd>
+              </mtr>
+            </mtable>
+            <mo fence="true" stretchy="true"></mo>
+          </mrow>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f(i):={\begin{cases}i+1,&amp;{\mbox{if }}0\leq i&lt;n-1\\k,&amp;{\mbox{if }}i=n-1.\end{cases}}}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/f33305878e46ce4a41c80a7b6951571b1e718607.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.505ex; width:33.613ex; height:6.176ex;" alt="f(i):={\begin{cases}i+1,&amp;{\mbox{if }}0\leq i&lt;n-1\\k,&amp;{\mbox{if }}i=n-1.\end{cases}}"></span></dd>
+</dl>
+<p>Multiplication of elements in <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo fence="false" stretchy="false">⟨<!-- ⟨ --></mo>
+        <mi>f</mi>
+        <mo fence="false" stretchy="false">⟩<!-- ⟩ --></mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \langle f\rangle }</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/870037af06b737f0f7e35b42eb3b18ec1ce0199a.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:3.119ex; height:2.843ex;" alt="\langle f\rangle "></span> is then given by function composition.</p>
+<p>Note also that when <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>k</mi>
+        <mo>=</mo>
+        <mn>0</mn>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle k=0}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/6307c8a99dad7d0bcb712352ae0a748bd99a038b.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:5.504ex; height:2.176ex;" alt="k=0"></span> then the function <i>f</i> is a permutation of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo fence="false" stretchy="false">{</mo>
+        <mn>0</mn>
+        <mo>,</mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mn>2</mn>
+        <mo>,</mo>
+        <mo>…<!-- … --></mo>
+        <mo>,</mo>
+        <mi>n</mi>
+        <mo>−<!-- − --></mo>
+        <mn>1</mn>
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \{0,1,2,\dots ,n-1\}}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/a274c78335c05b113ff9a19b66526a9da869fbfd.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:18.592ex; height:2.843ex;" alt="\{0,1,2,\dots ,n-1\}"></span> and gives the unique <a href="https://en.wikipedia.org/wiki/Cyclic_group" title="Cyclic group">cyclic group</a> of order <i>n</i>.</p>
+<h2><span class="mw-headline" id="Properties">Properties</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=8" title="Edit section: Properties">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>In a monoid, one can define positive integer powers of an element <i>x</i>&nbsp;: <i>x</i><sup>1</sup> = <i>x</i>, and <i>x</i><sup>n</sup> = <i>x</i> • ... • <i>x</i> (<i>n</i> times) for <i>n</i> &gt; 1 . The rule of powers <i>x</i><sup><i>n</i> + <i>p</i></sup> = <i>x</i><sup><i>n</i></sup> • <i>x</i><sup><i>p</i></sup> is obvious.</p>
+<p>From the definition of a monoid, one can show that the identity element <i>e</i> is unique. Then, for any <i>x</i>, one can set <i>x</i><sup>0</sup> = <i>e</i> and the rule of powers is still true with nonnegative exponents.</p>
+<p>It is possible to define <a href="https://en.wikipedia.org/wiki/Inverse_element" title="Inverse element">invertible elements</a>: an element <i>x</i> is called invertible if there exists an element <i>y</i> such that <span class="nowrap"><i>x</i> • <i>y</i> = <i>e</i></span> and <span class="nowrap"><i>y</i> • <i>x</i> = <i>e</i></span>. The element <i>y</i> is called the inverse of <i>x</i>. If <i>y</i> and <i>z</i> are inverses of <i>x</i>, then by associativity <span class="nowrap"><i>y</i> = (<i>zx</i>)<i>y</i> = <i>z</i>(<i>xy</i>) = <i>z</i></span>. Thus inverses, if they exist, are unique.<sup id="cite_ref-8" class="reference"><a href="#cite_note-8">[8]</a></sup></p>
+<p>If <i>y</i> is the inverse of <i>x</i>, one can define negative powers of <i>x</i> by setting <span class="nowrap"><i>x</i><sup>−1</sup> = <i>y</i></span> and <span class="nowrap"><i>x</i><sup>−<i>n</i></sup> = <i>y</i> • ... • <i>y</i></span> (<i>n</i> times) for <span class="nowrap"><i>n</i> &gt; 1</span>. And the rule of exponents is still verified for all <i>n</i>, <i>p</i> rational integers. This is why the inverse of <i>x</i> is usually written <i>x</i><sup>−1</sup>. The set of all invertible elements in a monoid <i>M</i>, together with the operation •, forms a <a href="https://en.wikipedia.org/wiki/Group_%28mathematics%29" title="Group (mathematics)">group</a>. In that sense, every monoid contains a group (possibly only the <a href="https://en.wikipedia.org/wiki/Trivial_group" title="Trivial group">trivial group</a> consisting of only the identity).</p>
+<p>However, not every monoid sits inside a group. For instance, it is perfectly possible to have a monoid in which two elements <i>a</i> and <i>b</i> exist such that <span class="nowrap"><i>a</i> • <i>b</i> = <i>a</i></span> holds even though <i>b</i>
+ is not the identity element. Such a monoid cannot be embedded in a 
+group, because in the group we could multiply both sides with the 
+inverse of <i>a</i> and would get that <span class="nowrap"><i>b</i> = <i>e</i></span>, which isn't true. A monoid <span class="nowrap">(<i>M</i>, •)</span> has the <a href="https://en.wikipedia.org/wiki/Cancellation_property" title="Cancellation property">cancellation property</a> (or is <a href="https://en.wikipedia.org/wiki/Cancellative" class="mw-redirect" title="Cancellative">cancellative</a>) if for all <i>a</i>, <i>b</i> and <i>c</i> in <i>M</i>, <span class="nowrap"><i>a</i> • <i>b</i> = <i>a</i> • <i>c</i></span> always implies <span class="nowrap"><i>b</i> = <i>c</i></span> and <span class="nowrap"><i>b</i> • <i>a</i> = <i>c</i> • <i>a</i></span> always implies <span class="nowrap"><i>b</i> = <i>c</i></span>. A commutative monoid with the cancellation property can always be embedded in a group via the <a href="https://en.wikipedia.org/wiki/Grothendieck_group" title="Grothendieck group">Grothendieck construction</a>.
+ That is how the additive group of the integers (a group with operation 
++) is constructed from the additive monoid of natural numbers (a 
+commutative monoid with operation + and cancellation property). However,
+ a non-commutative cancellative monoid need not be embeddable in a 
+group.</p>
+<p>If a monoid has the cancellation property and is <i>finite</i>, then it is in fact a group. Proof: Fix an element <i>x</i> in the monoid. Since the monoid is finite, <span class="nowrap"><i>x</i><sup><i>n</i></sup> = <i>x</i><sup><i>m</i></sup></span> for some <span class="nowrap"><i>m</i> &gt; <i>n</i> &gt; 0</span>. But then, by cancellation we have that <span class="nowrap"><i>x</i><sup><i>m</i> − <i>n</i></sup> = <i>e</i></span> where <i>e</i> is the identity. Therefore, <span class="nowrap"><i>x</i> • <i>x</i><sup><i>m</i> − <i>n</i> − 1</sup> = <i>e</i></span>, so <i>x</i> has an inverse.</p>
+<p>The right- and left-cancellative elements of a monoid each in turn 
+form a submonoid (i.e. obviously include the identity and not so 
+obviously are closed under the operation). This means that the 
+cancellative elements of any commutative monoid can be extended to a 
+group.</p>
+<p>It turns out that requiring the cancellative property in a monoid is 
+not required to perform the Grothendieck construction – commutativity is
+ sufficient. However, if the original monoid has an <a href="https://en.wikipedia.org/wiki/Absorbing_element" title="Absorbing element">absorbing element</a> then its Grothendieck group is the trivial group. Hence the homomorphism is, in general, not injective.</p>
+<p>An <b>inverse monoid</b> is a monoid where for every <i>a</i> in <i>M</i>, there exists a unique <i>a</i><sup>−1</sup> in <i>M</i> such that <span class="nowrap"><i>a</i> = <i>a</i> • <i>a</i><sup>−1</sup> • <i>a</i></span> and <span class="nowrap"><i>a</i><sup>−1</sup> = <i>a</i><sup>−1</sup> • <i>a</i> • <i>a</i><sup>−1</sup></span>. If an inverse monoid is cancellative, then it is a group.</p>
+<p>In the opposite direction, a <b><a href="https://en.wikipedia.org/wiki/Zerosumfree_monoid" title="Zerosumfree monoid">zerosumfree monoid</a></b> is an additively written monoid in which <span class="nowrap"><i>a</i> + <i>b</i> = 0</span> implies that <span class="nowrap"><i>a</i> = 0</span> and <span class="nowrap"><i>b</i> = 0</span>:<sup id="cite_ref-9" class="reference"><a href="#cite_note-9">[9]</a></sup> equivalently, that no element other than zero has an additive inverse.</p>
+<h2><span class="mw-headline" id="Acts_and_operator_monoids">Acts and operator monoids</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=9" title="Edit section: Acts and operator monoids">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div role="note" class="hatnote">Main article: <a href="https://en.wikipedia.org/wiki/Monoid_act" class="mw-redirect" title="Monoid act">monoid act</a></div>
+<p>Let <i>M</i> be a monoid, with the binary operation denoted by • and the identity element denoted by <i>e</i>. Then a (left) <b><i>M</i>-act</b> (or left act over <i>M</i>) is a set <i>X</i> together with an operation <span class="nowrap">⋅&nbsp;: <i>M</i> × <i>X</i> → <i>X</i></span> which is compatible with the monoid structure as follows:</p>
+<ul>
+<li>for all <i>x</i> in <i>X</i>: <span class="nowrap"><i>e</i> ⋅ <i>x</i> = <i>x</i></span>;</li>
+<li>for all <i>a</i>, <i>b</i> in <i>M</i> and <i>x</i> in <i>X</i>: <span class="nowrap"><i>a</i> ⋅ (<i>b</i> ⋅ <i>x</i>) = (<i>a</i> • <i>b</i>) ⋅ <i>x</i></span>.</li>
+</ul>
+<p>This is the analogue in monoid theory of a (left) <a href="https://en.wikipedia.org/wiki/Group_action" title="Group action">group action</a>. Right <i>M</i>-acts are defined in a similar way. A monoid with an act is also known as an <b><a href="https://en.wikipedia.org/wiki/Operator_monoid" class="mw-redirect" title="Operator monoid">operator monoid</a></b>. Important examples include <a href="https://en.wikipedia.org/wiki/Transition_system" title="Transition system">transition systems</a> of <a href="https://en.wikipedia.org/wiki/Semiautomata" class="mw-redirect" title="Semiautomata">semiautomata</a>. A <a href="https://en.wikipedia.org/wiki/Transformation_semigroup" title="Transformation semigroup">transformation semigroup</a> can be made into an operator monoid by adjoining the identity transformation.</p>
+<h2><span class="mw-headline" id="Monoid_homomorphisms">Monoid homomorphisms</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=10" title="Edit section: Monoid homomorphisms">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:163px;"><a href="https://en.wikipedia.org/wiki/File:Exponentiation_as_monoid_homomorphism_svg.svg" class="image"><img alt="" src="Monoid%20-%20Wikipedia_files/161px-Exponentiation_as_monoid_homomorphism_svg.png" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Exponentiation_as_monoid_homomorphism_svg.svg/242px-Exponentiation_as_monoid_homomorphism_svg.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Exponentiation_as_monoid_homomorphism_svg.svg/323px-Exponentiation_as_monoid_homomorphism_svg.svg.png 2x" data-file-width="496" data-file-height="461" width="161" height="150"></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="https://en.wikipedia.org/wiki/File:Exponentiation_as_monoid_homomorphism_svg.svg" class="internal" title="Enlarge"></a></div>
+Example monoid homomorphism <span class="nowrap"><i>x</i> ↦ 2<sup><i>x</i></sup></span> from <span class="nowrap"><span style="color:#004000">(<b>N</b>, +, 0)</span></span> to <span class="nowrap"><span style="color:#400000">(<b>N</b>, ×, 1)</span></span>. It is injective, but not surjective.</div>
+</div>
+</div>
+<p>A <a href="https://en.wikipedia.org/wiki/Homomorphism" title="Homomorphism">homomorphism</a> between two monoids <span class="nowrap">(<i>M</i>, ∗)</span> and <span class="nowrap">(<i>N</i>, •)</span> is a function <span class="nowrap"><i>f</i>&nbsp;: <i>M</i> → <i>N</i></span> such that</p>
+<ul>
+<li><i>f</i>(<i>x</i> ∗ <i>y</i>) = <i>f</i>(<i>x</i>) • <i>f</i>(<i>y</i>) for all <i>x</i>, <i>y</i> in <i>M</i></li>
+<li><i>f</i>(<i>e</i><sub><i>M</i></sub>) = <i>e</i><sub><i>N</i></sub>,</li>
+</ul>
+<p>where <i>e</i><sub><i>M</i></sub> and <i>e</i><sub><i>N</i></sub> are the identities on <i>M</i> and <i>N</i> respectively. Monoid homomorphisms are sometimes simply called <b>monoid morphisms</b>.</p>
+<p>Not every <a href="https://en.wikipedia.org/wiki/Semigroup_homomorphism" class="mw-redirect" title="Semigroup homomorphism">semigroup homomorphism</a>
+ is a monoid homomorphism, since it may not map the identity to the 
+identity of the target monoid, even though the element it maps the 
+identity to will be an identity of the image of the mapping. In 
+contrast, a semigroup homomorphism between groups is always a <a href="https://en.wikipedia.org/wiki/Group_homomorphism" title="Group homomorphism">group homomorphism</a>,
+ as it necessarily preserves the identity. Since for monoids this isn't 
+always true, it is necessary to state this as a separate requirement.</p>
+<p>A <a href="https://en.wikipedia.org/wiki/Bijective" class="mw-redirect" title="Bijective">bijective</a> monoid homomorphism is called a monoid <a href="https://en.wikipedia.org/wiki/Isomorphism" title="Isomorphism">isomorphism</a>. Two monoids are said to be isomorphic if there is a monoid isomorphism between them.</p>
+<h2><span class="mw-headline" id="Equational_presentation">Equational presentation</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=11" title="Edit section: Equational presentation">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div role="note" class="hatnote">Main article: <a href="https://en.wikipedia.org/wiki/Presentation_of_a_monoid" title="Presentation of a monoid">Presentation of a monoid</a></div>
+<p>Monoids may be given a <b>presentation</b>, much in the same way that groups can be specified by means of a <a href="https://en.wikipedia.org/wiki/Group_presentation" class="mw-redirect" title="Group presentation">group presentation</a>. One does this by specifying a set of generators Σ, and a set of relations on the <a href="https://en.wikipedia.org/wiki/Free_monoid" title="Free monoid">free monoid</a> Σ<sup>∗</sup>. One does this by extending (finite) <a href="https://en.wikipedia.org/wiki/Binary_relation" title="Binary relation">binary relations</a> on Σ<sup>∗</sup> to monoid congruences, and then constructing the quotient monoid, as above.</p>
+<p>Given a binary relation <span class="nowrap"><i>R</i> ⊂ Σ<sup>∗</sup> × Σ<sup>∗</sup></span>, one defines its symmetric closure as <span class="nowrap"><i>R</i> ∪ <i>R</i><sup>−1</sup></span>. This can be extended to a symmetric relation <span class="nowrap"><i>E</i> ⊂ Σ<sup>∗</sup> × Σ<sup>∗</sup></span> by defining <span class="nowrap"><i>x</i> ~<sub><i>E</i></sub> <i>y</i></span> if and only if <span class="nowrap"><i>x</i> = <i>sut</i></span> and <span class="nowrap"><i>y</i> = <i>svt</i></span> for some strings <span class="nowrap"><i>u</i>, <i>v</i>, <i>s</i>, <i>t</i> ∈ Σ<sup>∗</sup></span> with <span class="nowrap">(<i>u</i>,<i>v</i>) ∈ <i>R</i> ∪ <i>R</i><sup>−1</sup></span>. Finally, one takes the reflexive and transitive closure of <i>E</i>, which is then a monoid congruence.</p>
+<p>In the typical situation, the relation <i>R</i> is simply given as a set of equations, so that <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>R</mi>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <msub>
+          <mi>u</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <msub>
+          <mi>v</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mn>1</mn>
+          </mrow>
+        </msub>
+        <mo>,</mo>
+        <mo>⋯<!-- ⋯ --></mo>
+        <mo>,</mo>
+        <msub>
+          <mi>u</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <msub>
+          <mi>v</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>n</mi>
+          </mrow>
+        </msub>
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle R=\{u_{1}=v_{1},\cdots ,u_{n}=v_{n}\}}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/9be89315ac66833b2d1d2c3e4de18996122ac477.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:28.188ex; height:2.843ex;" alt="R=\{u_{1}=v_{1},\cdots ,u_{n}=v_{n}\}"></span>. Thus, for example,</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo fence="false" stretchy="false">⟨<!-- ⟨ --></mo>
+        <mi>p</mi>
+        <mo>,</mo>
+        <mi>q</mi>
+        <mspace width="thinmathspace"></mspace>
+        <mo fence="false" stretchy="false">|</mo>
+        <mspace width="thickmathspace"></mspace>
+        <mi>p</mi>
+        <mi>q</mi>
+        <mo>=</mo>
+        <mn>1</mn>
+        <mo fence="false" stretchy="false">⟩<!-- ⟩ --></mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \langle p,q\,\vert \;pq=1\rangle }</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/0a59b1beec90201325b680dded2f0907e8d1e53d.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:13.366ex; height:2.843ex;" alt="\langle p,q\,\vert \;pq=1\rangle "></span></dd>
+</dl>
+<p>is the equational presentation for the <a href="https://en.wikipedia.org/wiki/Bicyclic_monoid" class="mw-redirect" title="Bicyclic monoid">bicyclic monoid</a>, and</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo fence="false" stretchy="false">⟨<!-- ⟨ --></mo>
+        <mi>a</mi>
+        <mo>,</mo>
+        <mi>b</mi>
+        <mspace width="thinmathspace"></mspace>
+        <mo fence="false" stretchy="false">|</mo>
+        <mspace width="thickmathspace"></mspace>
+        <mi>a</mi>
+        <mi>b</mi>
+        <mi>a</mi>
+        <mo>=</mo>
+        <mi>b</mi>
+        <mi>a</mi>
+        <mi>a</mi>
+        <mo>,</mo>
+        <mi>b</mi>
+        <mi>b</mi>
+        <mi>a</mi>
+        <mo>=</mo>
+        <mi>b</mi>
+        <mi>a</mi>
+        <mi>b</mi>
+        <mo fence="false" stretchy="false">⟩<!-- ⟩ --></mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \langle a,b\,\vert \;aba=baa,bba=bab\rangle }</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/de4e9e4779ceadc7915bf5b6e2d2b37d0d3e6fb0.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:27.564ex; height:2.843ex;" alt="\langle a,b\,\vert \;aba=baa,bba=bab\rangle "></span></dd>
+</dl>
+<p>is the <a href="https://en.wikipedia.org/wiki/Plactic_monoid" title="Plactic monoid">plactic monoid</a> of degree 2 (it has infinite order). Elements of this plactic monoid may be written as <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msup>
+          <mi>a</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msup>
+        <msup>
+          <mi>b</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </msup>
+        <mo stretchy="false">(</mo>
+        <mi>b</mi>
+        <mi>a</mi>
+        <msup>
+          <mo stretchy="false">)</mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>k</mi>
+          </mrow>
+        </msup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle a^{i}b^{j}(ba)^{k}}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/835032329bc1b61d2e7899418c7318f27a827023.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:9.147ex; height:3.176ex;" alt="a^{i}b^{j}(ba)^{k}"></span> for integers <i>i</i>, <i>j</i>, <i>k</i>, as the relations show that <i>ba</i> commutes with both <i>a</i> and <i>b</i>.</p>
+<h2><span class="mw-headline" id="Relation_to_category_theory">Relation to category theory</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=12" title="Edit section: Relation to category theory">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<table class="infobox" style="float:right; text-align:center">
+<tbody><tr>
+<th style="background:#cee0f2; padding:0.2em 0.4em 0.2em; text-align:center; font-size:130%; line-height:1.2em;" colspan="6">Group-like structures</th>
+</tr>
+<tr>
+<th></th>
+<th style="text-align:center"><a href="https://en.wikipedia.org/wiki/Total_Function" class="mw-redirect" title="Total Function">Totality</a><sup class="reference plainlinks nourlexpansion" id="ref_Alpha"><a href="#endnote_Alpha">α</a></sup></th>
+<th style="text-align:center"><a href="https://en.wikipedia.org/wiki/Associativity" class="mw-redirect" title="Associativity">Associativity</a></th>
+<th style="text-align:center"><a href="https://en.wikipedia.org/wiki/Identity_element" title="Identity element">Identity</a></th>
+<th style="text-align:center"><a href="https://en.wikipedia.org/wiki/Inverse_element" title="Inverse element">Invertibility</a></th>
+<th style="text-align:center"><a href="https://en.wikipedia.org/wiki/Commutativity" class="mw-redirect" title="Commutativity">Commutativity</a></th>
+</tr>
+<tr>
+<th><a href="https://en.wikipedia.org/wiki/Semicategory" class="mw-redirect" title="Semicategory">Semicategory</a></th>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+</tr>
+<tr>
+<th><a href="https://en.wikipedia.org/wiki/Category_%28mathematics%29" title="Category (mathematics)">Category</a></th>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+</tr>
+<tr>
+<th><a href="https://en.wikipedia.org/wiki/Groupoid" title="Groupoid">Groupoid</a></th>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+</tr>
+<tr>
+<th><a href="https://en.wikipedia.org/wiki/Magma_%28algebra%29" title="Magma (algebra)">Magma</a></th>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+</tr>
+<tr>
+<th><a href="https://en.wikipedia.org/wiki/Quasigroup" title="Quasigroup">Quasigroup</a></th>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+</tr>
+<tr>
+<th><a href="https://en.wikipedia.org/wiki/Loop_%28algebra%29" class="mw-redirect" title="Loop (algebra)">Loop</a></th>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+</tr>
+<tr>
+<th><a href="https://en.wikipedia.org/wiki/Semigroup" title="Semigroup">Semigroup</a></th>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+</tr>
+<tr>
+<th><strong class="selflink">Monoid</strong></th>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+</tr>
+<tr>
+<th><a href="https://en.wikipedia.org/wiki/Group_%28mathematics%29" title="Group (mathematics)">Group</a></th>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#F99;vertical-align:middle;text-align:center;" class="table-no">Unneeded</td>
+</tr>
+<tr>
+<th><a href="https://en.wikipedia.org/wiki/Abelian_group" title="Abelian group">Abelian group</a></th>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+<td style="background:#9F9;vertical-align:middle;text-align:center;" class="table-yes">Required</td>
+</tr>
+<tr>
+<td colspan="6"><small><span class="citation wikicite" id="endnote_Alpha"><b><a href="#ref_Alpha">^α</a></b></span> <a href="https://en.wikipedia.org/wiki/Closure_%28mathematics%29" title="Closure (mathematics)">Closure</a>, which is used in many sources, is an equivalent axiom to totality, though defined differently.</small></td>
+</tr>
+</tbody></table>
+<p>Monoids can be viewed as a special class of <a href="https://en.wikipedia.org/wiki/Category_theory" title="Category theory">categories</a>. Indeed, the axioms required of a monoid operation are exactly those required of <a href="https://en.wikipedia.org/wiki/Morphism" title="Morphism">morphism</a> composition when restricted to the set of all morphisms whose source and target is a given object.<sup id="cite_ref-Awo10_10-0" class="reference"><a href="#cite_note-Awo10-10">[10]</a></sup> That is,</p>
+<dl>
+<dd><i>A monoid is, essentially, the same thing as a category with a single object.</i></dd>
+</dl>
+<p>More precisely, given a monoid <span class="nowrap">(<i>M</i>, •)</span>, one can construct a small category with only one object and whose morphisms are the elements of <i>M</i>. The composition of morphisms is given by the monoid operation •.</p>
+<p>Likewise, monoid homomorphisms are just <a href="https://en.wikipedia.org/wiki/Functor" title="Functor">functors</a> between single object categories.<sup id="cite_ref-Awo10_10-1" class="reference"><a href="#cite_note-Awo10-10">[10]</a></sup> So this construction gives an <a href="https://en.wikipedia.org/wiki/Equivalence_of_categories" title="Equivalence of categories">equivalence</a> between the <a href="https://en.wikipedia.org/wiki/Category_of_monoids" class="mw-redirect" title="Category of monoids">category of (small) monoids</a> <b>Mon</b> and a full subcategory of the category of (small) categories <b>Cat</b>. Similarly, the <a href="https://en.wikipedia.org/wiki/Category_of_groups" title="Category of groups">category of groups</a> is equivalent to another full subcategory of <b>Cat</b>.</p>
+<p>In this sense, category theory can be thought of as an extension of 
+the concept of a monoid. Many definitions and theorems about monoids can
+ be generalised to small categories with more than one object. For 
+example, a quotient of a category with one object is just a quotient 
+monoid.</p>
+<p>Monoids, just like other algebraic structures, also form their own category, <b>Mon</b>, whose objects are monoids and whose morphisms are monoid homomorphisms.<sup id="cite_ref-Awo10_10-2" class="reference"><a href="#cite_note-Awo10-10">[10]</a></sup></p>
+<p>There is also a notion of <a href="https://en.wikipedia.org/wiki/Monoid_%28category_theory%29" title="Monoid (category theory)">monoid object</a> which is an abstract definition of what is a monoid in a category. A monoid object in <b><a href="https://en.wikipedia.org/wiki/Category_of_sets" title="Category of sets">Set</a></b> is just a monoid.</p>
+<h2><span class="mw-headline" id="Monoids_in_computer_science">Monoids in computer science</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=13" title="Edit section: Monoids in computer science">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>In computer science, many <a href="https://en.wikipedia.org/wiki/Abstract_data_types" class="mw-redirect" title="Abstract data types">abstract data types</a> can be endowed with a monoid structure. In a common pattern, a <a href="https://en.wikipedia.org/wiki/Sequence" title="Sequence">sequence</a> of elements of a monoid is "<a href="https://en.wikipedia.org/wiki/Fold_%28higher-order_function%29" title="Fold (higher-order function)">folded</a>"
+ or "accumulated" to produce a final value. For instance, many iterative
+ algorithms need to update some kind of "running total" at each 
+iteration; this pattern may be elegantly expressed by a monoid 
+operation. Alternatively, the associativity of monoid operations ensures
+ that the operation can be <a href="https://en.wikipedia.org/wiki/Parallelization" class="mw-redirect" title="Parallelization">parallelized</a> by employing a <a href="https://en.wikipedia.org/wiki/Prefix_sum" title="Prefix sum">prefix sum</a> or similar algorithm, in order to utilize multiple cores or processors efficiently.</p>
+<p>Given a sequence of values of type <i>M</i> with identity element <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>ε<!-- ε --></mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \varepsilon }</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/a30c89172e5b88edbd45d3e2772c7f5e562e5173.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.338ex; width:1.094ex; height:1.676ex;" alt="\varepsilon "></span> and associative operation <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo>∗<!-- ∗ --></mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle *}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/8e9972f426d9e07855984f73ee195a21dbc21755.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: 0.058ex; margin-bottom: -0.229ex; width:1.173ex; height:1.509ex;" alt="*"></span>, the <i>fold</i> operation is defined as follows:</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">f</mi>
+          <mi mathvariant="normal">o</mi>
+          <mi mathvariant="normal">l</mi>
+          <mi mathvariant="normal">d</mi>
+        </mrow>
+        <mo>:</mo>
+        <msup>
+          <mi>M</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mo>∗<!-- ∗ --></mo>
+          </mrow>
+        </msup>
+        <mo stretchy="false">→<!-- → --></mo>
+        <mi>M</mi>
+        <mo>=</mo>
+        <mi>l</mi>
+        <mo stretchy="false">↦<!-- ↦ --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow>
+            <mo>{</mo>
+            <mtable columnalign="left left" rowspacing=".2em" columnspacing="1em" displaystyle="false">
+              <mtr>
+                <mtd>
+                  <mi>ε<!-- ε --></mi>
+                </mtd>
+                <mtd>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mtext>if&nbsp;</mtext>
+                  </mrow>
+                  <mi>l</mi>
+                  <mo>=</mo>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi mathvariant="normal">n</mi>
+                    <mi mathvariant="normal">i</mi>
+                    <mi mathvariant="normal">l</mi>
+                  </mrow>
+                </mtd>
+              </mtr>
+              <mtr>
+                <mtd>
+                  <mi>m</mi>
+                  <mo>∗<!-- ∗ --></mo>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi mathvariant="normal">f</mi>
+                    <mi mathvariant="normal">o</mi>
+                    <mi mathvariant="normal">l</mi>
+                    <mi mathvariant="normal">d</mi>
+                  </mrow>
+                  <mspace width="thinmathspace"></mspace>
+                  <msup>
+                    <mi>l</mi>
+                    <mo>′</mo>
+                  </msup>
+                </mtd>
+                <mtd>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mtext>if&nbsp;</mtext>
+                  </mrow>
+                  <mi>l</mi>
+                  <mo>=</mo>
+                  <mrow class="MJX-TeXAtom-ORD">
+                    <mi mathvariant="normal">c</mi>
+                    <mi mathvariant="normal">o</mi>
+                    <mi mathvariant="normal">n</mi>
+                    <mi mathvariant="normal">s</mi>
+                  </mrow>
+                  <mspace width="thinmathspace"></mspace>
+                  <mi>m</mi>
+                  <mspace width="thinmathspace"></mspace>
+                  <msup>
+                    <mi>l</mi>
+                    <mo>′</mo>
+                  </msup>
+                </mtd>
+              </mtr>
+            </mtable>
+            <mo fence="true" stretchy="true"></mo>
+          </mrow>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \mathrm 
+{fold} :M^{*}\rightarrow M=l\mapsto {\begin{cases}\varepsilon 
+&amp;{\mbox{if }}l=\mathrm {nil} \\m*\mathrm {fold} \,l'&amp;{\mbox{if 
+}}l=\mathrm {cons} \,m\,l'\end{cases}}}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/0da1272431c8010b1018e48a42b3e00a37bc534f.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -2.505ex; width:52.356ex; height:6.176ex;" alt="\mathrm {fold} :M^{*}\rightarrow M=l\mapsto {\begin{cases}\varepsilon &amp;{\mbox{if }}l=\mathrm {nil} \\m*\mathrm {fold} \,l'&amp;{\mbox{if }}l=\mathrm {cons} \,m\,l'\end{cases}}"></span></dd>
+</dl>
+<p>In addition, any <a href="https://en.wikipedia.org/wiki/Data_structure" title="Data structure">data structure</a> can be 'folded' in a similar way, given a serialization of its elements. For instance, the result of "folding" a <a href="https://en.wikipedia.org/wiki/Binary_tree" title="Binary tree">binary tree</a> might differ depending on pre-order vs. post-order <a href="https://en.wikipedia.org/wiki/Tree_traversal" title="Tree traversal">tree traversal</a>.</p>
+<h2><span class="mw-headline" id="MapReduce">MapReduce</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=14" title="Edit section: MapReduce">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Probably the most important application of monoids in computer science is so-called <a href="https://en.wikipedia.org/wiki/MapReduce" title="MapReduce">MapReduce</a> programming model (see <a rel="nofollow" class="external text" href="http://erikerlandson.github.io/blog/2016/09/05/expressing-map-reduce-as-a-left-folding-monoid/">Encoding Map-Reduce As A Monoid With Left Folding</a>). <a href="https://en.wikipedia.org/wiki/MapReduce" title="MapReduce">MapReduce</a>,
+ in computing, consists of two or three operations. Given a dataset, 
+"Map" consists of mapping arbitrary data to elements of a specific 
+monoid. "Reduce" consists of folding those elements, so that in the end 
+we produce just one element. As described above, this operation can be 
+highly parallelized. The only problem is that the monoid may be pretty 
+large, so it is distributed through the cloud, and the results of fold 
+cannot be stored in one node. If this is the case, an operation of 
+"Shuffling" is added, to group results of mapping.<sup class="noprint Inline-Template" style="margin-left:0.1em; white-space:nowrap;">[<i><a href="https://en.wikipedia.org/wiki/Wikipedia:Please_clarify" title="Wikipedia:Please clarify"><span title="The text near this tag may need clarification or removal of jargon. (March 2017)">clarification needed</span></a></i>]</sup></p>
+<p>For example, if we have a <a href="https://en.wikipedia.org/wiki/Multiset" title="Multiset">multiset</a>,
+ in a program it is represented as a map from elements to their numbers.
+ Elements are called keys in this case. The number of distinct keys may 
+be too big, and in this case the <a href="https://en.wikipedia.org/wiki/Multiset" title="Multiset">multiset</a>
+ is being sharded. To finalize reduction properly, the "Shuffling" stage
+ regroups the data among the nodes. If we do not need this step, the 
+whole Map/Reduce consists of mapping and reducing; both operation are 
+parallelizable, the former due to its element-wise nature, the latter 
+due to associativity of the monoid.</p>
+<h2><span class="mw-headline" id="Complete_monoids">Complete monoids</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=15" title="Edit section: Complete monoids">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>A <b>complete monoid</b> is a commutative monoid equipped with an <a href="https://en.wikipedia.org/w/index.php?title=Infinitary_sum&amp;action=edit&amp;redlink=1" class="new" title="Infinitary sum (page does not exist)">infinitary sum</a> operation <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi mathvariant="normal">Σ<!-- Σ --></mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>I</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \Sigma _{I}}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/ac850afe7bf0ebf44ab89440cdab60f9df24d201.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.671ex; width:2.757ex; height:2.509ex;" alt="\Sigma _{I}"></span> for any <a href="https://en.wikipedia.org/wiki/Index_set" title="Index set">index set</a> <i>I</i> such that:<sup id="cite_ref-droste_11-0" class="reference"><a href="#cite_note-droste-11">[11]</a></sup><sup id="cite_ref-12" class="reference"><a href="#cite_note-12">[12]</a></sup><sup id="cite_ref-13" class="reference"><a href="#cite_note-13">[13]</a></sup><sup id="cite_ref-Kuich11_14-0" class="reference"><a href="#cite_note-Kuich11-14">[14]</a></sup></p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <munder>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>∈<!-- ∈ --></mo>
+            <mi mathvariant="normal">∅<!-- ∅ --></mi>
+          </mrow>
+        </munder>
+        <mrow class="MJX-TeXAtom-ORD">
+          <msub>
+            <mi>m</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>i</mi>
+            </mrow>
+          </msub>
+        </mrow>
+        <mo>=</mo>
+        <mn>0</mn>
+        <mo>;</mo>
+        <mspace width="1em"></mspace>
+        <munder>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>∈<!-- ∈ --></mo>
+            <mo fence="false" stretchy="false">{</mo>
+            <mi>j</mi>
+            <mo fence="false" stretchy="false">}</mo>
+          </mrow>
+        </munder>
+        <mrow class="MJX-TeXAtom-ORD">
+          <msub>
+            <mi>m</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>i</mi>
+            </mrow>
+          </msub>
+        </mrow>
+        <mo>=</mo>
+        <msub>
+          <mi>m</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <mo>;</mo>
+        <mspace width="1em"></mspace>
+        <munder>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>∈<!-- ∈ --></mo>
+            <mo fence="false" stretchy="false">{</mo>
+            <mi>j</mi>
+            <mo>,</mo>
+            <mi>k</mi>
+            <mo fence="false" stretchy="false">}</mo>
+          </mrow>
+        </munder>
+        <mrow class="MJX-TeXAtom-ORD">
+          <msub>
+            <mi>m</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>i</mi>
+            </mrow>
+          </msub>
+        </mrow>
+        <mo>=</mo>
+        <msub>
+          <mi>m</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <mo>+</mo>
+        <msub>
+          <mi>m</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>k</mi>
+          </mrow>
+        </msub>
+        <mspace width="1em"></mspace>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>for</mtext>
+          </mrow>
+        </mrow>
+        <mspace width="thickmathspace"></mspace>
+        <mi>j</mi>
+        <mo>≠<!-- ≠ --></mo>
+        <mi>k</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \sum _{i\in 
+\emptyset }{m_{i}}=0;\quad \sum _{i\in \{j\}}{m_{i}}=m_{j};\quad \sum 
+_{i\in \{j,k\}}{m_{i}}=m_{j}+m_{k}\quad {\textrm {for}}\;j\neq k}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/16b498bf5cc3c0dfcd790b92dcc9bb80b9014868.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.671ex; width:62.725ex; height:6.176ex;" alt="\sum _{i\in \emptyset }{m_{i}}=0;\quad \sum _{i\in \{j\}}{m_{i}}=m_{j};\quad \sum _{i\in \{j,k\}}{m_{i}}=m_{j}+m_{k}\quad {\textrm {for}}\;j\neq k"></span></p>
+<p>and</p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <munder>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mo>∈<!-- ∈ --></mo>
+            <mi>J</mi>
+          </mrow>
+        </munder>
+        <mrow class="MJX-TeXAtom-ORD">
+          <munder>
+            <mo>∑<!-- ∑ --></mo>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>i</mi>
+              <mo>∈<!-- ∈ --></mo>
+              <msub>
+                <mi>I</mi>
+                <mrow class="MJX-TeXAtom-ORD">
+                  <mi>j</mi>
+                </mrow>
+              </msub>
+            </mrow>
+          </munder>
+          <mrow class="MJX-TeXAtom-ORD">
+            <msub>
+              <mi>m</mi>
+              <mrow class="MJX-TeXAtom-ORD">
+                <mi>i</mi>
+              </mrow>
+            </msub>
+          </mrow>
+        </mrow>
+        <mo>=</mo>
+        <munder>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+            <mo>∈<!-- ∈ --></mo>
+            <mi>I</mi>
+          </mrow>
+        </munder>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>m</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mspace width="thickmathspace"></mspace>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>if</mtext>
+          </mrow>
+        </mrow>
+        <munder>
+          <mo>⋃<!-- ⋃ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+            <mo>∈<!-- ∈ --></mo>
+            <mi>J</mi>
+          </mrow>
+        </munder>
+        <msub>
+          <mi>I</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mi>I</mi>
+        <mspace width="thickmathspace"></mspace>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>and</mtext>
+          </mrow>
+        </mrow>
+        <mspace width="thickmathspace"></mspace>
+        <msub>
+          <mi>I</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>j</mi>
+          </mrow>
+        </msub>
+        <mo>∩<!-- ∩ --></mo>
+        <msub>
+          <mi>I</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <msup>
+              <mi>j</mi>
+              <mo>′</mo>
+            </msup>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mi mathvariant="normal">∅<!-- ∅ --></mi>
+        <mspace width="thickmathspace"></mspace>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mtext>for</mtext>
+          </mrow>
+        </mrow>
+        <mspace width="thickmathspace"></mspace>
+        <mi>j</mi>
+        <mo>≠<!-- ≠ --></mo>
+        <msup>
+          <mi>j</mi>
+          <mo>′</mo>
+        </msup>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \sum _{j\in 
+J}{\sum _{i\in I_{j}}{m_{i}}}=\sum _{i\in I}(m_{i})\;{\textrm 
+{if}}\bigcup _{j\in J}I_{j}=I\;{\textrm {and}}\;I_{j}\cap 
+I_{j'}=\emptyset \;{\textrm {for}}\;j\neq j'}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/2ed5d00ae916b78ba0382f57e2b65cd4cc0220cd.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.671ex; width:59.631ex; height:6.176ex;" alt="\sum _{j\in J}{\sum _{i\in I_{j}}{m_{i}}}=\sum _{i\in I}(m_{i})\;{\textrm {if}}\bigcup _{j\in J}I_{j}=I\;{\textrm {and}}\;I_{j}\cap I_{j'}=\emptyset \;{\textrm {for}}\;j\neq j'"></span></p>
+<p>A <b>continuous monoid</b> is an ordered commutative monoid in which every <a href="https://en.wikipedia.org/wiki/Directed_set" title="Directed set">directed set</a> has a <a href="https://en.wikipedia.org/wiki/Least_upper_bound" class="mw-redirect" title="Least upper bound">least upper bound</a> compatible with the monoid operation:</p>
+<p><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>a</mi>
+        <mo>+</mo>
+        <mo movablelimits="true" form="prefix">sup</mo>
+        <mi>S</mi>
+        <mo>=</mo>
+        <mo movablelimits="true" form="prefix">sup</mo>
+        <mo stretchy="false">(</mo>
+        <mi>a</mi>
+        <mo>+</mo>
+        <mi>S</mi>
+        <mo stretchy="false">)</mo>
+        <mtext>&nbsp;</mtext>
+        <mo>.</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle a+\sup S=\sup(a+S)\ .}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/ca24dd8a54eb8990227d45acf99e9f87978559cd.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -0.838ex; width:24.831ex; height:2.843ex;" alt="a+\sup S=\sup(a+S)\ ."></span></p>
+<p>These two concepts are closely related: a continuous monoid is a complete monoid in which the infinitary sum may be defined as</p>
+<dl>
+<dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <munder>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>I</mi>
+          </mrow>
+        </munder>
+        <msub>
+          <mi>a</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <mo movablelimits="true" form="prefix">sup</mo>
+        <munder>
+          <mo>∑<!-- ∑ --></mo>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>E</mi>
+          </mrow>
+        </munder>
+        <msub>
+          <mi>a</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \sum _{I}a_{i}=\sup \sum _{E}a_{i}}</annotation>
+  </semantics>
+</math></span><img src="Monoid%20-%20Wikipedia_files/1702b0976ae167bff02b8c59d635f0fc9e1458bc.svg" class="mwe-math-fallback-image-inline" aria-hidden="true" style="vertical-align: -3.171ex; width:18.628ex; height:5.676ex;" alt="\sum _{I}a_{i}=\sup \sum _{E}a_{i}"></span></dd>
+</dl>
+<p>where the supremum on the right runs over all finite subsets <i>E</i> of <i>I</i> and each sum on the right is a finite sum in the monoid.<sup id="cite_ref-Kuich11_14-1" class="reference"><a href="#cite_note-Kuich11-14">[14]</a></sup></p>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=16" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Green%27s_relations" title="Green's relations">Green's relations</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Monad_%28functional_programming%29" title="Monad (functional programming)">Monad (functional programming)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Semiring" title="Semiring">Semiring</a> and <a href="https://en.wikipedia.org/wiki/Kleene_algebra" title="Kleene algebra">Kleene algebra</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Star_height_problem" title="Star height problem">Star height problem</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Vedic_square" title="Vedic square">Vedic square</a></li>
+</ul>
+<table style="margin:2em; border-right:1px solid Silver; border-bottom:2px solid Silver">
+<tbody><tr>
+<td>
+<table style="margin:4px; border:2px solid Silver">
+<tbody><tr>
+<td>
+<table style="margin:1em">
+<tbody><tr>
+<td><a href="https://en.wikipedia.org/wiki/Group_%28mathematics%29" title="Group (mathematics)">Group</a></td>
+<td>
+<table style="border-left:4px solid SkyBlue">
+<tbody><tr>
+<td>
+<table>
+<tbody><tr>
+<td>Monoid</td>
+<td>
+<table style="border-left:4px solid SkyBlue">
+<tbody><tr>
+<td>
+<table>
+<tbody><tr>
+<td><a href="https://en.wikipedia.org/wiki/Semigroup" title="Semigroup">Semigroup</a></td>
+<td>
+<table style="border-left:4px solid SkyBlue">
+<tbody><tr>
+<td>
+<table>
+<tbody><tr>
+<td><a href="https://en.wikipedia.org/wiki/Magma_%28algebra%29" title="Magma (algebra)">Magma</a></td>
+<td>
+<table style="border-left:4px solid SkyBlue">
+<tbody><tr>
+<td><a href="https://en.wikipedia.org/wiki/Operation_%28mathematics%29" title="Operation (mathematics)">Operation</a></td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Closure_%28mathematics%29" title="Closure (mathematics)">Closure</a></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Associativity" class="mw-redirect" title="Associativity">Associativity</a></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Identity_element" title="Identity element">Identity</a></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+<tr>
+<td><a href="https://en.wikipedia.org/wiki/Inverse_element" title="Inverse element">Inverses</a></td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+</td>
+</tr>
+</tbody></table>
+<h2><span class="mw-headline" id="Notes">Notes</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=17" title="Edit section: Notes">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">If both <i>e</i><sub>1</sub> and <i>e</i><sub>2</sub> satisfy the above equations, then <i>e</i><sub>1</sub> = <i>e</i><sub>1</sub> • <i>e</i><sub>2</sub> = <i>e</i><sub>2</sub>.</span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Jacobson (2009)</span></li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Some
+ authors omit the requirement that a submonoid must contain the identity
+ element from its definition, requiring only that it have <i>an</i> identity element, which can be distinct from that of <i>M</i>.</span></li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><b><a href="#cite_ref-4"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation book">Gondran, Michel; Minoux, Michel (2008). <i>Graphs, Dioids and Semirings: New Models and Algorithms</i>. Operations Research/Computer Science Interfaces Series. <b>41</b>. Dordrecht: <a href="https://en.wikipedia.org/wiki/Springer-Verlag" class="mw-redirect" title="Springer-Verlag">Springer-Verlag</a>. p.&nbsp;13. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/978-0-387-75450-5" title="Special:BookSources/978-0-387-75450-5">978-0-387-75450-5</a>. <a href="https://en.wikipedia.org/wiki/Zentralblatt_MATH" title="Zentralblatt MATH">Zbl</a>&nbsp;<a rel="nofollow" class="external text" href="https://zbmath.org/?format=complete&amp;q=an:1201.16038">1201.16038</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMonoid&amp;rft.aufirst=Michel&amp;rft.aulast=Gondran&amp;rft.au=Minoux%2C+Michel&amp;rft.btitle=Graphs%2C+Dioids+and+Semirings%3A+New+Models+and+Algorithms&amp;rft.date=2008&amp;rft.genre=book&amp;rft_id=%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A1201.16038&amp;rft.isbn=978-0-387-75450-5&amp;rft.pages=13&amp;rft.place=Dordrecht&amp;rft.pub=Springer-Verlag&amp;rft.series=Operations+Research%2FComputer+Science+Interfaces+Series&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite id="CITEREFRhodesSteinberg2009" class="citation">Rhodes, John; Steinberg, Benjamin (2009), <a rel="nofollow" class="external text" href="https://books.google.com/books?id=8L0QIEj0PI4C&amp;pg=PA22"><i>The</i> q<i>-theory of Finite Semigroups: A New Approach</i></a>, Springer Monographs in Mathematics, <b>71</b>, Springer, p.&nbsp;22, <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/9780387097817" title="Special:BookSources/9780387097817">9780387097817</a></cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMonoid&amp;rft.aufirst=John&amp;rft.aulast=Rhodes&amp;rft.au=Steinberg%2C+Benjamin&amp;rft.btitle=The+q-theory+of+Finite+Semigroups%3A+A+New+Approach&amp;rft.date=2009&amp;rft.genre=book&amp;rft_id=https%3A%2F%2Fbooks.google.com%2Fbooks%3Fid%3D8L0QIEj0PI4C%26pg%3DPA22&amp;rft.isbn=9780387097817&amp;rft.pages=22&amp;rft.pub=Springer&amp;rft.series=Springer+Monographs+in+Mathematics&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span>.</span></li>
+<li id="cite_note-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-6"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Jacobson (2009), p. 29, examples 1, 2, 4 &amp; 5.</span></li>
+<li id="cite_note-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-7"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Jacobson (2009), p. 35</span></li>
+<li id="cite_note-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-8"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Jacobson, I.5. p. 22</span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation journal">Wehrung, Friedrich (1996). <a rel="nofollow" class="external text" href="http://projecteuclid.org/euclid.pjm/1102352063">"Tensor products of structures with interpolation"</a>. <i>Pacific Journal of Mathematics</i>. <b>176</b> (1): 267–285. <a href="https://en.wikipedia.org/wiki/Zentralblatt_MATH" title="Zentralblatt MATH">Zbl</a>&nbsp;<a rel="nofollow" class="external text" href="https://zbmath.org/?format=complete&amp;q=an:0865.06010">0865.06010</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMonoid&amp;rft.atitle=Tensor+products+of+structures+with+interpolation&amp;rft.aufirst=Friedrich&amp;rft.aulast=Wehrung&amp;rft.date=1996&amp;rft.genre=article&amp;rft_id=%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A0865.06010&amp;rft_id=http%3A%2F%2Fprojecteuclid.org%2Feuclid.pjm%2F1102352063&amp;rft.issue=1&amp;rft.jtitle=Pacific+Journal+of+Mathematics&amp;rft.pages=267-285&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=176" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-Awo10-10"><span class="mw-cite-backlink">^ <a href="#cite_ref-Awo10_10-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Awo10_10-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-Awo10_10-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text"><cite class="citation book"><a href="https://en.wikipedia.org/wiki/Steve_Awodey" title="Steve Awodey">Awodey, Steve</a> (2006). <i>Category Theory</i>. Oxford Logic Guides. <b>49</b>. <a href="https://en.wikipedia.org/wiki/Oxford_University_Press" title="Oxford University Press">Oxford University Press</a>. p.&nbsp;10. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-19-856861-4" title="Special:BookSources/0-19-856861-4">0-19-856861-4</a>. <a href="https://en.wikipedia.org/wiki/Zentralblatt_MATH" title="Zentralblatt MATH">Zbl</a>&nbsp;<a rel="nofollow" class="external text" href="https://zbmath.org/?format=complete&amp;q=an:1100.18001">1100.18001</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMonoid&amp;rft.aufirst=Steve&amp;rft.aulast=Awodey&amp;rft.btitle=Category+Theory&amp;rft.date=2006&amp;rft.genre=book&amp;rft_id=%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A1100.18001&amp;rft.isbn=0-19-856861-4&amp;rft.pages=10&amp;rft.pub=Oxford+University+Press&amp;rft.series=Oxford+Logic+Guides&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-droste-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-droste_11-0"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text">Droste, M., &amp; Kuich, W. (2009). Semirings and Formal Power Series. <i>Handbook of Weighted Automata</i>, 3–28. <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1007%2F978-3-642-01492-5_1">10.1007/978-3-642-01492-5_1</a>, pp. 7-10</span></li>
+<li id="cite_note-12"><span class="mw-cite-backlink"><b><a href="#cite_ref-12"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation journal">Hebisch, Udo (1992). "Eine algebraische Theorie unendlicher Summen mit Anwendungen auf Halbgruppen und Halbringe". <i>Bayreuther Mathematische Schriften</i> (in German). <b>40</b>: 21–152. <a href="https://en.wikipedia.org/wiki/Zentralblatt_MATH" title="Zentralblatt MATH">Zbl</a>&nbsp;<a rel="nofollow" class="external text" href="https://zbmath.org/?format=complete&amp;q=an:0747.08005">0747.08005</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMonoid&amp;rft.atitle=Eine+algebraische+Theorie+unendlicher+Summen+mit+Anwendungen+auf+Halbgruppen+und+Halbringe&amp;rft.aufirst=Udo&amp;rft.aulast=Hebisch&amp;rft.date=1992&amp;rft.genre=article&amp;rft_id=%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A0747.08005&amp;rft.jtitle=Bayreuther+Mathematische+Schriften&amp;rft.pages=21-152&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal&amp;rft.volume=40" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-13"><span class="mw-cite-backlink"><b><a href="#cite_ref-13"><span class="cite-accessibility-label">Jump up </span>^</a></b></span> <span class="reference-text"><cite class="citation book">Kuich, Werner (1990). "ω-continuous semirings, algebraic systems and pushdown automata". In Paterson, Michael S. <i>Automata, Languages and Programming: 17th International Colloquium, Warwick University, England, July 16-20, 1990, Proceedings</i>. Lecture Notes in Computer Science. <b>443</b>. <a href="https://en.wikipedia.org/wiki/Springer-Verlag" class="mw-redirect" title="Springer-Verlag">Springer-Verlag</a>. pp.&nbsp;103–110. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/3-540-52826-1" title="Special:BookSources/3-540-52826-1">3-540-52826-1</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMonoid&amp;rft.atitle=%CF%89-continuous+semirings%2C+algebraic+systems+and+pushdown+automata&amp;rft.aufirst=Werner&amp;rft.aulast=Kuich&amp;rft.btitle=Automata%2C+Languages+and+Programming%3A+17th+International+Colloquium%2C+Warwick+University%2C+England%2C+July+16-20%2C+1990%2C+Proceedings&amp;rft.date=1990&amp;rft.genre=bookitem&amp;rft.isbn=3-540-52826-1&amp;rft.pages=103-110&amp;rft.pub=Springer-Verlag&amp;rft.series=Lecture+Notes+in+Computer+Science&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+<li id="cite_note-Kuich11-14"><span class="mw-cite-backlink">^ <a href="#cite_ref-Kuich11_14-0"><span class="cite-accessibility-label">Jump up to: </span><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-Kuich11_14-1"><sup><i><b>b</b></i></sup></a></span> <span class="reference-text"><cite class="citation book">Kuich, Werner (2011). "Algebraic systems and pushdown automata". In Kuich, Werner. <i>Algebraic foundations in computer science. Essays dedicated to Symeon Bozapalidis on the occasion of his retirement</i>. Lecture Notes in Computer Science. <b>7020</b>. Berlin: <a href="https://en.wikipedia.org/wiki/Springer-Verlag" class="mw-redirect" title="Springer-Verlag">Springer-Verlag</a>. pp.&nbsp;228–256. <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/978-3-642-24896-2" title="Special:BookSources/978-3-642-24896-2">978-3-642-24896-2</a>. <a href="https://en.wikipedia.org/wiki/Zentralblatt_MATH" title="Zentralblatt MATH">Zbl</a>&nbsp;<a rel="nofollow" class="external text" href="https://zbmath.org/?format=complete&amp;q=an:1251.68135">1251.68135</a>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMonoid&amp;rft.atitle=Algebraic+systems+and+pushdown+automata&amp;rft.aufirst=Werner&amp;rft.aulast=Kuich&amp;rft.btitle=Algebraic+foundations+in+computer+science.+Essays+dedicated+to+Symeon+Bozapalidis+on+the+occasion+of+his+retirement&amp;rft.date=2011&amp;rft.genre=bookitem&amp;rft_id=%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A1251.68135&amp;rft.isbn=978-3-642-24896-2&amp;rft.pages=228-256&amp;rft.place=Berlin&amp;rft.pub=Springer-Verlag&amp;rft.series=Lecture+Notes+in+Computer+Science&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+</ol>
+</div>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=18" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><cite id="CITEREFHowie1995" class="citation"><a href="https://en.wikipedia.org/wiki/John_Mackintosh_Howie" title="John Mackintosh Howie">Howie, John M.</a> (1995), <i>Fundamentals of Semigroup Theory</i>, London Mathematical Society Monographs. New Series, <b>12</b>, Oxford: Clarendon Press, <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-19-851194-9" title="Special:BookSources/0-19-851194-9">0-19-851194-9</a>, <a href="https://en.wikipedia.org/wiki/Zentralblatt_MATH" title="Zentralblatt MATH">Zbl</a>&nbsp;<a rel="nofollow" class="external text" href="https://zbmath.org/?format=complete&amp;q=an:0835.20077">0835.20077</a></cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMonoid&amp;rft.aufirst=John+M.&amp;rft.aulast=Howie&amp;rft.btitle=Fundamentals+of+Semigroup+Theory&amp;rft.date=1995&amp;rft.genre=book&amp;rft_id=%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A0835.20077&amp;rft.isbn=0-19-851194-9&amp;rft.place=Oxford&amp;rft.pub=Clarendon+Press&amp;rft.series=London+Mathematical+Society+Monographs.+New+Series&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><cite id="CITEREFJacobson1951" class="citation"><a href="https://en.wikipedia.org/wiki/Nathan_Jacobson" title="Nathan Jacobson">Jacobson, Nathan</a> (1951), <i>Lectures in Abstract Algebra</i>, <b>I</b>, D. Van Nostrand Company, <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-387-90122-1" title="Special:BookSources/0-387-90122-1">0-387-90122-1</a></cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMonoid&amp;rft.aufirst=Nathan&amp;rft.aulast=Jacobson&amp;rft.btitle=Lectures+in+Abstract+Algebra&amp;rft.date=1951&amp;rft.genre=book&amp;rft.isbn=0-387-90122-1&amp;rft.pub=D.+Van+Nostrand+Company&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><cite id="CITEREFJacobson2009" class="citation"><a href="https://en.wikipedia.org/wiki/Nathan_Jacobson" title="Nathan Jacobson">Jacobson, Nathan</a> (2009), <i>Basic algebra</i>, <b>1</b> (2nd ed.), Dover, <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/978-0-486-47189-1" title="Special:BookSources/978-0-486-47189-1">978-0-486-47189-1</a></cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMonoid&amp;rft.aufirst=Nathan&amp;rft.aulast=Jacobson&amp;rft.btitle=Basic+algebra&amp;rft.date=2009&amp;rft.edition=2nd&amp;rft.genre=book&amp;rft.isbn=978-0-486-47189-1&amp;rft.pub=Dover&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><cite id="CITEREFKilpKnauerMikhalev2000" class="citation">Kilp, Mati; Knauer, Ulrich; Mikhalev, Alexander V. (2000), <i>Monoids, acts and categories. With applications to wreath products and graphs. A handbook for students and researchers</i>, de Gruyter Expositions in Mathematics, <b>29</b>, Berlin: Walter de Gruyter, <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/3-11-015248-7" title="Special:BookSources/3-11-015248-7">3-11-015248-7</a>, <a href="https://en.wikipedia.org/wiki/Zentralblatt_MATH" title="Zentralblatt MATH">Zbl</a>&nbsp;<a rel="nofollow" class="external text" href="https://zbmath.org/?format=complete&amp;q=an:0945.20036">0945.20036</a></cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMonoid&amp;rft.aufirst=Mati&amp;rft.au=Knauer%2C+Ulrich&amp;rft.aulast=Kilp&amp;rft.au=Mikhalev%2C+Alexander+V.&amp;rft.btitle=Monoids%2C+acts+and+categories.+With+applications+to+wreath+products+and+graphs.+A+handbook+for+students+and+researchers&amp;rft.date=2000&amp;rft.genre=book&amp;rft_id=%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A0945.20036&amp;rft.isbn=3-11-015248-7&amp;rft.place=Berlin&amp;rft.pub=Walter+de+Gruyter&amp;rft.series=de+Gruyter+Expositions+in+Mathematics&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><cite id="CITEREFLothaire1997" class="citation"><a href="https://en.wikipedia.org/wiki/M._Lothaire" title="M. Lothaire">Lothaire, M.</a> (1997), <i>Combinatorics on words</i>, Encyclopedia of Mathematics and Its Applications, <b>17</b>,
+ Perrin, D.; Reutenauer, C.; Berstel, J.; Pin, J. E.; Pirillo, G.; 
+Foata, D.; Sakarovitch, J.; Simon, I.; Schützenberger, M. P.; Choffrut, 
+C.; Cori, R.; Lyndon, Roger; Rota, Gian-Carlo. Foreword by Roger Lyndon 
+(2nd ed.), <a href="https://en.wikipedia.org/wiki/Cambridge_University_Press" title="Cambridge University Press">Cambridge University Press</a>, <a href="https://en.wikipedia.org/wiki/Digital_object_identifier" title="Digital object identifier">doi</a>:<a rel="nofollow" class="external text" href="https://dx.doi.org/10.1017%2FCBO9780511566097">10.1017/CBO9780511566097</a>, <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/0-521-59924-5" title="Special:BookSources/0-521-59924-5">0-521-59924-5</a>, <a href="https://en.wikipedia.org/wiki/Mathematical_Reviews" title="Mathematical Reviews">MR</a>&nbsp;<a rel="nofollow" class="external text" href="https://www.ams.org/mathscinet-getitem?mr=1475463">1475463</a>, <a href="https://en.wikipedia.org/wiki/Zentralblatt_MATH" title="Zentralblatt MATH">Zbl</a>&nbsp;<a rel="nofollow" class="external text" href="https://zbmath.org/?format=complete&amp;q=an:0874.20040">0874.20040</a></cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMonoid&amp;rft.aufirst=M.&amp;rft.aulast=Lothaire&amp;rft.btitle=Combinatorics+on+words&amp;rft.date=1997&amp;rft.edition=2nd&amp;rft.genre=book&amp;rft_id=%2F%2Fwww.ams.org%2Fmathscinet-getitem%3Fmr%3D1475463&amp;rft_id=%2F%2Fzbmath.org%2F%3Fformat%3Dcomplete%26q%3Dan%3A0874.20040&amp;rft_id=info%3Adoi%2F10.1017%2FCBO9780511566097&amp;rft.isbn=0-521-59924-5&amp;rft.pub=Cambridge+University+Press&amp;rft.series=Encyclopedia+of+Mathematics+and+Its+Applications&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+</ul>
+<h2><span class="mw-headline" id="External_links">External links</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit&amp;section=19" title="Edit section: External links">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li><cite id="CITEREFHazewinkel2001" class="citation">Hazewinkel, Michiel, ed. (2001), <a rel="nofollow" class="external text" href="http://www.encyclopediaofmath.org/index.php?title=p/m064740">"Monoid"</a>, <i><a href="https://en.wikipedia.org/wiki/Encyclopedia_of_Mathematics" title="Encyclopedia of Mathematics">Encyclopedia of Mathematics</a></i>, <a href="https://en.wikipedia.org/wiki/Springer_Science%2BBusiness_Media" title="Springer Science+Business Media">Springer</a>, <a href="https://en.wikipedia.org/wiki/International_Standard_Book_Number" title="International Standard Book Number">ISBN</a>&nbsp;<a href="https://en.wikipedia.org/wiki/Special:BookSources/978-1-55608-010-4" title="Special:BookSources/978-1-55608-010-4">978-1-55608-010-4</a></cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMonoid&amp;rft.atitle=Monoid&amp;rft.btitle=Encyclopedia+of+Mathematics&amp;rft.date=2001&amp;rft.genre=bookitem&amp;rft_id=http%3A%2F%2Fwww.encyclopediaofmath.org%2Findex.php%3Ftitle%3Dp%2Fm064740&amp;rft.isbn=978-1-55608-010-4&amp;rft.pub=Springer&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Abook" class="Z3988"><span style="display:none;">&nbsp;</span></span></li>
+<li><span class="citation mathworld" id="Reference-Mathworld-Monoid"><cite class="citation web"><a href="https://en.wikipedia.org/wiki/Eric_W._Weisstein" title="Eric W. Weisstein">Weisstein, Eric W.</a> <a rel="nofollow" class="external text" href="http://mathworld.wolfram.com/Monoid.html">"Monoid"</a>. <i><a href="https://en.wikipedia.org/wiki/MathWorld" title="MathWorld">MathWorld</a></i>.</cite><span title="ctx_ver=Z39.88-2004&amp;rfr_id=info%3Asid%2Fen.wikipedia.org%3AMonoid&amp;rft.atitle=Monoid&amp;rft.au=Weisstein%2C+Eric+W.&amp;rft.genre=unknown&amp;rft_id=http%3A%2F%2Fmathworld.wolfram.com%2FMonoid.html&amp;rft.jtitle=MathWorld&amp;rft_val_fmt=info%3Aofi%2Ffmt%3Akev%3Amtx%3Ajournal" class="Z3988"><span style="display:none;">&nbsp;</span></span></span></li>
+</ul>
+<ul>
+<li><a rel="nofollow" class="external text" href="http://planetmath.org/Monoid">Monoid</a> at <a href="https://en.wikipedia.org/wiki/PlanetMath" title="PlanetMath">PlanetMath.org</a>.</li>
+</ul>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1172
+Cached time: 20170312051140
+Cache expiry: 2592000
+Dynamic content: false
+CPU time usage: 0.328 seconds
+Real time usage: 0.481 seconds
+Preprocessor visited node count: 2259/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 62621/2097152 bytes
+Template argument size: 3086/2097152 bytes
+Highest expansion depth: 11/40
+Expensive parser function count: 1/500
+Lua time usage: 0.115/10.000 seconds
+Lua memory usage: 4.68 MB/50 MB
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  287.590      1 -total
+ 33.63%   96.709      1 Template:Reflist
+ 17.30%   49.750      1 Template:Clarify
+ 17.08%   49.111      4 Template:Cite_book
+ 15.88%   45.665      1 Template:Fix-span
+ 13.05%   37.528      7 Template:Citation
+  9.55%   27.461      2 Template:Category_handler
+  9.08%   26.105      1 Template:Other_uses
+  7.22%   20.772      1 Template:Algebraic_structures
+  6.39%   18.385      1 Template:Sidebar_with_collapsible_lists
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:19652-0!*!0!!en!4!*!math=5 and timestamp 20170312051140 and revision id 768075849
+ -->
+<noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;oldid=768075849">https://en.wikipedia.org/w/index.php?title=Monoid&amp;oldid=768075849</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://en.wikipedia.org/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="https://en.wikipedia.org/wiki/Category:Algebraic_structures" title="Category:Algebraic structures">Algebraic structures</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Category_theory" title="Category:Category theory">Category theory</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Semigroup_theory" title="Category:Semigroup theory">Semigroup theory</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="https://en.wikipedia.org/wiki/Category:CS1_German-language_sources_%28de%29" title="Category:CS1 German-language sources (de)">CS1 German-language sources (de)</a></li><li><a href="https://en.wikipedia.org/wiki/Category:Wikipedia_articles_needing_clarification_from_March_2017" title="Category:Wikipedia articles needing clarification from March 2017">Wikipedia articles needing clarification from March 2017</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-anonuserpage">Not logged in</li><li id="pt-anontalk"><a href="https://en.wikipedia.org/wiki/Special:MyTalk" title="Discussion about edits from this IP address [Alt+Shift+n]" accesskey="n">Talk</a></li><li id="pt-anoncontribs"><a href="https://en.wikipedia.org/wiki/Special:MyContributions" title="A list of edits made from this IP address [Alt+Shift+y]" accesskey="y">Contributions</a></li><li id="pt-createaccount"><a href="https://en.wikipedia.org/w/index.php?title=Special:CreateAccount&amp;returnto=Monoid" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="https://en.wikipedia.org/w/index.php?title=Special:UserLogin&amp;returnto=Monoid" title="You're encouraged to log in; however, it's not mandatory. [Alt+Shift+o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li id="ca-nstab-main" class="selected"><span><a href="https://en.wikipedia.org/wiki/Monoid" title="View the content page [Alt+Shift+c]" accesskey="c">Article</a></span></li>
+															<li id="ca-talk"><span><a href="https://en.wikipedia.org/wiki/Talk:Monoid" title="Discussion about the content page [Alt+Shift+t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label" tabindex="0">
+							<span>Variants</span><a href="#" tabindex="-1"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="https://en.wikipedia.org/wiki/Monoid">Read</a></span></li>
+															<li id="ca-edit"><span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=edit" title="Edit this page [Alt+Shift+e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=history" title="Past revisions of this page [Alt+Shift+h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label" style="">
+						<h3 id="p-cactions-label" tabindex="0"><span>More</span><a href="#" tabindex="-1"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input name="search" placeholder="Search Wikipedia" title="Search Wikipedia [Alt+Shift+f]" accesskey="f" id="searchInput" tabindex="1" autocomplete="off" type="search"><input value="Special:Search" name="title" type="hidden"><input name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" type="submit">							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="https://en.wikipedia.org/wiki/Main_Page" title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label">Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="https://en.wikipedia.org/wiki/Main_Page" title="Visit the main page [Alt+Shift+z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="https://en.wikipedia.org/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="https://en.wikipedia.org/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="https://en.wikipedia.org/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="https://en.wikipedia.org/wiki/Special:Random" title="Load a random article [Alt+Shift+x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="https://shop.wikimedia.org/" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-interaction" aria-labelledby="p-interaction-label">
+			<h3 id="p-interaction-label">Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="https://en.wikipedia.org/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="https://en.wikipedia.org/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="https://en.wikipedia.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [Alt+Shift+r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://en.wikipedia.org/wiki/Special:WhatLinksHere/Monoid" title="List of all English Wikipedia pages containing links to this page [Alt+Shift+j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://en.wikipedia.org/wiki/Special:RecentChangesLinked/Monoid" rel="nofollow" title="Recent changes in pages linked from this page [Alt+Shift+k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="https://en.wikipedia.org/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [Alt+Shift+u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="https://en.wikipedia.org/wiki/Special:SpecialPages" title="A list of all special pages [Alt+Shift+q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;oldid=768075849" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="https://www.wikidata.org/wiki/Q208237" title="Link to connected data repository item [Alt+Shift+g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="https://en.wikipedia.org/w/index.php?title=Special:CiteThisPage&amp;page=Monoid&amp;id=768075849" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-coll-print_export" aria-labelledby="p-coll-print_export-label">
+			<h3 id="p-coll-print_export-label">Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Monoid">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="https://en.wikipedia.org/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Monoid&amp;returnto=Monoid&amp;oldid=768075849&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="https://en.wikipedia.org/w/index.php?title=Monoid&amp;printable=yes" title="Printable version of this page [Alt+Shift+p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-lang" aria-labelledby="p-lang-label"><span class="uls-settings-trigger" title="Language settings" tabindex="0" role="button" aria-haspopup="true"></span>
+			<h3 id="p-lang-label">Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-ar"><a href="https://ar.wikipedia.org/wiki/%D9%85%D9%88%D9%86%D9%88%D9%8A%D8%AF" title="مونويد – Arabic" hreflang="ar" class="interlanguage-link-target" lang="ar">العربية</a></li><li class="interlanguage-link interwiki-az"><a href="https://az.wikipedia.org/wiki/Monoid" title="Monoid – Azerbaijani" hreflang="az" class="interlanguage-link-target" lang="az">Azərbaycanca</a></li><li class="interlanguage-link interwiki-ca"><a href="https://ca.wikipedia.org/wiki/Monoide" title="Monoide – Catalan" hreflang="ca" class="interlanguage-link-target" lang="ca">Català</a></li><li class="interlanguage-link interwiki-cs"><a href="https://cs.wikipedia.org/wiki/Monoid" title="Monoid – Czech" hreflang="cs" class="interlanguage-link-target" lang="cs">Čeština</a></li><li class="interlanguage-link interwiki-de"><a href="https://de.wikipedia.org/wiki/Monoid" title="Monoid – German" hreflang="de" class="interlanguage-link-target" lang="de">Deutsch</a></li><li class="interlanguage-link interwiki-et"><a href="https://et.wikipedia.org/wiki/Monoid" title="Monoid – Estonian" hreflang="et" class="interlanguage-link-target" lang="et">Eesti</a></li><li class="interlanguage-link interwiki-es"><a href="https://es.wikipedia.org/wiki/Monoide" title="Monoide – Spanish" hreflang="es" class="interlanguage-link-target" lang="es">Español</a></li><li class="interlanguage-link interwiki-eo"><a href="https://eo.wikipedia.org/wiki/Monoido" title="Monoido – Esperanto" hreflang="eo" class="interlanguage-link-target" lang="eo">Esperanto</a></li><li class="interlanguage-link interwiki-fa"><a href="https://fa.wikipedia.org/wiki/%D9%85%D9%88%D9%86%D9%88%D8%A6%DB%8C%D8%AF" title="مونوئید – Persian" hreflang="fa" class="interlanguage-link-target" lang="fa">فارسی</a></li><li class="interlanguage-link interwiki-fr"><a href="https://fr.wikipedia.org/wiki/Mono%C3%AFde" title="Monoïde – French" hreflang="fr" class="interlanguage-link-target" lang="fr">Français</a></li><li class="interlanguage-link interwiki-ko"><a href="https://ko.wikipedia.org/wiki/%EB%AA%A8%EB%85%B8%EC%9D%B4%EB%93%9C" title="모노이드 – Korean" hreflang="ko" class="interlanguage-link-target" lang="ko">한국어</a></li><li class="interlanguage-link interwiki-hr"><a href="https://hr.wikipedia.org/wiki/Monoid" title="Monoid – Croatian" hreflang="hr" class="interlanguage-link-target" lang="hr">Hrvatski</a></li><li class="interlanguage-link interwiki-is"><a href="https://is.wikipedia.org/wiki/Einungur" title="Einungur – Icelandic" hreflang="is" class="interlanguage-link-target" lang="is">Íslenska</a></li><li class="interlanguage-link interwiki-it"><a href="https://it.wikipedia.org/wiki/Monoide" title="Monoide – Italian" hreflang="it" class="interlanguage-link-target" lang="it">Italiano</a></li><li class="interlanguage-link interwiki-he"><a href="https://he.wikipedia.org/wiki/%D7%9E%D7%95%D7%A0%D7%95%D7%90%D7%99%D7%93_%28%D7%9E%D7%91%D7%A0%D7%94_%D7%90%D7%9C%D7%92%D7%91%D7%A8%D7%99%29" title="מונואיד (מבנה אלגברי) – Hebrew" hreflang="he" class="interlanguage-link-target" lang="he">עברית</a></li><li class="interlanguage-link interwiki-hu"><a href="https://hu.wikipedia.org/wiki/Monoid" title="Monoid – Hungarian" hreflang="hu" class="interlanguage-link-target" lang="hu">Magyar</a></li><li class="interlanguage-link interwiki-ms"><a href="https://ms.wikipedia.org/wiki/Monoid" title="Monoid – Malay" hreflang="ms" class="interlanguage-link-target" lang="ms">Bahasa Melayu</a></li><li class="interlanguage-link interwiki-nl"><a href="https://nl.wikipedia.org/wiki/Mono%C3%AFde" title="Monoïde – Dutch" hreflang="nl" class="interlanguage-link-target" lang="nl">Nederlands</a></li><li class="interlanguage-link interwiki-ja"><a href="https://ja.wikipedia.org/wiki/%E3%83%A2%E3%83%8E%E3%82%A4%E3%83%89" title="モノイド – Japanese" hreflang="ja" class="interlanguage-link-target" lang="ja">日本語</a></li><li class="interlanguage-link interwiki-oc"><a href="https://oc.wikipedia.org/wiki/Mono%C3%AFde" title="Monoïde – Occitan" hreflang="oc" class="interlanguage-link-target" lang="oc">Occitan</a></li><li class="interlanguage-link interwiki-pms"><a href="https://pms.wikipedia.org/wiki/Mon%C3%B2id" title="Monòid – Piedmontese" hreflang="pms" class="interlanguage-link-target" lang="pms">Piemontèis</a></li><li class="interlanguage-link interwiki-pl"><a href="https://pl.wikipedia.org/wiki/Monoid" title="Monoid – Polish" hreflang="pl" class="interlanguage-link-target" lang="pl">Polski</a></li><li class="interlanguage-link interwiki-pt"><a href="https://pt.wikipedia.org/wiki/Monoide" title="Monoide – Portuguese" hreflang="pt" class="interlanguage-link-target" lang="pt">Português</a></li><li class="interlanguage-link interwiki-ro"><a href="https://ro.wikipedia.org/wiki/Monoid" title="Monoid – Romanian" hreflang="ro" class="interlanguage-link-target" lang="ro">Română</a></li><li class="interlanguage-link interwiki-ru"><a href="https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%BD%D0%BE%D0%B8%D0%B4" title="Моноид – Russian" hreflang="ru" class="interlanguage-link-target" lang="ru">Русский</a></li><li class="interlanguage-link interwiki-simple"><a href="https://simple.wikipedia.org/wiki/Monoid" title="Monoid – Simple English" hreflang="simple" class="interlanguage-link-target" lang="simple">Simple English</a></li><li class="interlanguage-link interwiki-sl"><a href="https://sl.wikipedia.org/wiki/Monoid" title="Monoid – Slovenian" hreflang="sl" class="interlanguage-link-target" lang="sl">Slovenščina</a></li><li class="interlanguage-link interwiki-sr"><a href="https://sr.wikipedia.org/wiki/%D0%9C%D0%BE%D0%BD%D0%BE%D0%B8%D0%B4" title="Моноид – Serbian" hreflang="sr" class="interlanguage-link-target" lang="sr">Српски / srpski</a></li><li class="interlanguage-link interwiki-sh"><a href="https://sh.wikipedia.org/wiki/Monoid" title="Monoid – Serbo-Croatian" hreflang="sh" class="interlanguage-link-target" lang="sh">Srpskohrvatski / српскохрватски</a></li><li class="interlanguage-link interwiki-fi"><a href="https://fi.wikipedia.org/wiki/Monoidi" title="Monoidi – Finnish" hreflang="fi" class="interlanguage-link-target" lang="fi">Suomi</a></li><li class="interlanguage-link interwiki-sv"><a href="https://sv.wikipedia.org/wiki/Monoid" title="Monoid – Swedish" hreflang="sv" class="interlanguage-link-target" lang="sv">Svenska</a></li><li class="interlanguage-link interwiki-ta"><a href="https://ta.wikipedia.org/wiki/%E0%AE%92%E0%AE%B1%E0%AF%8D%E0%AE%B1%E0%AF%88%E0%AE%95%E0%AF%8D%E0%AE%95%E0%AF%81%E0%AE%B2%E0%AE%AE%E0%AF%8D" title="ஒற்றைக்குலம் – Tamil" hreflang="ta" class="interlanguage-link-target" lang="ta">தமிழ்</a></li><li class="interlanguage-link interwiki-tr"><a href="https://tr.wikipedia.org/wiki/Birlik" title="Birlik – Turkish" hreflang="tr" class="interlanguage-link-target" lang="tr">Türkçe</a></li><li class="interlanguage-link interwiki-uk"><a href="https://uk.wikipedia.org/wiki/%D0%9C%D0%BE%D0%BD%D0%BE%D1%97%D0%B4" title="Моноїд – Ukrainian" hreflang="uk" class="interlanguage-link-target" lang="uk">Українська</a></li><li class="interlanguage-link interwiki-vi"><a href="https://vi.wikipedia.org/wiki/Monoid" title="Monoid – Vietnamese" hreflang="vi" class="interlanguage-link-target" lang="vi">Tiếng Việt</a></li><li class="interlanguage-link interwiki-zh"><a href="https://zh.wikipedia.org/wiki/%E5%B9%BA%E5%8D%8A%E7%BE%A4" title="幺半群 – Chinese" hreflang="zh" class="interlanguage-link-target" lang="zh">中文</a></li>					</ul>
+				<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Q208237#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 1 March 2017, at 17:22.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="https://en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="https://wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="https://wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="https://www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://en.wikipedia.org/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="https://en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-cookiestatement"><a href="https://wikimediafoundation.org/wiki/Cookie_statement">Cookie statement</a></li>
+											<li id="footer-places-mobileview"><a href="https://en.m.wikipedia.org/w/index.php?title=Monoid&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="Monoid%20-%20Wikipedia_files/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" alt="Wikimedia Foundation" width="88" height="31"></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="Monoid%20-%20Wikipedia_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.328","walltime":"0.481","ppvisitednodes":{"value":2259,"limit":1000000},"ppgeneratednodes":{"value":0,"limit":1500000},"postexpandincludesize":{"value":62621,"limit":2097152},"templateargumentsize":{"value":3086,"limit":2097152},"expansiondepth":{"value":11,"limit":40},"expensivefunctioncount":{"value":1,"limit":500},"entityaccesscount":{"value":0,"limit":400},"timingprofile":["100.00%  287.590      1 -total"," 33.63%   96.709      1 Template:Reflist"," 17.30%   49.750      1 Template:Clarify"," 17.08%   49.111      4 Template:Cite_book"," 15.88%   45.665      1 Template:Fix-span"," 13.05%   37.528      7 Template:Citation","  9.55%   27.461      2 Template:Category_handler","  9.08%   26.105      1 Template:Other_uses","  7.22%   20.772      1 Template:Algebraic_structures","  6.39%   18.385      1 Template:Sidebar_with_collapsible_lists"]},"scribunto":{"limitreport-timeusage":{"value":"0.115","limit":"10.000"},"limitreport-memusage":{"value":4908305,"limit":52428800}},"cachereport":{"origin":"mw1172","timestamp":"20170312051140","ttl":2592000,"transientcontent":false}}});});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":572,"wgHostname":"mw1172"});});</script>
+	
+
+<div style="display: none; font-size: 13px;" class="suggestions"><div class="suggestions-results"></div><div class="suggestions-special"></div></div><a accesskey="v" href="https://en.wikipedia.org/wiki/Monoid?action=edit" style="display: none;"></a></body></html>
