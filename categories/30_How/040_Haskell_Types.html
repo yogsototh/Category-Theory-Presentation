@@ -1,5 +1,6 @@
 <h2 id="haskell-types">Haskell Types</h2>
-<p>Sometimes, the type determine a lot about the function<sup>★</sup>:</p>
+<p>Sometimes, the type determine a lot about the
+function<sup>★</sup>:</p>
 <pre class="haskell"><code>fst :: (a,b) -> a -- Only one choice
 snd :: (a,b) -> b -- Only one choice
 f :: a -> [a]     -- Many choices
@@ -10,6 +11,7 @@ f :: a -> [a]     -- Many choices
 -- for example: the type of addOne isn't [a] -> [a]
 addOne l = map <span class="red">(+1)</span> l
 -- The (+1) force 'a' to be a Num.</code></pre>
-
 <p>
-<p><span class="small base01">★:<a href="http://ttic.uchicago.edu/~dreyer/course/papers/wadler.pdf">Theorems for free!, Philip Wadler, 1989</a></span></p>
+<p><span
+class="small base01">★:<a href="http://ttic.uchicago.edu/~dreyer/course/papers/wadler.pdf">Theorems
+for free!, Philip Wadler, 1989</a></span></p>

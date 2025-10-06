@@ -11,7 +11,7 @@ cd $scriptdir
 
 # Convert all slides from markdown
 for slide in **/*.md(.N); do
-    pandoc -f markdown -t html $slide > ${slide:r}.html
+    pandoc -f markdown -t html --mathjax='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js' $slide > ${slide:r}.html
 done
 
 {
